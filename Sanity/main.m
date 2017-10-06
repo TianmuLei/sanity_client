@@ -8,9 +8,14 @@
 
 #import <UIKit/UIKit.h>
 #import "AppDelegate.h"
+#import "client.h"
 
 int main(int argc, char * argv[]) {
+    client *_clientInstant=[[client alloc] init];
     @autoreleasepool {
         return UIApplicationMain(argc, argv, nil, NSStringFromClass([AppDelegate class]));
     }
+    
+    
+    
 }
