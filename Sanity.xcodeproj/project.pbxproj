@@ -119,12 +119,11 @@
 		7C2D9DF71F875EFD00027681 /* Sanity */ = {
 			isa = PBXGroup;
 			children = (
+				CC15B38E1F87675800764940 /* View */,
 				7C2D9E2B1F875FA200027681 /* client.h */,
 				7C2D9E2C1F875FA200027681 /* client.m */,
 				7C2D9DFB1F875EFD00027681 /* AppDelegate.h */,
 				7C2D9DFC1F875EFD00027681 /* AppDelegate.m */,
-				7C2D9DFE1F875EFD00027681 /* ViewController.h */,
-				7C2D9DFF1F875EFD00027681 /* ViewController.m */,
 				7C2D9E011F875EFD00027681 /* Main.storyboard */,
 				7C2D9E041F875EFD00027681 /* Assets.xcassets */,
 				7C2D9E061F875EFD00027681 /* LaunchScreen.storyboard */,
@@ -167,6 +166,15 @@
 				707A33C305BFBF4336B3971E /* Pods-Sanity.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		CC15B38E1F87675800764940 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				7C2D9DFE1F875EFD00027681 /* ViewController.h */,
+				7C2D9DFF1F875EFD00027681 /* ViewController.m */,
+			);
+			name = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
