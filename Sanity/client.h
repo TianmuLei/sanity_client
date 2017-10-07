@@ -10,5 +10,7 @@
 
 @interface client : NSObject <SRWebSocketDelegate>
 @property (strong, atomic)  SRWebSocket *webSocket;
+-(NSString*) JSONToString:(NSDictionary*)dict;
+-(NSDictionary*) StringToJSON:(NSString*) JSONString;
 @end
 
