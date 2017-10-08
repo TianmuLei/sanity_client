@@ -16,6 +16,9 @@
 		7C2D9E131F875EFD00027681 /* SanityTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C2D9E121F875EFD00027681 /* SanityTests.m */; };
 		7C2D9E1E1F875EFD00027681 /* SanityUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C2D9E1D1F875EFD00027681 /* SanityUITests.m */; };
 		7C2D9E2D1F875FA200027681 /* client.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C2D9E2C1F875FA200027681 /* client.m */; };
+		7C703F291F8ABF6A00B5D982 /* Transaction.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C703F281F8ABF6A00B5D982 /* Transaction.m */; };
+		7C703F2C1F8AC1EB00B5D982 /* Category.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C703F2B1F8AC1EB00B5D982 /* Category.m */; };
+		7C703F2F1F8AC32A00B5D982 /* Budget.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C703F2E1F8AC32A00B5D982 /* Budget.m */; };
 		7CA1D1EB1F897A87003631D6 /* MainController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CA1D1E81F897A87003631D6 /* MainController.m */; };
 		7CA1D1EC1F897A87003631D6 /* SignupController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CA1D1EA1F897A87003631D6 /* SignupController.m */; };
 		C0ACF45D5FDB633C6D76F84C /* libPods-Sanity.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EB1AA2A5F86FBB7BDA75AF6F /* libPods-Sanity.a */; };
@@ -59,6 +62,12 @@
 		7C2D9E1F1F875EFD00027681 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7C2D9E2B1F875FA200027681 /* client.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = client.h; sourceTree = "<group>"; };
 		7C2D9E2C1F875FA200027681 /* client.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = client.m; sourceTree = "<group>"; };
+		7C703F271F8ABF6A00B5D982 /* Transaction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Transaction.h; sourceTree = "<group>"; };
+		7C703F281F8ABF6A00B5D982 /* Transaction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Transaction.m; sourceTree = "<group>"; };
+		7C703F2A1F8AC1EB00B5D982 /* Category.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Category.h; sourceTree = "<group>"; };
+		7C703F2B1F8AC1EB00B5D982 /* Category.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Category.m; sourceTree = "<group>"; };
+		7C703F2D1F8AC32A00B5D982 /* Budget.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Budget.h; sourceTree = "<group>"; };
+		7C703F2E1F8AC32A00B5D982 /* Budget.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Budget.m; sourceTree = "<group>"; };
 		7CA1D1E71F897A87003631D6 /* MainController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainController.h; sourceTree = "<group>"; };
 		7CA1D1E81F897A87003631D6 /* MainController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainController.m; sourceTree = "<group>"; };
 		7CA1D1E91F897A87003631D6 /* SignupController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignupController.h; sourceTree = "<group>"; };
@@ -139,6 +148,12 @@
 				7CA1D1E81F897A87003631D6 /* MainController.m */,
 				7CA1D1E91F897A87003631D6 /* SignupController.h */,
 				7CA1D1EA1F897A87003631D6 /* SignupController.m */,
+				7C703F271F8ABF6A00B5D982 /* Transaction.h */,
+				7C703F281F8ABF6A00B5D982 /* Transaction.m */,
+				7C703F2A1F8AC1EB00B5D982 /* Category.h */,
+				7C703F2B1F8AC1EB00B5D982 /* Category.m */,
+				7C703F2D1F8AC32A00B5D982 /* Budget.h */,
+				7C703F2E1F8AC32A00B5D982 /* Budget.m */,
 				7C2D9DF81F875EFD00027681 /* Supporting Files */,
 			);
 			path = Sanity;
@@ -371,9 +386,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7C703F291F8ABF6A00B5D982 /* Transaction.m in Sources */,
 				7C2D9E001F875EFD00027681 /* ViewController.m in Sources */,
 				7C2D9DFD1F875EFD00027681 /* AppDelegate.m in Sources */,
+				7C703F2C1F8AC1EB00B5D982 /* Category.m in Sources */,
 				7C2D9E2D1F875FA200027681 /* client.m in Sources */,
+				7C703F2F1F8AC32A00B5D982 /* Budget.m in Sources */,
 				7CA1D1EB1F897A87003631D6 /* MainController.m in Sources */,
 				7C2D9DFA1F875EFD00027681 /* main.m in Sources */,
 				7CA1D1EC1F897A87003631D6 /* SignupController.m in Sources */,

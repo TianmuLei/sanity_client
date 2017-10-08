@@ -10,4 +10,13 @@
 
 @implementation SignupController
 
+
+- (id) initWithClass:(client *)myClient{
+    self = [super initWithClass: myClient];
+    if (self) {
+       // self.client=myClient;
+    }
+    return self;
+}
+
 @end
