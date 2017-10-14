@@ -19,7 +19,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    [self displayProfile:@"Ruyin Shao" :@"ruyinsha@usc.edu"];
+    [self displayProfile:@"user" :@"u**r@usc.edu"];
 }
 
 - (void)didReceiveMemoryWarning {
