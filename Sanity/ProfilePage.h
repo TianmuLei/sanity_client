@@ -10,8 +10,6 @@
 
 @interface ProfilePage : UIViewController
 
-//@property NSString* username;
-//@property NSString* password;
-//@property NSString* email;
+- (void) displayProfile:(NSString*)username :(NSString*)email;
 
 @end
