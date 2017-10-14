@@ -1,39 +1,28 @@
 //
-//  ProfilePage.m
-//  SanityTab
+//  SignupPage.m
+//  Sanity
 //
-//  Created by Ruyin Shao on 10/13/17.
-//  Copyright © 2017 Ruyin Shao. All rights reserved.
+//  Created by Gu on 10/14/17.
+//  Copyright © 2017 Absolute A. All rights reserved.
 //
 
-#import "ProfilePage.h"
+#import "SignupPage.h"
 
-@interface ProfilePage ()
-@property (weak, nonatomic) IBOutlet UILabel *nameLabel;
-@property (weak, nonatomic) IBOutlet UILabel *emailLabel;
+@interface SignupPage ()
 
 @end
 
-@implementation ProfilePage
+@implementation SignupPage
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    [self displayProfile:@"user" :@"u**r@usc.edu"];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
-
-- (void) displayProfile:(NSString*)username :(NSString*)email{
-    self.nameLabel.text = username;
-    self.emailLabel.text = email;
-}
-
-
 
 /*
 #pragma mark - Navigation
