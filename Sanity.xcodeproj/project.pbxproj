@@ -23,6 +23,7 @@
 		7CA1D1EB1F897A87003631D6 /* MainController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CA1D1E81F897A87003631D6 /* MainController.m */; };
 		7CA1D1EC1F897A87003631D6 /* SignupController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CA1D1EA1F897A87003631D6 /* SignupController.m */; };
 		C0ACF45D5FDB633C6D76F84C /* libPods-Sanity.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EB1AA2A5F86FBB7BDA75AF6F /* libPods-Sanity.a */; };
+		CC2D17E11F91AFBE0052613D /* ProfilePage.m in Sources */ = {isa = PBXBuildFile; fileRef = CC2D17E01F91AFBE0052613D /* ProfilePage.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,6 +76,8 @@
 		7CA1D1E81F897A87003631D6 /* MainController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainController.m; sourceTree = "<group>"; };
 		7CA1D1E91F897A87003631D6 /* SignupController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignupController.h; sourceTree = "<group>"; };
 		7CA1D1EA1F897A87003631D6 /* SignupController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignupController.m; sourceTree = "<group>"; };
+		CC2D17DF1F91AFBE0052613D /* ProfilePage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfilePage.h; sourceTree = "<group>"; };
+		CC2D17E01F91AFBE0052613D /* ProfilePage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfilePage.m; sourceTree = "<group>"; };
 		EB1AA2A5F86FBB7BDA75AF6F /* libPods-Sanity.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Sanity.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -144,7 +147,6 @@
 				7C2D9DFC1F875EFD00027681 /* AppDelegate.m */,
 				7C2D9E011F875EFD00027681 /* Main.storyboard */,
 				7C2D9E041F875EFD00027681 /* Assets.xcassets */,
-				7C2D9E061F875EFD00027681 /* LaunchScreen.storyboard */,
 				7C2D9E091F875EFD00027681 /* Info.plist */,
 				7C2D9DF91F875EFD00027681 /* main.m */,
 				7CA1D1E71F897A87003631D6 /* MainController.h */,
@@ -167,6 +169,7 @@
 		7C2D9DF81F875EFD00027681 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				7C2D9E061F875EFD00027681 /* LaunchScreen.storyboard */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -201,6 +204,8 @@
 		CC15B38E1F87675800764940 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				CC2D17DF1F91AFBE0052613D /* ProfilePage.h */,
+				CC2D17E01F91AFBE0052613D /* ProfilePage.m */,
 				7C2D9DFE1F875EFD00027681 /* ViewController.h */,
 				7C2D9DFF1F875EFD00027681 /* ViewController.m */,
 			);
@@ -392,6 +397,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7C703F321F8AC41700B5D982 /* User.m in Sources */,
+				CC2D17E11F91AFBE0052613D /* ProfilePage.m in Sources */,
 				7C703F291F8ABF6A00B5D982 /* Transaction.m in Sources */,
 				7C2D9E001F875EFD00027681 /* ViewController.m in Sources */,
 				7C2D9DFD1F875EFD00027681 /* AppDelegate.m in Sources */,
