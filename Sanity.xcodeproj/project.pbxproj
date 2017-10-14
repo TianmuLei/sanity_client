@@ -22,6 +22,15 @@
 		7C703F321F8AC41700B5D982 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C703F311F8AC41700B5D982 /* User.m */; };
 		7CA1D1EB1F897A87003631D6 /* MainController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CA1D1E81F897A87003631D6 /* MainController.m */; };
 		7CA1D1EC1F897A87003631D6 /* SignupController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CA1D1EA1F897A87003631D6 /* SignupController.m */; };
+		843599C01F91DB39002372E9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 843599B81F91DB38002372E9 /* Assets.xcassets */; };
+		843599C11F91DB39002372E9 /* Base.lproj in Resources */ = {isa = PBXBuildFile; fileRef = 843599B91F91DB38002372E9 /* Base.lproj */; };
+		843599C21F91DB39002372E9 /* HomePageTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 843599BA1F91DB38002372E9 /* HomePageTableViewController.m */; };
+		843599C31F91DB39002372E9 /* ViewControllerTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 843599BD1F91DB39002372E9 /* ViewControllerTest.m */; };
+		843599C41F91DB39002372E9 /* XYPieChart.m in Sources */ = {isa = PBXBuildFile; fileRef = 843599BE1F91DB39002372E9 /* XYPieChart.m */; };
+		843599C61F91DBEA002372E9 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 843599C51F91DBEA002372E9 /* CoreGraphics.framework */; };
+		843599C81F91DBF1002372E9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 843599C71F91DBF1002372E9 /* Foundation.framework */; };
+		843599CA1F91DBF6002372E9 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 843599C91F91DBF6002372E9 /* UIKit.framework */; };
+		843599CC1F91DBFD002372E9 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 843599CB1F91DBFD002372E9 /* QuartzCore.framework */; };
 		C0ACF45D5FDB633C6D76F84C /* libPods-Sanity.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EB1AA2A5F86FBB7BDA75AF6F /* libPods-Sanity.a */; };
 		CC2D17E11F91AFBE0052613D /* ProfilePage.m in Sources */ = {isa = PBXBuildFile; fileRef = CC2D17E01F91AFBE0052613D /* ProfilePage.m */; };
 		CC2D17E41F91C2AF0052613D /* AddBudgetPage.m in Sources */ = {isa = PBXBuildFile; fileRef = CC2D17E31F91C2AF0052613D /* AddBudgetPage.m */; };
@@ -77,6 +86,18 @@
 		7CA1D1E81F897A87003631D6 /* MainController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainController.m; sourceTree = "<group>"; };
 		7CA1D1E91F897A87003631D6 /* SignupController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignupController.h; sourceTree = "<group>"; };
 		7CA1D1EA1F897A87003631D6 /* SignupController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignupController.m; sourceTree = "<group>"; };
+		843599B81F91DB38002372E9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		843599B91F91DB38002372E9 /* Base.lproj */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Base.lproj; sourceTree = "<group>"; };
+		843599BA1F91DB38002372E9 /* HomePageTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomePageTableViewController.m; sourceTree = "<group>"; };
+		843599BB1F91DB38002372E9 /* HomePageTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomePageTableViewController.h; sourceTree = "<group>"; };
+		843599BC1F91DB39002372E9 /* ViewControllerTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewControllerTest.h; sourceTree = "<group>"; };
+		843599BD1F91DB39002372E9 /* ViewControllerTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewControllerTest.m; sourceTree = "<group>"; };
+		843599BE1F91DB39002372E9 /* XYPieChart.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XYPieChart.m; sourceTree = "<group>"; };
+		843599BF1F91DB39002372E9 /* XYPieChart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XYPieChart.h; sourceTree = "<group>"; };
+		843599C51F91DBEA002372E9 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		843599C71F91DBF1002372E9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		843599C91F91DBF6002372E9 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		843599CB1F91DBFD002372E9 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		CC2D17DF1F91AFBE0052613D /* ProfilePage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfilePage.h; sourceTree = "<group>"; };
 		CC2D17E01F91AFBE0052613D /* ProfilePage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfilePage.m; sourceTree = "<group>"; };
 		CC2D17E21F91C2AF0052613D /* AddBudgetPage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddBudgetPage.h; sourceTree = "<group>"; };
@@ -89,6 +110,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				843599CC1F91DBFD002372E9 /* QuartzCore.framework in Frameworks */,
+				843599CA1F91DBF6002372E9 /* UIKit.framework in Frameworks */,
+				843599C81F91DBF1002372E9 /* Foundation.framework in Frameworks */,
+				843599C61F91DBEA002372E9 /* CoreGraphics.framework in Frameworks */,
 				C0ACF45D5FDB633C6D76F84C /* libPods-Sanity.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -113,6 +138,10 @@
 		4A6FEE003D3905322FAA0D4B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				843599CB1F91DBFD002372E9 /* QuartzCore.framework */,
+				843599C91F91DBF6002372E9 /* UIKit.framework */,
+				843599C71F91DBF1002372E9 /* Foundation.framework */,
+				843599C51F91DBEA002372E9 /* CoreGraphics.framework */,
 				EB1AA2A5F86FBB7BDA75AF6F /* libPods-Sanity.a */,
 			);
 			name = Frameworks;
@@ -154,6 +183,8 @@
 		7C2D9DF71F875EFD00027681 /* Sanity */ = {
 			isa = PBXGroup;
 			children = (
+				843599B81F91DB38002372E9 /* Assets.xcassets */,
+				843599B91F91DB38002372E9 /* Base.lproj */,
 				7C19917A1F91C6000039701C /* Controller */,
 				CC15B38E1F87675800764940 /* View */,
 				7C2D9E2B1F875FA200027681 /* client.h */,
@@ -215,6 +246,12 @@
 		CC15B38E1F87675800764940 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				843599BA1F91DB38002372E9 /* HomePageTableViewController.m */,
+				843599BB1F91DB38002372E9 /* HomePageTableViewController.h */,
+				843599BC1F91DB39002372E9 /* ViewControllerTest.h */,
+				843599BD1F91DB39002372E9 /* ViewControllerTest.m */,
+				843599BE1F91DB39002372E9 /* XYPieChart.m */,
+				843599BF1F91DB39002372E9 /* XYPieChart.h */,
 				CC2D17DF1F91AFBE0052613D /* ProfilePage.h */,
 				CC2D17E01F91AFBE0052613D /* ProfilePage.m */,
 				CC2D17E21F91C2AF0052613D /* AddBudgetPage.h */,
@@ -336,6 +373,8 @@
 			files = (
 				7C2D9E081F875EFD00027681 /* LaunchScreen.storyboard in Resources */,
 				7C2D9E051F875EFD00027681 /* Assets.xcassets in Resources */,
+				843599C11F91DB39002372E9 /* Base.lproj in Resources */,
+				843599C01F91DB39002372E9 /* Assets.xcassets in Resources */,
 				7C2D9E031F875EFD00027681 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -412,6 +451,7 @@
 				7C703F321F8AC41700B5D982 /* User.m in Sources */,
 				CC2D17E11F91AFBE0052613D /* ProfilePage.m in Sources */,
 				7C703F291F8ABF6A00B5D982 /* Transaction.m in Sources */,
+				843599C41F91DB39002372E9 /* XYPieChart.m in Sources */,
 				CC2D17E41F91C2AF0052613D /* AddBudgetPage.m in Sources */,
 				7C2D9E001F875EFD00027681 /* ViewController.m in Sources */,
 				7C2D9DFD1F875EFD00027681 /* AppDelegate.m in Sources */,
@@ -419,8 +459,10 @@
 				7C2D9E2D1F875FA200027681 /* client.m in Sources */,
 				7C703F2F1F8AC32A00B5D982 /* Budget.m in Sources */,
 				7CA1D1EB1F897A87003631D6 /* MainController.m in Sources */,
+				843599C31F91DB39002372E9 /* ViewControllerTest.m in Sources */,
 				7C2D9DFA1F875EFD00027681 /* main.m in Sources */,
 				7CA1D1EC1F897A87003631D6 /* SignupController.m in Sources */,
+				843599C21F91DB39002372E9 /* HomePageTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
