@@ -9,6 +9,10 @@
 #import "LoginPage.h"
 
 @interface LoginPage ()
+@property (weak, nonatomic) IBOutlet UITextField *emailTextField;
+@property (weak, nonatomic) IBOutlet UITextField *passwordTextField;
+@property (weak, nonatomic) IBOutlet UIButton *loginButton;
+@property (weak, nonatomic) IBOutlet UIButton *signupButton;
 
 @end
 
@@ -23,6 +27,25 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+- (IBAction)loginClicked:(id)sender {
+    self.password = self.passwordTextField.text;
+    self.email = self.emailTextField.text;
+    
+}
+- (IBAction)exitKeyboardForEmail:(id)sender {
+    [self.emailTextField resignFirstResponder];
+}
+
+- (IBAction)exitKeyboardForPassword:(id)sender {
+    [self.passwordTextField resignFirstResponder];
+}
+
+- (IBAction)backgroundClicked:(id)sender {
+    [self.passwordTextField resignFirstResponder];
+    [self.emailTextField resignFirstResponder];
+}
+
 
 /*
 #pragma mark - Navigation

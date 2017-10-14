@@ -9,5 +9,8 @@
 #import <UIKit/UIKit.h>
 
 @interface SignupPage : UIViewController
+@property (strong,nonatomic) NSString * password;
+@property (strong,nonatomic) NSString * email;
+@property (strong,nonatomic) NSString * username;
 
 @end

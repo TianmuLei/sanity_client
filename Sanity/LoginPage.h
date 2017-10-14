@@ -9,5 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface LoginPage : UIViewController
+@property (strong,nonatomic) NSString * password;
+@property (strong,nonatomic) NSString * email;
 
 @end
