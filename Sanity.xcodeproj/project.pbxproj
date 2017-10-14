@@ -115,6 +115,17 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		7C19917A1F91C6000039701C /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				7CA1D1E71F897A87003631D6 /* MainController.h */,
+				7CA1D1E81F897A87003631D6 /* MainController.m */,
+				7CA1D1E91F897A87003631D6 /* SignupController.h */,
+				7CA1D1EA1F897A87003631D6 /* SignupController.m */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
 		7C2D9DEC1F875EFD00027681 = {
 			isa = PBXGroup;
 			children = (
@@ -140,6 +151,7 @@
 		7C2D9DF71F875EFD00027681 /* Sanity */ = {
 			isa = PBXGroup;
 			children = (
+				7C19917A1F91C6000039701C /* Controller */,
 				CC15B38E1F87675800764940 /* View */,
 				7C2D9E2B1F875FA200027681 /* client.h */,
 				7C2D9E2C1F875FA200027681 /* client.m */,
@@ -149,10 +161,6 @@
 				7C2D9E041F875EFD00027681 /* Assets.xcassets */,
 				7C2D9E091F875EFD00027681 /* Info.plist */,
 				7C2D9DF91F875EFD00027681 /* main.m */,
-				7CA1D1E71F897A87003631D6 /* MainController.h */,
-				7CA1D1E81F897A87003631D6 /* MainController.m */,
-				7CA1D1E91F897A87003631D6 /* SignupController.h */,
-				7CA1D1EA1F897A87003631D6 /* SignupController.m */,
 				7C703F271F8ABF6A00B5D982 /* Transaction.h */,
 				7C703F281F8ABF6A00B5D982 /* Transaction.m */,
 				7C703F2A1F8AC1EB00B5D982 /* Category.h */,
