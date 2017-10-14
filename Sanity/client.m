@@ -14,10 +14,10 @@
 {
     self = [super init];
     if (self) {
-        _webSocket = [[SRWebSocket alloc] initWithURL:[NSURL URLWithString:@"ws://localhost:9999"]];
+        _webSocket = [[SRWebSocket alloc] initWithURL:[NSURL URLWithString:@"ws://165.227.14.202:9999"]];
         _webSocket.delegate = self;
-       // [_webSocket open];
-        SignupController* mainCon=[[SignupController alloc] initWithClass:self];
+       [_webSocket open];
+      //  SignupController* mainCon=[[SignupController alloc] initWithClass:self];
 
         
         
@@ -31,6 +31,7 @@
 - (void)webSocketDidOpen:(SRWebSocket *)webSocket;
 {
     NSLog(@"Websocket Connected");
+     SignupController* mainCon=[[SignupController alloc] initWithClass:self];
     //NSString *message = @"WangWangWang";
     //[_webSocket send:message];
     
@@ -107,8 +108,8 @@
 
 -(void) sendMessage:(NSDictionary*)dict{
     NSString *message=[self JSONToString:dict];
-    NSLog(@"sendmessage:  \"%@\"", message);
-   // [_webSocket send:message];
+    //NSLog(@"sendmessage:  \"%@\"", message);
+   [_webSocket send:message];
 }
 
 

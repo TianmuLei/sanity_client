@@ -33,7 +33,7 @@
     
     
     
-    NSDictionary *info=@{@"username":username,@"Email":email,@"password1":password1,@"password2":password2};
+    NSDictionary *info=@{@"username":username,@"email":email,@"password1":password1,@"password2":password2};
     
     NSDictionary *message=@{@"function":@"Register",@"information":info};
     
