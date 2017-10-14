@@ -7,6 +7,7 @@
 //
 
 #import "client.h"
+#import "SignupController.h"
 
 @implementation client
 - (instancetype)init
@@ -15,8 +16,9 @@
     if (self) {
         _webSocket = [[SRWebSocket alloc] initWithURL:[NSURL URLWithString:@"ws://localhost:9999"]];
         _webSocket.delegate = self;
-        [_webSocket open];
-        
+       // [_webSocket open];
+        SignupController* mainCon=[[SignupController alloc] initWithClass:self];
+
         
         
         
@@ -29,8 +31,9 @@
 - (void)webSocketDidOpen:(SRWebSocket *)webSocket;
 {
     NSLog(@"Websocket Connected");
-    NSString *message = @"WangWangWang";
-    [_webSocket send:message];
+    //NSString *message = @"WangWangWang";
+    //[_webSocket send:message];
+    
 }
 
 - (void)webSocket:(SRWebSocket *)webSocket didFailWithError:(NSError *)error;
@@ -100,6 +103,15 @@
     
     return object;
 }
+
+
+-(void) sendMessage:(NSDictionary*)dict{
+    NSString *message=[self JSONToString:dict];
+    NSLog(@"sendmessage:  \"%@\"", message);
+   // [_webSocket send:message];
+}
+
+
 
 
 @end

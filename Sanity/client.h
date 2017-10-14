@@ -7,10 +7,13 @@
 //
 #import <Foundation/Foundation.h>
 #import <SocketRocket/SRWebSocket.h>
+#import "User.h"
 
 @interface client : NSObject <SRWebSocketDelegate>
 @property (strong, atomic)  SRWebSocket *webSocket;
+@property (strong, atomic)  User *myUser;
 -(NSString*) JSONToString:(NSDictionary*)dict;
 -(NSDictionary*) StringToJSON:(NSString*) JSONString;
+-(void) sendMessage:(NSDictionary*)dict;
 @end
 

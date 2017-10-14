@@ -12,7 +12,10 @@
 
 @property int* limit;
 @property int* total;
+@property int* period;
 @property (strong, atomic) NSString* name;
 @property (strong, atomic) NSMutableArray* categories;
+@property (strong, atomic) NSDateComponents* startDate;
+
 
 @end
