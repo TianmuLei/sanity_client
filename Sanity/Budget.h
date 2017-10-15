@@ -10,12 +10,13 @@
 
 @interface Budget : NSObject
 
-@property int* limit;
-@property int* total;
-@property int* period;
+#warning To tianmu: Changed limit and NSDateComponent to NSDate!!!!!
+@property int limit;
+@property int total;
+@property int period;
 @property (strong, atomic) NSString* name;
 @property (strong, atomic) NSMutableArray* categories;
-@property (strong, atomic) NSDateComponents* startDate;
+@property (strong, atomic) NSDate* startDate;
 
 
 @end

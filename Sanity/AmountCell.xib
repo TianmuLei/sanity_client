@@ -48,6 +48,9 @@
                     <constraint firstAttribute="bottom" secondItem="jHh-yJ-d2b" secondAttribute="bottom" constant="7.5" id="vwp-4a-hV2"/>
                 </constraints>
             </tableViewCellContentView>
+            <connections>
+                <outlet property="amountTF" destination="jHh-yJ-d2b" id="3Px-sd-QJr"/>
+            </connections>
         </tableViewCell>
     </objects>
 </document>

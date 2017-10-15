@@ -7,7 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Budget.h"
 
 @interface AddBudgetPage : UITableViewController
+
 
 @end

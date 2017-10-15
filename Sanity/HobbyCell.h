@@ -14,5 +14,6 @@
 #define HobbyCellHeight 50
 
 @interface HobbyCell : UITableViewCell
+@property (weak, nonatomic) IBOutlet UITextField *categoryNameTF;
 
 @end

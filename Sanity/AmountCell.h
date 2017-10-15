@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 #define AmountCellID @"AmountCell"
 @interface AmountCell : UITableViewCell
+@property (weak, nonatomic) IBOutlet UITextField *amountTF;
 
 @end

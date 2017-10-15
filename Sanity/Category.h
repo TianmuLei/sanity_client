@@ -11,8 +11,8 @@
 @interface Category : NSObject
 
 
-@property int* limit;
-@property int* total;
+@property int limit;
+@property int total;
 @property (strong, atomic) NSString* name;
 @property (strong, atomic) NSString* budget;
 @property (strong, atomic) NSMutableArray* transctions;

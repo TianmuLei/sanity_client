@@ -682,23 +682,34 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Period" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w01-ga-jOg">
-                                                    <rect key="frame" x="15" y="13.5" width="42" height="17"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <color key="textColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sca-17-bbn">
                                                     <rect key="frame" x="334" y="22" width="0.0" height="0.0"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Period" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w01-ga-jOg">
+                                                    <rect key="frame" x="15" y="10" width="42" height="23.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <color key="textColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="m3g-qC-fua">
+                                                    <rect key="frame" x="115" y="8" width="245" height="29"/>
+                                                    <nil key="textColor"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                </textField>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstItem="m3g-qC-fua" firstAttribute="leading" secondItem="w01-ga-jOg" secondAttribute="trailing" constant="58" id="53g-ZR-YoJ"/>
                                                 <constraint firstItem="sca-17-bbn" firstAttribute="centerY" secondItem="GKd-6b-kaG" secondAttribute="centerY" id="OFd-lZ-Hxh"/>
-                                                <constraint firstItem="w01-ga-jOg" firstAttribute="leading" secondItem="GKd-6b-kaG" secondAttribute="leading" constant="15" id="tHd-7P-sGh"/>
-                                                <constraint firstItem="w01-ga-jOg" firstAttribute="centerY" secondItem="GKd-6b-kaG" secondAttribute="centerY" id="z6e-0r-d40"/>
+                                                <constraint firstAttribute="trailing" secondItem="m3g-qC-fua" secondAttribute="trailing" constant="15" id="ORF-xY-P7m"/>
+                                                <constraint firstItem="m3g-qC-fua" firstAttribute="top" secondItem="GKd-6b-kaG" secondAttribute="top" constant="8" id="P5f-11-lzB"/>
+                                                <constraint firstItem="w01-ga-jOg" firstAttribute="top" secondItem="GKd-6b-kaG" secondAttribute="topMargin" constant="2" id="afB-qm-m3K"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="w01-ga-jOg" secondAttribute="bottom" constant="2" id="hLV-iq-kSi"/>
+                                                <constraint firstItem="w01-ga-jOg" firstAttribute="leading" secondItem="GKd-6b-kaG" secondAttribute="leadingMargin" constant="7" id="mln-n5-He9"/>
+                                                <constraint firstAttribute="bottom" secondItem="m3g-qC-fua" secondAttribute="bottom" constant="6.5" id="oqu-Le-OxS"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
@@ -737,7 +748,7 @@
                                                         <color key="titleColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     </state>
                                                     <connections>
-                                                        <action selector="addCell:" destination="1Hd-Yx-9Dx" eventType="touchUpInside" id="ygP-JV-y0r"/>
+                                                        <action selector="submitNewBudget:" destination="1Hd-Yx-9Dx" eventType="touchUpInside" id="aRq-C2-OzI"/>
                                                     </connections>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mL9-WD-dys">
@@ -777,6 +788,11 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Add Budget" id="tKA-Gc-Zvc"/>
+                    <connections>
+                        <outlet property="budgetNameTF" destination="q8e-fQ-IU9" id="Oro-vL-LcJ"/>
+                        <outlet property="datePicker" destination="MEW-d7-2Nm" id="CGP-A3-lGe"/>
+                        <outlet property="periodTF" destination="m3g-qC-fua" id="0wB-Mj-VXc"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Jnc-JD-jVQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

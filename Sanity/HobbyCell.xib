@@ -45,6 +45,9 @@
                     <constraint firstItem="dHw-fd-8ta" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="1" id="vNY-9B-IXC"/>
                 </constraints>
             </tableViewCellContentView>
+            <connections>
+                <outlet property="categoryNameTF" destination="dHw-fd-8ta" id="a4z-mN-sEw"/>
+            </connections>
             <point key="canvasLocation" x="34" y="63.5"/>
         </tableViewCell>
     </objects>

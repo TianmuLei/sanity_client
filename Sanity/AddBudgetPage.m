@@ -9,6 +9,8 @@
 #import "AddBudgetPage.h"
 #import "AmountCell.h"
 #import "HobbyCell.h"
+#import "Budget.h"
+#import "Category.h"
 
 typedef enum:NSInteger{
     sectionName = 0,
@@ -19,7 +21,16 @@ typedef enum:NSInteger{
 
 @interface AddBudgetPage ()
 
+
+
+@property (weak, nonatomic) IBOutlet UITextField *budgetNameTF;
+@property (weak, nonatomic) IBOutlet UIDatePicker *datePicker;
+
+@property (weak, nonatomic) IBOutlet UITextField *periodTF;
+
 @property (nonatomic, strong) NSMutableArray *hobbysArr;
+@property (nonatomic, strong) NSMutableArray *categoryNameCells;
+@property (nonatomic, strong) NSMutableArray *categoryAmountCells;
 
 @end
 
@@ -27,15 +38,53 @@ typedef enum:NSInteger{
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self initSetUp];
     // Do any additional setup after loading the view, typically from a nib.
     
     
 }
 
+- (void) initSetUp {
+    _categoryNameCells = [[NSMutableArray alloc] init];
+    _categoryAmountCells = [[NSMutableArray alloc] init];
+
+}
+
+- (void) addBudgetSucceeded:(Budget *)budget {
+    
+}
 //clicked add category button
 - (IBAction)addCell:(id)sender {
     [self addData];
 }
+
+//clicked submit
+- (IBAction)submitNewBudget:(id)sender {
+    //create a new budget
+    Budget *mBudget = [[Budget alloc] init];
+    NSString *budgetName = _budgetNameTF.text;
+    mBudget.name = budgetName;
+    mBudget.period = [_periodTF.text intValue];
+    mBudget.startDate = [_datePicker date];
+  
+    for (int i = 1; i < _categoryNameCells.count; ++i) {
+        HobbyCell *nameCell = _categoryNameCells[i];
+        AmountCell *amountCell = _categoryAmountCells[i];
+        Category *cate1 = [[Category alloc] init];
+        
+        //assign attributes to category
+        cate1.name = nameCell.categoryNameTF.text;
+        cate1.limit = [amountCell.amountTF.text intValue];
+        
+
+        //add one category inside
+        [mBudget.categories addObject:cate1];
+        mBudget.total += cate1.limit;
+    }
+
+    
+}
+
 
 - (void)addData{
     
@@ -74,6 +123,7 @@ typedef enum:NSInteger{
             if(cell == nil){
                 cell = [[NSBundle mainBundle] loadNibNamed:HobbyCellID owner:nil options:nil].lastObject;
             }
+            [_categoryNameCells addObject:cell];
             return cell;
         }
         else {
@@ -81,6 +131,7 @@ typedef enum:NSInteger{
             if(cell == nil){
                 cell = [[NSBundle mainBundle] loadNibNamed:AmountCellID owner:nil options:nil].lastObject;
             }
+            [_categoryAmountCells addObject:cell];
             return cell;
         }
     }
