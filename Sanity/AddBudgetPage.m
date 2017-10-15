@@ -29,11 +29,10 @@ typedef enum:NSInteger{
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     
-    /** 延时添加数据 */
-    
     
 }
 
+//clicked add category button
 - (IBAction)addCell:(id)sender {
     [self addData];
 }
@@ -44,9 +43,6 @@ typedef enum:NSInteger{
     [self.hobbysArr addObject:@1];
     
     [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:sectionCategory] withRowAnimation:UITableViewRowAnimationNone];
-    //
-    //        self.hobbysArr.count>5?[self deleteData]:[self addData];
-    //
 }
 
 - (void)deleteData{
@@ -65,14 +61,14 @@ typedef enum:NSInteger{
 
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    if(sectionCategory == section){//爱好 （动态cell）
+    if(sectionCategory == section){
         return self.hobbysArr.count;
     }
     return [super tableView:tableView numberOfRowsInSection:section];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    if(sectionCategory == indexPath.section){//爱好 （动态cell）
+    if(sectionCategory == indexPath.section){
         if (indexPath.row % 2 == 0){
             HobbyCell *cell = [tableView dequeueReusableCellWithIdentifier:HobbyCellID];
             if(cell == nil){

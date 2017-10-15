@@ -646,26 +646,31 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Start Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DEn-1j-cAP">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Start Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DEn-1j-cAP">
                                                     <rect key="frame" x="15" y="13.5" width="66" height="17"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="66" id="pTh-aS-AqD"/>
+                                                        <constraint firstAttribute="height" constant="17" id="zTN-JG-dTJ"/>
+                                                    </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <color key="textColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <datePicker contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="MEW-d7-2Nm">
-                                                    <rect key="frame" x="93" y="0.0" width="267" height="44"/>
+                                                <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="MEW-d7-2Nm">
+                                                    <rect key="frame" x="109" y="0.0" width="266" height="44"/>
                                                     <date key="date" timeIntervalSinceReferenceDate="529743286.68199903">
                                                         <!--2017-10-15 06:54:46 +0000-->
                                                     </date>
                                                 </datePicker>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="MEW-d7-2Nm" firstAttribute="top" secondItem="Zvt-vz-MhW" secondAttribute="top" id="D94-b2-3Cj"/>
-                                                <constraint firstAttribute="trailing" secondItem="MEW-d7-2Nm" secondAttribute="trailing" id="aaJ-Hc-Hhv"/>
-                                                <constraint firstItem="MEW-d7-2Nm" firstAttribute="leading" secondItem="DEn-1j-cAP" secondAttribute="trailing" constant="2" id="bct-dp-n4c"/>
-                                                <constraint firstItem="DEn-1j-cAP" firstAttribute="centerY" secondItem="Zvt-vz-MhW" secondAttribute="centerY" id="eec-HO-upI"/>
-                                                <constraint firstItem="DEn-1j-cAP" firstAttribute="leading" secondItem="Zvt-vz-MhW" secondAttribute="leading" constant="15" id="sXT-Au-WJQ"/>
-                                                <constraint firstAttribute="bottom" secondItem="MEW-d7-2Nm" secondAttribute="bottom" id="vbv-mn-GAg"/>
+                                                <constraint firstItem="MEW-d7-2Nm" firstAttribute="top" secondItem="Zvt-vz-MhW" secondAttribute="top" id="DqV-li-hmB"/>
+                                                <constraint firstItem="DEn-1j-cAP" firstAttribute="leading" secondItem="Zvt-vz-MhW" secondAttribute="leadingMargin" constant="7" id="IJs-1y-ig7"/>
+                                                <constraint firstItem="DEn-1j-cAP" firstAttribute="top" secondItem="Zvt-vz-MhW" secondAttribute="topMargin" constant="5.5" id="MAm-Y4-VNV"/>
+                                                <constraint firstAttribute="bottom" secondItem="MEW-d7-2Nm" secondAttribute="bottom" id="N8S-7L-sGz"/>
+                                                <constraint firstAttribute="trailing" secondItem="MEW-d7-2Nm" secondAttribute="trailing" id="bO1-nB-sa8"/>
+                                                <constraint firstItem="MEW-d7-2Nm" firstAttribute="leading" secondItem="DEn-1j-cAP" secondAttribute="trailing" constant="28" id="fS1-pz-zZt"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="DEn-1j-cAP" secondAttribute="bottom" constant="5" id="qZm-pf-iYz"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
