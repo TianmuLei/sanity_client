@@ -13,6 +13,7 @@
 @property (weak, nonatomic) IBOutlet UITextField *passwordTextField;
 @property (weak, nonatomic) IBOutlet UIButton *loginButton;
 @property (weak, nonatomic) IBOutlet UIButton *signupButton;
+@property (weak, nonatomic) IBOutlet UILabel *warningLabel;
 
 @end
 
@@ -20,7 +21,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    //hide the warning Label
+    [self.warningLabel setHidden:YES];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -31,9 +33,19 @@
 - (IBAction)loginClicked:(id)sender {
     self.password = self.passwordTextField.text;
     self.email = self.emailTextField.text;
+    //null check
+    if(self.password.length==0 || self.email.length==0)
+    {
+        [self.warningLabel setHidden:NO];
+        return;
+    }
+    [self tryLogin];
     
 }
 - (IBAction)exitKeyboardForEmail:(id)sender {
+    //get rid of white space
+    self.emailTextField.text = [self.emailTextField.text stringByTrimmingCharactersInSet:
+                                [NSCharacterSet whitespaceCharacterSet]];
     [self.emailTextField resignFirstResponder];
 }
 
@@ -42,8 +54,25 @@
 }
 
 - (IBAction)backgroundClicked:(id)sender {
+    //get rid of white space
+    self.emailTextField.text = [self.emailTextField.text stringByTrimmingCharactersInSet:
+                                [NSCharacterSet whitespaceCharacterSet]];
     [self.passwordTextField resignFirstResponder];
     [self.emailTextField resignFirstResponder];
+}
+
+- (void) tryLogin{
+    #warning to be deleted!
+    [self loginSucceeded];
+}
+
+
+- (void) loginSucceeded{
+    [self performSegueWithIdentifier:@"LoginToHomeSegue" sender:self];
+}
+
+- (void) loginFailed{
+    
 }
 
 

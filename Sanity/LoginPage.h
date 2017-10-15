@@ -12,4 +12,7 @@
 @property (strong,nonatomic) NSString * password;
 @property (strong,nonatomic) NSString * email;
 
+- (void) loginSucceeded;
+- (void) loginFailed;
+    
 @end
