@@ -37,6 +37,12 @@
 		C0ACF45D5FDB633C6D76F84C /* libPods-Sanity.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EB1AA2A5F86FBB7BDA75AF6F /* libPods-Sanity.a */; };
 		CC2D17E11F91AFBE0052613D /* ProfilePage.m in Sources */ = {isa = PBXBuildFile; fileRef = CC2D17E01F91AFBE0052613D /* ProfilePage.m */; };
 		CC2D17E41F91C2AF0052613D /* AddBudgetPage.m in Sources */ = {isa = PBXBuildFile; fileRef = CC2D17E31F91C2AF0052613D /* AddBudgetPage.m */; };
+		CC673EDC1F934B54000CE0B6 /* CategoryNameCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CC673EDA1F934B54000CE0B6 /* CategoryNameCell.m */; };
+		CC673EDD1F934B54000CE0B6 /* CategoryNameCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CC673EDB1F934B54000CE0B6 /* CategoryNameCell.xib */; };
+		CC673EE11F934C29000CE0B6 /* AmountCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CC673EDF1F934C29000CE0B6 /* AmountCell.xib */; };
+		CC673EE21F934C29000CE0B6 /* AmountCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CC673EE01F934C29000CE0B6 /* AmountCell.m */; };
+		CC673EF01F9357F7000CE0B6 /* HobbyCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CC673EEE1F9357F7000CE0B6 /* HobbyCell.xib */; };
+		CC673EF11F9357F7000CE0B6 /* HobbyCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CC673EEF1F9357F7000CE0B6 /* HobbyCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -111,6 +117,15 @@
 		CC2D17E01F91AFBE0052613D /* ProfilePage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfilePage.m; sourceTree = "<group>"; };
 		CC2D17E21F91C2AF0052613D /* AddBudgetPage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddBudgetPage.h; sourceTree = "<group>"; };
 		CC2D17E31F91C2AF0052613D /* AddBudgetPage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddBudgetPage.m; sourceTree = "<group>"; };
+		CC673ED91F934B54000CE0B6 /* CategoryNameCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoryNameCell.h; sourceTree = "<group>"; };
+		CC673EDA1F934B54000CE0B6 /* CategoryNameCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoryNameCell.m; sourceTree = "<group>"; };
+		CC673EDB1F934B54000CE0B6 /* CategoryNameCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CategoryNameCell.xib; sourceTree = "<group>"; };
+		CC673EDE1F934C29000CE0B6 /* AmountCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AmountCell.h; sourceTree = "<group>"; };
+		CC673EDF1F934C29000CE0B6 /* AmountCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AmountCell.xib; sourceTree = "<group>"; };
+		CC673EE01F934C29000CE0B6 /* AmountCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AmountCell.m; sourceTree = "<group>"; };
+		CC673EED1F9357F7000CE0B6 /* HobbyCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HobbyCell.h; sourceTree = "<group>"; };
+		CC673EEE1F9357F7000CE0B6 /* HobbyCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HobbyCell.xib; sourceTree = "<group>"; };
+		CC673EEF1F9357F7000CE0B6 /* HobbyCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HobbyCell.m; sourceTree = "<group>"; };
 		EB1AA2A5F86FBB7BDA75AF6F /* libPods-Sanity.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Sanity.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -255,6 +270,7 @@
 		CC15B38E1F87675800764940 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				CC673ED81F934B31000CE0B6 /* Cells */,
 				8457BF1C1F93363A0028166A /* HomeTableViewCell.h */,
 				8457BF1D1F93363A0028166A /* HomeTableViewCell.m */,
 				843599BA1F91DB38002372E9 /* HomePageTableViewController.m */,
@@ -275,6 +291,22 @@
 				7C2D9DFF1F875EFD00027681 /* ViewController.m */,
 			);
 			name = View;
+			sourceTree = "<group>";
+		};
+		CC673ED81F934B31000CE0B6 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				CC673EED1F9357F7000CE0B6 /* HobbyCell.h */,
+				CC673EEE1F9357F7000CE0B6 /* HobbyCell.xib */,
+				CC673EEF1F9357F7000CE0B6 /* HobbyCell.m */,
+				CC673EDE1F934C29000CE0B6 /* AmountCell.h */,
+				CC673EDF1F934C29000CE0B6 /* AmountCell.xib */,
+				CC673EE01F934C29000CE0B6 /* AmountCell.m */,
+				CC673ED91F934B54000CE0B6 /* CategoryNameCell.h */,
+				CC673EDA1F934B54000CE0B6 /* CategoryNameCell.m */,
+				CC673EDB1F934B54000CE0B6 /* CategoryNameCell.xib */,
+			);
+			name = Cells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -386,10 +418,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CC673EE11F934C29000CE0B6 /* AmountCell.xib in Resources */,
 				7C2D9E081F875EFD00027681 /* LaunchScreen.storyboard in Resources */,
+				CC673EF01F9357F7000CE0B6 /* HobbyCell.xib in Resources */,
 				7C2D9E051F875EFD00027681 /* Assets.xcassets in Resources */,
 				843599C11F91DB39002372E9 /* Base.lproj in Resources */,
 				843599C01F91DB39002372E9 /* Assets.xcassets in Resources */,
+				CC673EDD1F934B54000CE0B6 /* CategoryNameCell.xib in Resources */,
 				7C2D9E031F875EFD00027681 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -475,8 +510,11 @@
 				7C2D9E2D1F875FA200027681 /* client.m in Sources */,
 				7C703F2F1F8AC32A00B5D982 /* Budget.m in Sources */,
 				7CA1D1EB1F897A87003631D6 /* MainController.m in Sources */,
+				CC673EF11F9357F7000CE0B6 /* HobbyCell.m in Sources */,
+				CC673EDC1F934B54000CE0B6 /* CategoryNameCell.m in Sources */,
 				843599C31F91DB39002372E9 /* ViewControllerTest.m in Sources */,
 				8434BE091F91FF2200A4BDC7 /* LoginPage.m in Sources */,
+				CC673EE21F934C29000CE0B6 /* AmountCell.m in Sources */,
 				8457BF1E1F93363A0028166A /* HomeTableViewCell.m in Sources */,
 				7C2D9DFA1F875EFD00027681 /* main.m in Sources */,
 				7CA1D1EC1F897A87003631D6 /* SignupController.m in Sources */,

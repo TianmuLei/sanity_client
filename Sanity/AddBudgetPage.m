@@ -7,11 +7,19 @@
 //
 
 #import "AddBudgetPage.h"
+#import "AmountCell.h"
+#import "HobbyCell.h"
+
+typedef enum:NSInteger{
+    sectionName = 0,
+    sectionCategory = 1,
+    sectionSubmit = 2,
+    
+}SectionType;
 
 @interface AddBudgetPage ()
 
-@property NSMutableArray *tableCellLists;
-
+@property (nonatomic, strong) NSMutableArray *hobbysArr;
 
 @end
 
@@ -19,87 +27,90 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self listSetUp];
-       
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
+    // Do any additional setup after loading the view, typically from a nib.
     
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    /** 延时添加数据 */
+    
+    
 }
+
+- (IBAction)addCell:(id)sender {
+    [self addData];
+}
+
+- (void)addData{
+    
+    [self.hobbysArr addObject:@1];
+    [self.hobbysArr addObject:@1];
+    
+    [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:sectionCategory] withRowAnimation:UITableViewRowAnimationNone];
+    //
+    //        self.hobbysArr.count>5?[self deleteData]:[self addData];
+    //
+}
+
+- (void)deleteData{
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [self.hobbysArr removeObjectAtIndex:0];
+        [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:sectionCategory] withRowAnimation:UITableViewRowAnimationNone];
+        self.hobbysArr.count>5?[self deleteData]:[self addData];
+    });
+}
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
 
-- (void) listSetUp{
-    self.tableCellLists = [NSMutableArray arrayWithArray:@[@"Budget Name", @"Start Date", @"Period", @"Category Name", @"Amount"]];
 
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    if(sectionCategory == section){//爱好 （动态cell）
+        return self.hobbysArr.count;
+    }
+    return [super tableView:tableView numberOfRowsInSection:section];
 }
 
-- (NSInteger) tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return 7 ;
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    if(sectionCategory == indexPath.section){//爱好 （动态cell）
+        if (indexPath.row % 2 == 0){
+            HobbyCell *cell = [tableView dequeueReusableCellWithIdentifier:HobbyCellID];
+            if(cell == nil){
+                cell = [[NSBundle mainBundle] loadNibNamed:HobbyCellID owner:nil options:nil].lastObject;
+            }
+            return cell;
+        }
+        else {
+            AmountCell *cell = [tableView dequeueReusableCellWithIdentifier:AmountCellID];
+            if(cell == nil){
+                cell = [[NSBundle mainBundle] loadNibNamed:AmountCellID owner:nil options:nil].lastObject;
+            }
+            return cell;
+        }
+    }
+    return [super tableView:tableView cellForRowAtIndexPath:indexPath];
 }
-#pragma mark - Table view data source
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-   return 1;
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    if(sectionCategory == indexPath.section){
+        return HobbyCellHeight;
+    }
+    return [super tableView:tableView heightForRowAtIndexPath:indexPath];
 }
 
-//- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-//  
-//    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
-//    
-//    cell.textLabel.text = self.tableCellLists[indexPath.row];
-//    
-//    //set font
-//    cell.textLabel.font = [UIFont fontWithName:@"Arial" size: 25.0];
-//    return cell;
-//}
-
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
+- (NSInteger)tableView:(UITableView *)tableView indentationLevelForRowAtIndexPath:(NSIndexPath *)indexPath{
+    if(sectionCategory == indexPath.section){
+        return [super tableView:tableView indentationLevelForRowAtIndexPath: [NSIndexPath indexPathForRow:0 inSection:sectionCategory]];
+    }
+    return [super tableView:tableView indentationLevelForRowAtIndexPath:indexPath];
 }
-*/
 
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
+
+- (NSMutableArray *)hobbysArr{
+    if(!_hobbysArr){
+        _hobbysArr = [NSMutableArray array];
+    }
+    return _hobbysArr;
 }
-*/
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end
