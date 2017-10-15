@@ -67,9 +67,9 @@
 
 - (void) tryLogin{
     #warning to be deleted!
-    NSArray * tabletemp =  @[@"iPhone1", @"iPhone2",@"iPhone3",@"iPhone4",@"iPhone5",@"iTV",@"iNew"];
-    NSArray * c = @[@"black",@"black",@"black",@"orange",@"red",@"orange",@"black"];
-    [self loginSucceeded: tabletemp withColor: c];
+    self.tableContent = @[@"iPhone1", @"iPhone2",@"iPhone3",@"iPhone4",@"iPhone5",@"iTV",@"iNew"];
+    self.colors = @[@"black",@"black",@"black",@"orange",@"red",@"orange",@"black"];
+    [self loginupSucceeded:self.tableContent withColor:self.colors];
 }
 
 
@@ -83,7 +83,7 @@
     }
 }
 
-- (void) loginupSucceeded:(NSArray *)table withColor:(NSArray *)color{
+- (void) loginupSucceeded:(NSArray *) table withColor:(NSArray *) color{
     self.colors = color;
     self.tableContent = table;
     [self performSegueWithIdentifier:@"LoginToHomeSegue" sender:self];

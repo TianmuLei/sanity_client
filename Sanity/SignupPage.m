@@ -75,7 +75,7 @@
 }
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
-    if([segue.identifier isEqualToString:@"LoginToHomeSegue"]){
+    if([segue.identifier isEqualToString:@"SignupToHomeSegue"]){
         UITabBarController * tabController = (UITabBarController *)segue.destinationViewController;
         UINavigationController *navController = (UINavigationController *)tabController.viewControllers[0];
         HomePageTableViewController *controller = (HomePageTableViewController *)navController.topViewController;
@@ -86,12 +86,12 @@
 
 - (void) trySignup{
     #warning to be deleted!
-    NSArray * tabletemp =  @[@"iPhone1", @"iPhone2",@"iPhone3",@"iPhone4",@"iPhone5",@"iTV",@"iNew"];
-    NSArray * c = @[@"black",@"black",@"black",@"orange",@"red",@"orange",@"black"];
-    [self signupSucceeded: tabletemp withColor: c];
+    self.tableContent = @[@"iPhone1", @"iPhone2",@"iPhone3",@"iPhone4",@"iPhone5",@"iTV",@"iNew"];
+    self.colors = @[@"black",@"black",@"black",@"orange",@"red",@"orange",@"black"];
+    [self signupSucceeded:self.tableContent withColor:self.colors];
 }
 
-- (void) signupSucceeded:(NSArray *)table withColor:(NSArray *)color{
+- (void) signupSucceeded:(NSArray *) table withColor:(NSArray *) color{
     self.colors = color;
     self.tableContent = table;
     [self performSegueWithIdentifier:@"SignupToHomeSegue" sender:self];

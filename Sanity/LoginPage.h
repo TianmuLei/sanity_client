@@ -12,7 +12,7 @@
 @property (strong,nonatomic) NSString * password;
 @property (strong,nonatomic) NSString * email;
 
-- (void) loginSucceeded:(NSArray *)table withColor:(NSArray *)color;
+- (void) loginSucceeded:(NSArray *) table withColor:(NSArray *) color;
 - (void) loginFailed:(NSString*) errorMessage;
     
 @end
