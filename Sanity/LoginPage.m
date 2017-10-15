@@ -67,7 +67,7 @@
 
 - (void) tryLogin{
     #warning to be deleted!
-    self.tableContent = @[@"iPhone1", @"iPhone2",@"iPhone3",@"iPhone4",@"iPhone5",@"iTV",@"iNew"];
+    self.tableContent = @[@"                                    100/500", @"iPhone2",@"iPhone3",@"iPhone4",@"iPhone5",@"iTV",@"iNew"];
     self.colors = @[@"black",@"black",@"black",@"orange",@"red",@"orange",@"black"];
     [self loginupSucceeded:self.tableContent withColor:self.colors];
 }

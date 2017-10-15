@@ -84,10 +84,9 @@
 }
 
 
-
 //Configure the cells in table
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"BudgetListCell" forIndexPath:indexPath];
     
     //set text
     cell.textLabel.text  = self.tableContent[indexPath.row];
@@ -112,13 +111,13 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
    
-    [self performSegueWithIdentifier:@"ShowDetailTest" sender:tableView];
+    [self performSegueWithIdentifier:@"HomeToBudget" sender:tableView];
 }
 
 //send parameter to next page by directing changing the values
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    if ([segue.identifier isEqualToString:@"ShowDetailTest"]) {
+    if ([segue.identifier isEqualToString:@"HomeToBudget"]) {
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
         ViewControllerTest * destViewController = segue.destinationViewController;
         //destViewController.indexNum = indexPath.row;

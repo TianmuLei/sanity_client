@@ -57,7 +57,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="M1u-hY-Aev" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1892" y="989.95502248875573"/>
+            <point key="canvasLocation" x="1970" y="576"/>
         </scene>
         <!--Add Budget Page-->
         <scene sceneID="7x8-aI-Tlf">
@@ -243,7 +243,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CPA-an-3jP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2826" y="931"/>
+            <point key="canvasLocation" x="2791" y="576"/>
         </scene>
         <!--Profile-->
         <scene sceneID="rxm-dl-sie">
@@ -301,7 +301,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IGa-o5-TvE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1170" y="338"/>
+            <point key="canvasLocation" x="-1892" y="422"/>
         </scene>
         <!--HomePage-->
         <scene sceneID="JoM-9F-6DP">
@@ -321,7 +321,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JUp-LF-dMr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="42" y="-399"/>
+            <point key="canvasLocation" x="34" y="-452"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="EIC-pF-zNf">
@@ -340,7 +340,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Tmw-fa-Tt6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-822" y="1116"/>
+            <point key="canvasLocation" x="-151" y="575"/>
         </scene>
         <!--Add-->
         <scene sceneID="J4Y-1e-ju7">
@@ -359,7 +359,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3Yg-eO-hOF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="952.79999999999995" y="989.95502248875573"/>
+            <point key="canvasLocation" x="1086" y="577"/>
         </scene>
         <!--Home-->
         <scene sceneID="kg9-fN-NnA">
@@ -387,7 +387,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="KAK-ui-GoE">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="BudgetListCell" id="KAK-ui-GoE">
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KAK-ui-GoE" id="8XJ-oo-3hY">
@@ -402,9 +402,9 @@
                         </connections>
                     </tableView>
                     <tabBarItem key="tabBarItem" title="Home" id="Tos-4W-wc0"/>
-                    <navigationItem key="navigationItem" id="BbK-Lb-eGs"/>
+                    <navigationItem key="navigationItem" title="Budget List" id="BbK-Lb-eGs"/>
                     <connections>
-                        <segue destination="PTi-hs-lrl" kind="show" identifier="ShowDetailTest" id="Y50-d0-BtZ"/>
+                        <segue destination="PTi-hs-lrl" kind="show" identifier="HomeToBudget" id="Y50-d0-BtZ"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MBo-Uz-Bpz" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -471,7 +471,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cnC-pt-RbS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2857" y="-195"/>
+            <point key="canvasLocation" x="2735" y="-452"/>
         </scene>
         <!--Login -->
         <scene sceneID="eL5-e6-hOp">
@@ -590,7 +590,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xMZ-J8-Lyd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1887.2" y="-1688.0059970014993"/>
+            <point key="canvasLocation" x="-1892" y="-525"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="45S-wh-Lb5">
@@ -610,7 +610,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ECs-ox-yhn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2682" y="-1688"/>
+            <point key="canvasLocation" x="-2738" y="-524"/>
         </scene>
         <!--Sign Up-->
         <scene sceneID="o12-DC-rtf">
@@ -754,7 +754,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="heL-yh-jAC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1047" y="-1688"/>
+            <point key="canvasLocation" x="-986" y="-1166"/>
         </scene>
     </scenes>
     <resources>
