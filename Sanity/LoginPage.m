@@ -7,6 +7,7 @@
 //
 
 #import "LoginPage.h"
+#import "HomePageTableViewController.h"
 
 @interface LoginPage ()
 @property (weak, nonatomic) IBOutlet UITextField *emailTextField;
@@ -67,11 +68,23 @@
 }
 
 
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    if([segue.identifier isEqualToString:@"LoginToHomeSegue"]){
+        UITabBarController * tabController = (UITabBarController *)segue.destinationViewController;
+        UINavigationController *navController = (UINavigationController *)tabController.viewControllers[0];
+        HomePageTableViewController *controller = (HomePageTableViewController *)navController.topViewController;
+        #warning hard-coded content, to be changed
+        controller.tableContent = @[@"iPhone1", @"iPhone2",@"iPhone3",@"iPhone4",@"iPhone5",@"iTV",@"iNew"];
+        #warning hard-coded content, to be changed
+        controller.colors = @[@"black",@"black",@"black",@"orange",@"red",@"orange",@"black"];
+    }
+}
+
 - (void) loginSucceeded{
     [self performSegueWithIdentifier:@"LoginToHomeSegue" sender:self];
 }
 
-- (void) loginFailed{
+- (void) loginFailed:(NSString*) errorMessage{
     
 }
 

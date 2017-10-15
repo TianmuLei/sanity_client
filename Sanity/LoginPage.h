@@ -13,6 +13,6 @@
 @property (strong,nonatomic) NSString * email;
 
 - (void) loginSucceeded;
-- (void) loginFailed;
+- (void) loginFailed:(NSString*) errorMessage;
     
 @end
