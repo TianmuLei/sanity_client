@@ -15,8 +15,9 @@
 @property (weak, nonatomic) IBOutlet UIButton *loginButton;
 @property (weak, nonatomic) IBOutlet UIButton *signupButton;
 @property (weak, nonatomic) IBOutlet UILabel *warningLabel;
-@property (strong,nonatomic) NSArray * tableContent;
+@property (strong,nonatomic) NSArray * budgetArray;
 @property (strong,nonatomic) NSArray * colors;
+@property (strong,nonatomic) NSArray * amountArray;
 
 @end
 
@@ -67,9 +68,10 @@
 
 - (void) tryLogin{
     #warning to be deleted!
-    self.tableContent = @[@"                                    100/500", @"iPhone2",@"iPhone3",@"iPhone4",@"iPhone5",@"iTV",@"iNew"];
+    self.budgetArray = @[@"iPhone1", @"iPhone2",@"iPhone3",@"iPhone4",@"iPhone5",@"iTV",@"iNew"];
+    self.amountArray = @[@"10/20",@"100/200",@"1000/2000",@"100000/2000000",@"10/90",@"10/100",@"35/253"];
     self.colors = @[@"black",@"black",@"black",@"orange",@"red",@"orange",@"black"];
-    [self loginupSucceeded:self.tableContent withColor:self.colors];
+    [self loginupSucceeded:self.budgetArray withAmount:self.amountArray withColor:self.colors];
 }
 
 
@@ -78,14 +80,17 @@
         UITabBarController * tabController = (UITabBarController *)segue.destinationViewController;
         UINavigationController *navController = (UINavigationController *)tabController.viewControllers[0];
         HomePageTableViewController *controller = (HomePageTableViewController *)navController.topViewController;
-        controller.tableContent = self.tableContent;
+        controller.amountArray = self.amountArray;
+        controller.budgetArray = self.budgetArray;
         controller.colors = self.colors;
     }
 }
 
-- (void) loginupSucceeded:(NSArray *) table withColor:(NSArray *) color{
+- (void) loginupSucceeded:(NSArray *) budget withAmount:(NSArray *) amount withColor:(NSArray *) color
+{
     self.colors = color;
-    self.tableContent = table;
+    self.budgetArray = budget;
+    self.amountArray = amount;
     [self performSegueWithIdentifier:@"LoginToHomeSegue" sender:self];
 }
 

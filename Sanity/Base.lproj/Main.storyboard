@@ -387,13 +387,37 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="BudgetListCell" id="KAK-ui-GoE">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="BudgetListCell" id="KAK-ui-GoE" customClass="HomeTableViewCell">
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KAK-ui-GoE" id="8XJ-oo-3hY">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="budgetName" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tfA-uH-nKu" userLabel="budgetName">
+                                            <rect key="frame" x="8" y="8" width="143.5" height="28"/>
+                                            <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="25"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Amount" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="56s-B0-mvi" userLabel="amount">
+                                            <rect key="frame" x="283.5" y="8" width="86.5" height="28"/>
+                                            <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="25"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="trailing" secondItem="56s-B0-mvi" secondAttribute="trailing" constant="5" id="0Hk-66-BMc"/>
+                                        <constraint firstItem="56s-B0-mvi" firstAttribute="top" secondItem="tfA-uH-nKu" secondAttribute="top" id="AqH-e0-vU0"/>
+                                        <constraint firstItem="tfA-uH-nKu" firstAttribute="leading" secondItem="8XJ-oo-3hY" secondAttribute="leadingMargin" id="G5r-PI-UNe"/>
+                                        <constraint firstItem="tfA-uH-nKu" firstAttribute="top" secondItem="8XJ-oo-3hY" secondAttribute="topMargin" id="Y1C-1V-yRf"/>
+                                    </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="amountLabel" destination="56s-B0-mvi" id="wGc-ea-GTd"/>
+                                    <outlet property="budgetNameLabel" destination="tfA-uH-nKu" id="7eu-dh-SkY"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -409,7 +433,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MBo-Uz-Bpz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1766" y="-452"/>
+            <point key="canvasLocation" x="1765.5999999999999" y="-452.02398800599701"/>
         </scene>
         <!--Test Purpose-->
         <scene sceneID="ZQ9-8M-9g0">

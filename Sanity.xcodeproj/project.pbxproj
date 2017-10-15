@@ -33,6 +33,7 @@
 		843599C81F91DBF1002372E9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 843599C71F91DBF1002372E9 /* Foundation.framework */; };
 		843599CA1F91DBF6002372E9 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 843599C91F91DBF6002372E9 /* UIKit.framework */; };
 		843599CC1F91DBFD002372E9 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 843599CB1F91DBFD002372E9 /* QuartzCore.framework */; };
+		8457BF1E1F93363A0028166A /* HomeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8457BF1D1F93363A0028166A /* HomeTableViewCell.m */; };
 		C0ACF45D5FDB633C6D76F84C /* libPods-Sanity.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EB1AA2A5F86FBB7BDA75AF6F /* libPods-Sanity.a */; };
 		CC2D17E11F91AFBE0052613D /* ProfilePage.m in Sources */ = {isa = PBXBuildFile; fileRef = CC2D17E01F91AFBE0052613D /* ProfilePage.m */; };
 		CC2D17E41F91C2AF0052613D /* AddBudgetPage.m in Sources */ = {isa = PBXBuildFile; fileRef = CC2D17E31F91C2AF0052613D /* AddBudgetPage.m */; };
@@ -104,6 +105,8 @@
 		843599C71F91DBF1002372E9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		843599C91F91DBF6002372E9 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		843599CB1F91DBFD002372E9 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		8457BF1C1F93363A0028166A /* HomeTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeTableViewCell.h; sourceTree = "<group>"; };
+		8457BF1D1F93363A0028166A /* HomeTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeTableViewCell.m; sourceTree = "<group>"; };
 		CC2D17DF1F91AFBE0052613D /* ProfilePage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfilePage.h; sourceTree = "<group>"; };
 		CC2D17E01F91AFBE0052613D /* ProfilePage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfilePage.m; sourceTree = "<group>"; };
 		CC2D17E21F91C2AF0052613D /* AddBudgetPage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddBudgetPage.h; sourceTree = "<group>"; };
@@ -252,6 +255,8 @@
 		CC15B38E1F87675800764940 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				8457BF1C1F93363A0028166A /* HomeTableViewCell.h */,
+				8457BF1D1F93363A0028166A /* HomeTableViewCell.m */,
 				843599BA1F91DB38002372E9 /* HomePageTableViewController.m */,
 				843599BB1F91DB38002372E9 /* HomePageTableViewController.h */,
 				8434BE031F91FF2200A4BDC7 /* LoginPage.h */,
@@ -472,6 +477,7 @@
 				7CA1D1EB1F897A87003631D6 /* MainController.m in Sources */,
 				843599C31F91DB39002372E9 /* ViewControllerTest.m in Sources */,
 				8434BE091F91FF2200A4BDC7 /* LoginPage.m in Sources */,
+				8457BF1E1F93363A0028166A /* HomeTableViewCell.m in Sources */,
 				7C2D9DFA1F875EFD00027681 /* main.m in Sources */,
 				7CA1D1EC1F897A87003631D6 /* SignupController.m in Sources */,
 				843599C21F91DB39002372E9 /* HomePageTableViewController.m in Sources */,
