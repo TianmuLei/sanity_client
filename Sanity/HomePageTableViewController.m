@@ -17,12 +17,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    #warning hard-coded content, to be changed
-    //self.tableContent = @[@"iPhone1", @"iPhone2",@"iPhone3",@"iPhone4",@"iPhone5"];
-    #warning hard-coded content, to be changed
-    //self.colors = @[@"black",@"black",@"black",@"orange",@"red"];
-    
-    
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     
