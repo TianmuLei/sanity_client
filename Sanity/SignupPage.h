@@ -13,7 +13,7 @@
 @property (strong,nonatomic) NSString * email;
 @property (strong,nonatomic) NSString * username;
 
-- (void) signupSucceeded;
-- (void) signupFailed;
+- (void) signupSucceeded:(NSArray *)table withColor:(NSArray *)color;
+- (void) signupFailed:(NSString*) errorMessage;
 
 @end

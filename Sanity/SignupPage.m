@@ -7,6 +7,8 @@
 //
 
 #import "SignupPage.h"
+#import "HomePageTableViewController.h"
+
 
 @interface SignupPage ()
 @property (weak, nonatomic) IBOutlet UITextField *emailTextField;
@@ -16,6 +18,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *usernameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *passwordLabel;
 @property (weak, nonatomic) IBOutlet UILabel *warningLabel;
+@property (strong,nonatomic) NSArray * tableContent;
+@property (strong,nonatomic) NSArray * colors;
 
 @end
 
@@ -38,6 +42,7 @@
     //null check
     if(self.password.length==0 || self.email.length==0 || self.password.length==0)
     {
+        self.warningLabel.text = @"Please fill in all required fields!";
         [self.warningLabel setHidden:NO];
         return;
     }
@@ -69,17 +74,32 @@
     [self.passwordTextField resignFirstResponder];
 }
 
-- (void) trySignup{
-    #warning to be deleted!
-    [self signupSucceeded];
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    if([segue.identifier isEqualToString:@"LoginToHomeSegue"]){
+        UITabBarController * tabController = (UITabBarController *)segue.destinationViewController;
+        UINavigationController *navController = (UINavigationController *)tabController.viewControllers[0];
+        HomePageTableViewController *controller = (HomePageTableViewController *)navController.topViewController;
+        controller.tableContent = self.tableContent;
+        controller.colors = self.colors;
+    }
 }
 
-- (void) signupSucceeded{
+- (void) trySignup{
+    #warning to be deleted!
+    NSArray * tabletemp =  @[@"iPhone1", @"iPhone2",@"iPhone3",@"iPhone4",@"iPhone5",@"iTV",@"iNew"];
+    NSArray * c = @[@"black",@"black",@"black",@"orange",@"red",@"orange",@"black"];
+    [self signupSucceeded: tabletemp withColor: c];
+}
+
+- (void) signupSucceeded:(NSArray *)table withColor:(NSArray *)color{
+    self.colors = color;
+    self.tableContent = table;
     [self performSegueWithIdentifier:@"SignupToHomeSegue" sender:self];
 }
 
-- (void) signupFailed{
-    
+- (void) signupFailed:(NSString*) errorMessage{
+    self.warningLabel.text = errorMessage;
+    [self.warningLabel setHidden:NO];
 }
 
 /*

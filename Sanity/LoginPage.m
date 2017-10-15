@@ -15,6 +15,8 @@
 @property (weak, nonatomic) IBOutlet UIButton *loginButton;
 @property (weak, nonatomic) IBOutlet UIButton *signupButton;
 @property (weak, nonatomic) IBOutlet UILabel *warningLabel;
+@property (strong,nonatomic) NSArray * tableContent;
+@property (strong,nonatomic) NSArray * colors;
 
 @end
 
@@ -37,6 +39,7 @@
     //null check
     if(self.password.length==0 || self.email.length==0)
     {
+        self.warningLabel.text = @"Please fill in all required fields!";
         [self.warningLabel setHidden:NO];
         return;
     }
@@ -64,7 +67,9 @@
 
 - (void) tryLogin{
     #warning to be deleted!
-    [self loginSucceeded];
+    NSArray * tabletemp =  @[@"iPhone1", @"iPhone2",@"iPhone3",@"iPhone4",@"iPhone5",@"iTV",@"iNew"];
+    NSArray * c = @[@"black",@"black",@"black",@"orange",@"red",@"orange",@"black"];
+    [self loginSucceeded: tabletemp withColor: c];
 }
 
 
@@ -73,19 +78,20 @@
         UITabBarController * tabController = (UITabBarController *)segue.destinationViewController;
         UINavigationController *navController = (UINavigationController *)tabController.viewControllers[0];
         HomePageTableViewController *controller = (HomePageTableViewController *)navController.topViewController;
-        #warning hard-coded content, to be changed
-        controller.tableContent = @[@"iPhone1", @"iPhone2",@"iPhone3",@"iPhone4",@"iPhone5",@"iTV",@"iNew"];
-        #warning hard-coded content, to be changed
-        controller.colors = @[@"black",@"black",@"black",@"orange",@"red",@"orange",@"black"];
+        controller.tableContent = self.tableContent;
+        controller.colors = self.colors;
     }
 }
 
-- (void) loginSucceeded{
+- (void) loginupSucceeded:(NSArray *)table withColor:(NSArray *)color{
+    self.colors = color;
+    self.tableContent = table;
     [self performSegueWithIdentifier:@"LoginToHomeSegue" sender:self];
 }
 
 - (void) loginFailed:(NSString*) errorMessage{
-    
+    self.warningLabel.text = errorMessage;
+    [self.warningLabel setHidden:NO];
 }
 
 
