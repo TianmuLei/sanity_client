@@ -10,9 +10,9 @@
 
 @interface Budget : NSObject
 
-#warning To tianmu: Changed limit and NSDateComponent to NSDate!!!!!
-@property int limit;
-@property int total;
+#warning To tianmu: Changed limit and NSDateComponent to NSDate!!!!! (float threshold)
+@property int threshold;//when to push notification
+@property float total;
 @property int period;
 @property (strong, atomic) NSString* name;
 @property (strong, atomic) NSMutableArray* categories;

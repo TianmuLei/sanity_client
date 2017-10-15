@@ -11,7 +11,7 @@
 @interface Category : NSObject
 
 
-@property int limit;
+@property float limit;
 @property int total;
 @property (strong, atomic) NSString* name;
 @property (strong, atomic) NSString* budget;
