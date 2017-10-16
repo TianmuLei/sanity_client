@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ProfilePageController.h"
 
 @interface ProfilePage : UIViewController
 
