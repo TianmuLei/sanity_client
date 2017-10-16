@@ -49,6 +49,7 @@
 		849E42971F943E8600074460 /* TranscationLabelCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 849E42961F943E8600074460 /* TranscationLabelCell.m */; };
 		849E429A1F94402900074460 /* TransactionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 849E42991F94402900074460 /* TransactionCell.m */; };
 		84C6F8821F954E7400F2F061 /* HistoryHomeTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84C6F8811F954E7400F2F061 /* HistoryHomeTableViewController.m */; };
+		84F4390C1F957C890040D12B /* SingleBudgetHistoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84F4390B1F957C890040D12B /* SingleBudgetHistoryViewController.m */; };
 		C0ACF45D5FDB633C6D76F84C /* libPods-Sanity.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EB1AA2A5F86FBB7BDA75AF6F /* libPods-Sanity.a */; };
 		CC2D17E11F91AFBE0052613D /* ProfilePage.m in Sources */ = {isa = PBXBuildFile; fileRef = CC2D17E01F91AFBE0052613D /* ProfilePage.m */; };
 		CC2D17E41F91C2AF0052613D /* AddBudgetPage.m in Sources */ = {isa = PBXBuildFile; fileRef = CC2D17E31F91C2AF0052613D /* AddBudgetPage.m */; };
@@ -165,6 +166,8 @@
 		849E42991F94402900074460 /* TransactionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TransactionCell.m; sourceTree = "<group>"; };
 		84C6F8801F954E7400F2F061 /* HistoryHomeTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HistoryHomeTableViewController.h; sourceTree = "<group>"; };
 		84C6F8811F954E7400F2F061 /* HistoryHomeTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HistoryHomeTableViewController.m; sourceTree = "<group>"; };
+		84F4390A1F957C890040D12B /* SingleBudgetHistoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SingleBudgetHistoryViewController.h; sourceTree = "<group>"; };
+		84F4390B1F957C890040D12B /* SingleBudgetHistoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SingleBudgetHistoryViewController.m; sourceTree = "<group>"; };
 		CC2D17DF1F91AFBE0052613D /* ProfilePage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfilePage.h; sourceTree = "<group>"; };
 		CC2D17E01F91AFBE0052613D /* ProfilePage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfilePage.m; sourceTree = "<group>"; };
 		CC2D17E21F91C2AF0052613D /* AddBudgetPage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddBudgetPage.h; sourceTree = "<group>"; };
@@ -368,6 +371,8 @@
 				8434BE061F91FF2200A4BDC7 /* SignupPage.m */,
 				843599BC1F91DB39002372E9 /* SingleBudgetViewController.h */,
 				843599BD1F91DB39002372E9 /* SingleBudgetViewController.m */,
+				84F4390A1F957C890040D12B /* SingleBudgetHistoryViewController.h */,
+				84F4390B1F957C890040D12B /* SingleBudgetHistoryViewController.m */,
 				843599BE1F91DB39002372E9 /* XYPieChart.m */,
 				843599BF1F91DB39002372E9 /* XYPieChart.h */,
 				CC2D17DF1F91AFBE0052613D /* ProfilePage.h */,
@@ -615,6 +620,7 @@
 				7C8F83431F93FA810053B40B /* BudgetPageController.m in Sources */,
 				843599C41F91DB39002372E9 /* XYPieChart.m in Sources */,
 				CC2D17E41F91C2AF0052613D /* AddBudgetPage.m in Sources */,
+				84F4390C1F957C890040D12B /* SingleBudgetHistoryViewController.m in Sources */,
 				7C2D9E001F875EFD00027681 /* ViewController.m in Sources */,
 				CC8D32151F952BF700FE0704 /* ResetPasswordPage.m in Sources */,
 				7C8F834F1F94BEFA0053B40B /* EditBudgetController.m in Sources */,
