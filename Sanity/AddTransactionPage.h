@@ -7,7 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Budget.h"
+#import "AddTransactionController.h"
 
-@interface AddTransactionPage : UITableViewController
+@interface AddTransactionPage : UITableViewController<AddTransactionControllerDelegate>
+
+- (void) receiveBudgetInfo: (NSMutableArray *) budgetsFromServer;
+- (void) addSuccessful;
+- (void) addFailed;
 
 @end

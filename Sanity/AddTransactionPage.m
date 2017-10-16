@@ -7,8 +7,15 @@
 //
 
 #import "AddTransactionPage.h"
+#import "Budget.h"
+#import "Category.h"
+#import "UIClientConnector.h"
+#import "AddTransactionController.h"
+
 
 @interface AddTransactionPage () <UIPickerViewDelegate, UIPickerViewDataSource>
+
+//UI Elements
 @property (weak, nonatomic) IBOutlet UITextField *budgetTF;
 @property (weak, nonatomic) IBOutlet UIDatePicker *date;
 @property (weak, nonatomic) IBOutlet UITextField *amountTF;
@@ -16,17 +23,35 @@
 @property (weak, nonatomic) IBOutlet UITextField *descripTF;
 @property UIPickerView *budgetPicker;
 @property UIPickerView *categoryPicker;
+
+//Arrays
 @property (strong, nonatomic) NSMutableArray *budgets;
+@property (strong, nonatomic) NSMutableArray *categoriesCurrBudget;
+@property (strong, nonatomic) AddTransactionController *controller;
+@property BOOL budgetSelected;
+
 @end
 
 @implementation AddTransactionPage
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.budgetSelected = NO;
     _budgets = [[NSMutableArray alloc]init];
-    [_budgets addObject:@"budget 1"];
-    [_budgets addObject:@"budget 2"];
+    _categoriesCurrBudget = [[NSMutableArray alloc]init];
     
+    Budget * bg = [[Budget alloc] init];
+    bg.name = @"mybudget";
+    bg.categories = [[NSMutableArray alloc] init];
+    Category * cate1 = [[Category alloc] init];
+    cate1.name = @"hahah";
+    [bg.categories addObject:cate1];
+    [_budgets addObject:bg];
+    
+    _controller = UIClientConnector.myClient.addTransaction;
+    UIClientConnector.myClient.addTransaction.delegate = self;
+
+    //call function
     self.budgetPicker = [[UIPickerView alloc] initWithFrame:CGRectMake(0, 50, 100, 150)];
     self.budgetPicker.delegate = self;
     self.budgetPicker.dataSource = self;
@@ -69,11 +94,17 @@
 // #4
 -(NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component {
     if (pickerView == self.budgetPicker) {
+        if (_budgetTF.text.length < 1) {
+            _budgetSelected = NO;
+        }
         return [self.budgets count];
     }
     if (pickerView == self.categoryPicker) {
 #warning  tobe changed
-        return [self.budgets count];
+        if (self.budgetSelected){
+            return [self.categoriesCurrBudget count];
+        }
+        return 0;
     }
     
     return 0;
@@ -84,10 +115,15 @@
 // #5
 -(NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component {
     if (pickerView == self.budgetPicker) {
-        return self.budgets[row];
+        self.categoriesCurrBudget = [(Budget *)[self.budgets objectAtIndex:row] categories];
+        _budgetSelected = YES;
+        return [(Budget *)self.budgets[row] name];
     }
     if (pickerView == self.categoryPicker) {
-        return self.budgets[row];
+        if (_budgetSelected){
+            return [(Category *)self.categoriesCurrBudget[row] name];
+        }
+        return nil;
     }
     
     return nil;
@@ -96,10 +132,10 @@
 // #6
 -(void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
     if (pickerView == self.budgetPicker) {
-        self.budgetTF.text = self.budgets[row];
+        self.budgetTF.text = [(Budget *)self.budgets[row] name];
     }
     if (pickerView == self.categoryPicker) {
-        self.categoryTF.text = self.budgets[row];
+        self.categoryTF.text = [(Category *)self.categoriesCurrBudget[row] name];
     }
 }
 
@@ -153,6 +189,19 @@
     return isDecimal;
 }
 
+//call back functions
+- (void) receiveBudgetInfo:(NSMutableArray *)budgetsFromServer{
+    _budgets = budgetsFromServer;
+    
+}
+
+- (void) addSuccessful{
+
+}
+
+- (void) addFailed{
+
+}
 
 
 /*
