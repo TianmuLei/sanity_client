@@ -60,6 +60,7 @@
 		CC673EF41F94655F000CE0B6 /* EditBudgetPage.m in Sources */ = {isa = PBXBuildFile; fileRef = CC673EF31F94655F000CE0B6 /* EditBudgetPage.m */; };
 		CC673EF81F946ACA000CE0B6 /* CategoryDisplay.m in Sources */ = {isa = PBXBuildFile; fileRef = CC673EF61F946ACA000CE0B6 /* CategoryDisplay.m */; };
 		CC673EF91F946ACA000CE0B6 /* CategoryDisplay.xib in Resources */ = {isa = PBXBuildFile; fileRef = CC673EF71F946ACA000CE0B6 /* CategoryDisplay.xib */; };
+		CC673EFF1F94C372000CE0B6 /* AddTransactionPage.m in Sources */ = {isa = PBXBuildFile; fileRef = CC673EFE1F94C372000CE0B6 /* AddTransactionPage.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -176,6 +177,8 @@
 		CC673EF51F946ACA000CE0B6 /* CategoryDisplay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoryDisplay.h; sourceTree = "<group>"; };
 		CC673EF61F946ACA000CE0B6 /* CategoryDisplay.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoryDisplay.m; sourceTree = "<group>"; };
 		CC673EF71F946ACA000CE0B6 /* CategoryDisplay.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CategoryDisplay.xib; sourceTree = "<group>"; };
+		CC673EFD1F94C372000CE0B6 /* AddTransactionPage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddTransactionPage.h; sourceTree = "<group>"; };
+		CC673EFE1F94C372000CE0B6 /* AddTransactionPage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddTransactionPage.m; sourceTree = "<group>"; };
 		EB1AA2A5F86FBB7BDA75AF6F /* libPods-Sanity.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Sanity.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -361,6 +364,8 @@
 				7C2D9DFF1F875EFD00027681 /* ViewController.m */,
 				CC673EF21F94655F000CE0B6 /* EditBudgetPage.h */,
 				CC673EF31F94655F000CE0B6 /* EditBudgetPage.m */,
+				CC673EFD1F94C372000CE0B6 /* AddTransactionPage.h */,
+				CC673EFE1F94C372000CE0B6 /* AddTransactionPage.m */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -597,6 +602,7 @@
 				7C2D9DFD1F875EFD00027681 /* AppDelegate.m in Sources */,
 				7C703F2C1F8AC1EB00B5D982 /* Category.m in Sources */,
 				8434BE0A1F91FF2200A4BDC7 /* SignupPage.m in Sources */,
+				CC673EFF1F94C372000CE0B6 /* AddTransactionPage.m in Sources */,
 				7C2D9E2D1F875FA200027681 /* client.m in Sources */,
 				7C8F83491F93FB3A0053B40B /* ProfilePageController.m in Sources */,
 				7C8F83401F93FA5F0053B40B /* BudgetListController.m in Sources */,

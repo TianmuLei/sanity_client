@@ -30,6 +30,7 @@ typedef enum:NSInteger{
 @property (weak, nonatomic) IBOutlet UITextField *thresholdTF;
 
 @property (weak, nonatomic) IBOutlet UITextField *periodTF;
+@property (weak, nonatomic) IBOutlet UITextField *frequencyTF;
 
 //class instances
 @property (nonatomic, strong) NSMutableArray *categories;
@@ -37,6 +38,7 @@ typedef enum:NSInteger{
 @property (nonatomic, strong) NSMutableArray *categoryAmountCells;
 @property (nonatomic, strong) AddBudgetController *controller;
 @property int threshold;
+@property NSNumber *frequency;
 
 @end
 
@@ -78,7 +80,7 @@ typedef enum:NSInteger{
 }
 
 - (void) addBudgetFailed {
-    [self getAlerted];
+    [self getAlerted:@"Duplicate Name" msg:@"You cannot have two budgets with the same name"];
     
 }
 
@@ -104,33 +106,76 @@ typedef enum:NSInteger{
                                                          NSCalendarUnitHour  |
                                                          NSCalendarUnitMinute|
                                                          NSCalendarUnitSecond) fromDate:[_datePicker date]];
+ 
     
-    mBudget.name = budgetName;
-    mBudget.period = [_periodTF.text intValue];
-    mBudget.startDate = components;
-    mBudget.categories = [[NSMutableArray alloc] init];
-    mBudget.threshold = [_thresholdTF.text intValue];
-    
-    for (int i = 0; i < _categoryNameCells.count; ++i) {
-        HobbyCell *nameCell = _categoryNameCells[i];
-        AmountCell *amountCell = _categoryAmountCells[i];
-        Category *cate1 = [[Category alloc] init];
-        
-        //assign attributes to category
-        cate1.name = nameCell.categoryNameTF.text;
-        cate1.limit = [amountCell.amountTF.text floatValue];
-        
-        
-        //add one category inside
-        [mBudget.categories addObject:cate1];
-        mBudget.total += cate1.limit;
+    if (budgetName.length < 1){
+        [self getAlerted:@"Required Fields" msg:@"Please fill in all required fields"];
+        _budgetNameTF.layer.borderColor=[[UIColor redColor]CGColor];
+        _budgetNameTF.layer.borderWidth= 1.0f;
     }
-    
-#warning  get controller / delegete = self
-      _controller = UIClientConnector.myClient.addBudget;
-    UIClientConnector.myClient.addBudget.delegate = self;
-    [_controller addBudget:mBudget.name period:[NSNumber numberWithInt:mBudget.period] date:mBudget.startDate category:mBudget.categories threshold:[NSNumber numberWithInt:mBudget.threshold] frequency:[NSNumber numberWithInt:10]];
-    
+    else if (_periodTF.text.length < 1) {
+        [self getAlerted:@"Required Fields" msg:@"Please fill in all required fields"];
+        _periodTF.layer.borderColor = [[UIColor redColor]CGColor];
+        _periodTF.layer.borderWidth = 1.0f;
+    }
+    else if (_thresholdTF.text.length < 1) {
+       [self getAlerted:@"Required Fields" msg:@"Please fill in all required fields"];
+        _thresholdTF.layer.borderColor = [[UIColor redColor]CGColor];
+        _thresholdTF.layer.borderWidth = 1.0f;
+    }
+    else if (![self numberFormatChecker:_periodTF.text]){
+        [self getAlerted:@"Number Format Error" msg:@"Please fill in numbers for period"];
+    }
+    else if (![self numberFormatChecker:_thresholdTF.text]){
+        [self getAlerted:@"Number Format Error" msg:@"Please fill in numbers for threshold"];
+    }
+    else if (![self numberFormatChecker:_frequencyTF.text]){
+        [self getAlerted:@"Number Format Error" msg:@"Please fill in numbers for frequency"];
+    }
+    else {
+        BOOL formatError = false;
+        mBudget.name = budgetName;
+        mBudget.period = [_periodTF.text intValue];
+        mBudget.startDate = components;
+        mBudget.categories = [[NSMutableArray alloc] init];
+        mBudget.threshold = [_thresholdTF.text intValue];
+        
+        for (int i = 0; i < _categoryNameCells.count; ++i) {
+            HobbyCell *nameCell = _categoryNameCells[i];
+            AmountCell *amountCell = _categoryAmountCells[i];
+            Category *cate1 = [[Category alloc] init];
+            
+            if (nameCell.categoryNameTF.text.length < 1) {
+                 [self getAlerted:@"Required Fields" msg:@"Please fill in all required fields"];
+                formatError = true;
+            }
+            else if (amountCell.amountTF.text.length < 1) {
+                [self getAlerted:@"Required Fields" msg:@"Please fill in all required fields"];
+                formatError = true;
+            }
+            else if (![self numberFormatChecker:amountCell.amountTF.text]){
+                [self getAlerted:@"Number Format Error" msg:@"Please fill in numbers for categories"];
+                formatError = true;
+            }
+            //assign attributes to category
+            cate1.name = nameCell.categoryNameTF.text;
+            cate1.limit = [amountCell.amountTF.text floatValue];
+            
+            
+            //add one category inside
+            [mBudget.categories addObject:cate1];
+            mBudget.total += cate1.limit;
+        }
+        
+        NSNumber *frequency = [NSNumber numberWithInt:[_frequencyTF.text intValue]];
+        
+    #warning  get controller / delegete = self
+        if (!formatError){
+            _controller = UIClientConnector.myClient.addBudget;
+            UIClientConnector.myClient.addBudget.delegate = self;
+            [_controller addBudget:mBudget.name period:[NSNumber numberWithInt:mBudget.period] date:mBudget.startDate category:mBudget.categories threshold:[NSNumber numberWithFloat:mBudget.threshold] frequency:frequency];
+        }
+    }
     //  [self addBudgetFailed];
 }
 
@@ -209,10 +254,10 @@ typedef enum:NSInteger{
 
 
 //alert window
-- (void) getAlerted {
+- (void) getAlerted: (NSString*) errorTitle msg:(NSString*) errorMessage {
     UIAlertController *alertController = [UIAlertController
-                                          alertControllerWithTitle:@"Required Fields"
-                                          message:@"Please fill in all required fields"
+                                          alertControllerWithTitle:errorTitle
+                                          message:errorMessage
                                           preferredStyle:UIAlertControllerStyleAlert];
     UIAlertAction *okAction = [UIAlertAction
                                actionWithTitle:@"OK"
@@ -231,6 +276,14 @@ typedef enum:NSInteger{
         _categories = [NSMutableArray array];
     }
     return _categories;
+}
+
+//return NO if not numeric
+- (BOOL) numberFormatChecker: (NSString *) mString{
+    NSNumberFormatter *nf = [[NSNumberFormatter alloc] init];
+    BOOL isDecimal = [nf numberFromString:mString] != nil;
+    
+    return isDecimal;
 }
 
 @end
