@@ -11,6 +11,8 @@
 #import "HobbyCell.h"
 #import "Budget.h"
 #import "Category.h"
+#import "AddBudgetController.h"
+#import "UIClientConnector.h"
 
 typedef enum:NSInteger{
     sectionName = 0,
@@ -33,6 +35,7 @@ typedef enum:NSInteger{
 @property (nonatomic, strong) NSMutableArray *categories;
 @property (nonatomic, strong) NSMutableArray *categoryNameCells;
 @property (nonatomic, strong) NSMutableArray *categoryAmountCells;
+@property (nonatomic, strong) AddBudgetController *controller;
 @property int threshold;
 
 @end
@@ -122,6 +125,11 @@ typedef enum:NSInteger{
         [mBudget.categories addObject:cate1];
         mBudget.total += cate1.limit;
     }
+    
+#warning  get controller / delegete = self
+      _controller = UIClientConnector.myClient.addBudget;
+    UIClientConnector.myClient.addBudget.delegate = self;
+    [_controller addBudget:mBudget.name period:[NSNumber numberWithInt:mBudget.period] date:mBudget.startDate category:mBudget.categories threshold:[NSNumber numberWithInt:mBudget.threshold] frequency:[NSNumber numberWithInt:10]];
     
     //  [self addBudgetFailed];
 }

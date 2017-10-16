@@ -8,8 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import "Budget.h"
+#import "AddBudgetController.h"
 
-@interface AddBudgetPage : UITableViewController
+@interface AddBudgetPage : UITableViewController<AddBudgetControllerDelegate>
 
 - (void) addBudgetSucceeded;
 - (void) addBudgetFailed;
