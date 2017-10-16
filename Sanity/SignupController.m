@@ -62,5 +62,24 @@
     return hash;
 }
 
+-(void) success{
+    
+}
+-(void) fail{
+    NSMutableArray *name = [[NSMutableArray alloc]init];
+    NSMutableArray *amount = [[NSMutableArray alloc]init];
+    NSMutableArray *color = [[NSMutableArray alloc]init];
+    
+    NSArray * nameArray= [name copy];
+    NSArray * spentArray= [amount copy];
+    NSArray * colorArray= [color copy];
+
+    
+    
+    [self.delegate signupSucceeded:nameArray withAmount:spentArray withColor:colorArray];
+    
+    
+}
+
 
 @end

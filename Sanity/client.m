@@ -54,12 +54,12 @@
 
     //NSDictionary *message=@{@"function":@"test"};
     //[UIClientConnector.myClient sendMessage:message];
-/*
+
     LoginController* logCon=[[LoginController alloc] initWithClass:self];
    [logCon login:@"tianmule@usc.edu" password:@"baobao"];
    //[logCon login:@"tianmule@usc.edu" password:@"baobao1"];
     
-    NSDateComponents *dateComponents = [[NSDateComponents alloc] init];
+/*    NSDateComponents *dateComponents = [[NSDateComponents alloc] init];
     dateComponents.day = 4;
     dateComponents.month = 5;
     dateComponents.year = 2004;
@@ -87,6 +87,7 @@
     
     
     */
+    [_categoryPage requestCategory:@"testBudget1" category:@"cat"];
  
     
 
@@ -151,6 +152,7 @@
                 
             }else{
                 [_login success:[messageObject objectForKey:@"budgetList"]];
+                [self addBudgetListData:[messageObject objectForKey:@"budgetList"]];
                 
             }
         }
@@ -232,24 +234,24 @@
 -(void) addBudgetListData:(NSMutableArray*) list{
     _budgetListData=[[NSMutableArray alloc]init];
     
-    for(int i=0;i<list.count;i++){
+   /* for(int i=0;i<list.count;i++){
         NSDictionary* budget=[list objectAtIndex:i];
+        Budget* single=[[Budget alloc]init];
+        single.name=[budget objectForKey:@"name"];
+        single.spend=[budget objectForKey:@"budgetSpent"];
+        single.total=[budget objectForKey:@"budgetTotal"];
+        single.startDate=[budget objectForKey:@"date"];
+        single.frequency=[budget objectForKey:@"frequency"];
+        single.threshold=[budget objectForKey:@"threshold"];
+        
+        [_budgetListData addObject:single];
       //  Budget
+              //NSString *spendT = [NSNumber stringValue];
         
-        /*
-        [name addObject:[budget objectForKey:@"name"]];
-        NSNumber* spent=[budget objectForKey:@"budgetSpent"];
-        NSNumber* total=[budget objectForKey:@"budgetTotal"];
-        NSString* amountString= [NSString stringWithFormat:@"%@/%@",spent,total];
-        [amount addObject:amountString];
-  
-        */
-        //NSString *spendT = [NSNumber stringValue];
-        
-        
-        
-    }
     
+        
+    }*/
+
     
     
 }

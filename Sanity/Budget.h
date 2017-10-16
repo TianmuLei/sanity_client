@@ -12,7 +12,7 @@
 
 #warning To tianmu: Changed limit and NSDateComponent to NSDate!!!!! (float threshold)
 @property int threshold;//when to push notification
-@property float total;
+@property double total;
 @property int period;
 @property (strong, atomic) NSString* name;
 @property (strong, atomic) NSMutableArray* categories;

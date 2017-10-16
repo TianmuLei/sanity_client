@@ -13,6 +13,9 @@
 
 @protocol  SignupControllerDelegate<NSObject>
 //add call back function here
+
+- (void) signupSucceeded:(NSArray *) budget withAmount:(NSArray *) amount withColor:(NSArray *) color;
+- (void) signupFailed:(NSString*) errorMessage;
 @required
 @end
 
@@ -26,4 +29,6 @@
 -(void) signup: (NSString*) email username:(NSString*) username password:(NSString*) password;
 -(int) hash1:(NSString*) password;
 -(int) hash2:(NSString*) password;
+-(void) success;
+-(void) fail;
 @end
