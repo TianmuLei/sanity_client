@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "ProfilePageController.h"
 
-@interface ProfilePage : UIViewController
+@interface ProfilePage : UIViewController<ProfilePageControllerDelegate>
 
 - (void) displayProfile:(NSString*)username :(NSString*)email;
 

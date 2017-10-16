@@ -61,6 +61,8 @@
 		CC673EF81F946ACA000CE0B6 /* CategoryDisplay.m in Sources */ = {isa = PBXBuildFile; fileRef = CC673EF61F946ACA000CE0B6 /* CategoryDisplay.m */; };
 		CC673EF91F946ACA000CE0B6 /* CategoryDisplay.xib in Resources */ = {isa = PBXBuildFile; fileRef = CC673EF71F946ACA000CE0B6 /* CategoryDisplay.xib */; };
 		CC673EFF1F94C372000CE0B6 /* AddTransactionPage.m in Sources */ = {isa = PBXBuildFile; fileRef = CC673EFE1F94C372000CE0B6 /* AddTransactionPage.m */; };
+		CC8D32151F952BF700FE0704 /* ResetPasswordPage.m in Sources */ = {isa = PBXBuildFile; fileRef = CC8D32141F952BF700FE0704 /* ResetPasswordPage.m */; };
+		CCB2DFB51F9526E600503F0D /* ResetUsernamePage.m in Sources */ = {isa = PBXBuildFile; fileRef = CCB2DFB41F9526E600503F0D /* ResetUsernamePage.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -179,6 +181,10 @@
 		CC673EF71F946ACA000CE0B6 /* CategoryDisplay.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CategoryDisplay.xib; sourceTree = "<group>"; };
 		CC673EFD1F94C372000CE0B6 /* AddTransactionPage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddTransactionPage.h; sourceTree = "<group>"; };
 		CC673EFE1F94C372000CE0B6 /* AddTransactionPage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddTransactionPage.m; sourceTree = "<group>"; };
+		CC8D32131F952BF700FE0704 /* ResetPasswordPage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResetPasswordPage.h; sourceTree = "<group>"; };
+		CC8D32141F952BF700FE0704 /* ResetPasswordPage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResetPasswordPage.m; sourceTree = "<group>"; };
+		CCB2DFB31F9526E600503F0D /* ResetUsernamePage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResetUsernamePage.h; sourceTree = "<group>"; };
+		CCB2DFB41F9526E600503F0D /* ResetUsernamePage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResetUsernamePage.m; sourceTree = "<group>"; };
 		EB1AA2A5F86FBB7BDA75AF6F /* libPods-Sanity.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Sanity.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -366,6 +372,10 @@
 				CC673EF31F94655F000CE0B6 /* EditBudgetPage.m */,
 				CC673EFD1F94C372000CE0B6 /* AddTransactionPage.h */,
 				CC673EFE1F94C372000CE0B6 /* AddTransactionPage.m */,
+				CCB2DFB31F9526E600503F0D /* ResetUsernamePage.h */,
+				CCB2DFB41F9526E600503F0D /* ResetUsernamePage.m */,
+				CC8D32131F952BF700FE0704 /* ResetPasswordPage.h */,
+				CC8D32141F952BF700FE0704 /* ResetPasswordPage.m */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -596,6 +606,7 @@
 				843599C41F91DB39002372E9 /* XYPieChart.m in Sources */,
 				CC2D17E41F91C2AF0052613D /* AddBudgetPage.m in Sources */,
 				7C2D9E001F875EFD00027681 /* ViewController.m in Sources */,
+				CC8D32151F952BF700FE0704 /* ResetPasswordPage.m in Sources */,
 				7C8F834F1F94BEFA0053B40B /* EditBudgetController.m in Sources */,
 				849E42941F9438EC00074460 /* SingleCategoryTableViewController.m in Sources */,
 				849E42971F943E8600074460 /* TranscationLabelCell.m in Sources */,
@@ -609,6 +620,7 @@
 				7C703F2F1F8AC32A00B5D982 /* Budget.m in Sources */,
 				7C8F833A1F92C72E0053B40B /* AddTransactionController.m in Sources */,
 				7C8F833D1F92DE230053B40B /* AddBudgetController.m in Sources */,
+				CCB2DFB51F9526E600503F0D /* ResetUsernamePage.m in Sources */,
 				CC673EF81F946ACA000CE0B6 /* CategoryDisplay.m in Sources */,
 				7CA1D1EB1F897A87003631D6 /* MainController.m in Sources */,
 				CC673EF11F9357F7000CE0B6 /* HobbyCell.m in Sources */,

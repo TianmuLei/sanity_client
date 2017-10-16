@@ -7,11 +7,13 @@
 //
 
 #import "ProfilePage.h"
+#import "ProfilePageController.h"
+#import "UIClientConnector.h"
 
 @interface ProfilePage ()
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *emailLabel;
-
+@property (strong, nonatomic) ProfilePageController *controller;
 @end
 
 @implementation ProfilePage
@@ -20,7 +22,11 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    [self displayProfile:@"user" :@"u**r@usc.edu"];
+    _controller = UIClientConnector.myClient.profilePage;
+    UIClientConnector.myClient.profilePage.delegate = self;
+    [_controller getUserInfo];
+    
+  //  [self displayProfile:@"user" :@"u**r@usc.edu"];
     
 }
 
