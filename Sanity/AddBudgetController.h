@@ -11,6 +11,8 @@
 
 @protocol  AddBudgetControllerDelegate<NSObject>
 //add call back function here
+- (void) addBudgetSucceeded;
+- (void) addBudgetFailed;
 @required
 @end
 
@@ -19,4 +21,6 @@
 }
 @property (nonatomic,strong) id delegate;
 -(void) addBudget: (NSString*) name period:(NSNumber*) period date:(NSDateComponents*) startDate category:(NSMutableArray*)category threshold:(NSNumber*) threshold frequency:(NSNumber*) frequency;
+-(void) success;
+-(void) fail;
 @end

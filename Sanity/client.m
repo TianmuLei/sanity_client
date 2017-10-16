@@ -158,9 +158,10 @@
         }
         else if ([function isEqualToString:@"createBudget"]){
             if([status isEqualToString:@"fail"]){
-                
+                [ _addBudget fail];
             }else{
-                
+                [ _addBudget success];
+
             }
         }
         else if ([function isEqualToString:@"addTransaction"]){

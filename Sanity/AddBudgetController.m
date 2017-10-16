@@ -54,4 +54,13 @@
 }
 
 
+-(void) success{
+    [self.delegate addBudgetSucceeded];
+}
+-(void) fail{
+    [self.delegate addBudgetFailed];
+
+}
+
+
 @end
