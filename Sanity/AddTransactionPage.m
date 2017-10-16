@@ -199,9 +199,10 @@
 
 }
 
-- (void) addFailed{
-
+- (void) addFailed: (NSString *)reasonTitle withReason:(NSString *)reason{
+    [self getAlerted:reasonTitle msg:reason];
 }
+
 
 
 /*
