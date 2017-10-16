@@ -16,6 +16,7 @@
 #import "CategoryPageController.h"
 #import "ProfilePageController.h"
 #import "UIClientConnector.h"
+#import "Budget.h"
 
 @implementation client
 - (instancetype)init
@@ -227,6 +228,32 @@
     NSLog(@"sendmessage:  \"%@\"", message);
    [_webSocket send:message];
 }
+
+-(void) addBudgetListData:(NSMutableArray*) list{
+    _budgetListData=[[NSMutableArray alloc]init];
+    
+    for(int i=0;i<list.count;i++){
+        NSDictionary* budget=[list objectAtIndex:i];
+      //  Budget
+        
+        /*
+        [name addObject:[budget objectForKey:@"name"]];
+        NSNumber* spent=[budget objectForKey:@"budgetSpent"];
+        NSNumber* total=[budget objectForKey:@"budgetTotal"];
+        NSString* amountString= [NSString stringWithFormat:@"%@/%@",spent,total];
+        [amount addObject:amountString];
+  
+        */
+        //NSString *spendT = [NSNumber stringValue];
+        
+        
+        
+    }
+    
+    
+    
+}
+
 
 
 

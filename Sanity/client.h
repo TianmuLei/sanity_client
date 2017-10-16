@@ -30,8 +30,10 @@
 @property (strong,atomic) BudgetPageController* budgetPage;
 @property (strong,atomic) CategoryPageController* categoryPage;
 @property (strong,atomic) ProfilePageController* profilePage;
+@property (strong,atomic) NSMutableArray* budgetListData;
 -(NSString*) JSONToString:(NSDictionary*)dict;
 -(NSDictionary*) StringToJSON:(NSString*) JSONString;
+-(void) addBudgetListData:(NSMutableArray*) list;
 -(void) sendMessage:(NSDictionary*)dict;
 @end
 
