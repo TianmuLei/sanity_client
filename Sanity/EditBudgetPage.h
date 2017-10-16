@@ -7,8 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Budget.h"
 
 @interface EditBudgetPage : UITableViewController
 
+- (void) getBudgetInfo:(Budget *)budget;
 
 @end

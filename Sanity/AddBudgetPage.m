@@ -51,7 +51,9 @@ typedef enum:NSInteger{
     _categories = [[NSMutableArray alloc] init];
     _categoryNameCells = [[NSMutableArray alloc] init];
     _categoryAmountCells = [[NSMutableArray alloc] init];
-
+    [self.categories addObject:@1];
+    [self.categories addObject:@1];
+    
 }
 
 
@@ -74,7 +76,7 @@ typedef enum:NSInteger{
 
 - (void) addBudgetFailed {
     [self getAlerted];
-
+    
 }
 
 
@@ -105,7 +107,7 @@ typedef enum:NSInteger{
     mBudget.startDate = components;
     mBudget.categories = [[NSMutableArray alloc] init];
     mBudget.threshold = [_thresholdTF.text intValue];
- 
+    
     for (int i = 0; i < _categoryNameCells.count; ++i) {
         HobbyCell *nameCell = _categoryNameCells[i];
         AmountCell *amountCell = _categoryAmountCells[i];
@@ -115,13 +117,13 @@ typedef enum:NSInteger{
         cate1.name = nameCell.categoryNameTF.text;
         cate1.limit = [amountCell.amountTF.text floatValue];
         
-
+        
         //add one category inside
         [mBudget.categories addObject:cate1];
         mBudget.total += cate1.limit;
     }
-
-  //  [self addBudgetFailed];
+    
+    //  [self addBudgetFailed];
 }
 
 
@@ -137,8 +139,8 @@ typedef enum:NSInteger{
 
 #warning NOT Complete don't use this
 - (void)deleteData{
-        [self.categories removeObjectAtIndex:0];
-        [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:sectionCategory] withRowAnimation:UITableViewRowAnimationNone];
+    [self.categories removeObjectAtIndex:0];
+    [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:sectionCategory] withRowAnimation:UITableViewRowAnimationNone];
 }
 
 
@@ -156,29 +158,29 @@ typedef enum:NSInteger{
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-  
+    
     if(indexPath.section == sectionCategory){
-      //int x = indexPath.row;
-      //  int y = _categories.count;
-    // if (indexPath.row >= _categories.count - 2){
-            if (indexPath.row % 2 == 0){
-                HobbyCell *cell = [tableView dequeueReusableCellWithIdentifier:HobbyCellID];
-                if(cell == nil){
-                    cell = [[NSBundle mainBundle] loadNibNamed:HobbyCellID owner:nil options:nil].lastObject;
-                }
-                [_categoryNameCells addObject:cell];
-                return cell;
+        //int x = indexPath.row;
+        //  int y = _categories.count;
+        // if (indexPath.row >= _categories.count - 2){
+        if (indexPath.row % 2 == 0){
+            HobbyCell *cell = [tableView dequeueReusableCellWithIdentifier:HobbyCellID];
+            if(cell == nil){
+                cell = [[NSBundle mainBundle] loadNibNamed:HobbyCellID owner:nil options:nil].lastObject;
             }
-            else {
-                AmountCell *cell = [tableView dequeueReusableCellWithIdentifier:AmountCellID];
-                if(cell == nil){
-                    cell = [[NSBundle mainBundle] loadNibNamed:AmountCellID owner:nil options:nil].lastObject;
-                }
-                [_categoryAmountCells addObject:cell];
-                return cell;
-            }
+            [_categoryNameCells addObject:cell];
+            return cell;
         }
-  //  }
+        else {
+            AmountCell *cell = [tableView dequeueReusableCellWithIdentifier:AmountCellID];
+            if(cell == nil){
+                cell = [[NSBundle mainBundle] loadNibNamed:AmountCellID owner:nil options:nil].lastObject;
+            }
+            [_categoryAmountCells addObject:cell];
+            return cell;
+        }
+    }
+    //  }
     return [super tableView:tableView cellForRowAtIndexPath:indexPath];
 }
 
@@ -192,7 +194,6 @@ typedef enum:NSInteger{
 - (NSInteger)tableView:(UITableView *)tableView indentationLevelForRowAtIndexPath:(NSIndexPath *)indexPath{
     if(sectionCategory == indexPath.section){
         int insertLoc = 0;
-       // if (_categories.count > 2) insertLoc = (int)_categories.count - 3;
         return [super tableView:tableView indentationLevelForRowAtIndexPath: [NSIndexPath indexPathForRow:insertLoc inSection:sectionCategory]];
     }
     return [super tableView:tableView indentationLevelForRowAtIndexPath:indexPath];

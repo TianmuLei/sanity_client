@@ -15,5 +15,6 @@
 
 @interface HobbyCell : UITableViewCell
 @property (weak, nonatomic) IBOutlet UITextField *categoryNameTF;
+@property (weak, nonatomic) IBOutlet UILabel *categoryNameLabel;
 
 @end
