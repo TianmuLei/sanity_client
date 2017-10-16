@@ -21,24 +21,11 @@
 }
 
 
-
-//for displaying pie chart
-- (void)viewWillAppear:(BOOL)animated
+//override -> load data for pie chart
+- (void)layoutSubViews
 {
-    [super viewWillAppear:animated];
-}
-- (void)viewDidAppear:(BOOL)animated
-{
-    [super viewDidAppear:animated];
-    [self.PieChartDisplay reloadData];
-}
-- (void)viewWillDisappear:(BOOL)animated
-{
-    [super viewWillDisappear:animated];
-}
-- (void)viewDidDisappear:(BOOL)animated
-{
-    [super viewDidDisappear:animated];
+    [super layoutSubviews];
+    [self.pieChart reloadData];
 }
 
 #pragma mark - XYPieChart Data Source

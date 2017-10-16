@@ -8,22 +8,44 @@
 
 #import "SingleCategoryTableViewController.h"
 #import "PieChartCell.h"
+#import "TranscationLabelCell.h"
+#import "TransactionCell.h"
 
 @interface SingleCategoryTableViewController ()
-
 @end
 
 @implementation SingleCategoryTableViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
+
+
+
+//for displaying pie chart
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+}
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+}
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+}
+- (void)viewDidDisappear:(BOOL)animated
+{
+    [super viewDidDisappear:animated];
+}
+
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -33,24 +55,46 @@
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-#warning Incomplete implementation, return the number of sections
-    return 0;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-#warning Incomplete implementation, return the number of rows
-    return 0;
+    return self.numOfTransactions+2;
 }
 
-/*
+//Configure the cells in table
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
+
+    //set up pie chart
+    if(indexPath.row == 0){
+        PieChartCell *cell = [tableView dequeueReusableCellWithIdentifier:@"SingleCategoryPieChartCell" forIndexPath:indexPath];
+        cell.detailLabel.text = self.textForPieChart;
+        //set label color
+        if([self.pieChartLabelColor isEqualToString:@"black"])
+        {
+            cell.detailLabel.textColor = [UIColor blackColor];
+        }else if([self.pieChartLabelColor isEqualToString:@"orange"])
+        {
+            cell.detailLabel.textColor = [UIColor orangeColor];
+        }else if([self.pieChartLabelColor isEqualToString:@"red"])
+        {
+            cell.detailLabel.textColor = [UIColor redColor];
+        }
+        cell.texts = self.texts;
+        cell.slices = self.slices;
+        return cell;
+    }else if(indexPath.row == 1){ //set up "Transaction" labell
+        TranscationLabelCell *cell = [tableView dequeueReusableCellWithIdentifier:@"SingleCategoryTransactionLabelCell" forIndexPath:indexPath];
+        return cell;
+    }else {//set up transactions
+        TransactionCell *cell = [tableView dequeueReusableCellWithIdentifier:@"SingleCategoryTransactionCell" forIndexPath:indexPath];
+        cell.nameLabel.text = self.transactionNames[indexPath.row-2];
+        cell.amountLabel.text = self.transactionAmounts[indexPath.row-2];
+        cell.dateLabel.text = self.transactionDates[indexPath.row-2];
+        return cell;
+    }
     
-    // Configure the cell...
-    
-    return cell;
 }
-*/
 
 /*
 // Override to support conditional editing of the table view.
