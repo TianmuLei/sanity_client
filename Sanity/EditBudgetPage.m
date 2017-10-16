@@ -7,8 +7,17 @@
 //
 
 #import "EditBudgetPage.h"
+#import "CategoryDisplay.h"
 
 @interface EditBudgetPage ()
+@property (weak, nonatomic) IBOutlet UILabel *budgetNameLabel;
+@property (weak, nonatomic) IBOutlet UILabel *startDateLabel;
+@property (weak, nonatomic) IBOutlet UITextField *periodTF;
+@property (weak, nonatomic) IBOutlet UITextField *thresholdTF;
+
+
+//data set
+@property (strong, nonatomic) NSMutableArray *categories;
 
 @end
 
@@ -16,12 +25,11 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
-    
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    _categories = [[NSMutableArray alloc] init];
+    [ _categories addObject:@"whatttt" ];
+    [ _categories addObject:@"whatttt" ];
+    [ _categories addObject:@"whatttt" ];
+
 }
 
 - (void)didReceiveMemoryWarning {
@@ -32,13 +40,22 @@
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-#warning Incomplete implementation, return the number of sections
-    return 0;
+    return 3;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-#warning Incomplete implementation, return the number of rows
-    return 0;
+    if (section == 1) {
+        for (int i = 0; i < _categories.count; i++) {
+            CategoryDisplay *cell = [tableView dequeueReusableCellWithIdentifier:@"CategoryDisplayCell"];
+            if(cell == nil){
+                cell = [[NSBundle mainBundle] loadNibNamed:@"CategoryDisplayCell" owner:nil options:nil].lastObject;
+            }
+            
+            return cell;
+        }
+    
+    }
+    return [super tableView:tableView numberOfRowsInSection:section];
 }
 
 /*

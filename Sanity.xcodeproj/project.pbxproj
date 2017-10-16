@@ -48,6 +48,8 @@
 		CC673EF01F9357F7000CE0B6 /* HobbyCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CC673EEE1F9357F7000CE0B6 /* HobbyCell.xib */; };
 		CC673EF11F9357F7000CE0B6 /* HobbyCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CC673EEF1F9357F7000CE0B6 /* HobbyCell.m */; };
 		CC673EF41F94655F000CE0B6 /* EditBudgetPage.m in Sources */ = {isa = PBXBuildFile; fileRef = CC673EF31F94655F000CE0B6 /* EditBudgetPage.m */; };
+		CC673EF81F946ACA000CE0B6 /* CategoryDisplay.m in Sources */ = {isa = PBXBuildFile; fileRef = CC673EF61F946ACA000CE0B6 /* CategoryDisplay.m */; };
+		CC673EF91F946ACA000CE0B6 /* CategoryDisplay.xib in Resources */ = {isa = PBXBuildFile; fileRef = CC673EF71F946ACA000CE0B6 /* CategoryDisplay.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -141,6 +143,9 @@
 		CC673EEF1F9357F7000CE0B6 /* HobbyCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HobbyCell.m; sourceTree = "<group>"; };
 		CC673EF21F94655F000CE0B6 /* EditBudgetPage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditBudgetPage.h; sourceTree = "<group>"; };
 		CC673EF31F94655F000CE0B6 /* EditBudgetPage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditBudgetPage.m; sourceTree = "<group>"; };
+		CC673EF51F946ACA000CE0B6 /* CategoryDisplay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoryDisplay.h; sourceTree = "<group>"; };
+		CC673EF61F946ACA000CE0B6 /* CategoryDisplay.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoryDisplay.m; sourceTree = "<group>"; };
+		CC673EF71F946ACA000CE0B6 /* CategoryDisplay.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CategoryDisplay.xib; sourceTree = "<group>"; };
 		EB1AA2A5F86FBB7BDA75AF6F /* libPods-Sanity.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Sanity.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -330,6 +335,9 @@
 				CC673ED91F934B54000CE0B6 /* CategoryNameCell.h */,
 				CC673EDA1F934B54000CE0B6 /* CategoryNameCell.m */,
 				CC673EDB1F934B54000CE0B6 /* CategoryNameCell.xib */,
+				CC673EF51F946ACA000CE0B6 /* CategoryDisplay.h */,
+				CC673EF61F946ACA000CE0B6 /* CategoryDisplay.m */,
+				CC673EF71F946ACA000CE0B6 /* CategoryDisplay.xib */,
 			);
 			name = Cells;
 			sourceTree = "<group>";
@@ -443,6 +451,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CC673EF91F946ACA000CE0B6 /* CategoryDisplay.xib in Resources */,
 				CC673EE11F934C29000CE0B6 /* AmountCell.xib in Resources */,
 				7C2D9E081F875EFD00027681 /* LaunchScreen.storyboard in Resources */,
 				CC673EF01F9357F7000CE0B6 /* HobbyCell.xib in Resources */,
@@ -536,6 +545,7 @@
 				8434BE0A1F91FF2200A4BDC7 /* SignupPage.m in Sources */,
 				7C2D9E2D1F875FA200027681 /* client.m in Sources */,
 				7C703F2F1F8AC32A00B5D982 /* Budget.m in Sources */,
+				CC673EF81F946ACA000CE0B6 /* CategoryDisplay.m in Sources */,
 				7CA1D1EB1F897A87003631D6 /* MainController.m in Sources */,
 				CC673EF11F9357F7000CE0B6 /* HobbyCell.m in Sources */,
 				849E42911F9434A200074460 /* PieChartCell.m in Sources */,

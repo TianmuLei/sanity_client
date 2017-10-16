@@ -1,5 +1,5 @@
 //
-//  EditBudgetPage.h
+//  CategoryDisplay.h
 //  Sanity
 //
 //  Created by Ruyin Shao on 10/15/17.
@@ -8,7 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface EditBudgetPage : UITableViewController
-
+@interface CategoryDisplay : UITableViewCell
 
 @end
