@@ -7,7 +7,8 @@
 //
 
 #import "HomePageTableViewController.h"
-#import "ViewControllerTest.h"
+#import "SingleBudgetViewController.h"
+#import "HomeTableViewCell.h"
 
 @interface HomePageTableViewController ()
 
@@ -17,12 +18,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    #warning hard-coded content, to be changed
-    self.tableContent = @[@"iPhone1", @"iPhone2",@"iPhone3",@"iPhone4",@"iPhone5"];
-    #warning hard-coded content, to be changed
-    self.colors = @[@"black",@"black",@"black",@"orange",@"red"];
-    
-    
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     
@@ -64,7 +59,8 @@
 {
     //update data
     #warning hard-coded, to be changed
-    self.tableContent = @[@"iPhone1", @"iPhone2",@"iPhone3",@"iPhone4",@"iPhone5",@"iPad"];
+    self.budgetArray = @[@"iPhone1", @"iPhone2",@"iPhone3",@"iPhone4",@"iPhone5",@"iPad"];
+    self.amountArray = @[@"10/20",@"100/200",@"1000/2000",@"100000/2000000",@"10/90",@"10/100"];
     #warning hard-coded content, to be changed
     self.colors = @[@"black",@"black",@"black",@"orange",@"red",@"orange"];
     
@@ -86,30 +82,35 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 //#warning Incomplete implementation, return the number of rows
-    return self.tableContent.count;
+    return self.budgetArray.count;
 }
-
 
 
 //Configure the cells in table
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
+    HomeTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"BudgetListCell" forIndexPath:indexPath];
     
+ 
     //set text
-    cell.textLabel.text  = self.tableContent[indexPath.row];
+    cell.budgetNameLabel.text = self.budgetArray[indexPath.row];
+    cell.amountLabel.text  = self.amountArray[indexPath.row];
+    
     //set font
-    cell.textLabel.font = [UIFont fontWithName:@"Arial" size: 25.0];
+    //cell.textLabel.font = [UIFont fontWithName:@"Arial" size: 25.0];
+    
     //set color
     if([self.colors[indexPath.row] isEqualToString:@"black"])
     {
-        cell.textLabel.textColor = [UIColor blackColor];
+        cell.amountLabel.textColor = [UIColor blackColor];
     }else if([self.colors[indexPath.row] isEqualToString:@"orange"])
     {
-        cell.textLabel.textColor = [UIColor orangeColor];
+        cell.amountLabel.textColor = [UIColor orangeColor];
     }else if([self.colors[indexPath.row] isEqualToString:@"red"])
     {
-        cell.textLabel.textColor = [UIColor redColor];
+        cell.amountLabel.textColor = [UIColor redColor];
     }
+    
+    
     return cell;
 }
 
@@ -118,18 +119,18 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
    
-    [self performSegueWithIdentifier:@"ShowDetailTest" sender:tableView];
+    [self performSegueWithIdentifier:@"HomeToBudget" sender:tableView];
 }
 
 //send parameter to next page by directing changing the values
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    if ([segue.identifier isEqualToString:@"ShowDetailTest"]) {
+    if ([segue.identifier isEqualToString:@"HomeToBudget"]) {
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-        ViewControllerTest * destViewController = segue.destinationViewController;
+        SingleBudgetViewController * destViewController = segue.destinationViewController;
         //destViewController.indexNum = indexPath.row;
         int indexSelected = (int) indexPath.row;
-        destViewController.nameSelected = self.tableContent[indexSelected];
+        destViewController.nameSelected = self.budgetArray[indexSelected];
         destViewController.slices = [[NSMutableArray alloc] init];
         destViewController.texts = [[NSMutableArray alloc] init];
         for(int i = 0; i < 5; i ++)

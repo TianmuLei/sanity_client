@@ -9,5 +9,11 @@
 #import <UIKit/UIKit.h>
 
 @interface SignupPage : UIViewController
+@property (strong,nonatomic) NSString * password;
+@property (strong,nonatomic) NSString * email;
+@property (strong,nonatomic) NSString * username;
+
+- (void) signupSucceeded:(NSArray *) budget withAmount:(NSArray *) amount withColor:(NSArray *) color;
+- (void) signupFailed:(NSString*) errorMessage;
 
 @end

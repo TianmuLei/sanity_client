@@ -6,15 +6,16 @@
 //  Copyright © 2017 Gu. All rights reserved.
 //
 
-#import "ViewControllerTest.h"
+#import "SingleBudgetViewController.h"
+#import "SingleCategoryTableViewController.h"
 
-@interface ViewControllerTest ()
+@interface SingleBudgetViewController ()
 @property (weak, nonatomic) IBOutlet UILabel *labelTest;
 @property (weak, nonatomic) IBOutlet UILabel *labelForClickedElement;
 
 @end
 
-@implementation ViewControllerTest
+@implementation SingleBudgetViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -33,6 +34,27 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+- (IBAction)testClicked:(id)sender
+{
+    
+     [self performSegueWithIdentifier:@"BudgetToCategory" sender:self];
+}
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    if([segue.identifier isEqualToString:@"BudgetToCategory"]){
+        SingleCategoryTableViewController *controller = (SingleCategoryTableViewController *)segue.destinationViewController;
+        controller.texts =  @[@"used",@"unused"];
+        controller.slices = @[@"50",@"130"];
+        controller.transactionNames = @[@"trans1",@"trans2"];
+        controller.transactionAmounts = @[@"$100",@"150"];
+        controller.transactionDates = @[@"5/10/2017",@"8/10/2017"];
+        controller.numOfTransactions = 2;
+        controller.textForPieChart = @"100/200";
+        controller.pieChartLabelColor = @"red";
+    }
+}
+
 
 
 

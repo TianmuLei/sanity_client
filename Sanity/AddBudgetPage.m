@@ -7,11 +7,33 @@
 //
 
 #import "AddBudgetPage.h"
+#import "AmountCell.h"
+#import "HobbyCell.h"
+#import "Budget.h"
+#import "Category.h"
+
+typedef enum:NSInteger{
+    sectionName = 0,
+    sectionCategory = 1,
+    sectionSubmit = 2,
+    
+}SectionType;
 
 @interface AddBudgetPage ()
 
-@property NSMutableArray *tableCellLists;
+//UI Elements
+@property (weak, nonatomic) IBOutlet UITextField *budgetNameTF;
+@property (weak, nonatomic) IBOutlet UIDatePicker *datePicker;
 
+@property (weak, nonatomic) IBOutlet UITextField *thresholdTF;
+
+@property (weak, nonatomic) IBOutlet UITextField *periodTF;
+
+//class instances
+@property (nonatomic, strong) NSMutableArray *categories;
+@property (nonatomic, strong) NSMutableArray *categoryNameCells;
+@property (nonatomic, strong) NSMutableArray *categoryAmountCells;
+@property int threshold;
 
 @end
 
@@ -19,87 +41,188 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self listSetUp];
-       
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
+    [self initSetUp];
+    // Do any additional setup after loading the view, typically from a nib.
     
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    
 }
+
+- (void) initSetUp {
+    _categories = [[NSMutableArray alloc] init];
+    _categoryNameCells = [[NSMutableArray alloc] init];
+    _categoryAmountCells = [[NSMutableArray alloc] init];
+
+}
+
+
+//dismiss keyboards
+- (IBAction)dismissBudgetKey:(id)sender {
+    [self.budgetNameTF resignFirstResponder];
+}
+- (IBAction)dismissPeriodKey:(id)sender {
+    [self.periodTF resignFirstResponder];
+}
+- (IBAction)dismissNotificationKey:(id)sender {
+    [self.thresholdTF resignFirstResponder];
+}
+
+
+
+- (void) addBudgetSucceeded {
+    [self.navigationController popToRootViewControllerAnimated:YES];
+}
+
+- (void) addBudgetFailed {
+    [self getAlerted];
+
+}
+
+
+//clicked add category button
+- (IBAction)addCell:(id)sender {
+    [self addData];
+}
+
+//clicked submit
+- (IBAction)submitNewBudget:(id)sender {
+    
+    //create a new budget
+    Budget *mBudget = [[Budget alloc] init];
+    NSString *budgetName = _budgetNameTF.text;
+    
+    //cast NSdate to NSDatecomponent
+    NSCalendar *calendar            = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
+    
+    NSDateComponents *components = [calendar components:(NSCalendarUnitYear|
+                                                         NSCalendarUnitMonth |
+                                                         NSCalendarUnitDay   |
+                                                         NSCalendarUnitHour  |
+                                                         NSCalendarUnitMinute|
+                                                         NSCalendarUnitSecond) fromDate:[_datePicker date]];
+    
+    mBudget.name = budgetName;
+    mBudget.period = [_periodTF.text intValue];
+    mBudget.startDate = components;
+    mBudget.categories = [[NSMutableArray alloc] init];
+    mBudget.threshold = [_thresholdTF.text intValue];
+ 
+    for (int i = 0; i < _categoryNameCells.count; ++i) {
+        HobbyCell *nameCell = _categoryNameCells[i];
+        AmountCell *amountCell = _categoryAmountCells[i];
+        Category *cate1 = [[Category alloc] init];
+        
+        //assign attributes to category
+        cate1.name = nameCell.categoryNameTF.text;
+        cate1.limit = [amountCell.amountTF.text floatValue];
+        
+
+        //add one category inside
+        [mBudget.categories addObject:cate1];
+        mBudget.total += cate1.limit;
+    }
+
+  //  [self addBudgetFailed];
+}
+
+
+- (void)addData{
+    [_categoryNameCells removeAllObjects];
+    [_categoryAmountCells removeAllObjects];
+    
+    [self.categories addObject:@1];
+    [self.categories addObject:@1];
+    
+    [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:sectionCategory] withRowAnimation:UITableViewRowAnimationNone];
+}
+
+#warning NOT Complete don't use this
+- (void)deleteData{
+        [self.categories removeObjectAtIndex:0];
+        [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:sectionCategory] withRowAnimation:UITableViewRowAnimationNone];
+}
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
 
-- (void) listSetUp{
-    self.tableCellLists = [NSMutableArray arrayWithArray:@[@"Budget Name", @"Start Date", @"Period", @"Category Name", @"Amount"]];
 
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    if(sectionCategory == section){
+        return self.categories.count;
+    }
+    return [super tableView:tableView numberOfRowsInSection:section];
 }
 
-- (NSInteger) tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return 7 ;
+int rowCount = 0;
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+  
+    if(indexPath.section == sectionCategory){
+      //int x = indexPath.row;
+      //  int y = _categories.count;
+    // if (indexPath.row >= _categories.count - 2){
+            if (indexPath.row % 2 == 0){
+                HobbyCell *cell = [tableView dequeueReusableCellWithIdentifier:HobbyCellID];
+                if(cell == nil){
+                    cell = [[NSBundle mainBundle] loadNibNamed:HobbyCellID owner:nil options:nil].lastObject;
+                }
+                [_categoryNameCells addObject:cell];
+                return cell;
+            }
+            else {
+                AmountCell *cell = [tableView dequeueReusableCellWithIdentifier:AmountCellID];
+                if(cell == nil){
+                    cell = [[NSBundle mainBundle] loadNibNamed:AmountCellID owner:nil options:nil].lastObject;
+                }
+                [_categoryAmountCells addObject:cell];
+                return cell;
+            }
+        }
+  //  }
+    return [super tableView:tableView cellForRowAtIndexPath:indexPath];
 }
-#pragma mark - Table view data source
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-   return 1;
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    if(sectionCategory == indexPath.section){
+        return HobbyCellHeight;
+    }
+    return [super tableView:tableView heightForRowAtIndexPath:indexPath];
 }
 
-//- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-//  
-//    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
-//    
-//    cell.textLabel.text = self.tableCellLists[indexPath.row];
-//    
-//    //set font
-//    cell.textLabel.font = [UIFont fontWithName:@"Arial" size: 25.0];
-//    return cell;
-//}
-
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
+- (NSInteger)tableView:(UITableView *)tableView indentationLevelForRowAtIndexPath:(NSIndexPath *)indexPath{
+    if(sectionCategory == indexPath.section){
+        int insertLoc = 0;
+       // if (_categories.count > 2) insertLoc = (int)_categories.count - 3;
+        return [super tableView:tableView indentationLevelForRowAtIndexPath: [NSIndexPath indexPathForRow:insertLoc inSection:sectionCategory]];
+    }
+    return [super tableView:tableView indentationLevelForRowAtIndexPath:indexPath];
 }
-*/
 
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
+
+//alert window
+- (void) getAlerted {
+    UIAlertController *alertController = [UIAlertController
+                                          alertControllerWithTitle:@"Required Fields"
+                                          message:@"Please fill in all required fields"
+                                          preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertAction *okAction = [UIAlertAction
+                               actionWithTitle:@"OK"
+                               style:UIAlertActionStyleDefault
+                               handler:^(UIAlertAction *action){
+                                   //set all label to red
+                               }];
+    [alertController addAction:okAction];
+    [self presentViewController:alertController animated:YES completion:nil];
+    
 }
-*/
 
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
+
+- (NSMutableArray *)categories{
+    if(!_categories){
+        _categories = [NSMutableArray array];
+    }
+    return _categories;
 }
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

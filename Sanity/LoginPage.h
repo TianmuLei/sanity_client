@@ -9,5 +9,10 @@
 #import <UIKit/UIKit.h>
 
 @interface LoginPage : UIViewController
+@property (strong,nonatomic) NSString * password;
+@property (strong,nonatomic) NSString * email;
 
+- (void) loginSucceeded:(NSArray *) budget withAmount:(NSArray *) amount withColor:(NSArray *) color;
+- (void) loginFailed:(NSString*) errorMessage;
+    
 @end

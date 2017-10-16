@@ -10,7 +10,8 @@
 
 @interface HomePageTableViewController : UITableViewController <UITableViewDataSource, UITableViewDelegate>
 
-@property (strong,nonatomic) NSArray * tableContent;
+@property (strong,nonatomic) NSArray * budgetArray;
+@property (strong,nonatomic) NSArray * amountArray;
 @property (strong,nonatomic) NSArray * colors;
 
 @end

@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "XYPieChart.h"
 
-@interface ViewControllerTest : UIViewController
+@interface SingleBudgetViewController : UIViewController
 
 @property   NSInteger indexNum;
 @property   NSString * nameSelected;
