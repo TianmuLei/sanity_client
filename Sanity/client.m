@@ -146,9 +146,10 @@
         else if ([function isEqualToString:@"login"]){
             if([status isEqualToString:@"fail"]){
                 
-                
+                [_login fail];
                 
             }else{
+                [_login success:[messageObject objectForKey:@"budgetList"]];
                 
             }
         }

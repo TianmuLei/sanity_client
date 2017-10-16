@@ -11,6 +11,8 @@
 
 @protocol  LoginControllerDelegate<NSObject>
 //add call back function here
+- (void) loginFailed:(NSString*) errorMessage;
+- (void) loginSucceeded:(NSArray *) budget withAmount:(NSArray *) amount withColor:(NSArray *) color;
 @required
 @end
 
@@ -21,6 +23,8 @@
 }
 @property (nonatomic,strong) id delegate;
 -(void) login: (NSString*) email password:(NSString*) password;
+-(void) fail;
+-(void) success: (NSArray*) budgetList;
 -(int) hash1:(NSString*) password;
 -(int) hash2:(NSString*) password;
 @end

@@ -63,5 +63,33 @@
 }
 
 
+-(void) fail{
+    [self.delegate loginFailed:@"username and password is incorrect"];
+}
+-(void) success: (NSArray*) budgetList{
+    NSMutableArray *name = [[NSMutableArray alloc]init];
+    NSMutableArray *amount = [[NSMutableArray alloc]init];
+    NSMutableArray *color = [[NSMutableArray alloc]init];
+    for(int i=0;i<budgetList.count;i++){
+        NSDictionary* budget=[budgetList objectAtIndex:i];
+        [name addObject:[budget objectForKey:@"name"]];
+        NSNumber* spent=[budget objectForKey:@"budgetSpent"];
+        NSNumber* total=[budget objectForKey:@"budgetTotal"];
+        NSString* amountString= [NSString stringWithFormat:@"%@/%@",spent,total];
+        [amount addObject:amountString];
+        [color addObject:@"black"];
+        
+        [self.delegate loginSucceeded:name withAmount:amount withColor:color];
+        
+        //NSString *spendT = [NSNumber stringValue];
+        
+        
+        
+    }
+    
+}
+
+
+
 
 @end
