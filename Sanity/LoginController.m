@@ -72,20 +72,32 @@
     NSMutableArray *color = [[NSMutableArray alloc]init];
     for(int i=0;i<budgetList.count;i++){
         NSDictionary* budget=[budgetList objectAtIndex:i];
-        [name addObject:[budget objectForKey:@"name"]];
+        NSString* nameString=[budget objectForKey:@"name"];
+        //[name addObject:nameString];
         NSNumber* spent=[budget objectForKey:@"budgetSpent"];
         NSNumber* total=[budget objectForKey:@"budgetTotal"];
-        NSString* amountString= [NSString stringWithFormat:@"%@/%@",spent,total];
-        [amount addObject:amountString];
+       // NSString* amountString= [NSString stringWithFormat:@"%d/%d",[spent integerValue],[total integerValue]];
+        //[amount addObject:@"10/10"];
+        NSString* black=@"black";
+        [name addObject:@"chenggongba"];
+        [amount addObject:@"10/10"];
         [color addObject:@"black"];
-        
-        [self.delegate loginSucceeded:name withAmount:amount withColor:color];
-        
-        //NSString *spendT = [NSNumber stringValue];
+        //[color addObject:black];
         
         
         
     }
+    NSArray * nameArray= [name copy];
+    NSArray * spentArray= [amount copy];
+    NSArray * colorArray= [color copy];
+    
+    NSLog(@"%@", nameArray);
+    NSLog(@"%@", spentArray);
+     NSLog(@"%@", colorArray);
+    
+
+    [self.delegate loginSucceeded:nameArray withAmount:spentArray withColor:colorArray];
+
     
 }
 

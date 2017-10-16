@@ -54,7 +54,7 @@
 
     //NSDictionary *message=@{@"function":@"test"};
     //[UIClientConnector.myClient sendMessage:message];
-
+/*
     LoginController* logCon=[[LoginController alloc] initWithClass:self];
    [logCon login:@"tianmule@usc.edu" password:@"baobao"];
    //[logCon login:@"tianmule@usc.edu" password:@"baobao1"];
@@ -86,7 +86,7 @@
     [_budgetList requestBudget:@"testBudget1" ];
     
     
-    
+    */
  
     
 
