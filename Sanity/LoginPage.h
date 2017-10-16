@@ -13,6 +13,9 @@
 @property (strong,nonatomic) NSString * password;
 @property (strong,nonatomic) NSString * email;
 @property (strong,nonatomic) LoginController * loginController;
+@property (strong,nonatomic) NSArray * budgetArray;
+@property (strong,nonatomic) NSArray * colors;
+@property (strong,nonatomic) NSArray * amountArray;
 
 - (void) loginSucceeded:(NSArray *) budget withAmount:(NSArray *) amount withColor:(NSArray *) color;
 - (void) loginFailed:(NSString*) errorMessage;

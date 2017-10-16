@@ -41,6 +41,7 @@
 		843599C81F91DBF1002372E9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 843599C71F91DBF1002372E9 /* Foundation.framework */; };
 		843599CA1F91DBF6002372E9 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 843599C91F91DBF6002372E9 /* UIKit.framework */; };
 		843599CC1F91DBFD002372E9 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 843599CB1F91DBFD002372E9 /* QuartzCore.framework */; };
+		84416C301F9483E300C711E1 /* PieChartCategoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84416C2F1F9483E300C711E1 /* PieChartCategoryViewController.m */; };
 		8457BF1E1F93363A0028166A /* HomeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8457BF1D1F93363A0028166A /* HomeTableViewCell.m */; };
 		849E42911F9434A200074460 /* PieChartCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 849E42901F9434A200074460 /* PieChartCell.m */; };
 		849E42941F9438EC00074460 /* SingleCategoryTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 849E42931F9438EC00074460 /* SingleCategoryTableViewController.m */; };
@@ -142,6 +143,8 @@
 		843599C71F91DBF1002372E9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		843599C91F91DBF6002372E9 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		843599CB1F91DBFD002372E9 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		84416C2E1F9483E300C711E1 /* PieChartCategoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PieChartCategoryViewController.h; sourceTree = "<group>"; };
+		84416C2F1F9483E300C711E1 /* PieChartCategoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PieChartCategoryViewController.m; sourceTree = "<group>"; };
 		8457BF1C1F93363A0028166A /* HomeTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeTableViewCell.h; sourceTree = "<group>"; };
 		8457BF1D1F93363A0028166A /* HomeTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeTableViewCell.m; sourceTree = "<group>"; };
 		849E428F1F9434A200074460 /* PieChartCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PieChartCell.h; sourceTree = "<group>"; };
@@ -335,6 +338,8 @@
 				843599BB1F91DB38002372E9 /* HomePageTableViewController.h */,
 				849E42921F9438EC00074460 /* SingleCategoryTableViewController.h */,
 				849E42931F9438EC00074460 /* SingleCategoryTableViewController.m */,
+				84416C2E1F9483E300C711E1 /* PieChartCategoryViewController.h */,
+				84416C2F1F9483E300C711E1 /* PieChartCategoryViewController.m */,
 				8434BE031F91FF2200A4BDC7 /* LoginPage.h */,
 				8434BE041F91FF2200A4BDC7 /* LoginPage.m */,
 				8434BE051F91FF2200A4BDC7 /* SignupPage.h */,
@@ -576,6 +581,7 @@
 				CC2D17E11F91AFBE0052613D /* ProfilePage.m in Sources */,
 				7C703F291F8ABF6A00B5D982 /* Transaction.m in Sources */,
 				7C8F83461F93FB240053B40B /* CategoryPageController.m in Sources */,
+				84416C301F9483E300C711E1 /* PieChartCategoryViewController.m in Sources */,
 				7C8F83431F93FA810053B40B /* BudgetPageController.m in Sources */,
 				843599C41F91DB39002372E9 /* XYPieChart.m in Sources */,
 				CC2D17E41F91C2AF0052613D /* AddBudgetPage.m in Sources */,
