@@ -47,6 +47,7 @@
 		CC673EE21F934C29000CE0B6 /* AmountCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CC673EE01F934C29000CE0B6 /* AmountCell.m */; };
 		CC673EF01F9357F7000CE0B6 /* HobbyCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CC673EEE1F9357F7000CE0B6 /* HobbyCell.xib */; };
 		CC673EF11F9357F7000CE0B6 /* HobbyCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CC673EEF1F9357F7000CE0B6 /* HobbyCell.m */; };
+		CC673EF41F94655F000CE0B6 /* EditBudgetPage.m in Sources */ = {isa = PBXBuildFile; fileRef = CC673EF31F94655F000CE0B6 /* EditBudgetPage.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -138,6 +139,8 @@
 		CC673EED1F9357F7000CE0B6 /* HobbyCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HobbyCell.h; sourceTree = "<group>"; };
 		CC673EEE1F9357F7000CE0B6 /* HobbyCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HobbyCell.xib; sourceTree = "<group>"; };
 		CC673EEF1F9357F7000CE0B6 /* HobbyCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HobbyCell.m; sourceTree = "<group>"; };
+		CC673EF21F94655F000CE0B6 /* EditBudgetPage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditBudgetPage.h; sourceTree = "<group>"; };
+		CC673EF31F94655F000CE0B6 /* EditBudgetPage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditBudgetPage.m; sourceTree = "<group>"; };
 		EB1AA2A5F86FBB7BDA75AF6F /* libPods-Sanity.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Sanity.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -301,6 +304,8 @@
 				CC2D17E31F91C2AF0052613D /* AddBudgetPage.m */,
 				7C2D9DFE1F875EFD00027681 /* ViewController.h */,
 				7C2D9DFF1F875EFD00027681 /* ViewController.m */,
+				CC673EF21F94655F000CE0B6 /* EditBudgetPage.h */,
+				CC673EF31F94655F000CE0B6 /* EditBudgetPage.m */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -539,6 +544,7 @@
 				8434BE091F91FF2200A4BDC7 /* LoginPage.m in Sources */,
 				CC673EE21F934C29000CE0B6 /* AmountCell.m in Sources */,
 				8457BF1E1F93363A0028166A /* HomeTableViewCell.m in Sources */,
+				CC673EF41F94655F000CE0B6 /* EditBudgetPage.m in Sources */,
 				7C2D9DFA1F875EFD00027681 /* main.m in Sources */,
 				849E429A1F94402900074460 /* TransactionCell.m in Sources */,
 				7CA1D1EC1F897A87003631D6 /* SignupController.m in Sources */,

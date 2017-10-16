@@ -16,7 +16,7 @@
 @property int period;
 @property (strong, atomic) NSString* name;
 @property (strong, atomic) NSMutableArray* categories;
-@property (strong, atomic) NSDate* startDate;
+@property (strong, atomic) NSDateComponents* startDate;
 
 
 @end

@@ -68,9 +68,16 @@ typedef enum:NSInteger{
 
 
 
-- (void) addBudgetSucceeded:(Budget *)budget {
-    
+- (void) addBudgetSucceeded {
+    [self.navigationController popToRootViewControllerAnimated:YES];
 }
+
+- (void) addBudgetFailed {
+    [self getAlerted];
+
+}
+
+
 //clicked add category button
 - (IBAction)addCell:(id)sender {
     [self addData];
@@ -78,12 +85,24 @@ typedef enum:NSInteger{
 
 //clicked submit
 - (IBAction)submitNewBudget:(id)sender {
+    
     //create a new budget
     Budget *mBudget = [[Budget alloc] init];
     NSString *budgetName = _budgetNameTF.text;
+    
+    //cast NSdate to NSDatecomponent
+    NSCalendar *calendar            = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
+    
+    NSDateComponents *components = [calendar components:(NSCalendarUnitYear|
+                                                         NSCalendarUnitMonth |
+                                                         NSCalendarUnitDay   |
+                                                         NSCalendarUnitHour  |
+                                                         NSCalendarUnitMinute|
+                                                         NSCalendarUnitSecond) fromDate:[_datePicker date]];
+    
     mBudget.name = budgetName;
     mBudget.period = [_periodTF.text intValue];
-    mBudget.startDate = [_datePicker date];
+    mBudget.startDate = components;
     mBudget.categories = [[NSMutableArray alloc] init];
     mBudget.threshold = [_thresholdTF.text intValue];
  
@@ -102,6 +121,7 @@ typedef enum:NSInteger{
         mBudget.total += cate1.limit;
     }
 
+  //  [self addBudgetFailed];
 }
 
 
@@ -177,6 +197,24 @@ int rowCount = 0;
         return [super tableView:tableView indentationLevelForRowAtIndexPath: [NSIndexPath indexPathForRow:insertLoc inSection:sectionCategory]];
     }
     return [super tableView:tableView indentationLevelForRowAtIndexPath:indexPath];
+}
+
+
+//alert window
+- (void) getAlerted {
+    UIAlertController *alertController = [UIAlertController
+                                          alertControllerWithTitle:@"Required Fields"
+                                          message:@"Please fill in all required fields"
+                                          preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertAction *okAction = [UIAlertAction
+                               actionWithTitle:@"OK"
+                               style:UIAlertActionStyleDefault
+                               handler:^(UIAlertAction *action){
+                                   //set all label to red
+                               }];
+    [alertController addAction:okAction];
+    [self presentViewController:alertController animated:YES completion:nil];
+    
 }
 
 

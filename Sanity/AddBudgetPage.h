@@ -11,5 +11,7 @@
 
 @interface AddBudgetPage : UITableViewController
 
+- (void) addBudgetSucceeded;
+- (void) addBudgetFailed;
 
 @end
