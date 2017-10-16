@@ -54,6 +54,20 @@ typedef enum:NSInteger{
 
 }
 
+
+//dismiss keyboards
+- (IBAction)dismissBudgetKey:(id)sender {
+    [self.budgetNameTF resignFirstResponder];
+}
+- (IBAction)dismissPeriodKey:(id)sender {
+    [self.periodTF resignFirstResponder];
+}
+- (IBAction)dismissNotificationKey:(id)sender {
+    [self.thresholdTF resignFirstResponder];
+}
+
+
+
 - (void) addBudgetSucceeded:(Budget *)budget {
     
 }
@@ -88,7 +102,6 @@ typedef enum:NSInteger{
         mBudget.total += cate1.limit;
     }
 
-    
 }
 
 
