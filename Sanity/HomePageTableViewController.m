@@ -7,7 +7,7 @@
 //
 
 #import "HomePageTableViewController.h"
-#import "ViewControllerTest.h"
+#import "SingleBudgetViewController.h"
 #import "HomeTableViewCell.h"
 
 @interface HomePageTableViewController ()
@@ -127,7 +127,7 @@
 {
     if ([segue.identifier isEqualToString:@"HomeToBudget"]) {
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-        ViewControllerTest * destViewController = segue.destinationViewController;
+        SingleBudgetViewController * destViewController = segue.destinationViewController;
         //destViewController.indexNum = indexPath.row;
         int indexSelected = (int) indexPath.row;
         destViewController.nameSelected = self.budgetArray[indexSelected];

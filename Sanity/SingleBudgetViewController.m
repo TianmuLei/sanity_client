@@ -6,15 +6,15 @@
 //  Copyright © 2017 Gu. All rights reserved.
 //
 
-#import "ViewControllerTest.h"
+#import "SingleBudgetViewController.h"
 
-@interface ViewControllerTest ()
+@interface SingleBudgetViewController ()
 @property (weak, nonatomic) IBOutlet UILabel *labelTest;
 @property (weak, nonatomic) IBOutlet UILabel *labelForClickedElement;
 
 @end
 
-@implementation ViewControllerTest
+@implementation SingleBudgetViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
