@@ -8,6 +8,14 @@
 
 #import "client.h"
 #import "SignupController.h"
+#import "LoginController.h"
+#import "AddBudgetController.h"
+#import "AddTransactionController.h"
+#import "BudgetListController.h"
+#import "BudgetPageController.h"
+#import "CategoryPageController.h"
+#import "ProfilePageController.h"
+#import "UIClientConnector.h"
 
 @implementation client
 - (instancetype)init
@@ -17,10 +25,17 @@
         _webSocket = [[SRWebSocket alloc] initWithURL:[NSURL URLWithString:@"ws://165.227.14.202:9999"]];
         _webSocket.delegate = self;
        [_webSocket open];
-      //  SignupController* mainCon=[[SignupController alloc] initWithClass:self];
+        _myUser=[[User alloc] init];
+        
+        _signup=[[SignupController alloc] initWithClass:self];
+        _login=[[LoginController alloc] initWithClass:self];
+        _addBudget=[[AddBudgetController alloc] initWithClass:self];
+        _addTransaction=[[AddTransactionController alloc] initWithClass:self];
+        _budgetPage=[[BudgetPageController alloc] initWithClass:self];
+        _budgetList=[[BudgetListController alloc] initWithClass:self];
+        _categoryPage=[[CategoryPageController alloc] initWithClass:self];
+        _profilePage=[[ProfilePageController alloc] initWithClass:self];
 
-        
-        
         
         
     }
@@ -31,9 +46,49 @@
 - (void)webSocketDidOpen:(SRWebSocket *)webSocket;
 {
     NSLog(@"Websocket Connected");
-     SignupController* mainCon=[[SignupController alloc] initWithClass:self];
-    //NSString *message = @"WangWangWang";
-    //[_webSocket send:message];
+  
+
+  //  [_signup signup:@"tianmule@usc.edu" username:@"tianmule" password:@"baobao"];
+   // [_signup signup:@"helenlei@g.com" username:@"ruyinsha" password:@"1234567"];
+
+    //NSDictionary *message=@{@"function":@"test"};
+    //[UIClientConnector.myClient sendMessage:message];
+
+    LoginController* logCon=[[LoginController alloc] initWithClass:self];
+   [logCon login:@"tianmule@usc.edu" password:@"baobao"];
+   //[logCon login:@"tianmule@usc.edu" password:@"baobao1"];
+    
+    NSDateComponents *dateComponents = [[NSDateComponents alloc] init];
+    dateComponents.day = 4;
+    dateComponents.month = 5;
+    dateComponents.year = 2004;
+    
+    AddBudgetController* addCon=[[AddBudgetController alloc] initWithClass:self];
+    NSMutableArray *categoryList = [[NSMutableArray alloc]init];
+    NSNumber* periodObject=[[NSNumber alloc]initWithInteger:30];
+    Category* cat1=[[Category alloc]init];
+    Category* cat2=[[Category alloc]init];
+    cat1.name=@"cat";
+      cat2.name=@"dog";
+    cat1.limit=100;
+    cat2.limit=100;
+    
+    
+     [categoryList addObject:cat1];
+     [categoryList addObject:cat2];
+
+
+    //[addCon addBudget:@"testBudget1" period:periodObject date:dateComponents category:categoryList threshold:periodObject frequency:periodObject];
+    
+   // [_addTransaction addTransaction: [[NSNumber alloc]initWithInteger:30] describe:@"lunch" category:@"cat" budget:@"testBudget1" date:dateComponents];
+    [_budgetList requestBudgetList];
+    [_budgetList requestBudget:@"testBudget1" ];
+    
+    
+    
+ 
+    
+
     
 }
 
@@ -64,9 +119,62 @@
 
 
 - (void)webSocket:(SRWebSocket *)webSocket didReceiveMessage:(id)message {
-    NSLog(@"WebSocket received message");
+    //NSLog(@"WebSocket received message");
     NSString *myString = (NSString *)message;
-    NSLog(@"message \"%@\"", myString);
+    
+    if ([myString rangeOfString:@"function"].location == NSNotFound) {
+        NSLog(@"ignore message");
+    } else {
+        
+        
+        NSData *webData = [myString dataUsingEncoding:NSUTF8StringEncoding];
+        
+        NSError *error;
+        NSDictionary *messageObject = [NSJSONSerialization JSONObjectWithData:webData options:0 error:&error];
+        NSLog(@"JSON DIct: %@", messageObject);
+        
+        NSString* function = [messageObject objectForKey:@"function"];
+        NSString* status = [messageObject objectForKey:@"status"];
+        
+        if ([function isEqualToString:@"register"]){
+            if([status isEqualToString:@"fail"]){
+                
+            }else{
+                
+            }
+        }
+        else if ([function isEqualToString:@"login"]){
+            if([status isEqualToString:@"fail"]){
+                
+                
+                
+            }else{
+                
+            }
+        }
+        else if ([function isEqualToString:@"createBudget"]){
+            if([status isEqualToString:@"fail"]){
+                
+            }else{
+                
+            }
+        }
+        else if ([function isEqualToString:@"addTransaction"]){
+            if([status isEqualToString:@"fail"]){
+                
+            }else{
+                
+            }
+        }
+        
+        
+        
+        
+     
+    }
+    
+    
+    
     
 }
 
@@ -94,21 +202,28 @@
 }
 
 -(NSDictionary*) StringToJSON:(NSString*) JSONString{
-    NSString *path = JSONString;
-    NSData *jsonData = [NSData dataWithContentsOfFile:path];
+    //NSString *path = JSONString;
+    NSData *jsonData = [NSData dataWithContentsOfFile:JSONString];
     
     NSError *error = nil;
     
     // Get JSON data into a Foundation object
     id object = [NSJSONSerialization JSONObjectWithData:jsonData options:NSJSONReadingAllowFragments error:&error];
     
-    return object;
+    if( [object isKindOfClass:[NSDictionary class]] && error == nil){
+         return object;
+    }
+    else{
+        return nil;
+    }
+    
+   
 }
 
 
 -(void) sendMessage:(NSDictionary*)dict{
     NSString *message=[self JSONToString:dict];
-    //NSLog(@"sendmessage:  \"%@\"", message);
+    NSLog(@"sendmessage:  \"%@\"", message);
    [_webSocket send:message];
 }
 

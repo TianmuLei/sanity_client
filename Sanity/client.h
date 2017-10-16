@@ -9,9 +9,27 @@
 #import <SocketRocket/SRWebSocket.h>
 #import "User.h"
 
+
+@class SignupController;
+@class LoginController;
+@class AddTransactionController;
+@class AddBudgetController;
+@class BudgetListController;
+@class BudgetPageController;
+@class CategoryPageController;
+@class ProfilePageController;
+
 @interface client : NSObject <SRWebSocketDelegate>
 @property (strong, atomic)  SRWebSocket *webSocket;
 @property (strong, atomic)  User *myUser;
+@property (strong,atomic) SignupController* signup;
+@property (strong,atomic) LoginController* login;
+@property (strong,atomic) AddTransactionController* addTransaction;
+@property (strong,atomic) AddBudgetController* addBudget;
+@property (strong,atomic) BudgetListController* budgetList;
+@property (strong,atomic) BudgetPageController* budgetPage;
+@property (strong,atomic) CategoryPageController* categoryPage;
+@property (strong,atomic) ProfilePageController* profilePage;
 -(NSString*) JSONToString:(NSDictionary*)dict;
 -(NSDictionary*) StringToJSON:(NSString*) JSONString;
 -(void) sendMessage:(NSDictionary*)dict;

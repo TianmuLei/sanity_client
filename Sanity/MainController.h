@@ -10,6 +10,7 @@
 #import "client.h"
 
 
+
 @interface MainController : NSObject
 @property (strong, atomic)  client *client;
 - (id) initWithClass:(client *)client;

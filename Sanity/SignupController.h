@@ -10,17 +10,19 @@
 
 
 
+
 @protocol  SignupControllerDelegate<NSObject>
 //add call back function here
 @required
 @end
 
 
-@interface SignupController : MainController{
+@interface SignupController :MainController{
      id <SignupControllerDelegate> _delegate;
     
 }
 @property (nonatomic,strong) id delegate;
+@property (strong, atomic)  client *client;
 -(void) signup: (NSString*) email username:(NSString*) username password:(NSString*) password;
 -(int) hash1:(NSString*) password;
 -(int) hash2:(NSString*) password;
