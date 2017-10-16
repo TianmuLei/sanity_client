@@ -10,7 +10,7 @@
 
 /** ID */
 #define HobbyCellID @"HobbyCell"
-/** 高度 */
+/** height */
 #define HobbyCellHeight 50
 
 @interface HobbyCell : UITableViewCell

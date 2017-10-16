@@ -133,10 +133,14 @@
 -(void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
     if (pickerView == self.budgetPicker) {
         self.budgetTF.text = [(Budget *)self.budgets[row] name];
+        [_budgetTF endEditing:YES];
     }
     if (pickerView == self.categoryPicker) {
         self.categoryTF.text = [(Category *)self.categoriesCurrBudget[row] name];
+        [_categoryTF endEditing:YES];
     }
+    
+
 }
 
 
@@ -203,6 +207,11 @@
     [self getAlerted:reasonTitle msg:reason];
 }
 
+
+//dismiss keyboards
+- (IBAction)dissmissKey:(id)sender {
+    [sender resignFirstResponder];
+}
 
 
 /*

@@ -12,10 +12,12 @@
 #import "Category.h"
 
 @interface EditBudgetPage ()
-@property (weak, nonatomic) IBOutlet UILabel *budgetNameLabel;
+@property (weak, nonatomic) IBOutlet UITextField *budgetNameTF;
+
 @property (weak, nonatomic) IBOutlet UILabel *startDateLabel;
 @property (weak, nonatomic) IBOutlet UITextField *periodTF;
 @property (weak, nonatomic) IBOutlet UITextField *thresholdTF;
+@property (weak, nonatomic) IBOutlet UITextField *frequencyTF;
 @property BOOL canDeleteCategories;
 
 
@@ -39,9 +41,22 @@
     
 }
 
+//reload section two
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    //select section 2 and reload data
+    NSRange range = NSMakeRange(1, 1);
+    NSIndexSet *section = [NSIndexSet indexSetWithIndexesInRange:range];
+    [self.tableView reloadSections:section withRowAnimation:UITableViewRowAnimationNone];
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (IBAction)dismissKeyboard:(id)sender {
+    [sender resignFirstResponder];
 }
 
 #pragma mark - Table view data source
@@ -57,13 +72,14 @@
     return [super tableView:tableView numberOfRowsInSection:section];
 }
 
-- (IBAction)addCell:(id)sender {
 
-}
 - (IBAction)deleteCell:(id)sender {
     _canDeleteCategories = YES;
     //[self.tableView setEditing:YES animated:YES];
     [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:1] withRowAnimation:UITableViewRowAnimationNone];
+}
+//submission get data
+- (IBAction)submitEdit:(id)sender {
 }
 
 
@@ -147,7 +163,7 @@
 }
 //set budget before load page
 - (void) getBudgetInfo:(Budget *)budget{
-    self.budgetNameLabel.text = budget.name;
+    self.budgetNameTF.text = budget.name;
     self.startDateLabel.text = [NSDateFormatter localizedStringFromDate:[budget.startDate date]
                                                               dateStyle:NSDateFormatterShortStyle
                                                               timeStyle:NSDateFormatterFullStyle];

@@ -63,6 +63,7 @@
 		CC673EF91F946ACA000CE0B6 /* CategoryDisplay.xib in Resources */ = {isa = PBXBuildFile; fileRef = CC673EF71F946ACA000CE0B6 /* CategoryDisplay.xib */; };
 		CC673EFF1F94C372000CE0B6 /* AddTransactionPage.m in Sources */ = {isa = PBXBuildFile; fileRef = CC673EFE1F94C372000CE0B6 /* AddTransactionPage.m */; };
 		CC8D32151F952BF700FE0704 /* ResetPasswordPage.m in Sources */ = {isa = PBXBuildFile; fileRef = CC8D32141F952BF700FE0704 /* ResetPasswordPage.m */; };
+		CC8D32181F9558CC00FE0704 /* AddCategoryPage.m in Sources */ = {isa = PBXBuildFile; fileRef = CC8D32171F9558CC00FE0704 /* AddCategoryPage.m */; };
 		CCB2DFB51F9526E600503F0D /* ResetUsernamePage.m in Sources */ = {isa = PBXBuildFile; fileRef = CCB2DFB41F9526E600503F0D /* ResetUsernamePage.m */; };
 /* End PBXBuildFile section */
 
@@ -186,6 +187,8 @@
 		CC673EFE1F94C372000CE0B6 /* AddTransactionPage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddTransactionPage.m; sourceTree = "<group>"; };
 		CC8D32131F952BF700FE0704 /* ResetPasswordPage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResetPasswordPage.h; sourceTree = "<group>"; };
 		CC8D32141F952BF700FE0704 /* ResetPasswordPage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResetPasswordPage.m; sourceTree = "<group>"; };
+		CC8D32161F9558CC00FE0704 /* AddCategoryPage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddCategoryPage.h; sourceTree = "<group>"; };
+		CC8D32171F9558CC00FE0704 /* AddCategoryPage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddCategoryPage.m; sourceTree = "<group>"; };
 		CCB2DFB31F9526E600503F0D /* ResetUsernamePage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResetUsernamePage.h; sourceTree = "<group>"; };
 		CCB2DFB41F9526E600503F0D /* ResetUsernamePage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResetUsernamePage.m; sourceTree = "<group>"; };
 		EB1AA2A5F86FBB7BDA75AF6F /* libPods-Sanity.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Sanity.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -381,6 +384,8 @@
 				CCB2DFB41F9526E600503F0D /* ResetUsernamePage.m */,
 				CC8D32131F952BF700FE0704 /* ResetPasswordPage.h */,
 				CC8D32141F952BF700FE0704 /* ResetPasswordPage.m */,
+				CC8D32161F9558CC00FE0704 /* AddCategoryPage.h */,
+				CC8D32171F9558CC00FE0704 /* AddCategoryPage.m */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -616,6 +621,7 @@
 				849E42941F9438EC00074460 /* SingleCategoryTableViewController.m in Sources */,
 				849E42971F943E8600074460 /* TranscationLabelCell.m in Sources */,
 				7C2D9DFD1F875EFD00027681 /* AppDelegate.m in Sources */,
+				CC8D32181F9558CC00FE0704 /* AddCategoryPage.m in Sources */,
 				7C703F2C1F8AC1EB00B5D982 /* Category.m in Sources */,
 				8434BE0A1F91FF2200A4BDC7 /* SignupPage.m in Sources */,
 				CC673EFF1F94C372000CE0B6 /* AddTransactionPage.m in Sources */,

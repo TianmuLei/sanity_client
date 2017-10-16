@@ -63,14 +63,18 @@ typedef enum:NSInteger{
 
 
 //dismiss keyboards
-- (IBAction)dismissBudgetKey:(id)sender {
+
+- (IBAction)dissmissBudgetKey:(id)sender {
     [self.budgetNameTF resignFirstResponder];
 }
-- (IBAction)dismissPeriodKey:(id)sender {
+- (IBAction)dissmissPeriodKey:(id)sender {
     [self.periodTF resignFirstResponder];
 }
-- (IBAction)dismissNotificationKey:(id)sender {
+- (IBAction)dismissThresholdKey:(id)sender {
     [self.thresholdTF resignFirstResponder];
+}
+- (IBAction)dismissFrequencyKey:(id)sender {
+    [self.frequencyTF resignFirstResponder];
 }
 
 

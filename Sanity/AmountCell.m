@@ -14,6 +14,9 @@
     [super awakeFromNib];
     // Initialization code
 }
+- (IBAction)dismissKeyboard:(id)sender {
+    [_amountTF resignFirstResponder];
+}
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];

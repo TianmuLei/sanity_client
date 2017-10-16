@@ -13,6 +13,7 @@
 - (void)awakeFromNib {
     [super awakeFromNib];
     // Initialization code
+    [_categoryNameTF addTarget:self action:@selector(resignFirstResponder) forControlEvents:UIControlEventEditingDidEndOnExit];
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
