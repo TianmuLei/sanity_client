@@ -72,12 +72,12 @@
     
     
     /*
-    #warning to be deleted!
-    self.budgetArray = @[@"iPhone1", @"iPhone2",@"iPhone3",@"iPhone4",@"iPhone5",@"iTV",@"iNew"];
-    self.amountArray = @[@"10/20",@"100/200",@"1000/2000",@"100000/2000000",@"10/90",@"10/100",@"35/253"];
-    self.colors = @[@"black",@"black",@"black",@"orange",@"red",@"orange",@"black"];
-    [self loginupSucceeded:self.budgetArray withAmount:self.amountArray withColor:self.colors];*/
-     
+     #warning to be deleted!
+     self.budgetArray = @[@"iPhone1", @"iPhone2",@"iPhone3",@"iPhone4",@"iPhone5",@"iTV",@"iNew"];
+     self.amountArray = @[@"10/20",@"100/200",@"1000/2000",@"100000/2000000",@"10/90",@"10/100",@"35/253"];
+     self.colors = @[@"black",@"black",@"black",@"orange",@"red",@"orange",@"black"];
+     [self loginupSucceeded:self.budgetArray withAmount:self.amountArray withColor:self.colors];*/
+    
 }
 
 
@@ -86,7 +86,7 @@
         UITabBarController * tabController = (UITabBarController *)segue.destinationViewController;
         UINavigationController *navController = (UINavigationController *)tabController.viewControllers[0];
         HomePageTableViewController *controller = (HomePageTableViewController *)navController.topViewController;
-
+        
         controller.amountArray = self.amountArray;
         controller.budgetArray = self.budgetArray;
         controller.colors = self.colors;
@@ -108,13 +108,13 @@
 
 
 /*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
+ #pragma mark - Navigation
+ 
+ // In a storyboard-based application, you will often want to do a little preparation before navigation
+ - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+ // Get the new view controller using [segue destinationViewController].
+ // Pass the selected object to the new view controller.
+ }
+ */
 
 @end

@@ -8,6 +8,8 @@
 
 #import "PieChartCategoryViewController.h"
 #import "XYPieChart.h"
+#import "SingleCategoryTableViewController.h"
+
 
 @interface PieChartCategoryViewController ()
 @property (weak, nonatomic) IBOutlet XYPieChart *PieChartDisplay;
@@ -44,6 +46,7 @@
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
+    [self.PieChartDisplay reloadData];
 }
 - (void)viewWillDisappear:(BOOL)animated
 {
@@ -55,15 +58,46 @@
 }
 
 
+//send parameter to next page by directing changing the values
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([segue.identifier isEqualToString:@"ChartCategoryToCategory"]) {
+        SingleCategoryTableViewController * destViewController = segue.destinationViewController;
+        destViewController.texts = self.texts;
+        destViewController.slices = self.slices;
+        destViewController.transactionNames = self.transactionNames;
+        destViewController.transactionDates = self.transactionDates;
+        destViewController.transactionAmounts = self.transactionAmounts;
+        destViewController.numOfTransactions = self.numOfTransactions;
+        destViewController.textForPieChart = self.textForPieChart;
+        destViewController.pieChartLabelColor = self.pieChartLabelColor;
+    }
+}
+
+#pragma mark - XYPieChart Data Source
+- (NSUInteger)numberOfSlicesInPieChart:(XYPieChart *)pieChart
+{
+    return self.slices.count;
+}
+
+- (CGFloat)pieChart:(XYPieChart *)pieChart valueForSliceAtIndex:(NSUInteger)index
+{
+    return [[self.slices objectAtIndex:index] intValue];
+}
+
+- (NSString *)pieChart:(XYPieChart *)pieChart textForSliceAtIndex:(NSUInteger)index
+{
+    return [self.texts objectAtIndex:index];
+}
 
 /*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
+ #pragma mark - Navigation
+ 
+ // In a storyboard-based application, you will often want to do a little preparation before navigation
+ - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+ // Get the new view controller using [segue destinationViewController].
+ // Pass the selected object to the new view controller.
+ }
+ */
 
 @end
