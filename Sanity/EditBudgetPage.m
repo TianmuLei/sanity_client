@@ -26,9 +26,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     _categories = [[NSMutableArray alloc] init];
-    [ _categories addObject:@"whatttt" ];
-    [ _categories addObject:@"whatttt" ];
-    [ _categories addObject:@"whatttt" ];
+
 
 }
 
@@ -45,6 +43,22 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     if (section == 1) {
+        return _categories.count;
+    }
+    return [super tableView:tableView numberOfRowsInSection:section];
+}
+
+- (IBAction)addCell:(id)sender {
+    [ _categories addObject:@"whatttt" ];
+    [ _categories addObject:@"whatttt" ];
+    [ _categories addObject:@"whatttt" ];
+    
+    [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:1] withRowAnimation:UITableViewRowAnimationNone];
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    if (indexPath.section == 1){
         for (int i = 0; i < _categories.count; i++) {
             CategoryDisplay *cell = [tableView dequeueReusableCellWithIdentifier:@"CategoryDisplayCell"];
             if(cell == nil){
@@ -53,63 +67,26 @@
             
             return cell;
         }
-    
     }
-    return [super tableView:tableView numberOfRowsInSection:section];
-}
-
-/*
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
     
-    // Configure the cell...
     
-    return cell;
+    return  [super tableView:tableView cellForRowAtIndexPath:indexPath];
 }
-*/
 
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
+- (NSInteger)tableView:(UITableView *)tableView indentationLevelForRowAtIndexPath:(NSIndexPath *)indexPath{
+    if(indexPath.section == 1){
+        int insertLoc = 0;
+        // if (_categories.count > 2) insertLoc = (int)_categories.count - 3;
+        return [super tableView:tableView indentationLevelForRowAtIndexPath: [NSIndexPath indexPathForRow:insertLoc inSection:1]];
+    }
+    return [super tableView:tableView indentationLevelForRowAtIndexPath:indexPath];
 }
-*/
 
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
+- (NSMutableArray *)categories{
+    if(!_categories){
+        _categories = [NSMutableArray array];
+    }
+    return _categories;
 }
-*/
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end
