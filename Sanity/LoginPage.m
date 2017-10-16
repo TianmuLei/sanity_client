@@ -16,9 +16,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *loginButton;
 @property (weak, nonatomic) IBOutlet UIButton *signupButton;
 @property (weak, nonatomic) IBOutlet UILabel *warningLabel;
-@property (strong,nonatomic) NSArray * budgetArray;
-@property (strong,nonatomic) NSArray * colors;
-@property (strong,nonatomic) NSArray * amountArray;
+
 
 @end
 
@@ -72,13 +70,14 @@
     UIClientConnector.myClient.login.delegate = self;
     [self.loginController login:self.email password:self.password];
     
+    
     /*
     #warning to be deleted!
     self.budgetArray = @[@"iPhone1", @"iPhone2",@"iPhone3",@"iPhone4",@"iPhone5",@"iTV",@"iNew"];
     self.amountArray = @[@"10/20",@"100/200",@"1000/2000",@"100000/2000000",@"10/90",@"10/100",@"35/253"];
     self.colors = @[@"black",@"black",@"black",@"orange",@"red",@"orange",@"black"];
-    [self loginupSucceeded:self.budgetArray withAmount:self.amountArray withColor:self.colors];
-     */
+    [self loginupSucceeded:self.budgetArray withAmount:self.amountArray withColor:self.colors];*/
+     
 }
 
 
@@ -87,13 +86,14 @@
         UITabBarController * tabController = (UITabBarController *)segue.destinationViewController;
         UINavigationController *navController = (UINavigationController *)tabController.viewControllers[0];
         HomePageTableViewController *controller = (HomePageTableViewController *)navController.topViewController;
+
         controller.amountArray = self.amountArray;
         controller.budgetArray = self.budgetArray;
         controller.colors = self.colors;
     }
 }
 
-- (void) loginupSucceeded:(NSArray *) budget withAmount:(NSArray *) amount withColor:(NSArray *) color
+- (void) loginSucceeded:(NSArray *) budget withAmount:(NSArray *) amount withColor:(NSArray *) color
 {
     self.colors = color;
     self.budgetArray = budget;

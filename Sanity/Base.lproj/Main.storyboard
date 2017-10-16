@@ -322,7 +322,7 @@
                         <outlet property="PieChartDisplay" destination="c7C-NA-g2Q" id="dIq-hV-4Bk"/>
                         <outlet property="labelForClickedElement" destination="vAX-k0-H5S" id="ZEU-RI-c1b"/>
                         <outlet property="labelTest" destination="5cZ-gw-9Je" id="9kU-Ad-ybC"/>
-                        <segue destination="y3W-rg-Le6" kind="show" identifier="BudgetToCategory" id="zkL-X8-Z94"/>
+                        <segue destination="KR4-mJ-uTZ" kind="show" identifier="BudgetToCategory" id="Non-6x-6lM"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cnC-pt-RbS" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1193,7 +1193,63 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Sc5-cN-c22" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2733.5999999999999" y="-1166.2668665667168"/>
+            <point key="canvasLocation" x="4372" y="-1197"/>
+        </scene>
+        <!--PieChart Category-->
+        <scene sceneID="pwc-uf-jM1">
+            <objects>
+                <viewController id="KR4-mJ-uTZ" userLabel="PieChart Category" customClass="PieChartCategoryViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="p4B-Uz-WLv"/>
+                        <viewControllerLayoutGuide type="bottom" id="RbU-yL-ARz"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="I2x-zT-ryW">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aFa-Fj-MPE" customClass="XYPieChart">
+                                <rect key="frame" x="0.0" y="99" width="375" height="375"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="aFa-Fj-MPE" secondAttribute="height" multiplier="1:1" id="5BY-LS-vIl"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r01-J1-5VV">
+                                <rect key="frame" x="155" y="524" width="65.5" height="30"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y3k-Sz-5EZ">
+                                <rect key="frame" x="269" y="587" width="106" height="31"/>
+                                <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="17"/>
+                                <state key="normal" title="Show Details">
+                                    <color key="titleColor" red="1" green="0.38386360120000002" blue="0.12467812220000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <segue destination="y3W-rg-Le6" kind="show" identifier="ChartCategoryToCategory" id="RK8-Ed-4WX"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="r01-J1-5VV" firstAttribute="centerX" secondItem="I2x-zT-ryW" secondAttribute="centerX" id="0XB-tQ-Lli"/>
+                            <constraint firstItem="r01-J1-5VV" firstAttribute="top" secondItem="aFa-Fj-MPE" secondAttribute="bottom" constant="50" id="EWc-fd-cYh"/>
+                            <constraint firstItem="aFa-Fj-MPE" firstAttribute="top" secondItem="p4B-Uz-WLv" secondAttribute="bottom" constant="35" id="GPL-jw-LP0"/>
+                            <constraint firstItem="aFa-Fj-MPE" firstAttribute="leading" secondItem="I2x-zT-ryW" secondAttribute="leading" id="QCV-29-IZa"/>
+                            <constraint firstAttribute="trailing" secondItem="Y3k-Sz-5EZ" secondAttribute="trailing" id="UQg-B9-4R2"/>
+                            <constraint firstItem="RbU-yL-ARz" firstAttribute="top" secondItem="Y3k-Sz-5EZ" secondAttribute="bottom" id="oBx-7e-834"/>
+                            <constraint firstAttribute="trailing" secondItem="aFa-Fj-MPE" secondAttribute="trailing" id="spi-kA-AGV"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="PieChartDisplay" destination="aFa-Fj-MPE" id="oBR-4R-Ojf"/>
+                        <outlet property="detailLabel" destination="r01-J1-5VV" id="aXb-1H-oWZ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hb7-GF-2Id" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3440.8000000000002" y="-1196.8515742128936"/>
         </scene>
     </scenes>
     <resources>
