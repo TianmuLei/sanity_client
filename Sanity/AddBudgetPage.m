@@ -155,7 +155,6 @@ typedef enum:NSInteger{
     return [super tableView:tableView numberOfRowsInSection:section];
 }
 
-int rowCount = 0;
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
   
     if(indexPath.section == sectionCategory){
