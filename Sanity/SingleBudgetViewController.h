@@ -14,7 +14,9 @@
 @property   NSInteger indexNum;
 @property   NSString * nameSelected;
 @property (weak, nonatomic) IBOutlet XYPieChart *PieChartDisplay;
+#warning to be changed to nsarray
 @property (nonatomic, strong) NSMutableArray *texts; 
 @property (nonatomic, strong) NSMutableArray *slices;
+@property (strong,nonatomic) NSString * pageTitle;
 
 @end

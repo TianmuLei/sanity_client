@@ -22,6 +22,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    
+    //set up page title
+    self.navigationItem.title = self.pageTitle;
+    
     //set up pie chart
     [self.PieChartDisplay setDelegate:self];
     [self.PieChartDisplay setDataSource:self];
@@ -71,6 +75,7 @@
         destViewController.numOfTransactions = self.numOfTransactions;
         destViewController.textForPieChart = self.textForPieChart;
         destViewController.pieChartLabelColor = self.pieChartLabelColor;
+        destViewController.pageTitle = self.pageTitle;
     }
 }
 

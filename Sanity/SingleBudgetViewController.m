@@ -12,6 +12,7 @@
 @interface SingleBudgetViewController ()
 @property (weak, nonatomic) IBOutlet UILabel *labelTest;
 @property (weak, nonatomic) IBOutlet UILabel *labelForClickedElement;
+@property int indexClicked;
 
 @end
 
@@ -20,9 +21,12 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     //for testing purposes
-    self.labelTest.text = self.nameSelected;
+    //self.labelTest.text = self.nameSelected;
     //[NSString stringWithFormat:@"%d", (int)self.indexNum];
     
+    
+    //set title
+    self.navigationItem.title = self.pageTitle;
     //set up pie chart
     [self.PieChartDisplay setDelegate:self];
     [self.PieChartDisplay setDataSource:self];
@@ -35,16 +39,10 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (IBAction)testClicked:(id)sender
-{
-    
-    [self performSegueWithIdentifier:@"BudgetToCategory" sender:self];
-}
-
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
     if([segue.identifier isEqualToString:@"BudgetToCategory"]){
         SingleCategoryTableViewController *controller = (SingleCategoryTableViewController *)segue.destinationViewController;
-        controller.texts =  @[@"used",@"unused"];
+        controller.texts =  @[[self.texts objectAtIndex:self.indexClicked],@"unused"];
         controller.slices = @[@"50",@"130"];
         controller.transactionNames = @[@"trans1",@"trans2"];
         controller.transactionAmounts = @[@"$100",@"$150"];
@@ -52,11 +50,10 @@
         controller.numOfTransactions = 2;
         controller.textForPieChart = @"100/200";
         controller.pieChartLabelColor = @"red";
+        controller.pageTitle = self.texts[self.indexClicked];
+       
     }
 }
-
-
-
 
 //for displaying pie chart
 - (void)viewWillAppear:(BOOL)animated
@@ -97,6 +94,7 @@
 //Slice Clicked, change label
 - (void)pieChart:(XYPieChart *)pieChart didSelectSliceAtIndex:(NSUInteger)index
 {
+    self.indexClicked = (int)index;
     //display detailed Info
     self.labelForClickedElement.text = [NSString stringWithFormat:@"%@ $%d/$%d",[self.texts objectAtIndex:index],(int)[self.slices objectAtIndex:index],80];
     
@@ -111,8 +109,14 @@
     {
         self.labelForClickedElement.textColor = [UIColor redColor];
     }
+    //[self performSegueWithIdentifier:@"BudgetToCategory" sender:self];
 }
 
+- (void)pieChart:(XYPieChart *)pieChart didDeselectSliceAtIndex:(NSUInteger)index;
+{
+    //redirect to category page
+    [self performSegueWithIdentifier:@"BudgetToCategory" sender:self];
+}
 
 /*
  #pragma mark - Navigation
