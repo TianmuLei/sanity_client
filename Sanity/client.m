@@ -17,6 +17,8 @@
 #import "ProfilePageController.h"
 #import "UIClientConnector.h"
 #import "Budget.h"
+#import "Category.h"
+#import "Transaction.h"
 
 @implementation client
 - (instancetype)init
@@ -59,7 +61,7 @@
    [logCon login:@"tianmule@usc.edu" password:@"baobao"];
    //[logCon login:@"tianmule@usc.edu" password:@"baobao1"];
     
-/*    NSDateComponents *dateComponents = [[NSDateComponents alloc] init];
+  /*  NSDateComponents *dateComponents = [[NSDateComponents alloc] init];
     dateComponents.day = 4;
     dateComponents.month = 5;
     dateComponents.year = 2004;
@@ -76,7 +78,7 @@
     
     
      [categoryList addObject:cat1];
-     [categoryList addObject:cat2];
+     [categoryList addObject:cat2];*/
 
 
     //[addCon addBudget:@"testBudget1" period:periodObject date:dateComponents category:categoryList threshold:periodObject frequency:periodObject];
@@ -84,9 +86,7 @@
    // [_addTransaction addTransaction: [[NSNumber alloc]initWithInteger:30] describe:@"lunch" category:@"cat" budget:@"testBudget1" date:dateComponents];
     [_budgetList requestBudgetList];
     [_budgetList requestBudget:@"testBudget1" ];
-    
-    
-    */
+
     [_categoryPage requestCategory:@"testBudget1" category:@"cat"];
  
     
@@ -140,18 +140,19 @@
         
         if ([function isEqualToString:@"register"]){
             if([status isEqualToString:@"fail"]){
+                [_signup fail];
                 
             }else{
-                
+                [_signup success];
             }
         }
         else if ([function isEqualToString:@"login"]){
             if([status isEqualToString:@"fail"]){
-                
                 [_login fail];
                 
             }else{
                 [_login success:[messageObject objectForKey:@"budgetList"]];
+                _myUser.username=[messageObject objectForKey:@"username"];
                 [self addBudgetListData:[messageObject objectForKey:@"budgetList"]];
                 
             }
@@ -171,7 +172,32 @@
                 
             }
         }
-        
+        else if ([function isEqualToString:@"returnBudgetList"]){
+            if([status isEqualToString:@"fail"]){
+                
+            }else{
+                NSDictionary*info=[messageObject objectForKey:@"information"];
+                [self addBudgetListData:[info objectForKey:@"budgetList"]];
+            }
+        }
+        else if ([function isEqualToString:@"returnCategoryList"]){
+            if([status isEqualToString:@"fail"]){
+                
+            }else{
+                 NSDictionary*info=[messageObject objectForKey:@"information"];
+                [self addCategoryData:info];
+                
+            }
+        }
+        else if ([function isEqualToString:@"returnTransactionsList"]){
+            if([status isEqualToString:@"fail"]){
+                
+            }else{
+                NSDictionary*info=[messageObject objectForKey:@"information"];
+                [self addTansData:info];
+                
+            }
+        }
         
         
         
@@ -235,15 +261,15 @@
 -(void) addBudgetListData:(NSMutableArray*) list{
     _budgetListData=[[NSMutableArray alloc]init];
     
-   /* for(int i=0;i<list.count;i++){
+    for(int i=0;i<list.count;i++){
         NSDictionary* budget=[list objectAtIndex:i];
         Budget* single=[[Budget alloc]init];
         single.name=[budget objectForKey:@"name"];
-        single.spend=[budget objectForKey:@"budgetSpent"];
-        single.total=[budget objectForKey:@"budgetTotal"];
-        single.startDate=[budget objectForKey:@"date"];
-        single.frequency=[budget objectForKey:@"frequency"];
-        single.threshold=[budget objectForKey:@"threshold"];
+        single.spent=[[budget objectForKey:@"budgetSpent"] doubleValue];
+        single.total=[[budget objectForKey:@"budgetTotal"] doubleValue];
+        single.startDateString=[budget objectForKey:@"date"];
+        single.frequency=[[budget objectForKey:@"frequency"] intValue];
+        single.threshold=[[budget objectForKey:@"threshold"] intValue];
         
         [_budgetListData addObject:single];
       //  Budget
@@ -251,11 +277,65 @@
         
     
         
-    }*/
-
-    
+    }
     
 }
+
+-(void) addCategoryData:(NSDictionary*) info{
+    NSMutableArray* categoryList=[[NSMutableArray alloc]init];
+    NSArray* cate=[info objectForKey:@"categoryList"];
+    NSString* budgetname=[info objectForKey:@"budgetName"];
+    
+    
+    for(int i=0;i<cate.count;i++){
+        NSDictionary* category=[cate objectAtIndex:i];
+        Category* single=[[Category alloc]init];
+        single.name=[category objectForKey:@"name"];
+        single.limit=[[category objectForKey:@"limit"] doubleValue];
+        single.spent=[[category objectForKey:@"categorySpent"] doubleValue];
+        single.budget=budgetname;
+        [categoryList addObject:single];
+    }
+    for(int i=0;i<_budgetListData.count;i++){
+        Budget* single=[_budgetListData objectAtIndex:i];
+        if([single.name isEqualToString:budgetname]){
+            single.categories=categoryList;
+        }
+    }
+    
+}
+-(void) addTansData:(NSDictionary*) info{
+    NSMutableArray* TransList=[[NSMutableArray alloc]init];
+    NSArray* trans=[info objectForKey:@"transctionList"];
+    NSString* budgetname=[info objectForKey:@"budget"];
+    NSString* categoryname=[info objectForKey:@"category"];
+
+    
+    for(int i=0;i<trans.count;i++){
+        NSDictionary* transaction=[trans objectAtIndex:i];
+        Transaction* single=[[Transaction alloc]init];
+        single.description=[transaction objectForKey:@"description"];
+        single.amount=[transaction objectForKey:@"amount"];
+        single.dateString=[transaction objectForKey:@"date"];
+        single.budget=budgetname;
+        single.category=categoryname;
+        [TransList addObject:single];
+    }
+    for(int i=0;i<_budgetListData.count;i++){
+        Budget* single=[_budgetListData objectAtIndex:i];
+        if([single.name isEqualToString:budgetname]){
+            for(int j=0;j<single.categories.count;j++){
+                Category* cat=  [single.categories objectAtIndex:j];
+                if([cat.name isEqualToString:categoryname]){
+                    cat.transctions=TransList;
+                }
+            }
+        
+        }
+    }
+    
+}
+
 
 
 

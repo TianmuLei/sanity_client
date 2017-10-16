@@ -9,9 +9,11 @@
 #import <Foundation/Foundation.h>
 
 @interface Transaction : NSObject
-@property int* amount;
-@property (strong, atomic) NSString* des;
+@property NSNumber* amount;
+@property (strong, atomic) NSString* description;
 @property (strong, atomic) NSDateComponents* date;
+@property (strong, atomic) NSString* dateString;
+
 @property (strong, atomic) NSString* budget;
 @property (strong, atomic) NSString* category;
 

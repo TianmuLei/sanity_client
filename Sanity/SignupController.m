@@ -63,6 +63,7 @@
 }
 
 -(void) success{
+    [self.delegate signupFailed:@"The email address has already been registered"];
     
 }
 -(void) fail{

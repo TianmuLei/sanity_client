@@ -18,5 +18,6 @@
 }
 @property (nonatomic,strong) id delegate;
 -(void) addTransaction: (NSNumber*) amount describe:(NSString*) describe category:(NSString*) category budget:(NSString*)budget date:(NSDateComponents*) date;
+-(void) requestBudgetAndCate;
 
 @end
