@@ -13,5 +13,6 @@
 @property (strong, nonatomic) UIWindow *window;
 +(void)registerNotification:(NSInteger )alerTime;
 
++ (void) setNotificationTitleAndContent: (NSString *)title withContent:(NSString *)content;
 @end
 

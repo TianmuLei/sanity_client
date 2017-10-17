@@ -22,12 +22,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    
     _controller = UIClientConnector.myClient.profilePage;
     UIClientConnector.myClient.profilePage.delegate = self;
     [_controller getUserInfo];
     
-    [AppDelegate registerNotification:2];
   //  [self displayProfile:@"user" :@"u**r@usc.edu"];
     
 }

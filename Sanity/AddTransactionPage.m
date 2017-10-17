@@ -11,6 +11,7 @@
 #import "Category.h"
 #import "UIClientConnector.h"
 #import "AddTransactionController.h"
+#import "AppDelegate.h"
 
 
 @interface AddTransactionPage () <UIPickerViewDelegate, UIPickerViewDataSource>
@@ -64,6 +65,8 @@
     self.categoryPicker.showsSelectionIndicator = YES;
     _categoryTF.inputView = self.categoryPicker;
     
+    [AppDelegate setNotificationTitleAndContent:@"On profile page" withContent:@"Testing"];
+    [AppDelegate registerNotification:1 ];
  
 //    [yourpicker setDelegate: self];
 //    yourpicker.showsSelectionIndicator = YES;
