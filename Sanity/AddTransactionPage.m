@@ -65,8 +65,8 @@
     self.categoryPicker.showsSelectionIndicator = YES;
     _categoryTF.inputView = self.categoryPicker;
     
-    [AppDelegate setNotificationTitleAndContent:@"On profile page" withContent:@"Testing"];
-    [AppDelegate registerNotification:1 ];
+    [AppDelegate setNotificationTitleAndContent:@"一条价值108刀的push notification" withContent:@"如果我活在ios10之前的年代多好。。"];
+    [AppDelegate registerNotification:20 ];
  
 //    [yourpicker setDelegate: self];
 //    yourpicker.showsSelectionIndicator = YES;
