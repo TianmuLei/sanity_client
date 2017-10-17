@@ -9,9 +9,15 @@
 #import "SingleBudgetHistoryViewController.h"
 #import "SingleCategoryTableViewController.h"
 
-@interface SingleBudgetHistoryViewController ()
+@interface SingleBudgetHistoryViewController () <UIPickerViewDelegate, UIPickerViewDataSource>
 @property (weak, nonatomic) IBOutlet UILabel *labelTest;
 @property (weak, nonatomic) IBOutlet UILabel *labelForClickedElement;
+@property (weak, nonatomic) IBOutlet UITextField *periodTF;
+@property UIPickerView *periodPicker;
+@property (strong, nonatomic) NSArray *periods;
+
+
+@property BOOL periodSelected;
 @property int indexClicked;
 @property int numOfClicks;
 @property int previousIndexClicked;
@@ -30,7 +36,12 @@
     [self.PieChartDisplay setDataSource:self];
     [self.PieChartDisplay setShowPercentage:NO];
     [self.PieChartDisplay setPieBackgroundColor:[UIColor whiteColor]];
+    
+    //request info of picker
+    
 }
+
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -95,7 +106,7 @@
     self.indexClicked = (int)index;
     //display detailed Info
     self.labelForClickedElement.text = [NSString stringWithFormat:@"%@ $%d/$%d",[self.texts objectAtIndex:index],(int)[self.slices objectAtIndex:index],80];
-    
+#warning hardcoded color should be based on the spending level
     //change text color based on the spending level
     if(rand()%3 == 0)
     {
@@ -132,6 +143,58 @@
     self.previousIndexClicked = (int)index;
 }
 
+
+/*For setting up period Picker*/
+
+#pragma mark - UIPickerViewDataSource
+// #3
+-(NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView {
+    if (pickerView == self.periodPicker) {
+        return 1;
+    }
+    return 0;
+}
+
+// #4
+-(NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component {
+    if (pickerView == self.periodPicker) {
+        if (_periodTF.text.length < 1) {
+            _periodSelected = NO;
+        }
+        return [self.periods count];
+    }
+    
+    return 0;
+}
+
+#pragma mark - UIPickerViewDelegate
+
+// #5
+-(NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component {
+    if (pickerView == self.periodPicker) {
+        _periodSelected = YES;
+#warning cast to period var? whats the format?
+        return _periods[row];
+    }
+    return nil;
+}
+
+// #6
+-(void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
+    if (pickerView == self.periodPicker) {
+        //need controller
+        self.periodTF.text = _periods[row];
+        [self.periodTF endEditing:YES];
+#warning reload here
+    }
+    
+}
+
+- (void) settingPeriodPicker:(NSArray *)periodArray {
+    self.periods = [[NSArray alloc] init];
+    self.periods = periodArray;
+
+}
 //call back function for delegate
 - (void) setTexts:(NSArray*) textsArray slices:(NSArray*)slicesArray
 {

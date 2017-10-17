@@ -56,8 +56,8 @@ typedef enum:NSInteger{
     _categories = [[NSMutableArray alloc] init];
     _categoryNameCells = [[NSMutableArray alloc] init];
     _categoryAmountCells = [[NSMutableArray alloc] init];
-    [self.categories addObject:@1];
-    [self.categories addObject:@1];
+    [self.categories addObject:@""];
+    [self.categories addObject:@""];
     
 }
 
@@ -180,16 +180,18 @@ typedef enum:NSInteger{
             [_controller addBudget:mBudget.name period:[NSNumber numberWithInt:mBudget.period] date:mBudget.startDate category:mBudget.categories threshold:[NSNumber numberWithFloat:mBudget.threshold] frequency:frequency];
         }
     }
-    //  [self addBudgetFailed];
 }
 
 
 - (void)addData{
-    [_categoryNameCells removeAllObjects];
-    [_categoryAmountCells removeAllObjects];
+    NSString *obj1 = [_categoryNameCells[_categoryNameCells.count - 1] categoryNameTF].text;
+    self.categories[self.categories.count - 2] = obj1;
+    self.categories[self.categories.count - 1] =[_categoryAmountCells[_categoryAmountCells.count - 1] amountTF].text;
     
-    [self.categories addObject:@1];
-    [self.categories addObject:@1];
+
+    [self.categories addObject:@""];
+    [self.categories addObject:@""];
+    [_categoryAmountCells removeAllObjects];
     
     [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:sectionCategory] withRowAnimation:UITableViewRowAnimationNone];
 }
@@ -224,6 +226,11 @@ typedef enum:NSInteger{
             HobbyCell *cell = [tableView dequeueReusableCellWithIdentifier:HobbyCellID];
             if(cell == nil){
                 cell = [[NSBundle mainBundle] loadNibNamed:HobbyCellID owner:nil options:nil].lastObject;
+                if (indexPath.row < _categories.count - 2){
+                    int indexrow = (int)indexPath.row;
+                    
+                cell.categoryNameTF.text = _categories[indexPath.row];
+                }
             }
             [_categoryNameCells addObject:cell];
             return cell;

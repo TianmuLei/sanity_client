@@ -17,5 +17,6 @@
 @property (nonatomic, strong) NSMutableArray *slices;
 @property (nonatomic, strong) NSString * pageTitle;
 - (void) setTexts:(NSArray*) textsArray slices:(NSArray*)slicesArray;
+- (void) settingPeriodPicker: (NSArray*) periodArray;
 
 @end

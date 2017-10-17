@@ -7,13 +7,10 @@
 //
 
 #import "ResetUsernamePage.h"
-#import "ProfilePageController.h"
-#import "UIClientConnector.h"
-#warning now zhaing
+
 
 @interface ResetUsernamePage ()
 @property (weak, nonatomic) IBOutlet UITextField *usernameTF;
-@property (strong, nonatomic) ProfilePageController *controller;
 
 @end
 
@@ -32,12 +29,6 @@
     if (_usernameTF.text.length < 1) {
         [self getAlerted:@"Required Field" msg:@"You need to fill in username text field to change username"];
     }
-    
-  //  _controller = UIClientConnector.myClient.profilePage;
-  //  UIClientConnector.myClient.profilePage.delegate = self;
-   // [_controller changeUsername:_usernameTF.text];
-   //  [self.navigationController popToRootViewControllerAnimated:YES];
-
 }
 
 
