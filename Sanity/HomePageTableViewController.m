@@ -11,6 +11,8 @@
 #import "HomeTableViewCell.h"
 
 @interface HomePageTableViewController ()
+@property (strong,nonatomic) NSArray* categorySlices;
+@property (strong,nonatomic) NSArray* categoryTexts;
 
 @end
 
@@ -130,7 +132,6 @@
         SingleBudgetViewController * destViewController = segue.destinationViewController;
         //destViewController.indexNum = indexPath.row;
         int indexSelected = (int) indexPath.row;
-        destViewController.nameSelected = self.budgetArray[indexSelected];
         destViewController.slices = [[NSMutableArray alloc] init];
         destViewController.texts = [[NSMutableArray alloc] init];
         destViewController.pageTitle = self.budgetArray[(int)indexPath.row];
@@ -144,7 +145,18 @@
     }
 }
 
-
+//call back function for delegate
+- (void) setBudget:(NSArray*) budget amount:(NSArray*) amount colors:(NSArray*)color
+{
+    self.budgetArray = budget;
+    self.amountArray = amount;
+    self.colors = color;
+}
+- (void) setTexts:(NSArray*) textsArray slices:(NSArray*) slicesArray
+{
+    self.categoryTexts = textsArray;
+    self.categorySlices = slicesArray;
+}
 
 /*
  // Override to support conditional editing of the table view.

@@ -15,8 +15,11 @@
 @property (nonatomic, strong) NSArray *transactionAmounts;
 @property (nonatomic, strong) NSArray *transactionDates;
 @property int numOfTransactions;
-@property (nonatomic, strong) NSString * textForPieChart;
+@property (nonatomic, strong) NSString * textForPieChart; // not in use
 @property (nonatomic, strong) NSString * pieChartLabelColor;
 @property (nonatomic, strong) NSString * pageTitle;
+
+- (void) setTexts:(NSArray*) textsArray slices:(NSArray*)slicesArray transactionNames:(NSArray*) names transactionAmounts:(NSArray*) amounts transactionDates:(NSArray*)dates numOfTransactions:(int) number labelColor:(NSString*) color;
+
 
 @end

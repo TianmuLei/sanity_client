@@ -13,18 +13,15 @@
 @property (weak, nonatomic) IBOutlet UILabel *labelTest;
 @property (weak, nonatomic) IBOutlet UILabel *labelForClickedElement;
 @property int indexClicked;
+@property int numOfClicks;
+@property int previousIndexClicked;
 
 @end
 
 @implementation SingleBudgetViewController
 
 - (void)viewDidLoad {
-    [super viewDidLoad];
-    //for testing purposes
-    //self.labelTest.text = self.nameSelected;
-    //[NSString stringWithFormat:@"%d", (int)self.indexNum];
-    
-    
+    [super viewDidLoad];    
     //set title
     self.navigationItem.title = self.pageTitle;
     //set up pie chart
@@ -109,13 +106,36 @@
     {
         self.labelForClickedElement.textColor = [UIColor redColor];
     }
-    //[self performSegueWithIdentifier:@"BudgetToCategory" sender:self];
+    
+    if(self.numOfClicks == 0){
+        //first click, don't redirect
+        self.numOfClicks = 1;
+    }else if( self.numOfClicks == 2 && self.previousIndexClicked!=(int)index)
+    {
+        //third click with different element, don't redirect
+        _numOfClicks = 1;
+    }else if( self.numOfClicks == 2 && self.previousIndexClicked==(int)index)
+    {
+        //third click with same element, redirect
+        self.numOfClicks = 0;
+        self.previousIndexClicked = -1;
+        [self performSegueWithIdentifier:@"BudgetToCategory" sender:self];
+    }
 }
 
 - (void)pieChart:(XYPieChart *)pieChart didDeselectSliceAtIndex:(NSUInteger)index;
 {
-    //redirect to category page
-    [self performSegueWithIdentifier:@"BudgetToCategory" sender:self];
+    //count number of clicks
+    self.numOfClicks++;
+    self.previousIndexClicked = (int)index;
+}
+
+
+//call back function for delegate
+- (void) setTexts:(NSArray*) textsArray slices:(NSArray*)slicesArray
+{
+    self.texts = textsArray;
+    self.slices = slicesArray;
 }
 
 /*

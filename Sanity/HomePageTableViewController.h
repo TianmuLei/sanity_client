@@ -14,4 +14,7 @@
 @property (strong,nonatomic) NSArray * amountArray;
 @property (strong,nonatomic) NSArray * colors;
 
+- (void) setBudget:(NSArray*) budget amount:(NSArray*) amount colors:(NSArray*)color;
+- (void) setTexts:(NSArray*) textsArray slices:(NSArray*) slicesArray;
+
 @end

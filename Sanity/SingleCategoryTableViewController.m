@@ -24,6 +24,13 @@
     //set up page title
     self.navigationItem.title = self.pageTitle;
     
+    // Initialize the refresh control.
+    self.refreshControl = [[UIRefreshControl alloc] init];
+    self.refreshControl.backgroundColor = [UIColor purpleColor];
+    self.refreshControl.tintColor = [UIColor whiteColor];
+    [self.refreshControl addTarget:self
+                            action:@selector(getLatest)
+                  forControlEvents:UIControlEventValueChanged];
     
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -36,6 +43,37 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+
+- (void)reloadData
+{
+    // Reload table data
+    [self.tableView reloadData];
+    
+    // End the refreshing
+    if(self.refreshControl)
+    {
+        NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+        [formatter setDateFormat:@"MMM d, h:mm a"];
+        NSString *title = [NSString stringWithFormat:@"Last update: %@", [formatter stringFromDate:[NSDate date]]];
+        NSDictionary *attrsDictionary = [NSDictionary dictionaryWithObject:[UIColor whiteColor]
+                                                                    forKey:NSForegroundColorAttributeName];
+        NSAttributedString *attributedTitle = [[NSAttributedString alloc] initWithString:title attributes:attrsDictionary];
+        self.refreshControl.attributedTitle = attributedTitle;
+        
+        [self.refreshControl endRefreshing];
+    }
+}
+
+//get data from delegate
+- (void) getLatest
+{
+    //update data
+    #warning hard-coded, to be changed
+    
+    [self reloadData];
+}
+
 
 #pragma mark - Table view data source
 
@@ -83,6 +121,19 @@
     }
     
 }
+
+//call back function for delegate
+- (void) setTexts:(NSArray*) textsArray slices:(NSArray*)slicesArray transactionNames:(NSArray*) names transactionAmounts:(NSArray*) amounts transactionDates:(NSArray*)dates numOfTransactions:(int) number labelColor:(NSString*) color
+{
+    self.texts = textsArray;
+    self.slices = slicesArray;
+    self.transactionNames = names;
+    self.transactionAmounts = amounts;
+    self.transactionDates = dates;
+    self.numOfTransactions = number;
+    self.pieChartLabelColor = color;
+}
+
 
 /*
  // Override to support conditional editing of the table view.
