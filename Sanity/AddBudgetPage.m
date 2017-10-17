@@ -56,8 +56,8 @@ typedef enum:NSInteger{
     _categories = [[NSMutableArray alloc] init];
     _categoryNameCells = [[NSMutableArray alloc] init];
     _categoryAmountCells = [[NSMutableArray alloc] init];
-    [self.categories addObject:@""];
-    [self.categories addObject:@""];
+    [self.categories addObject:@1];
+    [self.categories addObject:@1];
     
 }
 
@@ -110,7 +110,7 @@ typedef enum:NSInteger{
                                                          NSCalendarUnitHour  |
                                                          NSCalendarUnitMinute|
                                                          NSCalendarUnitSecond) fromDate:[_datePicker date]];
- 
+    
     
     if (budgetName.length < 1){
         [self getAlerted:@"Required Fields" msg:@"Please fill in all required fields"];
@@ -123,7 +123,7 @@ typedef enum:NSInteger{
         _periodTF.layer.borderWidth = 1.0f;
     }
     else if (_thresholdTF.text.length < 1) {
-       [self getAlerted:@"Required Fields" msg:@"Please fill in all required fields"];
+        [self getAlerted:@"Required Fields" msg:@"Please fill in all required fields"];
         _thresholdTF.layer.borderColor = [[UIColor redColor]CGColor];
         _thresholdTF.layer.borderWidth = 1.0f;
     }
@@ -150,7 +150,7 @@ typedef enum:NSInteger{
             Category *cate1 = [[Category alloc] init];
             
             if (nameCell.categoryNameTF.text.length < 1) {
-                 [self getAlerted:@"Required Fields" msg:@"Please fill in all required fields"];
+                [self getAlerted:@"Required Fields" msg:@"Please fill in all required fields"];
                 formatError = true;
             }
             else if (amountCell.amountTF.text.length < 1) {
@@ -173,7 +173,7 @@ typedef enum:NSInteger{
         
         NSNumber *frequency = [NSNumber numberWithInt:[_frequencyTF.text intValue]];
         
-    #warning  get controller / delegete = self
+#warning  get controller / delegete = self
         if (!formatError){
             _controller = UIClientConnector.myClient.addBudget;
             UIClientConnector.myClient.addBudget.delegate = self;
@@ -185,15 +185,11 @@ typedef enum:NSInteger{
 
 
 - (void)addData{
-    NSString *obj1 =[(HobbyCell *)_categoryNameCells[_categoryNameCells.count -1] categoryNameTF].text;
-    NSString *obj2 =[(AmountCell *)_categoryAmountCells[_categoryAmountCells.count -1] amountTF].text;
-    self.categories[self.categories.count - 2] = obj1;
-    self.categories[self.categories.count - 1] = obj2;
     [_categoryNameCells removeAllObjects];
     [_categoryAmountCells removeAllObjects];
     
-    [self.categories addObject:@""];
-    [self.categories addObject:@""];
+    [self.categories addObject:@1];
+    [self.categories addObject:@1];
     
     [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:sectionCategory] withRowAnimation:UITableViewRowAnimationNone];
 }
@@ -229,7 +225,6 @@ typedef enum:NSInteger{
             if(cell == nil){
                 cell = [[NSBundle mainBundle] loadNibNamed:HobbyCellID owner:nil options:nil].lastObject;
             }
-            cell.categoryNameTF.text = _categories[indexPath.row];
             [_categoryNameCells addObject:cell];
             return cell;
         }
@@ -238,7 +233,6 @@ typedef enum:NSInteger{
             if(cell == nil){
                 cell = [[NSBundle mainBundle] loadNibNamed:AmountCellID owner:nil options:nil].lastObject;
             }
-            cell.amountTF.text = _categories[indexPath.row];
             [_categoryAmountCells addObject:cell];
             return cell;
         }

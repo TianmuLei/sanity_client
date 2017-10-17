@@ -38,7 +38,14 @@
     [self.PieChartDisplay setPieBackgroundColor:[UIColor whiteColor]];
     
     //request info of picker
+    //call function
+    self.periods = [[NSArray alloc] initWithObjects:@"a",@"b", nil];
+    self.periodPicker = [[UIPickerView alloc] initWithFrame:CGRectMake(0, 50, 100, 150)];
+    self.periodPicker.delegate = self;
+    self.periodPicker.dataSource = self;
+    self.periodPicker.showsSelectionIndicator = YES;
     
+    _periodTF.inputView = _periodPicker;
 }
 
 
@@ -46,6 +53,9 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+- (IBAction)dismissPicker:(id)sender {
+    [self.periodTF endEditing:YES];
 }
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
