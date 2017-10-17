@@ -9,6 +9,7 @@
 #import "ProfilePage.h"
 #import "ProfilePageController.h"
 #import "UIClientConnector.h"
+#import "AppDelegate.h"
 
 @interface ProfilePage ()
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
@@ -26,6 +27,7 @@
     UIClientConnector.myClient.profilePage.delegate = self;
     [_controller getUserInfo];
     
+    [AppDelegate registerNotification:2];
   //  [self displayProfile:@"user" :@"u**r@usc.edu"];
     
 }
