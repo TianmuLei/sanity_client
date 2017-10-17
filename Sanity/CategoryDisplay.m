@@ -20,5 +20,8 @@
 
     // Configure the view for the selected state
 }
+- (IBAction)dismissKeyboard:(id)sender {
+    [sender resignFirstResponder];
+}
 
 @end

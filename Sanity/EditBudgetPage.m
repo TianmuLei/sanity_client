@@ -8,7 +8,6 @@
 
 #import "EditBudgetPage.h"
 #import "CategoryDisplay.h"
-#import "HobbyCell.h"
 #import "Category.h"
 
 @interface EditBudgetPage ()
@@ -96,8 +95,8 @@
 - (void)tableView:(UITableView *)tableview commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
     if(editingStyle == UITableViewCellEditingStyleDelete) {
         //alert Do you really want to remove this category?
-        HobbyCell *cell = [self.tableView cellForRowAtIndexPath:indexPath];
-        NSString *alertMsg = [NSString stringWithFormat:@"Are you sure you want to delete %@?", cell.categoryNameLabel.text];
+        CategoryDisplay *cell = [self.tableView cellForRowAtIndexPath:indexPath];
+        NSString *alertMsg = [NSString stringWithFormat:@"Are you sure you want to delete %@?", cell.categoryNameTF.text];
         UIAlertController *alertController = [UIAlertController
                                               alertControllerWithTitle:@"Delete Category"
                                               message:alertMsg preferredStyle:UIAlertControllerStyleAlert];
@@ -132,15 +131,15 @@
         if (_canDeleteCategories) {
             [self.tableView setEditing:YES animated:YES];
         }
-        HobbyCell *cell = [tableView dequeueReusableCellWithIdentifier:HobbyCellID];
+        CategoryDisplay *cell = [tableView dequeueReusableCellWithIdentifier:CategoryDisplayID];
         Category *tempCate = [_categories objectAtIndex:indexPath.row];
         
         
         if(cell == nil){
-            cell = [[NSBundle mainBundle] loadNibNamed:HobbyCellID owner:nil options:nil].lastObject;
+            cell = [[NSBundle mainBundle] loadNibNamed:CategoryDisplayID owner:nil options:nil].lastObject;
             //set name and amount
-            cell.categoryNameTF.text =[[NSNumber numberWithFloat:tempCate.limit] stringValue];
-            cell.categoryNameLabel.text = tempCate.name;
+            cell.categoryAmountTF.text =[[NSNumber numberWithFloat:tempCate.limit] stringValue];
+            cell.categoryNameTF.text = tempCate.name;
             
         }
         
@@ -150,7 +149,7 @@
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     if(indexPath.section == 1){
-        return HobbyCellHeight;
+        return CategoryDisplayHeight;
     }
     return [super tableView:tableView heightForRowAtIndexPath:indexPath];
 }

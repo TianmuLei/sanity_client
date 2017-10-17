@@ -8,6 +8,13 @@
 
 #import <UIKit/UIKit.h>
 
+/** ID */
+#define CategoryDisplayID @"CategoryDisplay"
+/** height */
+#define CategoryDisplayHeight 50
+
 @interface CategoryDisplay : UITableViewCell
+@property (weak, nonatomic) IBOutlet UITextField *categoryNameTF;
+@property (weak, nonatomic) IBOutlet UITextField *categoryAmountTF;
 
 @end
