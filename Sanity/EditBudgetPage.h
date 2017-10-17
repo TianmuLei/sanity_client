@@ -10,6 +10,10 @@
 #import "Budget.h"
 
 @interface EditBudgetPage : UITableViewController
+#warning @ziqian data I need a nsstirng of budget name
+
+@property (strong,nonatomic) NSString* budgetName;
+
 
 - (void) getBudgetInfo:(Budget *)budget;
 
