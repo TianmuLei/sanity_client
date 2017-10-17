@@ -68,10 +68,10 @@
                                                                           content:content trigger:trigger];
     
     [center addNotificationRequest:request withCompletionHandler:^(NSError * _Nullable error) {
-        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"local notification error" message:@"successfully add notification" preferredStyle:UIAlertControllerStyleAlert];
+       /*UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"local notification error" message:@"successfully add notification" preferredStyle:UIAlertControllerStyleAlert];
         UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"cancel" style:UIAlertActionStyleCancel handler:nil];
         [alert addAction:cancelAction];
-        [[UIApplication sharedApplication].keyWindow.rootViewController presentViewController:alert animated:YES completion:nil];
+        [[UIApplication sharedApplication].keyWindow.rootViewController presentViewController:alert animated:YES completion:nil];*/
     }];
 }
 
