@@ -189,6 +189,7 @@
 		CC8D32141F952BF700FE0704 /* ResetPasswordPage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResetPasswordPage.m; sourceTree = "<group>"; };
 		CC8D32161F9558CC00FE0704 /* AddCategoryPage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddCategoryPage.h; sourceTree = "<group>"; };
 		CC8D32171F9558CC00FE0704 /* AddCategoryPage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddCategoryPage.m; sourceTree = "<group>"; };
+		CC8D321A1F95813200FE0704 /* Sanity.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Sanity.entitlements; sourceTree = "<group>"; };
 		CCB2DFB31F9526E600503F0D /* ResetUsernamePage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResetUsernamePage.h; sourceTree = "<group>"; };
 		CCB2DFB41F9526E600503F0D /* ResetUsernamePage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResetUsernamePage.m; sourceTree = "<group>"; };
 		EB1AA2A5F86FBB7BDA75AF6F /* libPods-Sanity.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Sanity.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -290,6 +291,7 @@
 		7C2D9DF71F875EFD00027681 /* Sanity */ = {
 			isa = PBXGroup;
 			children = (
+				CC8D321A1F95813200FE0704 /* Sanity.entitlements */,
 				843599B81F91DB38002372E9 /* Assets.xcassets */,
 				843599B91F91DB38002372E9 /* Base.lproj */,
 				7C19917A1F91C6000039701C /* Controller */,
@@ -487,7 +489,13 @@
 				TargetAttributes = {
 					7C2D9DF41F875EFD00027681 = {
 						CreatedOnToolsVersion = 8.3.3;
+						DevelopmentTeam = 4C4WA9FBP2;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 					7C2D9E0D1F875EFD00027681 = {
 						CreatedOnToolsVersion = 8.3.3;
@@ -798,6 +806,8 @@
 			baseConfigurationReference = 678A0D931E29196D9DECA4A2 /* Pods-Sanity.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Sanity/Sanity.entitlements;
+				DEVELOPMENT_TEAM = 4C4WA9FBP2;
 				INFOPLIST_FILE = Sanity/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = edu.usc.Sanity;
@@ -810,6 +820,8 @@
 			baseConfigurationReference = 707A33C305BFBF4336B3971E /* Pods-Sanity.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Sanity/Sanity.entitlements;
+				DEVELOPMENT_TEAM = 4C4WA9FBP2;
 				INFOPLIST_FILE = Sanity/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = edu.usc.Sanity;
