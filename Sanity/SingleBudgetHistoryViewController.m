@@ -1,22 +1,22 @@
 //
-//  ViewControllerTest.m
-//  CS310
+//  SingleBudgetHistoryViewController.m
+//  Sanity
 //
-//  Created by Gu on 10/7/17.
-//  Copyright © 2017 Gu. All rights reserved.
+//  Created by Gu on 10/16/17.
+//  Copyright © 2017 Absolute A. All rights reserved.
 //
 
-#import "SingleBudgetViewController.h"
+#import "SingleBudgetHistoryViewController.h"
 #import "SingleCategoryTableViewController.h"
 
-@interface SingleBudgetViewController ()
+@interface SingleBudgetHistoryViewController ()
 @property (weak, nonatomic) IBOutlet UILabel *labelTest;
 @property (weak, nonatomic) IBOutlet UILabel *labelForClickedElement;
 @property int indexClicked;
 
 @end
 
-@implementation SingleBudgetViewController
+@implementation SingleBudgetHistoryViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -40,7 +40,7 @@
 }
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
-    if([segue.identifier isEqualToString:@"BudgetToCategory"]){
+    if([segue.identifier isEqualToString:@"SingleBudgetHistoryToCategory"]){
         SingleCategoryTableViewController *controller = (SingleCategoryTableViewController *)segue.destinationViewController;
         controller.texts =  @[[self.texts objectAtIndex:self.indexClicked],@"unused"];
         controller.slices = @[@"50",@"130"];
@@ -51,7 +51,7 @@
         controller.textForPieChart = @"100/200";
         controller.pieChartLabelColor = @"red";
         controller.pageTitle = self.texts[self.indexClicked];
-       
+        
     }
 }
 
@@ -115,7 +115,7 @@
 - (void)pieChart:(XYPieChart *)pieChart didDeselectSliceAtIndex:(NSUInteger)index;
 {
     //redirect to category page
-    [self performSegueWithIdentifier:@"BudgetToCategory" sender:self];
+    [self performSegueWithIdentifier:@"SingleBudgetHistoryToCategory" sender:self];
 }
 
 /*

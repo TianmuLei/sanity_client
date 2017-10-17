@@ -17,6 +17,6 @@
 @property int numOfTransactions;
 @property (nonatomic, strong) NSString * textForPieChart;
 @property (nonatomic, strong) NSString * pieChartLabelColor;
-
+@property (nonatomic, strong) NSString * pageTitle;
 
 @end

@@ -133,6 +133,7 @@
         destViewController.nameSelected = self.budgetArray[indexSelected];
         destViewController.slices = [[NSMutableArray alloc] init];
         destViewController.texts = [[NSMutableArray alloc] init];
+        destViewController.pageTitle = self.budgetArray[(int)indexPath.row];
         for(int i = 0; i < 5; i ++)
         {
             NSNumber * temp = [NSNumber numberWithInt:rand()%60+20];
