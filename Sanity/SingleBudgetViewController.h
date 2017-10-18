@@ -13,8 +13,8 @@
 
 @property (weak, nonatomic) IBOutlet XYPieChart *PieChartDisplay;
 
-@property (nonatomic, strong) NSArray *texts;
-@property (nonatomic, strong) NSArray *slices;
+@property (nonatomic, strong) NSMutableArray *texts;
+@property (nonatomic, strong) NSMutableArray *slices;
 @property (nonatomic, strong) NSString * pageTitle;
 - (void) setTexts:(NSArray*) textsArray slices:(NSArray*)slicesArray;
 

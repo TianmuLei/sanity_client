@@ -9,11 +9,11 @@
 #import <UIKit/UIKit.h>
 
 @interface PieChartCategoryViewController : UIViewController
-@property (nonatomic, strong) NSArray *texts;
-@property (nonatomic, strong) NSArray *slices;
-@property (nonatomic, strong) NSArray *transactionNames;
-@property (nonatomic, strong) NSArray *transactionAmounts;
-@property (nonatomic, strong) NSArray *transactionDates;
+@property (nonatomic, strong) NSMutableArray *texts;
+@property (nonatomic, strong) NSMutableArray *slices;
+@property (nonatomic, strong) NSMutableArray *transactionNames;
+@property (nonatomic, strong) NSMutableArray *transactionAmounts;
+@property (nonatomic, strong) NSMutableArray *transactionDates;
 @property int numOfTransactions;
 @property (nonatomic, strong) NSString * textForPieChart;
 @property (nonatomic, strong) NSString * pieChartLabelColor;
