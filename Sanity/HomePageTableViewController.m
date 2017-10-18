@@ -168,7 +168,7 @@
 {
     self.categoryTexts = textsArray;
     self.categorySlices = slicesArray;
-    [self performSegueWithIdentifier:@"HomeToBudget" sender:self];
+    [self performSegueWithIdentifier:@"HomeToBudget" sender:self.tableView];
 }
 
 /*
