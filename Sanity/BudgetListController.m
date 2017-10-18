@@ -11,10 +11,24 @@
 @implementation BudgetListController
 
 -(void) requestBudgetList{
-    NSDictionary *info=@{@"email":self.client.myUser.email};
-    NSDictionary *message=@{@"function":@"requestBudgetList",@"information":info};
-    
-    [self.client sendMessage:message];
+    NSMutableArray* budgetList=self.client.budgetListDataDic;
+    NSMutableArray *name = [[NSMutableArray alloc]init];
+    NSMutableArray *amount = [[NSMutableArray alloc]init];
+    NSMutableArray *color = [[NSMutableArray alloc]init];
+    for(int i=0;i<budgetList.count;i++){
+        NSDictionary* budget=[budgetList objectAtIndex:i];
+        [name addObject:[budget objectForKey:@"name"]];
+        NSNumber* spent=[budget objectForKey:@"budgetSpent"];
+        NSNumber* total=[budget objectForKey:@"budgetTotal"];
+        NSString* amountString= [NSString stringWithFormat:@"%@/%@",spent,total];
+        [amount addObject:amountString];
+        [color addObject:@"black"];
+        
+        
+        //NSString *spendT = [NSNumber stringValue];
+        
+    }
+    [self.delegate setBudget:name amount:amount colors:color];
     
 }
 
