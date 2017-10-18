@@ -10,6 +10,7 @@
 #import "PieChartCell.h"
 #import "TranscationLabelCell.h"
 #import "TransactionCell.h"
+#import "UIClientConnector.h"
 
 @interface SingleCategoryTableViewController ()
 @end

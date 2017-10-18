@@ -12,6 +12,9 @@
 -(void) changeUsername:(NSString*)newUserName{
     NSDictionary *info=@{@"email":self.client.myUser.email,@"username":newUserName,@"password1":@"",@"password2":@""};
     NSDictionary *message=@{@"function":@"changeUsername",@"information":info};
+    
+    self.client.myUser.username=newUserName;
+
     [self.client sendMessage:message];
     
     

@@ -15,7 +15,7 @@
 @property (strong,nonatomic) NSString * username;
 @property (strong,nonatomic) SignupController * signupController;
 
-- (void) signupSucceeded:(NSArray *) budget withAmount:(NSArray *) amount withColor:(NSArray *) color;
+- (void) signupSucceeded:(NSMutableArray *) budget withAmount:(NSMutableArray *) amount withColor:(NSMutableArray *) color;
 - (void) signupFailed:(NSString*) errorMessage;
 
 @end

@@ -19,9 +19,9 @@
 @property (weak, nonatomic) IBOutlet UILabel *usernameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *passwordLabel;
 @property (weak, nonatomic) IBOutlet UILabel *warningLabel;
-@property (strong,nonatomic) NSArray * budgetArray;
-@property (strong,nonatomic) NSArray * amountArray;
-@property (strong,nonatomic) NSArray * colors;
+@property (strong,nonatomic) NSMutableArray * budgetArray;
+@property (strong,nonatomic) NSMutableArray * amountArray;
+@property (strong,nonatomic) NSMutableArray * colors;
 
 @end
 
@@ -102,7 +102,7 @@
     [self signupSucceeded:self.budgetArray withAmount:self.amountArray withColor:self.colors];*/
 }
 
-- (void) signupSucceeded:(NSArray *) budget withAmount:(NSArray *) amount withColor:(NSArray *) color
+- (void) signupSucceeded:(NSMutableArray *) budget withAmount:(NSMutableArray *) amount withColor:(NSMutableArray *) color
 {
     self.colors = color;
     self.budgetArray = budget;

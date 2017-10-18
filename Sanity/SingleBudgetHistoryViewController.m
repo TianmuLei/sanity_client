@@ -8,6 +8,7 @@
 
 #import "SingleBudgetHistoryViewController.h"
 #import "SingleCategoryTableViewController.h"
+#import "UIClientConnector.h"
 
 @interface SingleBudgetHistoryViewController () <UIPickerViewDelegate, UIPickerViewDataSource>
 @property (weak, nonatomic) IBOutlet UILabel *labelTest;
