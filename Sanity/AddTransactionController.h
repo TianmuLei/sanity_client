@@ -10,6 +10,8 @@
 
 @protocol  AddTransactionControllerDelegate<NSObject>
 //add call back function here
+- (void) receiveBudgetInfo: (NSMutableArray *) budgetsFromServer;
+
 @required
 @end
 

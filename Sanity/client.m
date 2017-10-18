@@ -58,7 +58,7 @@
     //[UIClientConnector.myClient sendMessage:message];
 
     LoginController* logCon=[[LoginController alloc] initWithClass:self];
-   [logCon login:@"tianmule@usc.edu" password:@"baobao"];
+   //[logCon login:@"tianmule@usc.edu" password:@"baobao"];
    //[logCon login:@"tianmule@usc.edu" password:@"baobao1"];
     
   /*  NSDateComponents *dateComponents = [[NSDateComponents alloc] init];
@@ -84,10 +84,24 @@
     //[addCon addBudget:@"testBudget1" period:periodObject date:dateComponents category:categoryList threshold:periodObject frequency:periodObject];
     
    // [_addTransaction addTransaction: [[NSNumber alloc]initWithInteger:30] describe:@"lunch" category:@"cat" budget:@"testBudget1" date:dateComponents];
-    [_budgetList requestBudgetList];
-    [_budgetList requestBudget:@"testBudget1" ];
+   // [_budgetList requestBudgetList];
+    //[_budgetList requestBudget:@"testBudget1" ];
 
-    [_categoryPage requestCategory:@"testBudget1" category:@"cat"];
+    //[_categoryPage requestCategory:@"testBudget1" category:@"cat"];
+  /*
+    NSDateComponents *dateComponents = [[NSDateComponents alloc] init];
+    dateComponents.day = 10;
+    dateComponents.month = 10;
+    dateComponents.year = 2017;
+    [_addTransaction addTransaction: [[NSNumber alloc]initWithInteger:40] describe:@"dinner" category:@"cat" budget:@"testBudget1" date:dateComponents];
+    [_addTransaction addTransaction: [[NSNumber alloc]initWithInteger:40] describe:@"happy" category:@"dog" budget:@"testBudget1" date:dateComponents];
+    
+    NSDictionary *info=@{@"email":self.myUser.email};
+    NSDictionary *message=@{@"function":@"requestEverything",@"information":info};
+    */
+    //ß[self sendMessage:message];
+
+
  
     
 
@@ -151,9 +165,34 @@
                 [_login fail];
                 
             }else{
-                [_login success:[messageObject objectForKey:@"budgetList"]];
+              
                 _myUser.username=[messageObject objectForKey:@"username"];
-                [self addBudgetListData:[messageObject objectForKey:@"budgetList"]];
+                NSDictionary*info=[messageObject objectForKey:@"information"];
+                _budgetListDataDic=(NSMutableArray*)[info objectForKey:@"budgetLsit"];
+                [self pharseAlldata:_budgetListDataDic];
+                  [_login success:_budgetListDataDic];
+                
+                
+               // NSLog(@"%@", single.name)
+              /*  for(int i=0;i<_budgetListData.count;i++){
+                    Budget* single=[_budgetListData objectAtIndex:i];
+                    NSLog(@"%@", single.name);
+                    NSMutableArray* categlis=single.categories;
+                    for(int j=0;j<categlis.count;j++){
+                        Category* cat=[categlis objectAtIndex:j];
+                        NSLog(@"%@", cat.name);
+                        NSMutableArray* trasl=cat.transctions;
+                        for(int k=0;k<trasl.count;k++){
+                            Transaction* tras=[trasl objectAtIndex:k];
+                             NSLog(@"%@", tras.describe);
+                        }
+                        
+                    }
+
+                    
+                }*/
+                
+                
                 
             }
         }
@@ -197,6 +236,14 @@
                 [self addTansData:info];
                 
             }
+        }
+        else if ([function isEqualToString:@"returnEverything"]){
+            
+                NSDictionary*info=[messageObject objectForKey:@"information"];
+                _budgetListDataDic=(NSMutableArray*)[info objectForKey:@"budgetLsit"];
+                [self pharseAlldata:_budgetListDataDic];
+                
+            
         }
         
         
@@ -304,6 +351,71 @@
     }
     
 }
+
+
+-(void) pharseAlldata:(NSMutableArray*)allData{
+    _budgetListData=[[NSMutableArray alloc]init];
+    for(int i=0;i<allData.count;i++){
+        NSDictionary* budget=[allData objectAtIndex:i];
+        Budget* singleB=[[Budget alloc]init];
+        singleB.name=[budget objectForKey:@"name"];
+        singleB.spent=[[budget objectForKey:@"budgetSpent"] doubleValue];
+        singleB.total=[[budget objectForKey:@"budgetTotal"] doubleValue];
+        singleB.startDateString=[budget objectForKey:@"date"];
+        singleB.frequency=[[budget objectForKey:@"frequency"] intValue];
+        singleB.threshold=[[budget objectForKey:@"threshold"] intValue];
+        
+        
+        NSMutableArray* cateL=[budget objectForKey:@"categoryList"];
+        singleB.categories=[[NSMutableArray alloc]init];
+        for(int j=0;j<cateL.count;j++){
+            NSDictionary* category=[cateL objectAtIndex:j];
+            Category* singleC=[[Category alloc]init];
+            singleC.name=[category objectForKey:@"name"];
+            singleC.limit=[[category objectForKey:@"limit"] doubleValue];
+            singleC.spent=[[category objectForKey:@"categorySpent"] doubleValue];
+            singleC.budget=[category objectForKey:@"budgetName"] ;
+            
+          NSMutableArray* transL=[category objectForKey:@"transactionList"];
+            singleC.transctions=[[NSMutableArray alloc]init];
+            for(int k=0;k<transL.count;k++){
+                NSDictionary* transaction=[transL objectAtIndex:k];
+                Transaction* single=[[Transaction alloc]init];
+                single.describe=[transaction objectForKey:@"description"];
+                single.amount=[transaction objectForKey:@"amount"];
+                single.dateString=[transaction objectForKey:@"date"];
+                single.budget=[transaction objectForKey:@"budgetName"];
+                single.category=[transaction objectForKey:@"categoryName"];
+                [singleC.transctions addObject:single];
+                
+        }
+            
+            
+
+            
+
+            [ singleB.categories addObject:singleC];
+        }
+        
+        
+        
+        
+        
+        
+        
+        [_budgetListData addObject:singleB];
+        
+        
+        
+        
+    }
+
+    
+}
+
+
+
+
 -(void) addTansData:(NSDictionary*) info{
     NSMutableArray* TransList=[[NSMutableArray alloc]init];
     NSArray* trans=[info objectForKey:@"transctionList"];
@@ -314,7 +426,7 @@
     for(int i=0;i<trans.count;i++){
         NSDictionary* transaction=[trans objectAtIndex:i];
         Transaction* single=[[Transaction alloc]init];
-        single.description=[transaction objectForKey:@"description"];
+        single.describe=[transaction objectForKey:@"description"];
         single.amount=[transaction objectForKey:@"amount"];
         single.dateString=[transaction objectForKey:@"date"];
         single.budget=budgetname;
