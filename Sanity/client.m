@@ -457,6 +457,20 @@
     
 }
 
+-(Budget*) getBudget:(NSString*)name{
+    for(int i=0;i<_budgetListData.count;i++){
+        Budget* single=[_budgetListData objectAtIndex:i];
+        if([single.name isEqualToString:name]){
+            return single;
+        }
+    }
+    return nil;
+    
+}
+
+
+
+
 
 
 
