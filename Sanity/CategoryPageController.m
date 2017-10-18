@@ -22,11 +22,17 @@
 
 -(void) requestCategory:(NSString*) budget category:(NSString*) category{
     Category* actualCat=[self.client getCategory:budget :category];
+    if(actualCat==nil){
+        NSLog(@"THIS IS NULL");
+    }
     NSMutableArray *textArray = [[NSMutableArray alloc]init];
     NSMutableArray *slices = [[NSMutableArray alloc]init];
-    NSMutableArray *transName = [[NSMutableArray alloc]init];
-    NSMutableArray *transDate = [[NSMutableArray alloc]init];
-    NSMutableArray *transAmount = [[NSMutableArray alloc]init];
+  // NSMutableArray *transName = [[NSMutableArray alloc]init];
+    //NSMutableArray *transDate = [[NSMutableArray alloc]init];
+    //NSMutableArray *transAmount = [[NSMutableArray alloc]init];
+    NSMutableArray* transName=@[@"a"];
+    NSMutableArray* transDate=@[@"a"];
+    NSMutableArray* transAmount=@[@"a"];
     
     double spent=actualCat.spent;
     double limit=actualCat.limit;
@@ -39,14 +45,14 @@
     [slices addObject:spentString];
     [slices addObject:remianString];
     NSMutableArray *trans=actualCat.transctions;
-    for(int j=0;j<trans.count;j++){
+    /*for(int j=0;j<trans.count;j++){
         Transaction* t=[trans objectAtIndex:j];
         [transName addObject:t.describe];
         NSNumber *a=t.amount;
         NSString *aS=[a stringValue];
         [transAmount addObject:aS];
         [transDate addObject:t.date];
-    }
+    }*/
     NSString* color;
     if(spent>limit){
         color=@"red";
