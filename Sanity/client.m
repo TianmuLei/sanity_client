@@ -206,9 +206,9 @@
         }
         else if ([function isEqualToString:@"addTransaction"]){
             if([status isEqualToString:@"fail"]){
-                
+                 [_addTransaction fail];
             }else{
-                
+                 [_addTransaction success];
             }
         }
         else if ([function isEqualToString:@"returnBudgetList"]){

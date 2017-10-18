@@ -10,6 +10,8 @@
 
 @protocol  AddTransactionControllerDelegate<NSObject>
 //add call back function here
+- (void) addSuccessful;
+- (void) addFailed;
 - (void) receiveBudgetInfo: (NSMutableArray *) budgetsFromServer;
 
 @required
@@ -21,5 +23,7 @@
 @property (nonatomic,strong) id delegate;
 -(void) addTransaction: (NSNumber*) amount describe:(NSString*) describe category:(NSString*) category budget:(NSString*)budget date:(NSDateComponents*) date;
 -(void) requestBudgetAndCate;
+-(void) fail;
+-(void) success;
 
 @end

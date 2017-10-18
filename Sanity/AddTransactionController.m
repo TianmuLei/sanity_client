@@ -35,5 +35,14 @@
    // [self.client sendMessage:message];
 }
 
+-(void) fail{
+    [self.delegate addFailed];
+
+    }
+-(void) success{
+    [self.delegate addSuccessful];
+
+}
+
 
 @end
