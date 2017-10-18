@@ -204,7 +204,7 @@
 - (void) settingPeriodPicker:(NSArray *)periodArray {
     self.periods = [[NSArray alloc] init];
     self.periods = periodArray;
-
+    
 }
 //call back function for delegate
 - (void) setTexts:(NSArray*) textsArray slices:(NSArray*)slicesArray
