@@ -7,8 +7,9 @@
 //
 
 #import "SingleBudgetViewController.h"
-#import "SingleCategoryTableViewController.h"
 #import "UIClientConnector.h"
+#import "PieChartCategoryViewController.h"
+#import "EditBudgetPage.h"
 
 @interface SingleBudgetViewController ()
 @property (weak, nonatomic) IBOutlet UILabel *labelTest;
@@ -49,7 +50,9 @@
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
     if([segue.identifier isEqualToString:@"BudgetToCategory"]){
-        SingleCategoryTableViewController *controller = (SingleCategoryTableViewController *)segue.destinationViewController;
+        NSLog(@"send data");
+        PieChartCategoryViewController *controller = (PieChartCategoryViewController *)segue.destinationViewController;
+        /*
         controller.texts =  @[[self.texts objectAtIndex:self.indexClicked],@"unused"];
         controller.slices = @[@"50",@"130"];
         controller.transactionNames = @[@"trans1",@"trans2"];
@@ -58,8 +61,13 @@
         controller.numOfTransactions = 2;
         controller.textForPieChart = @"100/200";
         controller.pieChartLabelColor = @"red";
+        */
         controller.pageTitle = self.texts[self.indexClicked];
-        
+        controller.period = 0;
+        controller.budgetName = self.pageTitle;
+    }else if([segue.identifier isEqualToString:@"BudgetToEditBudget"]){
+        EditBudgetPage *controller = (EditBudgetPage *)segue.destinationViewController;
+        controller.budgetName = self.pageTitle;
     }
 }
 
@@ -140,6 +148,7 @@
         //third click with same element, redirect
         self.numOfClicks = 0;
         self.previousIndexClicked = -1;
+        NSLog(@"perform segue");
         [self performSegueWithIdentifier:@"BudgetToCategory" sender:self];
     }
 }

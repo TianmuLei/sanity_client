@@ -22,30 +22,45 @@
 
 -(void) requestCategory:(NSString*) budget category:(NSString*) category{
     Category* actualCat=[self.client getCategory:budget :category];
+    if(actualCat==nil){
+        NSLog(@"THIS IS NULL");
+    }
     NSMutableArray *textArray = [[NSMutableArray alloc]init];
     NSMutableArray *slices = [[NSMutableArray alloc]init];
-    NSMutableArray *transName = [[NSMutableArray alloc]init];
+   NSMutableArray *transName = [[NSMutableArray alloc]init];
     NSMutableArray *transDate = [[NSMutableArray alloc]init];
     NSMutableArray *transAmount = [[NSMutableArray alloc]init];
+
+    
+ //   NSMutableArray* transName=@[@"a"];
+   // NSMutableArray* transDate=@[@"a"];
+    //NSMutableArray* transAmount=@[@"a"];
     
     double spent=actualCat.spent;
     double limit=actualCat.limit;
     double remain=limit-spent;
+    if(remain<0){
+        remain=1;
+    }
     NSString *spentString=[NSString stringWithFormat:@"%f", spent];
     NSString *remianString=[NSString stringWithFormat:@"%f", remain];
     
-    [textArray addObject:@"spent"];
-    [textArray addObject:@"left"];
+    [textArray addObject:@"Spent"];
+    [textArray addObject:@"Left"];
     [slices addObject:spentString];
     [slices addObject:remianString];
+    NSLog(@"%@", spentString);
+    NSLog(@"%@", remianString);
     NSMutableArray *trans=actualCat.transctions;
+    
+    
     for(int j=0;j<trans.count;j++){
         Transaction* t=[trans objectAtIndex:j];
         [transName addObject:t.describe];
         NSNumber *a=t.amount;
         NSString *aS=[a stringValue];
         [transAmount addObject:aS];
-        [transDate addObject:t.date];
+        [transDate addObject:t.dateString];
     }
     NSString* color;
     if(spent>limit){
@@ -53,6 +68,10 @@
     }else{
         color=@"black";
     }
+    
+    NSLog(@"%@", transName );
+    
+    NSLog(@"%@", transAmount);
     [self.delegate setTexts:textArray slices:slices transactionNames:transName transactionAmounts:transAmount transactionDates:transDate numOfTransactions:trans.count labelColor:color];
     
     
