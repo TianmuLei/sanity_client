@@ -112,16 +112,21 @@
     self.labelForClickedElement.text = [NSString stringWithFormat:@"%@,   %.02f/%.02f",[self.texts objectAtIndex:index],[[array objectAtIndex:0] floatValue],[[array objectAtIndex:1] floatValue] ] ;
     
     //change text color based on the spending level
-    if(rand()%3 == 0)
+    if([[array objectAtIndex:0] floatValue] > [[array objectAtIndex:1] floatValue])
     {
+        self.labelForClickedElement.textColor = [UIColor redColor];
+        
+    }else{
         self.labelForClickedElement.textColor = [UIColor blackColor];
-    }else if(rand()%3 == 1)
+    }
+    
+    /*else if(rand()%3 == 1)
     {
         self.labelForClickedElement.textColor = [UIColor orangeColor];
     }else  if(rand()%3 == 2)
     {
-        self.labelForClickedElement.textColor = [UIColor redColor];
-    }
+        
+    }*/
     
     if(self.numOfClicks == 0){
         //first click, don't redirect

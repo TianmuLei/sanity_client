@@ -9,7 +9,7 @@
 #import "PieChartCategoryViewController.h"
 #import "XYPieChart.h"
 #import "SingleCategoryTableViewController.h"
-
+#import "UIClientConnector.h"
 
 @interface PieChartCategoryViewController ()
 @property (weak, nonatomic) IBOutlet XYPieChart *PieChartDisplay;
