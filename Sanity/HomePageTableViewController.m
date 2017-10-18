@@ -130,6 +130,7 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [self.controller requestBudget:self.budgetArray[(int)indexPath.row]];
+    [self performSegueWithIdentifier:@"HomeToBudget" sender:self.tableView];
 }
 
 //send parameter to next page by directing changing the values
@@ -140,10 +141,13 @@
         SingleBudgetViewController * destViewController = segue.destinationViewController;
         //destViewController.indexNum = indexPath.row;
         //int indexSelected = (int) indexPath.row;
-        destViewController.slices = self.categorySlices;
-        destViewController.texts = self.categoryTexts;
+        int indexSelected = (int) indexPath.row;
+        destViewController.slices = [[NSMutableArray alloc] init];
+        destViewController.texts = [[NSMutableArray alloc] init];
+        //destViewController.slices = self.categorySlices;
+        //destViewController.texts = self.categoryTexts;
         destViewController.pageTitle = self.budgetArray[(int)indexPath.row];
-        /*
+        
         //testing code
         for(int i = 0; i < 5; i ++)
         {
@@ -152,7 +156,7 @@
             [destViewController.slices addObject:temp];
             [destViewController.texts addObject:[[NSString alloc] initWithFormat:@"Food%d",i]];
         }
-        */
+        
     }
 }
 
@@ -168,7 +172,6 @@
 {
     self.categoryTexts = textsArray;
     self.categorySlices = slicesArray;
-    [self performSegueWithIdentifier:@"HomeToBudget" sender:self.tableView];
 }
 
 /*

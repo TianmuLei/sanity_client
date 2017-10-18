@@ -69,7 +69,7 @@
 - (void) getLatest
 {
     //update data
-    #warning hard-coded, to be changed
+#warning hard-coded, to be changed
     
     [self reloadData];
 }

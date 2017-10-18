@@ -21,7 +21,7 @@
 @implementation SingleBudgetViewController
 
 - (void)viewDidLoad {
-    [super viewDidLoad];    
+    [super viewDidLoad];
     //set title
     self.navigationItem.title = self.pageTitle;
     //set up pie chart
@@ -48,7 +48,7 @@
         controller.textForPieChart = @"100/200";
         controller.pieChartLabelColor = @"red";
         controller.pageTitle = self.texts[self.indexClicked];
-       
+        
     }
 }
 

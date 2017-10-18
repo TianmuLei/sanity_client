@@ -26,7 +26,7 @@
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
-
+    
     // Initialize the refresh control.
     self.refreshControl = [[UIRefreshControl alloc] init];
     self.refreshControl.backgroundColor = [UIColor purpleColor];
@@ -62,10 +62,10 @@
 - (void) getLatest
 {
     //update data
-    #warning hard-coded, to be changed
+#warning hard-coded, to be changed
     self.budgetArray = @[@"iPhone1", @"iPhone2",@"iPhone3",@"iPhone4",@"iPhone5",@"iPad"];
     self.amountArray = @[@"10/20",@"100/200",@"1000/2000",@"100000/2000000",@"10/90",@"10/100"];
-    #warning hard-coded content, to be changed
+#warning hard-coded content, to be changed
     self.colors = @[@"black",@"black",@"black",@"orange",@"red",@"orange"];
     
     [self reloadData];
@@ -76,10 +76,10 @@
 - (void)getInitialData
 {
     //update data
-    #warning hard-coded, to be changed
+#warning hard-coded, to be changed
     self.budgetArray = @[@"iPhone1", @"iPhone2",@"iPhone3",@"iPhone4",@"iPhone5",@"iPad"];
     self.amountArray = @[@"10/20",@"100/200",@"1000/2000",@"100000/2000000",@"10/90",@"10/100"];
-    #warning hard-coded content, to be changed
+#warning hard-coded content, to be changed
     self.colors = @[@"black",@"black",@"black",@"orange",@"red",@"orange"];
 }
 
@@ -145,12 +145,12 @@
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
         SingleBudgetViewController * destViewController = segue.destinationViewController;
         //destViewController.indexNum = indexPath.row;
-        //int indexSelected = (int) indexPath.row;
-
+        int indexSelected = (int) indexPath.row;
+        
         destViewController.slices = [[NSMutableArray alloc] init];
         destViewController.texts = [[NSMutableArray alloc] init];
         
-        /*
+        
         //testing code
         for(int i = 0; i < 5; i ++)
         {
@@ -158,7 +158,7 @@
             int tempInt = [temp integerValue];
             [destViewController.slices addObject:temp];
             [destViewController.texts addObject:[[NSString alloc] initWithFormat:@"Food%d",i]];
-        }*/
+        }
     }
 }
 
