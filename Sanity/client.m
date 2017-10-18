@@ -201,6 +201,11 @@
             if([status isEqualToString:@"fail"]){
                 [ _addBudget fail];
             }else{
+                NSDictionary*info=[messageObject objectForKey:@"information"];
+                _budgetListDataDic=(NSMutableArray*)[info objectForKey:@"budgetLsit"];
+                [self pharseAlldata:_budgetListDataDic];
+                
+                
                 [ _addBudget success];
 
             }
