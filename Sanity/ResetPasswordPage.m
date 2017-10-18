@@ -7,12 +7,15 @@
 //
 
 #import "ResetPasswordPage.h"
+#import "ChangePasswordController.h"
+#import "UIClientConnector.h"
 
 @interface ResetPasswordPage ()
 @property (weak, nonatomic) IBOutlet UITextField *oldPasswordTF;
 @property (weak, nonatomic) IBOutlet UITextField *resetPasswordTF;
 @property (weak, nonatomic) IBOutlet UITextField *confirmPasswordTF;
 
+@property ChangePasswordController* controller;
 @end
 
 @implementation ResetPasswordPage
@@ -45,7 +48,10 @@
     }
     else {
     //call controller and update information
-        
+        _controller = UIClientConnector.myClient.changePassword;
+        UIClientConnector.myClient.changePassword.delegate = self;
+        [_controller changePassword:_oldPasswordTF.text newPassword:_resetPasswordTF.text];
+
     }
 
 }

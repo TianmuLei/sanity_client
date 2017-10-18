@@ -7,8 +7,10 @@
 //
 
 #import "ViewController.h"
+#import "ChangePasswordController.h"
+#import "UIClientConnector.h"
 
-@interface ResetPasswordPage : ViewController
+@interface ResetPasswordPage : ViewController<ChangePasswordControllerDelegate>
 
 - (void)resetPasswordSuccess;
 
