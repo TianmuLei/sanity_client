@@ -79,13 +79,14 @@
         [amount addObject:amountString];
         [color addObject:@"black"];
         
-        [self.delegate loginSucceeded:name withAmount:amount withColor:color];
         
         //NSString *spendT = [NSNumber stringValue];
         
         
         
     }
+    [self.delegate loginSucceeded:name withAmount:amount withColor:color];
+
     
 }
 

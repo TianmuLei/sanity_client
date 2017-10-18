@@ -170,6 +170,7 @@
                 NSDictionary*info=[messageObject objectForKey:@"information"];
                 _budgetListDataDic=(NSMutableArray*)[info objectForKey:@"budgetLsit"];
                 [self pharseAlldata:_budgetListDataDic];
+                NSLog(@"loginSuccess111");
                   [_login success:_budgetListDataDic];
                 
                 
