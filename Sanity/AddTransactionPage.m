@@ -41,6 +41,9 @@
     _budgets = [[NSMutableArray alloc]init];
     _categoriesCurrBudget = [[NSMutableArray alloc]init];
     
+    
+    
+    
     Budget * bg = [[Budget alloc] init];
     bg.name = @"mybudget";
     bg.categories = [[NSMutableArray alloc] init];
@@ -53,6 +56,8 @@
     UIClientConnector.myClient.addTransaction.delegate = self;
 
     //call function
+    [_controller requestBudgetAndCate];
+    
     self.budgetPicker = [[UIPickerView alloc] initWithFrame:CGRectMake(0, 50, 100, 150)];
     self.budgetPicker.delegate = self;
     self.budgetPicker.dataSource = self;
@@ -142,8 +147,6 @@
         self.categoryTF.text = [(Category *)self.categoriesCurrBudget[row] name];
         [_categoryTF endEditing:YES];
     }
-    
-
 }
 
 
@@ -158,6 +161,18 @@
     }
     else {
         //get elements
+        NSCalendar *calendar            = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
+        
+        NSDateComponents *components = [calendar components:(NSCalendarUnitYear|
+                                                             NSCalendarUnitMonth |
+                                                             NSCalendarUnitDay   |
+                                                             NSCalendarUnitHour  |
+                                                             NSCalendarUnitMinute|
+                                                             NSCalendarUnitSecond) fromDate:[_date date]];
+        
+        
+        [_controller addTransaction:[NSNumber numberWithInt:_amountTF.text.floatValue] describe:_descripTF.text category:_categoryTF.text budget:_budgetTF.text date:components];
+        
     }
 
 }
