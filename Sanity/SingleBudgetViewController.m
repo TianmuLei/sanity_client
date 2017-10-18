@@ -10,6 +10,7 @@
 #import "SingleCategoryTableViewController.h"
 #import "UIClientConnector.h"
 #import "PieChartCategoryViewController.h"
+#import "EditBudgetPage.h"
 
 @interface SingleBudgetViewController ()
 @property (weak, nonatomic) IBOutlet UILabel *labelTest;
@@ -64,6 +65,9 @@
         */
         controller.pageTitle = self.texts[self.indexClicked];
         controller.period = 0;
+        controller.budgetName = self.pageTitle;
+    }else if([segue.identifier isEqualToString:@"BudgetToEditBudget"]){
+        EditBudgetPage *controller = (EditBudgetPage *)segue.destinationViewController;
         controller.budgetName = self.pageTitle;
     }
 }
