@@ -45,12 +45,24 @@
     UIClientConnector.myClient.categoryPage.delegate = self;
     if(self.period == 0)
     {
-        NSLog(@"call with %@, %@ ", self.budgetName, self.pageTitle);
+        //NSLog(@"call with %@, %@ ", self.budgetName, self.pageTitle);
         [self.controller requestCategory:self.budgetName category:self.pageTitle];
     }else{
     #warning to be uncommented
         //[self.controller requestCategory:self.budgetName category:self.pageTitle period:self.period];
     }
+    
+    /*
+    //for testing purposers
+    self.texts =  @[@"used",@"unused"];
+    self.slices = @[@"50",@"130"];
+    self.transactionNames = @[@"trans1",@"trans2"];
+    self.transactionAmounts = @[@"$100",@"$150"];
+    self.transactionDates = @[@"5/10/2017",@"8/10/2017"];
+    self.numOfTransactions = 2;
+    self.textForPieChart = @"100/200";
+    self.pieChartLabelColor = @"red";
+    */
 }
 
 - (void)didReceiveMemoryWarning {
@@ -123,6 +135,13 @@
     self.transactionDates = dates;
     self.numOfTransactions = number;
     self.pieChartLabelColor = color;
+    if([color isEqualToString:@"red"])
+    {
+        self.detailLabel.textColor = [UIColor redColor];
+    }else if([color isEqualToString:@"black"])
+    {
+        self.detailLabel.textColor = [UIColor blackColor];
+    }
     [self.PieChartDisplay reloadData];
 }
 /*

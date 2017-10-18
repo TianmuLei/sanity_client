@@ -61,13 +61,15 @@
 //get data from delegate
 - (void) getLatest
 {
-    //update data
-#warning hard-coded, to be changed
+    //testing purpose only
+    #warning hard-coded, to be changed
     self.budgetArray = @[@"iPhone1", @"iPhone2",@"iPhone3",@"iPhone4",@"iPhone5",@"iPad"];
     self.amountArray = @[@"10/20",@"100/200",@"1000/2000",@"100000/2000000",@"10/90",@"10/100"];
-#warning hard-coded content, to be changed
+    #warning hard-coded content, to be changed
     self.colors = @[@"black",@"black",@"black",@"orange",@"red",@"orange"];
     
+    //call delegate
+    //[self.controller requestBudgetList];
     [self reloadData];
 }
 
@@ -75,12 +77,16 @@
 //get initial data from delegate
 - (void)getInitialData
 {
-    //update data
-#warning hard-coded, to be changed
+    //testing purpose only
+        #warning hard-coded, to be changed
     self.budgetArray = @[@"iPhone1", @"iPhone2",@"iPhone3",@"iPhone4",@"iPhone5",@"iPad"];
     self.amountArray = @[@"10/20",@"100/200",@"1000/2000",@"100000/2000000",@"10/90",@"10/100"];
-#warning hard-coded content, to be changed
+        #warning hard-coded content, to be changed
     self.colors = @[@"black",@"black",@"black",@"orange",@"red",@"orange"];
+    
+    //call delegate
+    //[self.controller requestBudgetList];
+    [self reloadData];
 }
 
 /*
@@ -147,10 +153,13 @@
         //destViewController.indexNum = indexPath.row;
        // int indexSelected = (int) indexPath.row;
         
-        destViewController.slices = [[NSMutableArray alloc] init];
-        destViewController.texts = [[NSMutableArray alloc] init];
         
+        //testing purpose only
+        destViewController.slices = @[@"10/20",@"100/200",@"100/90",@"100/10"];
+        destViewController.texts = @[@"iPhone1", @"iPhone2",@"iPhone3",@"iPhone4"];
+        destViewController.pageTitle = self.budgetArray[(int)indexPath.row];
         
+        /*
         //testing code
         for(int i = 0; i < 5; i ++)
         {
@@ -159,6 +168,7 @@
             [destViewController.slices addObject:temp];
             [destViewController.texts addObject:[[NSString alloc] initWithFormat:@"Food%d",i]];
         }
+        */
     }
 }
 
