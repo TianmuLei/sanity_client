@@ -57,10 +57,10 @@
     for(int j=0;j<trans.count;j++){
         Transaction* t=[trans objectAtIndex:j];
         [transName addObject:t.describe];
-      //  NSNumber *a=t.amount;
-       // NSString *aS=[a stringValue];
-        [transAmount addObject:@"10"];
-        [transDate addObject:@"2015-1-1"];
+        NSNumber *a=t.amount;
+        NSString *aS=[a stringValue];
+        [transAmount addObject:aS];
+        [transDate addObject:t.dateString];
     }
     NSString* color;
     if(spent>limit){
