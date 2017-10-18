@@ -218,7 +218,7 @@
 }
 
 - (void) addSuccessful{
-
+      [self.navigationController popToRootViewControllerAnimated:YES];
 }
 
 - (void) addFailed{
