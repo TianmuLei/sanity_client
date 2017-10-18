@@ -9,6 +9,7 @@
 #import "HomePageTableViewController.h"
 #import "SingleBudgetViewController.h"
 #import "HomeTableViewCell.h"
+#import "UIClientConnector.h"
 
 @interface HomePageTableViewController ()
 @property (strong,nonatomic) NSArray* categorySlices;
@@ -34,6 +35,10 @@
     [self.refreshControl addTarget:self
                             action:@selector(getLatest)
                   forControlEvents:UIControlEventValueChanged];
+    
+    //set up delegate
+    self.controller = UIClientConnector.myClient.budgetList;
+    UIClientConnector.myClient.budgetList.delegate = self;
 }
 
 - (void)reloadData
@@ -59,13 +64,17 @@
 
 - (void) getLatest
 {
-    //update data
-#warning hard-coded, to be changed
-    self.budgetArray = @[@"iPhone1", @"iPhone2",@"iPhone3",@"iPhone4",@"iPhone5",@"iPad"];
-    self.amountArray = @[@"10/20",@"100/200",@"1000/2000",@"100000/2000000",@"10/90",@"10/100"];
-#warning hard-coded content, to be changed
-    self.colors = @[@"black",@"black",@"black",@"orange",@"red",@"orange"];
+    /*
+     //update data
+     #warning hard-coded, to be changed
+     self.budgetArray = @[@"iPhone1", @"iPhone2",@"iPhone3",@"iPhone4",@"iPhone5",@"iPad"];
+     self.amountArray = @[@"10/20",@"100/200",@"1000/2000",@"100000/2000000",@"10/90",@"10/100"];
+     #warning hard-coded content, to be changed
+     self.colors = @[@"black",@"black",@"black",@"orange",@"red",@"orange"];
+     */
     
+    
+    [self.controller requestBudgetList];
     [self reloadData];
 }
 
@@ -151,6 +160,7 @@
     self.budgetArray = budget;
     self.amountArray = amount;
     self.colors = color;
+    [self reloadData];
 }
 - (void) setTexts:(NSArray*) textsArray slices:(NSArray*) slicesArray
 {
