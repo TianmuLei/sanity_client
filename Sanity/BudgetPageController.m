@@ -7,6 +7,7 @@
 //
 
 #import "BudgetPageController.h"
+#import "Category.h"
 
 @implementation BudgetPageController
 
@@ -44,11 +45,8 @@
 }
 
 -(void) requestCategory:(NSString*) budget category:(NSString*) category{
-    NSDictionary *info=@{@"email":self.client.myUser.email,@"budget":budget,@"category":category};
+  Category* actualCat=[self.client getCategory:budget :category];
     
-    NSDictionary *message=@{@"function":@"requestCategory",@"information":info};
-    [self.client sendMessage:message];
-
 }
 
 
