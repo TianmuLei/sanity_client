@@ -12,9 +12,9 @@
 @interface SingleBudgetViewController : UIViewController
 
 @property (weak, nonatomic) IBOutlet XYPieChart *PieChartDisplay;
-#warning to be changed to nsarray
-@property (nonatomic, strong) NSMutableArray *texts; 
-@property (nonatomic, strong) NSMutableArray *slices;
+
+@property (nonatomic, strong) NSArray *texts;
+@property (nonatomic, strong) NSArray *slices;
 @property (nonatomic, strong) NSString * pageTitle;
 - (void) setTexts:(NSArray*) textsArray slices:(NSArray*)slicesArray;
 

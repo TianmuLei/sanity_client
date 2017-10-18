@@ -126,7 +126,7 @@
 }
 
 
-//redirect to next page
+//call delegate
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [self.controller requestBudget:self.budgetArray[(int)indexPath.row]];
@@ -139,10 +139,12 @@
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
         SingleBudgetViewController * destViewController = segue.destinationViewController;
         //destViewController.indexNum = indexPath.row;
-        int indexSelected = (int) indexPath.row;
-        destViewController.slices = [[NSMutableArray alloc] init];
-        destViewController.texts = [[NSMutableArray alloc] init];
+        //int indexSelected = (int) indexPath.row;
+        destViewController.slices = self.categorySlices;
+        destViewController.texts = self.categoryTexts;
         destViewController.pageTitle = self.budgetArray[(int)indexPath.row];
+        /*
+        //testing code
         for(int i = 0; i < 5; i ++)
         {
             NSNumber * temp = [NSNumber numberWithInt:rand()%60+20];
@@ -150,6 +152,7 @@
             [destViewController.slices addObject:temp];
             [destViewController.texts addObject:[[NSString alloc] initWithFormat:@"Food%d",i]];
         }
+        */
     }
 }
 
