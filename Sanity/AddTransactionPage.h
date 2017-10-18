@@ -14,6 +14,6 @@
 
 - (void) receiveBudgetInfo: (NSMutableArray *) budgetsFromServer;
 - (void) addSuccessful;
-- (void) addFailed: (NSString *)reasonTitle withReason:(NSString *)reason;
+- (void) addFailed;
 
 @end

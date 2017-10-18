@@ -221,8 +221,8 @@
 
 }
 
-- (void) addFailed: (NSString *)reasonTitle withReason:(NSString *)reason{
-    [self getAlerted:reasonTitle msg:reason];
+- (void) addFailed{
+    [self getAlerted:@"Duplicate transactions" msg:@"You have entered a transaction that's duplicate"];
 }
 
 

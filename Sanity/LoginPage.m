@@ -66,18 +66,19 @@
 }
 
 - (void) tryLogin{
-    /*
+    
     self.loginController = UIClientConnector.myClient.login;
     UIClientConnector.myClient.login.delegate = self;
     [self.loginController login:self.email password:self.password];
-    */
     
     
+    /*
      #warning to be deleted!
      self.budgetArray = @[@"iPhone1", @"iPhone2",@"iPhone3",@"iPhone4",@"iPhone5",@"iTV",@"iNew"];
      self.amountArray = @[@"10/20",@"100/200",@"1000/2000",@"100000/2000000",@"10/90",@"10/100",@"35/253"];
      self.colors = @[@"black",@"black",@"black",@"orange",@"red",@"orange",@"black"];
      [self loginSucceeded:self.budgetArray withAmount:self.amountArray withColor:self.colors];
+     */
     
 }
 
