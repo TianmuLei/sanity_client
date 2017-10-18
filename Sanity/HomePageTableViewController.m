@@ -141,7 +141,7 @@
         SingleBudgetViewController * destViewController = segue.destinationViewController;
         //destViewController.indexNum = indexPath.row;
         //int indexSelected = (int) indexPath.row;
-        int indexSelected = (int) indexPath.row;
+        //int indexSelected = (int) indexPath.row;
         destViewController.slices = [[NSMutableArray alloc] init];
         destViewController.texts = [[NSMutableArray alloc] init];
         //destViewController.slices = self.categorySlices;
