@@ -9,6 +9,7 @@
 #import "SingleBudgetHistoryViewController.h"
 #import "SingleCategoryTableViewController.h"
 #import "UIClientConnector.h"
+#import "PieChartCategoryViewController.h"
 
 @interface SingleBudgetHistoryViewController () <UIPickerViewDelegate, UIPickerViewDataSource>
 @property (weak, nonatomic) IBOutlet UILabel *labelTest;
@@ -61,7 +62,7 @@
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
     if([segue.identifier isEqualToString:@"SingleBudgetHistoryToCategory"]){
-        SingleCategoryTableViewController *controller = (SingleCategoryTableViewController *)segue.destinationViewController;
+        PieChartCategoryViewController *controller = (PieChartCategoryViewController *)segue.destinationViewController;
         controller.texts =  @[[self.texts objectAtIndex:self.indexClicked],@"unused"];
         controller.slices = @[@"50",@"130"];
         controller.transactionNames = @[@"trans1",@"trans2"];
@@ -71,7 +72,7 @@
         controller.textForPieChart = @"100/200";
         controller.pieChartLabelColor = @"red";
         controller.pageTitle = self.texts[self.indexClicked];
-        
+        controller.budgetName = self.pageTitle;
     }
 }
 

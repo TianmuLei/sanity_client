@@ -25,6 +25,7 @@
     //set up page title
     self.navigationItem.title = self.pageTitle;
     
+    /*
     // Initialize the refresh control.
     self.refreshControl = [[UIRefreshControl alloc] init];
     self.refreshControl.backgroundColor = [UIColor purpleColor];
@@ -32,7 +33,7 @@
     [self.refreshControl addTarget:self
                             action:@selector(getLatest)
                   forControlEvents:UIControlEventValueChanged];
-    
+    */
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     

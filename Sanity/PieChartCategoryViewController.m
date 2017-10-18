@@ -21,7 +21,12 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    //initialize arrays
+    self.texts = [[NSMutableArray alloc] init];
+    self.slices = [[NSMutableArray alloc] init];
+    self.transactionNames = [[NSMutableArray alloc] init];
+    self.transactionAmounts = [[NSMutableArray alloc] init];
+    self.transactionDates = [[NSMutableArray alloc] init];
     
     //set up page title
     self.navigationItem.title = self.pageTitle;
@@ -34,6 +39,18 @@
     
     //set up string
     self.detailLabel.text = self.textForPieChart;
+
+    //set up delegate
+    self.controller = UIClientConnector.myClient.categoryPage;
+    UIClientConnector.myClient.categoryPage.delegate = self;
+    if(self.period == 0)
+    {
+        NSLog(@"call with %@, %@ ", self.budgetName, self.pageTitle);
+        [self.controller requestCategory:self.budgetName category:self.pageTitle];
+    }else{
+    #warning to be uncommented
+        //[self.controller requestCategory:self.budgetName category:self.pageTitle period:self.period];
+    }
 }
 
 - (void)didReceiveMemoryWarning {
@@ -76,6 +93,7 @@
         destViewController.textForPieChart = self.textForPieChart;
         destViewController.pieChartLabelColor = self.pieChartLabelColor;
         destViewController.pageTitle = self.pageTitle;
+        destViewController.period = self.period;
     }
 }
 
@@ -105,6 +123,7 @@
     self.transactionDates = dates;
     self.numOfTransactions = number;
     self.pieChartLabelColor = color;
+    [self.PieChartDisplay reloadData];
 }
 /*
  #pragma mark - Navigation

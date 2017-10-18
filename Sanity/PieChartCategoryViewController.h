@@ -7,6 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CategoryPageController.h"
+
 
 @interface PieChartCategoryViewController : UIViewController
 @property (nonatomic, strong) NSMutableArray *texts;
@@ -18,6 +20,10 @@
 @property (nonatomic, strong) NSString * textForPieChart;
 @property (nonatomic, strong) NSString * pieChartLabelColor;
 @property (nonatomic, strong) NSString * pageTitle;
+@property (strong,nonatomic) CategoryPageController * controller;
+@property int period;
+@property (nonatomic, strong) NSString * budgetName;
+
 - (void) setTexts:(NSMutableArray *) textsArray slices:(NSMutableArray *)slicesArray transactionNames:(NSMutableArray *) names transactionAmounts:(NSMutableArray *) amounts transactionDates:(NSMutableArray *)dates numOfTransactions:(int) number labelColor:(NSString*) color;
 
 @end
