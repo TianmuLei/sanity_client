@@ -7,9 +7,10 @@
 //
 
 #import "ViewController.h"
-#import "ProfilePageController.h"
+#import "ChangeUsernameController.h"
+#import "UIClientConnector.h"
 
-@interface ResetUsernamePage : ViewController
+@interface ResetUsernamePage : ViewController<ChangeUsernameDelegate>
 
 - (void) resetSuccess;
 - (void) resetFailed;     

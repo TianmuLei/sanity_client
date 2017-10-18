@@ -7,11 +7,12 @@
 //
 
 #import "ResetUsernamePage.h"
-
+#import "ChangeUsernameController.h"
+#import "UIClientConnector.h"
 
 @interface ResetUsernamePage ()
 @property (weak, nonatomic) IBOutlet UITextField *usernameTF;
-
+@property ChangeUsernameController *controller;
 
 @end
 
@@ -30,7 +31,10 @@
     if (_usernameTF.text.length < 1) {
         [self getAlerted:@"Required Field" msg:@"You need to fill in username text field to change username"];
     }
-#warning call controller 
+    
+  //  _controller = UIClientConnector.myClient.;
+   // UIClientConnector.myClient.addBudget.delegate = self;
+    
     
 }
 
