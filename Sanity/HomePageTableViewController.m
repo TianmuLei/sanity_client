@@ -129,8 +129,7 @@
 //redirect to next page
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    
-    [self performSegueWithIdentifier:@"HomeToBudget" sender:tableView];
+    [self.controller requestBudget:self.budgetArray[(int)indexPath.row]];
 }
 
 //send parameter to next page by directing changing the values
@@ -166,6 +165,7 @@
 {
     self.categoryTexts = textsArray;
     self.categorySlices = slicesArray;
+    [self performSegueWithIdentifier:@"HomeToBudget" sender:self];
 }
 
 /*
