@@ -8,6 +8,7 @@
 
 #import "SingleBudgetViewController.h"
 #import "SingleCategoryTableViewController.h"
+#import "UIClientConnector.h"
 
 @interface SingleBudgetViewController ()
 @property (weak, nonatomic) IBOutlet UILabel *labelTest;
@@ -24,6 +25,16 @@
     [super viewDidLoad];
     //set title
     self.navigationItem.title = self.pageTitle;
+    self.slices = [[NSMutableArray alloc] init];
+    self.texts = [[NSMutableArray alloc] init];
+    
+    //set up delegate
+    self.controller = UIClientConnector.myClient.budgetList;
+    UIClientConnector.myClient.budgetList.delegate = self;
+    //to get data
+    [self.controller requestBudget:self.pageTitle];
+    
+    
     //set up pie chart
     [self.PieChartDisplay setDelegate:self];
     [self.PieChartDisplay setDataSource:self];
@@ -136,7 +147,9 @@
 {
     self.texts = textsArray;
     self.slices = slicesArray;
+    [self.PieChartDisplay reloadData];
 }
+
 
 /*
  #pragma mark - Navigation

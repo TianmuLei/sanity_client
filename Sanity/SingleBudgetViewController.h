@@ -8,11 +8,12 @@
 
 #import <UIKit/UIKit.h>
 #import "XYPieChart.h"
+#import "BudgetListController.h"
 
 @interface SingleBudgetViewController : UIViewController
 
 @property (weak, nonatomic) IBOutlet XYPieChart *PieChartDisplay;
-
+@property (strong,nonatomic) BudgetListController * controller;
 @property (nonatomic, strong) NSMutableArray *texts;
 @property (nonatomic, strong) NSMutableArray *slices;
 @property (nonatomic, strong) NSString * pageTitle;
