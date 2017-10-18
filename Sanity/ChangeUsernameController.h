@@ -11,6 +11,8 @@
 
 @protocol  ChangeUsernameDelegate<NSObject>
 //add call back function here
+- (void) resetSuccess;
+- (void) resetFailed;
 //- (void) displayProfile:(NSString*)username :(NSString*)email;
 @required
 @end
@@ -21,6 +23,8 @@
 @property (nonatomic,strong) id delegate;
 -(void) changeUsername:(NSString*)newUserName;
 - (id) initWithClass:(client *)myClient;
+-(void) success;
+-(void) fail;
 //@property (strong, atomic)  client *client;
 
 @end

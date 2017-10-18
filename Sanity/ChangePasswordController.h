@@ -11,6 +11,9 @@
 
 @protocol  ChangePasswordControllerDelegate<NSObject>
 //add call back function here
+- (void)resetPasswordSuccess;
+
+- (void)resetPasswordFailed;
 //- (void) displayProfile:(NSString*)username :(NSString*)email;
 @required
 @end
@@ -23,6 +26,8 @@
 -(int) hash1:(NSString*) password;
 -(int) hash2:(NSString*) password;
 - (id) initWithClass:(client *)myClient;
+-(void) success;
+-(void) fail;
 //@property (strong, atomic)  client *client;
 
 @end

@@ -16,4 +16,11 @@
     
     
 }
+-(void) success{
+    [self.delegate resetSuccess];
+    
+}
+-(void) fail{
+    [self.delegate resetSuccess];
+}
 @end
