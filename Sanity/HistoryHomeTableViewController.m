@@ -145,17 +145,20 @@
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
         SingleBudgetViewController * destViewController = segue.destinationViewController;
         //destViewController.indexNum = indexPath.row;
-        int indexSelected = (int) indexPath.row;
+        //int indexSelected = (int) indexPath.row;
 
         destViewController.slices = [[NSMutableArray alloc] init];
         destViewController.texts = [[NSMutableArray alloc] init];
+        
+        /*
+        //testing code
         for(int i = 0; i < 5; i ++)
         {
             NSNumber * temp = [NSNumber numberWithInt:rand()%60+20];
             int tempInt = [temp integerValue];
             [destViewController.slices addObject:temp];
             [destViewController.texts addObject:[[NSString alloc] initWithFormat:@"Food%d",i]];
-        }
+        }*/
     }
 }
 
