@@ -8,6 +8,8 @@
 
 #import "BudgetPageController.h"
 #import "Category.h"
+#import "Budget.h"
+#import "Transaction.h"
 
 @implementation BudgetPageController
 
@@ -34,18 +36,57 @@
     
 }
 
-
 -(void) requestBudget:(NSString*) name{
-   
-    
-    /*NSDictionary *info=@{@"email":self.client.myUser.email,@"name":name};
-    NSDictionary *message=@{@"function":@"requestBudget",@"information":info};
-    [self.client sendMessage:message];*/
+    Budget* single=[self.client getBudget:name];
+    NSMutableArray *name1 = [[NSMutableArray alloc]init];
+    NSMutableArray *amount = [[NSMutableArray alloc]init];
+    for(int j=0;j<single.categories.count;j++){
+        Category* cat=  [single.categories objectAtIndex:j];
+        NSString* Catname=cat.name;
+        double Catspent=cat.spent;
+        double Cattotal=cat.limit;
+        NSString* amountString= [NSString stringWithFormat:@"%f/%f",Catspent,Cattotal];
+        [amount addObject:amountString];
+        [name1 addObject:Catname];
+        
+    }
+    NSLog(@"%@", name1);
+    NSLog(@"%@", amount);
+    [self.delegate setTexts:name1 slices:amount];
     
 }
 
+
 -(void) requestCategory:(NSString*) budget category:(NSString*) category{
   Category* actualCat=[self.client getCategory:budget :category];
+    NSMutableArray *textArray = [[NSMutableArray alloc]init];
+    NSMutableArray *slices = [[NSMutableArray alloc]init];
+    NSMutableArray *transName = [[NSMutableArray alloc]init];
+    NSMutableArray *transDate = [[NSMutableArray alloc]init];
+    NSMutableArray *transAmount = [[NSMutableArray alloc]init];
+
+    double spent=actualCat.spent;
+    double limit=actualCat.limit;
+    double remain=limit-spent;
+    NSString *spentString=[NSString stringWithFormat:@"%f", spent];
+    NSString *remianString=[NSString stringWithFormat:@"%f", remain];
+    
+    [textArray addObject:@"spent"];
+    [textArray addObject:@"left"];
+    NSMutableArray *trans=actualCat.transctions;
+    for(int j=0;j<trans.count;j++){
+        Transaction* t=[trans objectAtIndex:j];
+        //[transName addObject:]
+        
+    }
+
+    
+    
+    
+   /* - (void) setTexts:(NSArray*) textsArray slices:(NSArray*)slicesArray transactionNames:(NSArray*) names transactionAmounts:(NSArray*) amounts transactionDates:(NSArray*)dates numOfTransactions:(int) number labelColor:(NSString*) color;
+
+   */
+    
     
 }
 

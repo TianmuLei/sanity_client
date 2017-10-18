@@ -53,5 +53,12 @@
     
 }
 
+-(void) success{
+    
+}
+-(void) fail{
+    
+}
+
 
 @end
