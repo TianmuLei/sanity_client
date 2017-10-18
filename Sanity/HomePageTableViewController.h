@@ -11,11 +11,11 @@
 
 @interface HomePageTableViewController : UITableViewController <UITableViewDataSource, UITableViewDelegate>
 
-@property (strong,nonatomic) NSArray * budgetArray;
-@property (strong,nonatomic) NSArray * amountArray;
-@property (strong,nonatomic) NSArray * colors;
+@property (strong,nonatomic) NSMutableArray * budgetArray;
+@property (strong,nonatomic) NSMutableArray * amountArray;
+@property (strong,nonatomic) NSMutableArray * colors;
 @property (strong,nonatomic) BudgetListController * controller;
-- (void) setBudget:(NSArray*) budget amount:(NSArray*) amount colors:(NSArray*)color;
-- (void) setTexts:(NSArray*) textsArray slices:(NSArray*) slicesArray;
+- (void) setBudget:(NSMutableArray*) budget amount:(NSMutableArray *) amount colors:(NSMutableArray*)color;
+- (void) setTexts:(NSMutableArray*) textsArray slices:(NSMutableArray *) slicesArray;
 
 @end

@@ -12,8 +12,8 @@
 #import "UIClientConnector.h"
 
 @interface HomePageTableViewController ()
-@property (strong,nonatomic) NSArray* categorySlices;
-@property (strong,nonatomic) NSArray* categoryTexts;
+@property (strong,nonatomic) NSMutableArray* categorySlices;
+@property (strong,nonatomic) NSMutableArray* categoryTexts;
 
 @end
 
@@ -141,12 +141,12 @@
         SingleBudgetViewController * destViewController = segue.destinationViewController;
         //destViewController.indexNum = indexPath.row;
         //int indexSelected = (int) indexPath.row;
-        //int indexSelected = (int) indexPath.row;
         destViewController.slices = [[NSMutableArray alloc] init];
         destViewController.texts = [[NSMutableArray alloc] init];
         //destViewController.slices = self.categorySlices;
         //destViewController.texts = self.categoryTexts;
         destViewController.pageTitle = self.budgetArray[(int)indexPath.row];
+        
         
         //testing code
         for(int i = 0; i < 5; i ++)
@@ -161,14 +161,14 @@
 }
 
 //call back function for delegate
-- (void) setBudget:(NSArray*) budget amount:(NSArray*) amount colors:(NSArray*)color
+- (void) setBudget:(NSMutableArray*) budget amount:(NSMutableArray *) amount colors:(NSMutableArray*)color
 {
     self.budgetArray = budget;
     self.amountArray = amount;
     self.colors = color;
     [self reloadData];
 }
-- (void) setTexts:(NSArray*) textsArray slices:(NSArray*) slicesArray
+- (void) setTexts:(NSMutableArray*) textsArray slices:(NSMutableArray *) slicesArray
 {
     self.categoryTexts = textsArray;
     self.categorySlices = slicesArray;
