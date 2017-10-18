@@ -194,6 +194,7 @@
     if (pickerView == self.periodPicker) {
         //need controller
         self.periodTF.text = _periods[row];
+        
         [self.periodTF endEditing:YES];
 #warning reload here
     }

@@ -276,7 +276,7 @@
                             <constraint firstItem="q0O-rI-3q8" firstAttribute="top" secondItem="LQb-j3-OZV" secondAttribute="bottom" constant="193" id="zrD-WB-g6i"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Profile" image="profileIcon" id="jg7-oV-pfO"/>
+                    <tabBarItem key="tabBarItem" title="Profile" image="profileIcon" selectedImage="profileIcon" id="jg7-oV-pfO"/>
                     <navigationItem key="navigationItem" title="Profile" id="RuH-Jk-dXc"/>
                     <connections>
                         <outlet property="emailLabel" destination="Nje-nD-S1f" id="zbd-NS-MCp"/>

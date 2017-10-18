@@ -16,5 +16,9 @@
 
 
 - (void) getBudgetInfo:(Budget *)budget;
+- (void) deleteCategorySuccess;
+- (void) deleteCategoryFail;
+- (void) editEntireBudgetSuccess;
+- (void) editEntireBudgetFail;
 
 @end

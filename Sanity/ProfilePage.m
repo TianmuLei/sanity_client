@@ -30,6 +30,15 @@
     
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    _controller = UIClientConnector.myClient.profilePage;
+    UIClientConnector.myClient.profilePage.delegate = self;
+    [_controller getUserInfo];
+    
+   // [self.view]; // to reload selected cell
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
