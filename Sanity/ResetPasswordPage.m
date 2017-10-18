@@ -44,8 +44,8 @@
         [self getAlerted:@"New password is inconsistent" msg:@"Make sure that the old password and new password are the same."];
     }
     else {
-    
     //call controller and update information
+        
     }
 
 }

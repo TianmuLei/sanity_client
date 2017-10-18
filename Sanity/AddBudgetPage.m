@@ -172,7 +172,10 @@ typedef enum:NSInteger{
         }
         
         NSNumber *frequency = [NSNumber numberWithInt:[_frequencyTF.text intValue]];
-        
+        if (mBudget.threshold > 100) {
+            [self getAlerted:@"Threshold Error" msg:@"Threshold cannot exceeds 100"];
+            formatError = true;
+        }
 #warning  get controller / delegete = self
         if (!formatError){
             _controller = UIClientConnector.myClient.addBudget;
@@ -224,7 +227,9 @@ typedef enum:NSInteger{
             HobbyCell *cell = [tableView dequeueReusableCellWithIdentifier:HobbyCellID];
             if(cell == nil){
                 cell = [[NSBundle mainBundle] loadNibNamed:HobbyCellID owner:nil options:nil].lastObject;
+                cell.categoryNameTF.text = @"";
             }
+            cell.categoryNameTF.text = @"";
             [_categoryNameCells addObject:cell];
             return cell;
         }
@@ -232,7 +237,9 @@ typedef enum:NSInteger{
             AmountCell *cell = [tableView dequeueReusableCellWithIdentifier:AmountCellID];
             if(cell == nil){
                 cell = [[NSBundle mainBundle] loadNibNamed:AmountCellID owner:nil options:nil].lastObject;
+                cell.amountTF.text = @"";
             }
+            cell.amountTF.text = @"";
             [_categoryAmountCells addObject:cell];
             return cell;
         }

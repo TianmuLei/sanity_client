@@ -70,8 +70,6 @@
     self.categoryPicker.showsSelectionIndicator = YES;
     _categoryTF.inputView = self.categoryPicker;
     
-    [AppDelegate setNotificationTitleAndContent:@"一条价值108刀的push notification" withContent:@"如果我活在ios10之前的年代多好。。"];
-    [AppDelegate registerNotification:20 ];
  
 //    [yourpicker setDelegate: self];
 //    yourpicker.showsSelectionIndicator = YES;
@@ -170,11 +168,37 @@
                                                              NSCalendarUnitMinute|
                                                              NSCalendarUnitSecond) fromDate:[_date date]];
         
+        //check whether exceeds amount
+        NSNumber *newAmount = [NSNumber numberWithFloat:_amountTF.text.floatValue];
         
-        [_controller addTransaction:[NSNumber numberWithInt:_amountTF.text.floatValue] describe:_descripTF.text category:_categoryTF.text budget:_budgetTF.text date:components];
+        [_controller addTransaction:newAmount describe:_descripTF.text category:_categoryTF.text budget:_budgetTF.text date:components];
         
     }
 
+}
+
+- (BOOL) exceedsBudget:(NSNumber *) newAmount withBudget:(NSString*) budget withCategory:(NSString*) cate{
+    
+    for (Budget* b in _budgets) {
+        if (b.name == budget) {
+            int threshold = b.threshold;
+            for (Category *c in b.categories) {
+                if (c.name == cate){
+                    float n = c.spent + [newAmount floatValue];
+                    if (n > c.limit*threshold/100) {
+                        NSString *notiTitle = [[NSString alloc] initWithFormat:@"Spent over budget with threshold %@ %% ", @(b.threshold).stringValue];
+                        NSString *notiContent = [[NSString alloc] initWithFormat:@"You spend over budget %@ in category %@", b.name, c.name];
+                        [AppDelegate setNotificationTitleAndContent:notiTitle withContent:notiContent];
+                        [AppDelegate registerNotification:1];
+#warning lack time interval
+                        break;
+                    }
+                }
+            }
+        }
+    }
+    
+    return false;
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {

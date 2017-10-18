@@ -17,6 +17,8 @@
 @property (weak, nonatomic) IBOutlet UITextField *periodTF;
 @property (weak, nonatomic) IBOutlet UITextField *thresholdTF;
 @property (weak, nonatomic) IBOutlet UITextField *frequencyTF;
+
+@property NSIndexPath *toBeDeleteRow;
 @property BOOL canDeleteCategories;
 
 
@@ -33,8 +35,6 @@
     testCate.name = @"test1";
     testCate.limit = 10.25f;
     [ _categories addObject:testCate];
-    // [ _categories addObject:@"whatttt" ];
-    // [ _categories addObject:@"whatttt" ];
     _canDeleteCategories = NO;
     
     
@@ -79,6 +79,9 @@
 }
 //submission get data
 - (IBAction)submitEdit:(id)sender {
+    NSString *budgetName = _budgetNameTF.text;
+
+    
 }
 
 
@@ -114,8 +117,8 @@
                                    handler:^(UIAlertAction *action){
 #warning call@jiaxin's function confirm delete
                                        //Delete the object from the friends array and the table.
-                                       [_categories removeObjectAtIndex:indexPath.row];
-                                       [self.tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
+                                       _toBeDeleteRow = indexPath;
+                                   
                                    }];
         
         [alertController addAction:cancelAction];
@@ -171,6 +174,48 @@
     self.categories = [[NSMutableArray alloc] init];
     self.categories = budget.categories;//get categories
     
+}
+
+// call back functions
+- (void) deleteCategorySuccess {
+    [_categories removeObjectAtIndex:_toBeDeleteRow.row];
+    [self.tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:_toBeDeleteRow] withRowAnimation:UITableViewRowAnimationFade];
+}
+- (void) deleteCategoryFail {
+    [self getAlerted:@"Delete Failed" msg:@"Server receives error message."];
+}
+- (void) editEntireBudgetSuccess {
+#warning Need to refreshpage
+    [self.navigationController popToRootViewControllerAnimated:YES];
+}
+- (void) editEntireBudgetFail {
+    [self getAlerted:@"Update failed" msg:@"Update error occured"];
+}
+
+
+//alert window
+- (void) getAlerted: (NSString*) errorTitle msg:(NSString*) errorMessage {
+    UIAlertController *alertController = [UIAlertController
+                                          alertControllerWithTitle:errorTitle
+                                          message:errorMessage
+                                          preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertAction *okAction = [UIAlertAction
+                               actionWithTitle:@"OK"
+                               style:UIAlertActionStyleDefault
+                               handler:^(UIAlertAction *action){
+                                   //set all label to red
+                               }];
+    [alertController addAction:okAction];
+    [self presentViewController:alertController animated:YES completion:nil];
+    
+}
+
+//return NO if not numeric
+- (BOOL) numberFormatChecker: (NSString *) mString{
+    NSNumberFormatter *nf = [[NSNumberFormatter alloc] init];
+    BOOL isDecimal = [nf numberFromString:mString] != nil;
+    
+    return isDecimal;
 }
 
 @end

@@ -12,6 +12,7 @@
 @interface ResetUsernamePage ()
 @property (weak, nonatomic) IBOutlet UITextField *usernameTF;
 
+
 @end
 
 @implementation ResetUsernamePage
@@ -29,8 +30,17 @@
     if (_usernameTF.text.length < 1) {
         [self getAlerted:@"Required Field" msg:@"You need to fill in username text field to change username"];
     }
+#warning call controller 
+    
 }
 
+- (void) resetSuccess{
+     [self.navigationController popToRootViewControllerAnimated:YES];
+}
+
+- (void) resetFailed{
+    [self getAlerted:@"Reset Failed" msg:@""];
+}
 
 //alert window
 - (void) getAlerted: (NSString*) errorTitle msg:(NSString*) errorMessage {

@@ -11,5 +11,7 @@
 
 @interface ResetUsernamePage : ViewController
 
+- (void) resetSuccess;
+- (void) resetFailed;
 
 @end
