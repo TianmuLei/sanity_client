@@ -204,10 +204,13 @@
 
             }
         }
-        else if ([function isEqualToString:@"addTransaction"]){
+        else if ([function isEqualToString:@"createTransaction"]){
             if([status isEqualToString:@"fail"]){
                  [_addTransaction fail];
             }else{
+                NSDictionary*info=[messageObject objectForKey:@"information"];
+                _budgetListDataDic=(NSMutableArray*)[info objectForKey:@"budgetLsit"];
+                [self pharseAlldata:_budgetListDataDic];
                  [_addTransaction success];
             }
         }
