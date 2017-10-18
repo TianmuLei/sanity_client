@@ -10,6 +10,7 @@
 
 @protocol  CategoryPageControllerDelegate<NSObject>
 //add call back function here
+- (void) setTexts:(NSArray*) textsArray slices:(NSArray*)slicesArray transactionNames:(NSArray*) names transactionAmounts:(NSArray*) amounts transactionDates:(NSArray*)dates numOfTransactions:(int) number labelColor:(NSString*) color;
 @required
 @end
 

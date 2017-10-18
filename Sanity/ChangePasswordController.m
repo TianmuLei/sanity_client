@@ -55,9 +55,10 @@
 
 -(void) success{
     
+    [self.delegate resetPasswordSuccess];
 }
 -(void) fail{
-    
+     [self.delegate resetPasswordFailed];
 }
 
 
