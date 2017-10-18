@@ -90,7 +90,10 @@
 
 - (CGFloat)pieChart:(XYPieChart *)pieChart valueForSliceAtIndex:(NSUInteger)index
 {
-    return [[self.slices objectAtIndex:index] intValue];
+    NSArray *array = [[self.slices objectAtIndex:index] componentsSeparatedByString:@"/"];
+    //NSLog(@"%@",[array objectAtIndex:1]);
+    return [[array objectAtIndex:1] intValue];
+    //return [[self.slices objectAtIndex:index] intValue];
 }
 
 - (NSString *)pieChart:(XYPieChart *)pieChart textForSliceAtIndex:(NSUInteger)index
@@ -103,8 +106,10 @@
 - (void)pieChart:(XYPieChart *)pieChart didSelectSliceAtIndex:(NSUInteger)index
 {
     self.indexClicked = (int)index;
+    //for getting values
+    NSArray *array = [[self.slices objectAtIndex:index] componentsSeparatedByString:@"/"];
     //display detailed Info
-    self.labelForClickedElement.text = [NSString stringWithFormat:@"%@ $%d/$%d",[self.texts objectAtIndex:index],(int)[self.slices objectAtIndex:index],80];
+    self.labelForClickedElement.text = [NSString stringWithFormat:@"%@,   %.02f/%.02f",[self.texts objectAtIndex:index],[[array objectAtIndex:0] floatValue],[[array objectAtIndex:1] floatValue] ] ;
     
     //change text color based on the spending level
     if(rand()%3 == 0)
