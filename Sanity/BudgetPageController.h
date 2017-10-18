@@ -10,6 +10,7 @@
 
 @protocol  BudgetPageControllerDelegate<NSObject>
 //add call back function here
+- (void) setBudget:(NSArray*) budget amount:(NSArray*) amount colors:(NSArray*)color;
 @required
 @end
 
