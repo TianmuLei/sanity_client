@@ -7,6 +7,8 @@
 //
 
 #import "BudgetListController.h"
+#include "Category.h"
+#include "Budget.h"
 
 @implementation BudgetListController
 
@@ -34,10 +36,25 @@
 
 
 -(void) requestBudget:(NSString*) name{
-     NSDictionary *info=@{@"email":self.client.myUser.email,@"name":name};
-     NSDictionary *message=@{@"function":@"requestBudget",@"information":info};
-     [self.client sendMessage:message];
-    
+    Budget* single=[self.client getBudget:name];
+    NSMutableArray *name1 = [[NSMutableArray alloc]init];
+    NSMutableArray *amount = [[NSMutableArray alloc]init];
+    for(int j=0;j<single.categories.count;j++){
+        Category* cat=  [single.categories objectAtIndex:j];
+        NSString* Catname=cat.name;
+        double Catspent=cat.spent;
+        double Cattotal=cat.limit;
+        NSString* amountString= [NSString stringWithFormat:@"%f/%f",Catspent,Cattotal];
+        [amount addObject:amountString];
+        [name1 addObject:Catname];
+        
+    }
+    NSLog(@"%@", name1);
+     NSLog(@"%@", amount);
+    [self.delegate setTexts:name1 slices:amount];
+
 }
+
+
 
 @end

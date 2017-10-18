@@ -18,6 +18,8 @@
 @class BudgetPageController;
 @class CategoryPageController;
 @class ProfilePageController;
+@class Budget;
+@class Category;
 
 @interface client : NSObject <SRWebSocketDelegate>
 @property (strong, atomic)  SRWebSocket *webSocket;
@@ -36,5 +38,7 @@
 -(NSDictionary*) StringToJSON:(NSString*) JSONString;
 -(void) addBudgetListData:(NSMutableArray*) list;
 -(void) sendMessage:(NSDictionary*)dict;
+-(Budget*) getBudget:(NSString*)name;
+-(Category*) getCategory:(NSString*)budgetName :(NSString*)categoryName;
 @end
 
