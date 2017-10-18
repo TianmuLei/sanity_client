@@ -8,6 +8,7 @@
 
 #import "SignupPage.h"
 #import "HomePageTableViewController.h"
+#import "UIClientConnector.h"
 
 
 @interface SignupPage ()
@@ -87,11 +88,18 @@
 }
 
 - (void) trySignup{
+    self.signupController = UIClientConnector.myClient.signup;
+    UIClientConnector.myClient.signup.delegate = self;
+    [self.signupController signup:self.email username:self.username password:self.password];
+    
+    
+    
+    /*
     #warning to be deleted!
     self.budgetArray = @[@"iPhone1", @"iPhone2",@"iPhone3",@"iPhone4",@"iPhone5",@"iTV",@"iNew"];
     self.amountArray = @[@"10/20",@"100/200",@"1000/2000",@"100000/2000000",@"10/90",@"10/100",@"35/253"];
     self.colors = @[@"black",@"black",@"black",@"orange",@"red",@"orange",@"black"];
-    [self signupSucceeded:self.budgetArray withAmount:self.amountArray withColor:self.colors];
+    [self signupSucceeded:self.budgetArray withAmount:self.amountArray withColor:self.colors];*/
 }
 
 - (void) signupSucceeded:(NSArray *) budget withAmount:(NSArray *) amount withColor:(NSArray *) color

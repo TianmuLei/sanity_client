@@ -62,11 +62,11 @@
     return hash;
 }
 
--(void) success{
+-(void) fail{
     [self.delegate signupFailed:@"The email address has already been registered"];
     
 }
--(void) fail{
+-(void) success{
     NSMutableArray *name = [[NSMutableArray alloc]init];
     NSMutableArray *amount = [[NSMutableArray alloc]init];
     NSMutableArray *color = [[NSMutableArray alloc]init];
