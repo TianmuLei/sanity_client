@@ -32,9 +32,9 @@
         [self getAlerted:@"Required Field" msg:@"You need to fill in username text field to change username"];
     }
     
-  //  _controller = UIClientConnector.myClient.;
-   // UIClientConnector.myClient.addBudget.delegate = self;
-    
+    _controller = UIClientConnector.myClient.changeUsername;
+   UIClientConnector.myClient.changeUsername.delegate = self;
+    [_controller changeUsername:_usernameTF.text];
     
 }
 
