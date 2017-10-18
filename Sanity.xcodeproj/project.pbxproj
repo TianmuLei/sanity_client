@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7C252C631F97272F00DCD981 /* ChangePasswordController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C252C621F97272F00DCD981 /* ChangePasswordController.m */; };
+		7C252C661F97275000DCD981 /* ChangeUsernameController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C252C651F97275000DCD981 /* ChangeUsernameController.m */; };
 		7C2D9DFA1F875EFD00027681 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C2D9DF91F875EFD00027681 /* main.m */; };
 		7C2D9DFD1F875EFD00027681 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C2D9DFC1F875EFD00027681 /* AppDelegate.m */; };
 		7C2D9E001F875EFD00027681 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C2D9DFF1F875EFD00027681 /* ViewController.m */; };
@@ -88,6 +90,10 @@
 /* Begin PBXFileReference section */
 		678A0D931E29196D9DECA4A2 /* Pods-Sanity.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sanity.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Sanity/Pods-Sanity.debug.xcconfig"; sourceTree = "<group>"; };
 		707A33C305BFBF4336B3971E /* Pods-Sanity.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sanity.release.xcconfig"; path = "Pods/Target Support Files/Pods-Sanity/Pods-Sanity.release.xcconfig"; sourceTree = "<group>"; };
+		7C252C611F97272F00DCD981 /* ChangePasswordController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChangePasswordController.h; sourceTree = "<group>"; };
+		7C252C621F97272F00DCD981 /* ChangePasswordController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChangePasswordController.m; sourceTree = "<group>"; };
+		7C252C641F97275000DCD981 /* ChangeUsernameController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChangeUsernameController.h; sourceTree = "<group>"; };
+		7C252C651F97275000DCD981 /* ChangeUsernameController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChangeUsernameController.m; sourceTree = "<group>"; };
 		7C2D9DF51F875EFD00027681 /* Sanity.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sanity.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7C2D9DF91F875EFD00027681 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		7C2D9DFB1F875EFD00027681 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -265,6 +271,10 @@
 				7C8F834B1F93FED10053B40B /* UIClientConnector.m */,
 				7C8F834D1F94BEFA0053B40B /* EditBudgetController.h */,
 				7C8F834E1F94BEFA0053B40B /* EditBudgetController.m */,
+				7C252C611F97272F00DCD981 /* ChangePasswordController.h */,
+				7C252C621F97272F00DCD981 /* ChangePasswordController.m */,
+				7C252C641F97275000DCD981 /* ChangeUsernameController.h */,
+				7C252C651F97275000DCD981 /* ChangeUsernameController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -634,10 +644,12 @@
 				7C8F834F1F94BEFA0053B40B /* EditBudgetController.m in Sources */,
 				849E42941F9438EC00074460 /* SingleCategoryTableViewController.m in Sources */,
 				849E42971F943E8600074460 /* TranscationLabelCell.m in Sources */,
+				7C252C631F97272F00DCD981 /* ChangePasswordController.m in Sources */,
 				7C2D9DFD1F875EFD00027681 /* AppDelegate.m in Sources */,
 				CC8D32181F9558CC00FE0704 /* AddCategoryPage.m in Sources */,
 				7C703F2C1F8AC1EB00B5D982 /* Category.m in Sources */,
 				8434BE0A1F91FF2200A4BDC7 /* SignupPage.m in Sources */,
+				7C252C661F97275000DCD981 /* ChangeUsernameController.m in Sources */,
 				CC673EFF1F94C372000CE0B6 /* AddTransactionPage.m in Sources */,
 				7C2D9E2D1F875FA200027681 /* client.m in Sources */,
 				7C8F83491F93FB3A0053B40B /* ProfilePageController.m in Sources */,

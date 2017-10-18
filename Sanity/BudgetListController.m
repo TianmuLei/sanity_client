@@ -49,6 +49,8 @@
         [name1 addObject:Catname];
         
     }
+    NSLog(@"%@", name1);
+     NSLog(@"%@", amount);
     [self.delegate setTexts:name1 slices:amount];
 
 }

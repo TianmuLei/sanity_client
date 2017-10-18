@@ -57,7 +57,7 @@
     //NSDictionary *message=@{@"function":@"test"};
     //[UIClientConnector.myClient sendMessage:message];
 
-    LoginController* logCon=[[LoginController alloc] initWithClass:self];
+   // LoginController* logCon=[[LoginController alloc] initWithClass:self];
    //[logCon login:@"tianmule@usc.edu" password:@"baobao"];
    //[logCon login:@"tianmule@usc.edu" password:@"baobao1"];
     
@@ -253,6 +253,19 @@
                 [self pharseAlldata:_budgetListDataDic];
                 
             
+        }else if ([function isEqualToString:@"changePassword"]){
+            if([status isEqualToString:@"fail"]){
+            }
+            else{
+                
+            }
+        }
+        else if ([function isEqualToString:@"changeUsername"]){
+            if([status isEqualToString:@"fail"]){
+            }
+            else{
+                
+            }
         }
         
         
@@ -467,7 +480,16 @@
     return nil;
     
 }
-
+-(Category*) getCategory:(NSString*)budgetName :(NSString*)categoryName{
+    Budget* single=[self getBudget:budgetName];
+    for(int j=0;j<single.categories.count;j++){
+        Category* cat=  [single.categories objectAtIndex:j];
+        if([cat.name isEqualToString:categoryName]){
+            return cat;
+        }
+    }
+    return nil;
+}
 
 
 
