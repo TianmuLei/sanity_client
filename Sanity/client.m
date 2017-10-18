@@ -16,6 +16,8 @@
 #import "CategoryPageController.h"
 #import "ProfilePageController.h"
 #import "UIClientConnector.h"
+#import "ChangePasswordController.h"
+#import "ChangeUsernameController.h"
 #import "Budget.h"
 #import "Category.h"
 #import "Transaction.h"
@@ -38,7 +40,8 @@
         _budgetList=[[BudgetListController alloc] initWithClass:self];
         _categoryPage=[[CategoryPageController alloc] initWithClass:self];
         _profilePage=[[ProfilePageController alloc] initWithClass:self];
-
+        _changePassword=[[ChangePasswordController alloc] initWithClass:self];
+        _changeUsername=[[ChangeUsernameController alloc] initWithClass:self];
         
         
     }
