@@ -22,6 +22,8 @@
 #import "Budget.h"
 #import "Category.h"
 #import "Transaction.h"
+#import "BudgetListHistoryController.h"
+#import "BudgetPageHistoryController.h"
 
 @implementation client
 - (instancetype)init
@@ -44,6 +46,8 @@
         _changePassword=[[ChangePasswordController alloc] initWithClass:self];
         _changeUsername=[[ChangeUsernameController alloc] initWithClass:self];
         _editBudget=[[EditBudgetController alloc] initWithClass:self];
+        _budgetListHistory=[[BudgetListHistoryController alloc] initWithClass:self];
+        _budgetPageHistory=[[BudgetPageHistoryController alloc] initWithClass:self];
 
         
         

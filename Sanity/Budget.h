@@ -20,7 +20,7 @@
 @property (strong, atomic) NSString* name;
 @property (strong, atomic) NSMutableArray* categories;
 @property (strong, atomic) NSDateComponents* startDate;
-@property (strong, atomic) NSDateComponents* startDateString;
+@property (strong, atomic) NSString* startDateString;
 
 
 @end
