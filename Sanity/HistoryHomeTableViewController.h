@@ -7,12 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "BudgetListHistoryController.h"
 
 @interface HistoryHomeTableViewController : UITableViewController
 @property (strong,nonatomic) NSArray * budgetArray;
 @property (strong,nonatomic) NSArray * amountArray;
 @property (strong,nonatomic) NSArray * colors;
+@property (strong,nonatomic) BudgetListHistoryController * controller;
 - (void) setBudget:(NSArray*) budget amount:(NSArray*) amount colors:(NSArray*)color;
 - (void) setTexts:(NSArray*) textsArray slices:(NSArray*) slicesArray;
 
