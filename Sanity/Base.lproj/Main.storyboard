@@ -592,14 +592,29 @@
                                 <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="User" translatesAutoresizingMaskIntoConstraints="NO" id="0nX-51-VP7">
+                                <rect key="frame" x="52.5" y="255" width="40" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="0nX-51-VP7" secondAttribute="height" multiplier="1:1" id="gqw-LG-Mfi"/>
+                                </constraints>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="password" translatesAutoresizingMaskIntoConstraints="NO" id="EvL-PQ-nk6">
+                                <rect key="frame" x="52" y="325" width="40" height="40"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="EvL-PQ-nk6" firstAttribute="width" secondItem="EvL-PQ-nk6" secondAttribute="height" multiplier="1:1" id="0Sk-LO-kOf"/>
+                            <constraint firstItem="EvL-PQ-nk6" firstAttribute="leading" secondItem="0nX-51-VP7" secondAttribute="leading" id="22W-Eb-twd"/>
                             <constraint firstItem="Bi9-Z5-1h3" firstAttribute="centerX" secondItem="O9v-aH-7xb" secondAttribute="centerX" id="2bn-X0-FhU"/>
                             <constraint firstItem="1MH-OY-tf0" firstAttribute="top" secondItem="exT-rf-vJi" secondAttribute="bottom" id="2xd-KG-yvP"/>
                             <constraint firstItem="7d0-qO-EP1" firstAttribute="top" secondItem="Xo9-TR-Gxw" secondAttribute="bottom" constant="75" id="8jH-h4-AZY"/>
+                            <constraint firstItem="8vz-7K-dR3" firstAttribute="height" secondItem="EvL-PQ-nk6" secondAttribute="height" id="9Ih-zf-587"/>
                             <constraint firstItem="Bi9-Z5-1h3" firstAttribute="top" secondItem="8vz-7K-dR3" secondAttribute="bottom" constant="25" id="9xD-VA-RGV"/>
                             <constraint firstItem="xGt-Bw-deW" firstAttribute="top" secondItem="8vz-7K-dR3" secondAttribute="bottom" constant="100" id="C85-3f-MJr"/>
+                            <constraint firstItem="7d0-qO-EP1" firstAttribute="leading" secondItem="0nX-51-VP7" secondAttribute="trailing" constant="20" id="MjY-0w-FIB"/>
+                            <constraint firstItem="7d0-qO-EP1" firstAttribute="top" secondItem="0nX-51-VP7" secondAttribute="top" id="N62-Xx-Rnv"/>
+                            <constraint firstItem="8vz-7K-dR3" firstAttribute="top" secondItem="EvL-PQ-nk6" secondAttribute="top" id="Pqs-ZW-KGs"/>
                             <constraint firstItem="exT-rf-vJi" firstAttribute="top" secondItem="O9v-aH-7xb" secondAttribute="top" id="V6s-KC-ddq"/>
                             <constraint firstItem="8vz-7K-dR3" firstAttribute="top" secondItem="7d0-qO-EP1" secondAttribute="bottom" constant="30" id="VAe-bP-I0A"/>
                             <constraint firstItem="hP6-IZ-s1c" firstAttribute="top" secondItem="xGt-Bw-deW" secondAttribute="bottom" constant="25" id="Wxt-AD-ZVX"/>
@@ -609,6 +624,7 @@
                             <constraint firstAttribute="trailing" secondItem="exT-rf-vJi" secondAttribute="trailing" id="aaL-r6-4Lw"/>
                             <constraint firstItem="Xo9-TR-Gxw" firstAttribute="top" secondItem="PrX-c3-2KO" secondAttribute="bottom" constant="50" id="ed7-e7-bu4"/>
                             <constraint firstItem="hP6-IZ-s1c" firstAttribute="centerX" secondItem="O9v-aH-7xb" secondAttribute="centerX" id="gKM-PC-gVq"/>
+                            <constraint firstItem="7d0-qO-EP1" firstAttribute="height" secondItem="0nX-51-VP7" secondAttribute="height" id="iTM-Yh-B9Q"/>
                             <constraint firstItem="exT-rf-vJi" firstAttribute="leading" secondItem="O9v-aH-7xb" secondAttribute="leading" id="tDk-dl-MRE"/>
                             <constraint firstItem="xGt-Bw-deW" firstAttribute="centerX" secondItem="O9v-aH-7xb" secondAttribute="centerX" id="xRe-ap-JcR"/>
                         </constraints>
@@ -625,7 +641,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xMZ-J8-Lyd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1892" y="-525"/>
+            <point key="canvasLocation" x="-1892" y="-525.78710644677665"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="45S-wh-Lb5">
@@ -2016,6 +2032,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="User" width="64" height="64"/>
+        <image name="password" width="128" height="128"/>
         <image name="profileIcon" width="20" height="20"/>
     </resources>
     <inferredMetricsTieBreakers>
