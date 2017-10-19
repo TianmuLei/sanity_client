@@ -9,6 +9,7 @@
 #import "EditBudgetPage.h"
 #import "CategoryDisplay.h"
 #import "Category.h"
+#import "EditBudgetController.h"
 
 @interface EditBudgetPage ()
 @property (weak, nonatomic) IBOutlet UITextField *budgetNameTF;
@@ -18,6 +19,7 @@
 @property (weak, nonatomic) IBOutlet UITextField *thresholdTF;
 @property (weak, nonatomic) IBOutlet UITextField *frequencyTF;
 
+@property EditBudgetController *controller;
 @property NSIndexPath *toBeDeleteRow;
 @property BOOL canDeleteCategories;
 
@@ -36,8 +38,10 @@
     testCate.limit = 10.25f;
     [ _categories addObject:testCate];
     _canDeleteCategories = NO;
-    
-    
+    Budget *b = [UIClientConnector.myClient getBudget:_budgetName];
+   // [_controller requestBudget:_budgetName];
+ 
+    [self getBudgetInfo:b];
 }
 
 //reload section two
@@ -46,6 +50,12 @@
     //select section 2 and reload data
     NSRange range = NSMakeRange(1, 1);
     NSIndexSet *section = [NSIndexSet indexSetWithIndexesInRange:range];
+    
+    Budget *b = [UIClientConnector.myClient getBudget:_budgetName];
+    // [_controller requestBudget:_budgetName];
+    
+    [self getBudgetInfo:b];
+    
     [self.tableView reloadSections:section withRowAnimation:UITableViewRowAnimationNone];
 }
 
@@ -165,11 +175,14 @@
 //set budget before load page
 - (void) getBudgetInfo:(Budget *)budget{
     self.budgetNameTF.text = budget.name;
-    self.startDateLabel.text = [NSDateFormatter localizedStringFromDate:[budget.startDate date]
+   // self.startDateLabel.text = budget.startDateString;
+    
+    /*[NSDateFormatter localizedStringFromDate:[budget.startDate date]
                                                               dateStyle:NSDateFormatterShortStyle
-                                                              timeStyle:NSDateFormatterFullStyle];
+                                                              timeStyle:NSDateFormatterFullStyle];*/
     self.periodTF.text = [[NSNumber numberWithInt:budget.period] stringValue];
     self.thresholdTF.text = [[NSNumber numberWithInt:budget.threshold] stringValue];
+    self.frequencyTF.text = [[NSNumber numberWithInt:budget.frequency] stringValue];
     self.categories = [[NSMutableArray alloc] init];
     self.categories = budget.categories;//get categories
     

@@ -8,9 +8,10 @@
 
 #import <UIKit/UIKit.h>
 #import "Budget.h"
+#import "EditBudgetController.h"
+#import "UIClientConnector.h"
 
-@interface EditBudgetPage : UITableViewController
-#warning @ziqian data I need a nsstirng of budget name
+@interface EditBudgetPage : UITableViewController<EditBudgetControllerDelegate>
 
 @property (strong,nonatomic) NSString* budgetName;
 
