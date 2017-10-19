@@ -34,4 +34,9 @@
 
 }
 
+-(Budget*) requestBudget:(NSString*) name{
+    return [self.client getBudget:name];
+    
+}
+
 @end
