@@ -21,4 +21,5 @@
 - (void) editBudget :(NSString*) oldBudgetName withnewBudget:(NSString *)newBudgetName withPeriod:(NSString*) period withThreshold:(NSString*)threshold withFrequency:(NSString*)frequency;
 -(void) success;
 -(void) fail;
+-(Budget*) requestBudget:(NSString*) name;
 @end
