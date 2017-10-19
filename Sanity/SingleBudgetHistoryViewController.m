@@ -48,8 +48,12 @@
     self.periodPicker.showsSelectionIndicator = YES;
     
     _periodTF.inputView = _periodPicker;
+    
+    //set up delegate
+    self.controller = UIClientConnector.myClient.budgetPageHistory;
+    UIClientConnector.myClient.budgetPageHistory.delegate = self;
+    //[self.controller requestBudget:self.pageTitle period:1];
 }
-
 
 
 - (void)didReceiveMemoryWarning {
@@ -63,14 +67,18 @@
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
     if([segue.identifier isEqualToString:@"SingleBudgetHistoryToCategory"]){
         PieChartCategoryViewController *controller = (PieChartCategoryViewController *)segue.destinationViewController;
-        controller.texts =  @[[self.texts objectAtIndex:self.indexClicked],@"unused"];
-        controller.slices = @[@"50",@"130"];
-        controller.transactionNames = @[@"trans1",@"trans2"];
-        controller.transactionAmounts = @[@"$100",@"$150"];
-        controller.transactionDates = @[@"5/10/2017",@"8/10/2017"];
+        
+        controller.texts = [NSMutableArray arrayWithObjects:@"spent",@"left",nil];
+        controller.slices = [NSMutableArray arrayWithObjects:@"50",@"130",nil];
+        controller.transactionNames = [NSMutableArray arrayWithObjects:@"trans1",@"trans2",nil];
+        controller.transactionAmounts = [NSMutableArray arrayWithObjects:@"$100",@"$150",nil];
+        controller.transactionDates = [NSMutableArray arrayWithObjects:@"5/10/2017",@"8/10/2017",nil];
         controller.numOfTransactions = 2;
         controller.textForPieChart = @"100/200";
         controller.pieChartLabelColor = @"red";
+        
+        
+        controller.textForPieChart = self.slices[self.indexClicked];
         controller.pageTitle = self.texts[self.indexClicked];
         controller.budgetName = self.pageTitle;
     }

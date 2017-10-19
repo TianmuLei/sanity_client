@@ -52,19 +52,20 @@
     if([segue.identifier isEqualToString:@"BudgetToCategory"]){
         NSLog(@"send data");
         PieChartCategoryViewController *controller = (PieChartCategoryViewController *)segue.destinationViewController;
-        /*
-        controller.texts =  @[[self.texts objectAtIndex:self.indexClicked],@"unused"];
-        controller.slices = @[@"50",@"130"];
-        controller.transactionNames = @[@"trans1",@"trans2"];
-        controller.transactionAmounts = @[@"$100",@"$150"];
-        controller.transactionDates = @[@"5/10/2017",@"8/10/2017"];
+        
+        controller.texts =  [NSMutableArray arrayWithObjects: @"spent",@"left",nil];
+        controller.slices = [NSMutableArray arrayWithObjects: @"50",@"130",nil];
+        controller.transactionNames = [NSMutableArray arrayWithObjects: @"trans1",@"trans2",nil];
+        controller.transactionAmounts = [NSMutableArray arrayWithObjects: @"$100",@"$150",nil];
+        controller.transactionDates = [NSMutableArray arrayWithObjects:@"5/10/2017",@"8/10/2017",nil];
         controller.numOfTransactions = 2;
         controller.textForPieChart = @"100/200";
         controller.pieChartLabelColor = @"red";
-        */
+        
         controller.pageTitle = self.texts[self.indexClicked];
         controller.period = 0;
         controller.budgetName = self.pageTitle;
+        controller.textForPieChart = self.slices[self.indexClicked];
     }else if([segue.identifier isEqualToString:@"BudgetToEditBudget"]){
         EditBudgetPage *controller = (EditBudgetPage *)segue.destinationViewController;
         controller.budgetName = self.pageTitle;

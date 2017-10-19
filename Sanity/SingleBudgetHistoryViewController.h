@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "XYPieChart.h"
+#import "BudgetPageHistoryController.h"
 
 @interface SingleBudgetHistoryViewController : UIViewController
 
@@ -17,6 +18,8 @@
 @property (nonatomic, strong) NSMutableArray *texts;
 @property (nonatomic, strong) NSMutableArray *slices;
 @property (nonatomic, strong) NSString * pageTitle;
+@property (strong,nonatomic) BudgetPageHistoryController * controller;
+
 - (void) setTexts:(NSMutableArray*) textsArray slices:(NSMutableArray*)slicesArray;
 - (void) settingPeriodPicker: (NSArray*) periodArray;
 
