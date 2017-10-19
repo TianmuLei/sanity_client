@@ -23,6 +23,8 @@
 @class ChangePasswordController;
 @class ChangeUsernameController;
 @class EditBudgetController;
+@class BudgetListHistoryController;
+@class BudgetPageHistoryController;
 
 @interface client : NSObject <SRWebSocketDelegate>
 @property (strong, atomic)  SRWebSocket *webSocket;
@@ -38,6 +40,8 @@
 @property (strong,atomic) ChangeUsernameController* changeUsername;
 @property (strong,atomic) ChangePasswordController* changePassword;
 @property (strong,atomic) EditBudgetController* editBudget;
+@property (strong,atomic) BudgetListHistoryController* budgetListHistory;
+@property (strong,atomic) BudgetPageHistoryController* budgetPageHistory;
 @property (strong,atomic) NSMutableArray* budgetListData;
 @property (strong,atomic) NSMutableArray* budgetHistoryData;
 @property (strong,atomic) NSMutableArray* budgetHistoryDataDic;
