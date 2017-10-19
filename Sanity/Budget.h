@@ -16,6 +16,7 @@
 @property double spent;
 @property int period;
 @property int frequency;
+@property int remain;
 @property (strong, atomic) NSString* name;
 @property (strong, atomic) NSMutableArray* categories;
 @property (strong, atomic) NSDateComponents* startDate;

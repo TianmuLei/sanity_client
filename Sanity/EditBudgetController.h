@@ -8,6 +8,17 @@
 
 #import "MainController.h"
 
-@interface EditBudgetController : MainController
+@protocol  EditBudgetControllerDelegate<NSObject>
+- (void) editEntireBudgetSuccess;
+- (void) editEntireBudgetFail;
+@required
+@end
 
+@interface EditBudgetController : MainController{
+    id <EditBudgetControllerDelegate> _delegate;
+}
+@property (nonatomic,strong) id delegate;
+- (void) editBudget :(NSString*) oldBudgetName withnewBudget:(NSString *)newBudgetName withPeriod:(NSString*) period withThreshold:(NSString*)threshold withFrequency:(NSString*)frequency;
+-(void) success;
+-(void) fail;
 @end

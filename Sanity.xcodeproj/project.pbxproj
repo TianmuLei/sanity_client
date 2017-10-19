@@ -18,6 +18,8 @@
 		7C2D9E131F875EFD00027681 /* SanityTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C2D9E121F875EFD00027681 /* SanityTests.m */; };
 		7C2D9E1E1F875EFD00027681 /* SanityUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C2D9E1D1F875EFD00027681 /* SanityUITests.m */; };
 		7C2D9E2D1F875FA200027681 /* client.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C2D9E2C1F875FA200027681 /* client.m */; };
+		7C698AA81F983F4800F697F7 /* BudgetListHistoryController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C698AA71F983F4800F697F7 /* BudgetListHistoryController.m */; };
+		7C698AAB1F983F6000F697F7 /* BudgetPageHistoryController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C698AAA1F983F6000F697F7 /* BudgetPageHistoryController.m */; };
 		7C703F291F8ABF6A00B5D982 /* Transaction.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C703F281F8ABF6A00B5D982 /* Transaction.m */; };
 		7C703F2C1F8AC1EB00B5D982 /* Category.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C703F2B1F8AC1EB00B5D982 /* Category.m */; };
 		7C703F2F1F8AC32A00B5D982 /* Budget.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C703F2E1F8AC32A00B5D982 /* Budget.m */; };
@@ -112,6 +114,10 @@
 		7C2D9E1F1F875EFD00027681 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7C2D9E2B1F875FA200027681 /* client.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = client.h; sourceTree = "<group>"; };
 		7C2D9E2C1F875FA200027681 /* client.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = client.m; sourceTree = "<group>"; };
+		7C698AA61F983F4800F697F7 /* BudgetListHistoryController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BudgetListHistoryController.h; sourceTree = "<group>"; };
+		7C698AA71F983F4800F697F7 /* BudgetListHistoryController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BudgetListHistoryController.m; sourceTree = "<group>"; };
+		7C698AA91F983F6000F697F7 /* BudgetPageHistoryController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BudgetPageHistoryController.h; sourceTree = "<group>"; };
+		7C698AAA1F983F6000F697F7 /* BudgetPageHistoryController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BudgetPageHistoryController.m; sourceTree = "<group>"; };
 		7C703F271F8ABF6A00B5D982 /* Transaction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Transaction.h; sourceTree = "<group>"; };
 		7C703F281F8ABF6A00B5D982 /* Transaction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Transaction.m; sourceTree = "<group>"; };
 		7C703F2A1F8AC1EB00B5D982 /* Category.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Category.h; sourceTree = "<group>"; };
@@ -275,6 +281,10 @@
 				7C252C621F97272F00DCD981 /* ChangePasswordController.m */,
 				7C252C641F97275000DCD981 /* ChangeUsernameController.h */,
 				7C252C651F97275000DCD981 /* ChangeUsernameController.m */,
+				7C698AA61F983F4800F697F7 /* BudgetListHistoryController.h */,
+				7C698AA71F983F4800F697F7 /* BudgetListHistoryController.m */,
+				7C698AA91F983F6000F697F7 /* BudgetPageHistoryController.h */,
+				7C698AAA1F983F6000F697F7 /* BudgetPageHistoryController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -654,6 +664,7 @@
 				7C2D9E2D1F875FA200027681 /* client.m in Sources */,
 				7C8F83491F93FB3A0053B40B /* ProfilePageController.m in Sources */,
 				7C8F83401F93FA5F0053B40B /* BudgetListController.m in Sources */,
+				7C698AAB1F983F6000F697F7 /* BudgetPageHistoryController.m in Sources */,
 				7C703F2F1F8AC32A00B5D982 /* Budget.m in Sources */,
 				7C8F833A1F92C72E0053B40B /* AddTransactionController.m in Sources */,
 				7C8F833D1F92DE230053B40B /* AddBudgetController.m in Sources */,
@@ -663,6 +674,7 @@
 				CC673EF11F9357F7000CE0B6 /* HobbyCell.m in Sources */,
 				849E42911F9434A200074460 /* PieChartCell.m in Sources */,
 				CC673EDC1F934B54000CE0B6 /* CategoryNameCell.m in Sources */,
+				7C698AA81F983F4800F697F7 /* BudgetListHistoryController.m in Sources */,
 				843599C31F91DB39002372E9 /* SingleBudgetViewController.m in Sources */,
 				8434BE091F91FF2200A4BDC7 /* LoginPage.m in Sources */,
 				CC673EE21F934C29000CE0B6 /* AmountCell.m in Sources */,
