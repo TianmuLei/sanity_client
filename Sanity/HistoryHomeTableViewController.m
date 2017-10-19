@@ -35,6 +35,10 @@
     [self.refreshControl addTarget:self
                             action:@selector(getLatest)
                   forControlEvents:UIControlEventValueChanged];
+    
+    //set up delegate
+    self.controller = UIClientConnector.myClient.budgetListHistory;
+    //UIClientConnector.myClient.budgetListHistory.delegate = self;
     [self getLatest];
 }
 
@@ -62,15 +66,18 @@
 //get data from delegate
 - (void) getLatest
 {
+    /*
     //testing purpose only
     #warning hard-coded, to be changed
     self.budgetArray = @[@"iPhone1", @"iPhone2",@"iPhone3",@"iPhone4",@"iPhone5",@"iPad"];
     self.amountArray = @[@"10/20",@"100/200",@"1000/2000",@"100000/2000000",@"10/90",@"10/100"];
     #warning hard-coded content, to be changed
     self.colors = @[@"black",@"black",@"black",@"orange",@"red",@"orange"];
+    */
     
     //call delegate
-    //[self.controller requestBudgetList];
+    UIClientConnector.myClient.budgetListHistory.delegate = self;
+    [self.controller requestBudgetList];
     [self reloadData];
 }
 
@@ -157,9 +164,11 @@
        // int indexSelected = (int) indexPath.row;
         
         
+        /*
         //testing purpose only
         destViewController.slices = @[@"10/20",@"100/200",@"100/90",@"100/10"];
         destViewController.texts = @[@"iPhone1", @"iPhone2",@"iPhone3",@"iPhone4"];
+        */
         destViewController.pageTitle = self.budgetArray[(int)indexPath.row];
         
         /*
