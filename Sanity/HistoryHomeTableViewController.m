@@ -9,6 +9,7 @@
 #import "HistoryHomeTableViewController.h"
 #import "SingleBudgetViewController.h"
 #import "HomeTableViewCell.h"
+#import "UIClientConnector.h"
 
 @interface HistoryHomeTableViewController ()
 @property (strong,nonatomic) NSArray* categorySlices;
@@ -34,7 +35,7 @@
     [self.refreshControl addTarget:self
                             action:@selector(getLatest)
                   forControlEvents:UIControlEventValueChanged];
-    [self getInitialData];
+    [self getLatest];
 }
 
 - (void)reloadData
@@ -73,7 +74,7 @@
     [self reloadData];
 }
 
-
+/*
 //get initial data from delegate
 - (void)getInitialData
 {
@@ -88,6 +89,8 @@
     //[self.controller requestBudgetList];
     [self reloadData];
 }
+*/
+
 
 /*
  - (void)didReceiveMemoryWarning {
@@ -179,7 +182,9 @@
     self.budgetArray = budget;
     self.amountArray = amount;
     self.colors = color;
+    [self reloadData];
 }
+
 - (void) setTexts:(NSArray*) textsArray slices:(NSArray*) slicesArray
 {
     self.categoryTexts = textsArray;
