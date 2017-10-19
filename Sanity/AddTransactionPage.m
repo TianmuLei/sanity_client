@@ -170,7 +170,7 @@
         
         //check whether exceeds amount
         NSNumber *newAmount = [NSNumber numberWithFloat:_amountTF.text.floatValue];
-        
+        [self exceedsBudget:newAmount withBudget:_budgetTF.text withCategory:_categoryTF.text];
         [_controller addTransaction:newAmount describe:_descripTF.text category:_categoryTF.text budget:_budgetTF.text date:components];
         
     }
@@ -180,10 +180,10 @@
 - (BOOL) exceedsBudget:(NSNumber *) newAmount withBudget:(NSString*) budget withCategory:(NSString*) cate{
     
     for (Budget* b in _budgets) {
-        if (b.name == budget) {
+        if ([b.name isEqualToString: budget]) {
             int threshold = b.threshold;
             for (Category *c in b.categories) {
-                if (c.name == cate){
+                if ([c.name isEqualToString:cate]){
                     float n = c.spent + [newAmount floatValue];
                     if (n > c.limit*threshold/100) {
                         NSString *notiTitle = [[NSString alloc] initWithFormat:@"Spent over budget with threshold %@ %% ", @(b.threshold).stringValue];
