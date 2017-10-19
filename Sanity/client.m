@@ -18,6 +18,7 @@
 #import "UIClientConnector.h"
 #import "ChangePasswordController.h"
 #import "ChangeUsernameController.h"
+#include "EditBudgetController.h"
 #import "Budget.h"
 #import "Category.h"
 #import "Transaction.h"
@@ -42,6 +43,8 @@
         _profilePage=[[ProfilePageController alloc] initWithClass:self];
         _changePassword=[[ChangePasswordController alloc] initWithClass:self];
         _changeUsername=[[ChangeUsernameController alloc] initWithClass:self];
+        _editBudget=[[EditBudgetController alloc] initWithClass:self];
+
         
         
     }
@@ -176,6 +179,11 @@
                 NSLog(@"loginSuccess111");
                   [_login success:_budgetListDataDic];
                 
+                NSDictionary *infoma=@{@"email":self.myUser.email};
+                NSDictionary *message=@{@"function":@"requestHistory",@"information":infoma};
+                [self sendMessage:message];
+
+                
                 
                // NSLog(@"%@", single.name)
               /*  for(int i=0;i<_budgetListData.count;i++){
@@ -273,6 +281,65 @@
                 
             }
         }
+        else if ([function isEqualToString:@"editBudget"]){
+            if([status isEqualToString:@"fail"]){
+                [_editBudget fail];
+            }
+            else{
+                [_editBudget success];
+            }
+        }
+        else if ([function isEqualToString:@"requestHistory"]){
+            NSDictionary*info1=[messageObject objectForKey:@"information1"];
+            NSMutableArray* info11=(NSMutableArray*)[info1 objectForKey:@"budgetLsit"];
+            NSMutableArray* info111=[self pharseHistorydata:info11];
+            
+            
+            NSDictionary*info2=[messageObject objectForKey:@"information2"];
+            NSMutableArray* info22=(NSMutableArray*)[info2 objectForKey:@"budgetLsit"];
+            NSMutableArray* info222=[self pharseHistorydata:info22];
+            
+            NSDictionary*info3=[messageObject objectForKey:@"information3"];
+            NSMutableArray* info33=(NSMutableArray*)[info3 objectForKey:@"budgetLsit"];
+            NSMutableArray* info333=[self pharseHistorydata:info33];
+            
+            NSDictionary*info4=[messageObject objectForKey:@"information4"];
+            NSMutableArray* info44=(NSMutableArray*)[info4 objectForKey:@"budgetLsit"];
+            NSMutableArray* info444=[self pharseHistorydata:info44];
+            
+            NSDictionary*info5=[messageObject objectForKey:@"information5"];
+            NSMutableArray* info55=(NSMutableArray*)[info5 objectForKey:@"budgetLsit"];
+            NSMutableArray* info555=[self pharseHistorydata:info55];
+            
+            NSDictionary*info6=[messageObject objectForKey:@"information6"];
+            NSMutableArray* info66=(NSMutableArray*)[info6 objectForKey:@"budgetLsit"];
+            NSMutableArray* info666=[self pharseHistorydata:info66];
+            
+            _budgetHistoryData=[[NSMutableArray alloc]init];
+            [_budgetHistoryData addObject:info111];
+            [_budgetHistoryData addObject:info222];
+            [_budgetHistoryData addObject:info333];
+            [_budgetHistoryData addObject:info444];
+            [_budgetHistoryData addObject:info555];
+            [_budgetHistoryData addObject:info666];
+            
+            _budgetHistoryDataDic=[[NSMutableArray alloc]init];
+            [_budgetHistoryDataDic addObject:info11];
+              [_budgetHistoryDataDic addObject:info22];
+              [_budgetHistoryDataDic addObject:info33];
+              [_budgetHistoryDataDic addObject:info44];
+              [_budgetHistoryDataDic addObject:info55];
+              [_budgetHistoryDataDic addObject:info66];
+
+
+
+            
+            
+
+            
+        }
+
+        
         
         
         
@@ -392,7 +459,7 @@
         singleB.startDateString=[budget objectForKey:@"date"];
         singleB.frequency=[[budget objectForKey:@"frequency"] intValue];
         singleB.threshold=[[budget objectForKey:@"threshold"] intValue];
-        
+        singleB.remain=[[budget objectForKey:@"remain"] intValue];
         
         NSMutableArray* cateL=[budget objectForKey:@"categoryList"];
         singleB.categories=[[NSMutableArray alloc]init];
@@ -486,6 +553,18 @@
     return nil;
     
 }
+
+-(Budget*) getBudget:(NSString*)name period:(int)period{
+    NSMutableArray *data=[_budgetHistoryData objectAtIndex:period-1];
+    for(int i=0;i<data.count;i++){
+        Budget* single=[data objectAtIndex:i];
+        if([single.name isEqualToString:name]){
+            return single;
+        }
+    }
+    return nil;
+    
+}
 -(Category*) getCategory:(NSString*)budgetName :(NSString*)categoryName{
     Budget* single=[self getBudget:budgetName];
     for(int j=0;j<single.categories.count;j++){
@@ -496,6 +575,83 @@
     }
     return nil;
 }
+
+-(Category*) getCategory:(NSString*)budgetName :(NSString*)categoryName period:(int) period{
+    
+    Budget* single=[self getBudget:budgetName period:period];
+    for(int j=0;j<single.categories.count;j++){
+        Category* cat=  [single.categories objectAtIndex:j];
+        if([cat.name isEqualToString:categoryName]){
+            return cat;
+        }
+    }
+    return nil;
+}
+
+
+
+-(NSMutableArray*) pharseHistorydata:(NSMutableArray*)allData{
+    NSMutableArray *historyData=[[NSMutableArray alloc]init];
+    for(int i=0;i<allData.count;i++){
+        NSDictionary* budget=[allData objectAtIndex:i];
+        Budget* singleB=[[Budget alloc]init];
+        singleB.name=[budget objectForKey:@"name"];
+        singleB.spent=[[budget objectForKey:@"budgetSpent"] doubleValue];
+        singleB.total=[[budget objectForKey:@"budgetTotal"] doubleValue];
+        singleB.startDateString=[budget objectForKey:@"date"];
+        singleB.frequency=[[budget objectForKey:@"frequency"] intValue];
+        singleB.threshold=[[budget objectForKey:@"threshold"] intValue];
+        singleB.remain=[[budget objectForKey:@"remain"] intValue];
+        
+        NSMutableArray* cateL=[budget objectForKey:@"categoryList"];
+        singleB.categories=[[NSMutableArray alloc]init];
+        for(int j=0;j<cateL.count;j++){
+            NSDictionary* category=[cateL objectAtIndex:j];
+            Category* singleC=[[Category alloc]init];
+            singleC.name=[category objectForKey:@"name"];
+            singleC.limit=[[category objectForKey:@"limit"] doubleValue];
+            singleC.spent=[[category objectForKey:@"categorySpent"] doubleValue];
+            singleC.budget=[category objectForKey:@"budgetName"] ;
+            
+            NSMutableArray* transL=[category objectForKey:@"transactionList"];
+            singleC.transctions=[[NSMutableArray alloc]init];
+            for(int k=0;k<transL.count;k++){
+                NSDictionary* transaction=[transL objectAtIndex:k];
+                Transaction* single=[[Transaction alloc]init];
+                single.describe=[transaction objectForKey:@"description"];
+                single.amount=[transaction objectForKey:@"amount"];
+                single.dateString=[transaction objectForKey:@"date"];
+                single.budget=[transaction objectForKey:@"budgetName"];
+                single.category=[transaction objectForKey:@"categoryName"];
+                [singleC.transctions addObject:single];
+                
+            }
+            
+            
+            
+            
+            
+            [ singleB.categories addObject:singleC];
+        }
+        
+        
+        
+        
+        
+        
+        
+        [historyData addObject:singleB];
+        
+        
+        
+        
+    }
+    return historyData;
+    
+    
+}
+
+
 
 
 

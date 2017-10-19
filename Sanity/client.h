@@ -22,6 +22,7 @@
 @class Category;
 @class ChangePasswordController;
 @class ChangeUsernameController;
+@class EditBudgetController;
 
 @interface client : NSObject <SRWebSocketDelegate>
 @property (strong, atomic)  SRWebSocket *webSocket;
@@ -36,13 +37,18 @@
 @property (strong,atomic) ProfilePageController* profilePage;
 @property (strong,atomic) ChangeUsernameController* changeUsername;
 @property (strong,atomic) ChangePasswordController* changePassword;
+@property (strong,atomic) EditBudgetController* editBudget;
 @property (strong,atomic) NSMutableArray* budgetListData;
+@property (strong,atomic) NSMutableArray* budgetHistoryData;
+@property (strong,atomic) NSMutableArray* budgetHistoryDataDic;
 @property (strong,atomic) NSMutableArray* budgetListDataDic;
 -(NSString*) JSONToString:(NSDictionary*)dict;
 -(NSDictionary*) StringToJSON:(NSString*) JSONString;
 -(void) addBudgetListData:(NSMutableArray*) list;
 -(void) sendMessage:(NSDictionary*)dict;
 -(Budget*) getBudget:(NSString*)name;
+-(Budget*) getBudget:(NSString*)name period:(int)period;
 -(Category*) getCategory:(NSString*)budgetName :(NSString*)categoryName;
+-(Category*) getCategory:(NSString*)budgetName :(NSString*)categoryName period:(int) period;
 @end
 

@@ -20,6 +20,9 @@
 @property (nonatomic,strong) id delegate;
 -(void) requestBudget:(NSString*) name;
 -(void) requestCategory:(NSString*) budget category:(NSString*) category;
+-(void) requestCategory:(NSString*) budget category:(NSString*) category period:(int)period;
+
+
 
 -(void) deleteTransaction: (NSNumber*) amount describe:(NSString*) describe category:(NSString*) category budget:(NSString*)budget date:(NSDateComponents*) date;
 
