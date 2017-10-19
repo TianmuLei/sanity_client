@@ -11,7 +11,7 @@
 @implementation BudgetListHistoryController
 
 -(void) requestBudgetList{
-    NSMutableArray* budgetList=[self.client.budgetListDataDic objectAtIndex:0];
+    NSMutableArray* budgetList=[self.client.budgetHistoryDataDic objectAtIndex:0];
     NSMutableArray *name = [[NSMutableArray alloc]init];
     NSMutableArray *amount = [[NSMutableArray alloc]init];
     NSMutableArray *color = [[NSMutableArray alloc]init];
