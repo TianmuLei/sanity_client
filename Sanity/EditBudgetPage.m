@@ -80,7 +80,6 @@
 //submission get data
 - (IBAction)submitEdit:(id)sender {
     NSString *budgetName = _budgetNameTF.text;
-
     
 }
 
@@ -124,7 +123,6 @@
         [alertController addAction:cancelAction];
         [alertController addAction:okAction];
         [self presentViewController:alertController animated:YES completion:nil];
-        
         
     }
 }
@@ -174,6 +172,7 @@
     self.thresholdTF.text = [[NSNumber numberWithInt:budget.threshold] stringValue];
     self.categories = [[NSMutableArray alloc] init];
     self.categories = budget.categories;//get categories
+    
     
 }
 

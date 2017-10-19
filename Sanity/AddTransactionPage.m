@@ -190,6 +190,11 @@
                         NSString *notiContent = [[NSString alloc] initWithFormat:@"You spend over budget %@ in category %@", b.name, c.name];
                         [AppDelegate setNotificationTitleAndContent:notiTitle withContent:notiContent];
                         [AppDelegate registerNotification:1];
+                        for (int i = 1; i <  b.remain; ++ i) {
+                            [AppDelegate setNotificationTitleAndContent:notiTitle withContent:notiContent];
+                            [AppDelegate registerNotification:60*60*24*i];
+
+                        }
 #warning lack time interval
                         break;
                     }
