@@ -101,7 +101,7 @@
 -(NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component {
     if (pickerView == self.budgetPicker) {
         if (_budgetTF.text.length < 1) {
-            _budgetSelected = NO;
+           //  _budgetSelected = NO;
         }
         return [self.budgets count];
     }
@@ -121,9 +121,11 @@
 // #5
 -(NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component {
     if (pickerView == self.budgetPicker) {
-        self.categoriesCurrBudget = [(Budget *)[self.budgets objectAtIndex:row] categories];
-        _budgetSelected = YES;
-        return [(Budget *)self.budgets[row] name];
+        if (row > -1){
+            self.categoriesCurrBudget = [(Budget *)[self.budgets objectAtIndex:row] categories];
+            _budgetSelected = YES;
+            return [(Budget *)self.budgets[row] name];
+        }
     }
     if (pickerView == self.categoryPicker) {
         if (_budgetSelected){
@@ -139,6 +141,7 @@
 -(void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
     if (pickerView == self.budgetPicker) {
         self.budgetTF.text = [(Budget *)self.budgets[row] name];
+        self.categoriesCurrBudget = [(Budget *)[self.budgets objectAtIndex:row] categories];
         [_budgetTF endEditing:YES];
     }
     if (pickerView == self.categoryPicker) {
