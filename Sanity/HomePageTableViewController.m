@@ -73,7 +73,7 @@
      self.colors = @[@"black",@"black",@"black",@"orange",@"red",@"orange"];
      */
     
-    
+    UIClientConnector.myClient.budgetList.delegate = self;
     [self.controller requestBudgetList];
     [self reloadData];
 }

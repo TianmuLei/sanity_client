@@ -29,9 +29,7 @@
     NSLog(@"%@", amount);
     [self.delegate setTexts:name1 slices:amount];
 
-    
-    
-    
+   
     
 }
 @end
