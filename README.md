@@ -11,6 +11,10 @@ This is an application used to keep track of user's spending versus their budget
     
 ## 1 - Set up Server
   To run $anity server, one shall use the terminal(macOS) or command line(Linux or Windows) to connect to the digitalocean server first. Use command line: “ssh root@165.227.14.202” to connect to the online server, then the terminal shall ask for the password, type “chenyang” for the password to log into the server. Then one shall then type “java -jar server.jar” to run the server online. 
+  ```
+  ssh root@165.227.14.202
+  ava -jar server.jar
+  ```
   If you need to see the code for server, please refer to https://github.com/jiaxinch/Sanity_Server_2
 
 ```
