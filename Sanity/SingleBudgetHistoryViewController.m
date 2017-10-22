@@ -16,7 +16,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *labelForClickedElement;
 @property (weak, nonatomic) IBOutlet UITextField *periodTF;
 @property UIPickerView *periodPicker;
-@property (strong, nonatomic) NSArray *periods;
+@property (strong, nonatomic) NSMutableArray *periods;
 
 
 @property BOOL periodSelected;
@@ -41,7 +41,7 @@
     
     //request info of picker
     //call function
-    self.periods = [[NSArray alloc] initWithObjects:@"a",@"b", nil];
+    self.periods = [[NSMutableArray alloc] initWithObjects:@"a",@"b", nil];
     self.periodPicker = [[UIPickerView alloc] initWithFrame:CGRectMake(0, 50, 100, 150)];
     self.periodPicker.delegate = self;
     self.periodPicker.dataSource = self;
@@ -221,8 +221,8 @@
     
 }
 
-- (void) settingPeriodPicker:(NSArray *)periodArray {
-    self.periods = [[NSArray alloc] init];
+- (void) settingPeriodPicker:(NSMutableArray *)periodArray {
+    self.periods = [[NSMutableArray alloc] init];
     self.periods = periodArray;
     
 }

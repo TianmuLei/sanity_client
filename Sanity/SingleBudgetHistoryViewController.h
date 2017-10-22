@@ -21,6 +21,6 @@
 @property (strong,nonatomic) BudgetPageHistoryController * controller;
 
 - (void) setTexts:(NSMutableArray*) textsArray slices:(NSMutableArray*)slicesArray;
-- (void) settingPeriodPicker: (NSArray*) periodArray;
+- (void) settingPeriodPicker: (NSMutableArray*) periodArray;
 
 @end
