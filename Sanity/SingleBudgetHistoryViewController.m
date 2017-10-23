@@ -8,8 +8,10 @@
 
 #import "SingleBudgetHistoryViewController.h"
 #import "SingleCategoryTableViewController.h"
+#import "BudgetPageController.h"
 #import "UIClientConnector.h"
 #import "PieChartCategoryViewController.h"
+#import "Budget.h"
 
 @interface SingleBudgetHistoryViewController () <UIPickerViewDelegate, UIPickerViewDataSource>
 @property (weak, nonatomic) IBOutlet UILabel *labelTest;
@@ -23,6 +25,8 @@
 @property int indexClicked;
 @property int numOfClicks;
 @property int previousIndexClicked;
+
+@property (strong,nonatomic) BudgetPageController * BudgetPagecontroller;
 
 @end
 
@@ -41,7 +45,7 @@
     
     //request info of picker
     //call function
-    self.periods = [[NSMutableArray alloc] initWithObjects:@"a",@"b", nil];
+    self.periods = [[NSMutableArray alloc] initWithObjects:@"1",@"2",@"3",@"4",@"5",@"6", nil];
     self.periodPicker = [[UIPickerView alloc] initWithFrame:CGRectMake(0, 50, 100, 150)];
     self.periodPicker.delegate = self;
     self.periodPicker.dataSource = self;
@@ -52,7 +56,7 @@
     //set up delegate
     self.controller = UIClientConnector.myClient.budgetPageHistory;
     UIClientConnector.myClient.budgetPageHistory.delegate = self;
-    //[self.controller requestBudget:self.pageTitle period:1];
+    [self.controller requestBudget:self.pageTitle period:1];
 }
 
 
@@ -216,7 +220,10 @@
         self.periodTF.text = _periods[row];
         
         [self.periodTF endEditing:YES];
+        
+        [_controller requestBudget:_pageTitle period:[_periods[row] intValue]];
 #warning reload here
+        
     }
     
 }
@@ -226,6 +233,8 @@
     self.periods = periodArray;
     
 }
+
+
 //call back function for delegate
 - (void) setTexts:(NSMutableArray*) textsArray slices:(NSMutableArray *)slicesArray
 {

@@ -10,7 +10,7 @@
 #import "XYPieChart.h"
 #import "BudgetPageHistoryController.h"
 
-@interface SingleBudgetHistoryViewController : UIViewController
+@interface SingleBudgetHistoryViewController : UIViewController<BudgetPageHistoryControllerDelegate>
 
 @property (weak, nonatomic) IBOutlet XYPieChart *PieChartDisplay;
 #warning to be changed to nsarray
