@@ -53,6 +53,7 @@
         NSLog(@"send data");
         PieChartCategoryViewController *controller = (PieChartCategoryViewController *)segue.destinationViewController;
         
+        /*
         controller.texts =  [NSMutableArray arrayWithObjects: @"spent",@"left",nil];
         controller.slices = [NSMutableArray arrayWithObjects: @"50",@"130",nil];
         controller.transactionNames = [NSMutableArray arrayWithObjects: @"trans1",@"trans2",nil];
@@ -61,11 +62,17 @@
         controller.numOfTransactions = 2;
         controller.textForPieChart = @"100/200";
         controller.pieChartLabelColor = @"red";
+        */
+        
+        //to get values
+        NSArray *array = [[self.slices objectAtIndex:self.indexClicked] componentsSeparatedByString:@"/"];
+        //display detailed Info
+        controller.textForPieChart = [NSString stringWithFormat:@"%.02f/%.02f",[[array objectAtIndex:0] floatValue],[[array objectAtIndex:1] floatValue] ] ;
+        
         
         controller.pageTitle = self.texts[self.indexClicked];
         controller.period = 0;
         controller.budgetName = self.pageTitle;
-        controller.textForPieChart = self.slices[self.indexClicked];
     }else if([segue.identifier isEqualToString:@"BudgetToEditBudget"]){
         EditBudgetPage *controller = (EditBudgetPage *)segue.destinationViewController;
         controller.budgetName = self.pageTitle;

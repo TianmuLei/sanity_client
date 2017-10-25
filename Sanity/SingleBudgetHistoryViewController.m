@@ -19,7 +19,7 @@
 @property (weak, nonatomic) IBOutlet UITextField *periodTF;
 @property UIPickerView *periodPicker;
 @property (strong, nonatomic) NSMutableArray *periods;
-
+@property int currentPeriod;
 
 @property BOOL periodSelected;
 @property int indexClicked;
@@ -57,6 +57,9 @@
     self.controller = UIClientConnector.myClient.budgetPageHistory;
     UIClientConnector.myClient.budgetPageHistory.delegate = self;
     [self.controller requestBudget:self.pageTitle period:1];
+    
+    //initialize, default is past 1
+    self.currentPeriod = 1;
 }
 
 
@@ -72,6 +75,7 @@
     if([segue.identifier isEqualToString:@"SingleBudgetHistoryToCategory"]){
         PieChartCategoryViewController *controller = (PieChartCategoryViewController *)segue.destinationViewController;
         
+        /*
         controller.texts = [NSMutableArray arrayWithObjects:@"spent",@"left",nil];
         controller.slices = [NSMutableArray arrayWithObjects:@"50",@"130",nil];
         controller.transactionNames = [NSMutableArray arrayWithObjects:@"trans1",@"trans2",nil];
@@ -80,11 +84,16 @@
         controller.numOfTransactions = 2;
         controller.textForPieChart = @"100/200";
         controller.pieChartLabelColor = @"red";
+        */
         
+        //to get values
+        NSArray *array = [[self.slices objectAtIndex:self.indexClicked] componentsSeparatedByString:@"/"];
+        //display detailed Info
+        controller.textForPieChart = [NSString stringWithFormat:@"%.02f/%.02f",[[array objectAtIndex:0] floatValue],[[array objectAtIndex:1] floatValue] ] ;
         
-        controller.textForPieChart = self.slices[self.indexClicked];
         controller.pageTitle = self.texts[self.indexClicked];
         controller.budgetName = self.pageTitle;
+        controller.period = self.currentPeriod;
     }
 }
 
@@ -216,13 +225,14 @@
 // #6
 -(void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
     if (pickerView == self.periodPicker) {
+        self.currentPeriod = [_periods[row] intValue];
         //need controller
         self.periodTF.text = _periods[row];
         
         [self.periodTF endEditing:YES];
         
         [_controller requestBudget:_pageTitle period:[_periods[row] intValue]];
-#warning reload here
+    #warning reload here
         
     }
     

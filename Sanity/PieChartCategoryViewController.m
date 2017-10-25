@@ -48,8 +48,8 @@
         //NSLog(@"call with %@, %@ ", self.budgetName, self.pageTitle);
         [self.controller requestCategory:self.budgetName category:self.pageTitle];
     }else{
-    //#warning to be uncommented
-    //    [self.controller requestCategory:self.budgetName category:self.pageTitle period:self.period];
+    #warning to be uncommented
+        [self.controller requestCategory:self.budgetName category:self.pageTitle period:self.period];
     }
     
     /*

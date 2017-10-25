@@ -78,7 +78,7 @@
     //call delegate
     UIClientConnector.myClient.budgetListHistory.delegate = self;
     [self.controller requestBudgetList];
-    [self reloadData];
+    //[self reloadData]; //done in call back function
 }
 
 /*
