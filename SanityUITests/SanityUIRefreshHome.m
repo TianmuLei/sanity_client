@@ -1,5 +1,5 @@
 //
-//  SanityUICreateBudgets.m
+//  SanityUIRefreshHome.m
 //  Sanity
 //
 //  Created by Gu on 10/27/17.
@@ -8,17 +8,23 @@
 
 #import <XCTest/XCTest.h>
 
-@interface SanityUICreateBudgets : XCTestCase
+@interface SanityUIRefreshHome : XCTestCase
 
 @end
 
-@implementation SanityUICreateBudgets
+@implementation SanityUIRefreshHome
 
 - (void)setUp {
     [super setUp];
     
     // Put setup code here. This method is called before the invocation of each test method in the class.
     
+    // In UI tests it is usually best to stop immediately when a failure occurs.
+    self.continueAfterFailure = NO;
+    // UI tests must launch the application that they test. Doing this in setup will make sure it happens for each test method.
+    [[[XCUIApplication alloc] init] launch];
+
+    // In UI tests it’s important to set the initial state - such as interface orientation - required for your tests before they run. The setUp method is a good place to do this.
 }
 
 - (void)tearDown {
@@ -26,7 +32,8 @@
     [super tearDown];
 }
 
-- (void) testCreateBudget{
+- (void)testRefreshHome
+{
     XCUIApplication *app = [[XCUIApplication alloc] init];
     [app launch];
     //login
@@ -45,12 +52,10 @@
     //click add category twice to get textfields for 3 categories
     XCUIElementQuery *tablesQuery = app.tables;
     XCUIElement *addCategoryButton = tablesQuery.buttons[@"Add Category"];
-    [addCategoryButton tap];
-    [addCategoryButton tap];
     //fill out the three categories
     XCUIElement *textField = [[tablesQuery.cells containingType:XCUIElementTypeStaticText identifier:@"Budget Name"] childrenMatchingType:XCUIElementTypeTextField].element;
     [textField tap];
-    [textField typeText:@"BudgetTest"];
+    [textField typeText:@"BudgetTestRefreshHome"];
     
     XCUIElementQuery *periodCellsQuery = [tablesQuery.cells containingType:XCUIElementTypeStaticText identifier:@"Period"];
     [periodCellsQuery.textFields[@"Number of days"] tap];
@@ -69,34 +74,29 @@
     XCUIElement *textField3 = [[[tablesQuery childrenMatchingType:XCUIElementTypeCell] elementBoundByIndex:6] childrenMatchingType:XCUIElementTypeTextField].element;
     [textField3 tap];
     [textField3 typeText:@"100"];
-    
-    XCUIElement *textField4 = [[[tablesQuery childrenMatchingType:XCUIElementTypeCell] elementBoundByIndex:7] childrenMatchingType:XCUIElementTypeTextField].element;
-    [textField4 tap];
-    [textField4 typeText:@"Cat2"];
-    XCUIElement *cell2 = [[tablesQuery childrenMatchingType:XCUIElementTypeCell] elementBoundByIndex:8];
-    XCUIElement *textField5 = [cell2 childrenMatchingType:XCUIElementTypeTextField].element;
-    [textField5 tap];
-    [textField5 typeText:@"180"];
-    
-    XCUIElement *textField6 = [[[tablesQuery childrenMatchingType:XCUIElementTypeCell] elementBoundByIndex:9] childrenMatchingType:XCUIElementTypeTextField].element;
-    [textField6 tap];
-    [textField6 typeText:@"Cat3"];
-    XCUIElement *textField7 = [[[tablesQuery childrenMatchingType:XCUIElementTypeCell] elementBoundByIndex:10] childrenMatchingType:XCUIElementTypeTextField].element;
-    [textField7 tap];
-    [textField7 typeText:@"560"];
+    [app.buttons[@"Done"] tap];
     
     [tablesQuery.buttons[@"Submit"] tap];
     
+    [app.tabBars.buttons[@"Home"] tap];
     
+    XCUIElementQuery *tablesQuery2 = app.tables;
+    XCUIElement *Cell1 = tablesQuery2.cells[@"budget1, 0/500"];
+
+    //pull to refresh
+    // [Cell1 swipeDown];
+    XCUICoordinate *coor1 = [Cell1 coordinateWithNormalizedOffset:CGVectorMake(0, 0)];
+    XCUICoordinate *coor2 = [Cell1 coordinateWithNormalizedOffset:CGVectorMake(0, 10)];
+    NSTimeInterval zeroInterval = 0;
+    [coor1 pressForDuration:zeroInterval thenDragToCoordinate:coor2];
     
     // create expectation to wait for response
     XCTestExpectation *expectation = [self expectationWithDescription:@"Add Budget Success"];
     //5 == num in seconds
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        XCTAssert(app.buttons[@"$$$$ Add Budget $$$$"].exists);
+        XCTAssert(tablesQuery2.cells[@"BudgetTestRefreshHome, 0/100"].exists);
         [expectation fulfill];
     });
-    
     
     // wait for expectation,fail automatically after predefined seconds
     NSTimeInterval interval = 6;
