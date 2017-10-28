@@ -8,21 +8,25 @@
 
 #import "SingleBudgetHistoryViewController.h"
 #import "SingleCategoryTableViewController.h"
+#import "BudgetPageController.h"
 #import "UIClientConnector.h"
 #import "PieChartCategoryViewController.h"
+#import "Budget.h"
 
 @interface SingleBudgetHistoryViewController () <UIPickerViewDelegate, UIPickerViewDataSource>
 @property (weak, nonatomic) IBOutlet UILabel *labelTest;
 @property (weak, nonatomic) IBOutlet UILabel *labelForClickedElement;
 @property (weak, nonatomic) IBOutlet UITextField *periodTF;
 @property UIPickerView *periodPicker;
-@property (strong, nonatomic) NSArray *periods;
-
+@property (strong, nonatomic) NSMutableArray *periods;
+@property int currentPeriod;
 
 @property BOOL periodSelected;
 @property int indexClicked;
 @property int numOfClicks;
 @property int previousIndexClicked;
+
+@property (strong,nonatomic) BudgetPageController * BudgetPagecontroller;
 
 @end
 
@@ -41,15 +45,22 @@
     
     //request info of picker
     //call function
-    self.periods = [[NSArray alloc] initWithObjects:@"a",@"b", nil];
+    self.periods = [[NSMutableArray alloc] initWithObjects:@"1",@"2",@"3",@"4",@"5",@"6", nil];
     self.periodPicker = [[UIPickerView alloc] initWithFrame:CGRectMake(0, 50, 100, 150)];
     self.periodPicker.delegate = self;
     self.periodPicker.dataSource = self;
     self.periodPicker.showsSelectionIndicator = YES;
     
     _periodTF.inputView = _periodPicker;
+    
+    //set up delegate
+    self.controller = UIClientConnector.myClient.budgetPageHistory;
+    UIClientConnector.myClient.budgetPageHistory.delegate = self;
+    [self.controller requestBudget:self.pageTitle period:1];
+    
+    //initialize, default is past 1
+    self.currentPeriod = 1;
 }
-
 
 
 - (void)didReceiveMemoryWarning {
@@ -63,16 +74,26 @@
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
     if([segue.identifier isEqualToString:@"SingleBudgetHistoryToCategory"]){
         PieChartCategoryViewController *controller = (PieChartCategoryViewController *)segue.destinationViewController;
-        controller.texts =  @[[self.texts objectAtIndex:self.indexClicked],@"unused"];
-        controller.slices = @[@"50",@"130"];
-        controller.transactionNames = @[@"trans1",@"trans2"];
-        controller.transactionAmounts = @[@"$100",@"$150"];
-        controller.transactionDates = @[@"5/10/2017",@"8/10/2017"];
+        
+        /*
+        controller.texts = [NSMutableArray arrayWithObjects:@"spent",@"left",nil];
+        controller.slices = [NSMutableArray arrayWithObjects:@"50",@"130",nil];
+        controller.transactionNames = [NSMutableArray arrayWithObjects:@"trans1",@"trans2",nil];
+        controller.transactionAmounts = [NSMutableArray arrayWithObjects:@"$100",@"$150",nil];
+        controller.transactionDates = [NSMutableArray arrayWithObjects:@"5/10/2017",@"8/10/2017",nil];
         controller.numOfTransactions = 2;
         controller.textForPieChart = @"100/200";
         controller.pieChartLabelColor = @"red";
+        */
+        
+        //to get values
+        NSArray *array = [[self.slices objectAtIndex:self.indexClicked] componentsSeparatedByString:@"/"];
+        //display detailed Info
+        controller.textForPieChart = [NSString stringWithFormat:@"%.02f/%.02f",[[array objectAtIndex:0] floatValue],[[array objectAtIndex:1] floatValue] ] ;
+        
         controller.pageTitle = self.texts[self.indexClicked];
         controller.budgetName = self.pageTitle;
+        controller.period = self.currentPeriod;
     }
 }
 
@@ -204,20 +225,26 @@
 // #6
 -(void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
     if (pickerView == self.periodPicker) {
+        self.currentPeriod = [_periods[row] intValue];
         //need controller
         self.periodTF.text = _periods[row];
         
         [self.periodTF endEditing:YES];
-#warning reload here
+        
+        [_controller requestBudget:_pageTitle period:[_periods[row] intValue]];
+    #warning reload here
+        
     }
     
 }
 
-- (void) settingPeriodPicker:(NSArray *)periodArray {
-    self.periods = [[NSArray alloc] init];
+- (void) settingPeriodPicker:(NSMutableArray *)periodArray {
+    self.periods = [[NSMutableArray alloc] init];
     self.periods = periodArray;
     
 }
+
+
 //call back function for delegate
 - (void) setTexts:(NSMutableArray*) textsArray slices:(NSMutableArray *)slicesArray
 {

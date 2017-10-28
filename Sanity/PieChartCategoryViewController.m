@@ -49,7 +49,7 @@
         [self.controller requestCategory:self.budgetName category:self.pageTitle];
     }else{
     #warning to be uncommented
-        //[self.controller requestCategory:self.budgetName category:self.pageTitle period:self.period];
+        [self.controller requestCategory:self.budgetName category:self.pageTitle period:self.period];
     }
     
     /*

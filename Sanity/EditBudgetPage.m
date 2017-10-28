@@ -38,6 +38,11 @@
     testCate.limit = 10.25f;
     [ _categories addObject:testCate];
     _canDeleteCategories = NO;
+    
+    
+    _controller = UIClientConnector.myClient.editBudget;
+    UIClientConnector.myClient.editBudget.delegate = self;
+
     Budget *b = [UIClientConnector.myClient getBudget:_budgetName];
    // [_controller requestBudget:_budgetName];
  
@@ -51,9 +56,11 @@
     NSRange range = NSMakeRange(1, 1);
     NSIndexSet *section = [NSIndexSet indexSetWithIndexesInRange:range];
     
+    _controller = UIClientConnector.myClient.editBudget;
+    UIClientConnector.myClient.editBudget.delegate = self;
+
     Budget *b = [UIClientConnector.myClient getBudget:_budgetName];
     // [_controller requestBudget:_budgetName];
-    
     [self getBudgetInfo:b];
     
     [self.tableView reloadSections:section withRowAnimation:UITableViewRowAnimationNone];
@@ -90,6 +97,7 @@
 //submission get data
 - (IBAction)submitEdit:(id)sender {
     NSString *budgetName = _budgetNameTF.text;
+    [_controller editBudget:_budgetName withnewBudget:_budgetNameTF.text withPeriod:_periodTF.text withThreshold:_thresholdTF.text withFrequency:_frequencyTF.text];
     
 }
 
@@ -175,7 +183,7 @@
 //set budget before load page
 - (void) getBudgetInfo:(Budget *)budget{
     self.budgetNameTF.text = budget.name;
-   // self.startDateLabel.text = budget.startDateString;
+    self.startDateLabel.text = budget.startDateString;
     
     /*[NSDateFormatter localizedStringFromDate:[budget.startDate date]
                                                               dateStyle:NSDateFormatterShortStyle
