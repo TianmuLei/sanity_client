@@ -30,7 +30,8 @@
 {
     self = [super init];
     if (self) {
-        _webSocket = [[SRWebSocket alloc] initWithURL:[NSURL URLWithString:@"ws://165.227.14.202:9999"]];
+       _webSocket = [[SRWebSocket alloc] initWithURL:[NSURL URLWithString:@"ws://165.227.14.202:9999"]];
+        // _webSocket = [[SRWebSocket alloc] initWithURL:[NSURL URLWithString:@"ws://localhost:9999"]];
         _webSocket.delegate = self;
        [_webSocket open];
         _myUser=[[User alloc] init];
