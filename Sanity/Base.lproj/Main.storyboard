@@ -413,6 +413,9 @@
                                         <constraint firstItem="tfA-uH-nKu" firstAttribute="top" secondItem="8XJ-oo-3hY" secondAttribute="topMargin" id="Y1C-1V-yRf"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <accessibility key="accessibilityConfiguration">
+                                    <bool key="isElement" value="YES"/>
+                                </accessibility>
                                 <connections>
                                     <outlet property="amountLabel" destination="56s-B0-mvi" id="wGc-ea-GTd"/>
                                     <outlet property="budgetNameLabel" destination="tfA-uH-nKu" id="7eu-dh-SkY"/>
@@ -449,6 +452,9 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="c7C-NA-g2Q" customClass="XYPieChart">
                                 <rect key="frame" x="0.0" y="74" width="375" height="375"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <bool key="isElement" value="YES"/>
+                                </accessibility>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="c7C-NA-g2Q" secondAttribute="height" multiplier="1:1" id="OKZ-ek-Lbc"/>
                                 </constraints>
@@ -1920,6 +1926,9 @@
                                         <constraint firstItem="Nmi-EJ-WaZ" firstAttribute="top" secondItem="IDn-p2-Bxu" secondAttribute="topMargin" id="reC-RD-FMR"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <accessibility key="accessibilityConfiguration">
+                                    <bool key="isElement" value="YES"/>
+                                </accessibility>
                                 <connections>
                                     <outlet property="amountLabel" destination="bah-u4-Gwo" id="Lwl-sB-UtE"/>
                                     <outlet property="budgetNameLabel" destination="Nmi-EJ-WaZ" id="mcd-TX-0K5"/>
@@ -1963,6 +1972,9 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Iju-nw-F0v" customClass="XYPieChart">
                                 <rect key="frame" x="28" y="157" width="320" height="320"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <bool key="isElement" value="YES"/>
+                                </accessibility>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="Iju-nw-F0v" secondAttribute="height" multiplier="1:1" id="lIj-Ui-EtD"/>
                                 </constraints>
@@ -2047,6 +2059,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="HLo-Fj-idy"/>
-        <segue reference="Non-6x-6lM"/>
+        <segue reference="JKh-AC-ajD"/>
     </inferredMetricsTieBreakers>
 </document>
