@@ -1,5 +1,5 @@
 //
-//  SanityUILoginFailed.m
+//  SanityUISignupFailedWithNotEnoughArgs.m
 //  Sanity
 //
 //  Created by Gu on 10/28/17.
@@ -8,11 +8,11 @@
 
 #import <XCTest/XCTest.h>
 
-@interface SanityUILoginFailed : XCTestCase
+@interface SanityUISignupFailedWithNotEnoughArgs : XCTestCase
 
 @end
 
-@implementation SanityUILoginFailed
+@implementation SanityUISignupFailedWithNotEnoughArgs
 
 - (void)setUp {
     [super setUp];
@@ -32,16 +32,22 @@
     [super tearDown];
 }
 
-- (void)testSanityUILoginFailed {
+- (void)testSanityUISignupFailedWithNotEnoughArgs
+{
+    
     XCUIApplication *app = [[XCUIApplication alloc] init];
     [app launch];
-    //login
-    XCUIElement *emailTextField = app.textFields[@"Email"];
-    [emailTextField tap];
-    [emailTextField typeText:@"z@z.com"];
-
+    [app.buttons[@"Sign Up"] tap];
+    XCUIElement *trojanUscEduTextField = app.textFields[@"trojan@usc.edu"];
+    [trojanUscEduTextField tap];
+    [trojanUscEduTextField typeText:@"tommy@usc.edu"];
+    
+    XCUIElement *tommyTrojanTextField = app.textFields[@"Tommy Trojan"];
+    [tommyTrojanTextField tap];
+    [tommyTrojanTextField typeText:@"Tommy Trojan"];
+    
     [app.buttons[@"Done"] tap];
-    [app.buttons[@"Login In"] tap];
+    [app.buttons[@"Sign Up"] tap];
     
     //check if label exists in page
     XCTAssert(app.staticTexts[@"Please fill in all required fields!"].exists);
