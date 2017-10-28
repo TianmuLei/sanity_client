@@ -32,10 +32,10 @@
     //login
     XCUIElement *emailTextField = app.textFields[@"Email"];
     [emailTextField tap];
-    [emailTextField typeText:@"tianmu@usc.edu"];
+    [emailTextField typeText:@"z@z.com"];
     XCUIElement *passwordSecureTextField = app.secureTextFields[@"Password"];
     [passwordSecureTextField tap];
-    [passwordSecureTextField typeText:@"tianmu"];
+    [passwordSecureTextField typeText:@"zg"];
     [app.buttons[@"Done"] tap];
     [app.buttons[@"Login In"] tap];
     
@@ -50,7 +50,7 @@
     //fill out the three categories
     XCUIElement *textField = [[tablesQuery.cells containingType:XCUIElementTypeStaticText identifier:@"Budget Name"] childrenMatchingType:XCUIElementTypeTextField].element;
     [textField tap];
-    [textField typeText:@"BudgetTest1050"];
+    [textField typeText:@"BudgetTest"];
     
     XCUIElementQuery *periodCellsQuery = [tablesQuery.cells containingType:XCUIElementTypeStaticText identifier:@"Period"];
     [periodCellsQuery.textFields[@"Number of days"] tap];

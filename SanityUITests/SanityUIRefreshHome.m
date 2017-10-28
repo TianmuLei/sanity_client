@@ -34,31 +34,73 @@
 
 - (void)testRefreshHome
 {
-    
     XCUIApplication *app = [[XCUIApplication alloc] init];
+    [app launch];
+    //login
     XCUIElement *emailTextField = app.textFields[@"Email"];
-    [emailTextField typeText:@"i"];
-    [app.keys[@"a"] tap];
-    [emailTextField typeText:@"a"];
-    [app.keys[@"n"] tap];
-    [emailTextField typeText:@"nmu@usc.edu"];
-    
+    [emailTextField tap];
+    [emailTextField typeText:@"z@z.com"];
     XCUIElement *passwordSecureTextField = app.secureTextFields[@"Password"];
     [passwordSecureTextField tap];
-    [passwordSecureTextField typeText:@"r"];
-    
-    XCUIElement *deleteKey = app.keys[@"delete"];
-    [deleteKey tap];
-    [deleteKey tap];
-    [passwordSecureTextField typeText:@"tianmu"];
+    [passwordSecureTextField typeText:@"zg"];
     [app.buttons[@"Done"] tap];
-    [app typeText:@"\n"];
     [app.buttons[@"Login In"] tap];
     
-    XCUIElementQuery *tabBarsQuery = app.tabBars;
-    [tabBarsQuery.buttons[@"Add"] tap];
-    [tabBarsQuery.buttons[@"Home"] tap];
+    //go to add budget page
+    [app.tabBars.buttons[@"Add"] tap];
+    [app.buttons[@"$$$$ Add Budget $$$$"] tap];
+    //click add category twice to get textfields for 3 categories
+    XCUIElementQuery *tablesQuery = app.tables;
+    XCUIElement *addCategoryButton = tablesQuery.buttons[@"Add Category"];
+    //fill out the three categories
+    XCUIElement *textField = [[tablesQuery.cells containingType:XCUIElementTypeStaticText identifier:@"Budget Name"] childrenMatchingType:XCUIElementTypeTextField].element;
+    [textField tap];
+    [textField typeText:@"BudgetTestRefreshHome"];
     
+    XCUIElementQuery *periodCellsQuery = [tablesQuery.cells containingType:XCUIElementTypeStaticText identifier:@"Period"];
+    [periodCellsQuery.textFields[@"Number of days"] tap];
+    [[periodCellsQuery childrenMatchingType:XCUIElementTypeTextField].element typeText:@"10"];
+    [tablesQuery.textFields[@"%"] tap];
+    [[[tablesQuery.cells containingType:XCUIElementTypeStaticText identifier:@"Notification Threshold"] childrenMatchingType:XCUIElementTypeTextField].element typeText:@"78"];
+    [tablesQuery.textFields[@"Number of days"] tap];
+    [[[tablesQuery.cells containingType:XCUIElementTypeStaticText identifier:@"Notification Frequncy"] childrenMatchingType:XCUIElementTypeTextField].element typeText:@"12"];
+    
+    XCUIElement *cell = [[tablesQuery childrenMatchingType:XCUIElementTypeCell] elementBoundByIndex:5];
+    [cell.staticTexts[@"Category Name: "] swipeUp];
+    
+    XCUIElement *textField2 = [cell childrenMatchingType:XCUIElementTypeTextField].element;
+    [textField2 tap];
+    [textField2 typeText:@"Cat1"];
+    XCUIElement *textField3 = [[[tablesQuery childrenMatchingType:XCUIElementTypeCell] elementBoundByIndex:6] childrenMatchingType:XCUIElementTypeTextField].element;
+    [textField3 tap];
+    [textField3 typeText:@"100"];
+    [app.buttons[@"Done"] tap];
+    
+    [tablesQuery.buttons[@"Submit"] tap];
+    
+    [app.tabBars.buttons[@"Home"] tap];
+    
+    XCUIElementQuery *tablesQuery2 = app.tables;
+    XCUIElement *Cell1 = tablesQuery2.cells[@"budget1, 0/500"];
+
+    //pull to refresh
+    // [Cell1 swipeDown];
+    XCUICoordinate *coor1 = [Cell1 coordinateWithNormalizedOffset:CGVectorMake(0, 0)];
+    XCUICoordinate *coor2 = [Cell1 coordinateWithNormalizedOffset:CGVectorMake(0, 10)];
+    NSTimeInterval zeroInterval = 0;
+    [coor1 pressForDuration:zeroInterval thenDragToCoordinate:coor2];
+    
+    // create expectation to wait for response
+    XCTestExpectation *expectation = [self expectationWithDescription:@"Add Budget Success"];
+    //5 == num in seconds
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        XCTAssert(tablesQuery2.cells[@"BudgetTestRefreshHome, 0/100"].exists);
+        [expectation fulfill];
+    });
+    
+    // wait for expectation,fail automatically after predefined seconds
+    NSTimeInterval interval = 6;
+    [self waitForExpectationsWithTimeout:interval handler: nil];
 }
 
 @end
