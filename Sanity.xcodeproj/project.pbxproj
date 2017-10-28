@@ -51,6 +51,7 @@
 		8468B69A1FA48D240060B59D /* SanityUILoginFailed.m in Sources */ = {isa = PBXBuildFile; fileRef = 8468B6991FA48D240060B59D /* SanityUILoginFailed.m */; };
 		8468B69C1FA48DF00060B59D /* SanityUISignupFailed.m in Sources */ = {isa = PBXBuildFile; fileRef = 8468B69B1FA48DF00060B59D /* SanityUISignupFailed.m */; };
 		8468B69E1FA48E320060B59D /* SanityUISignupFailedWithNotEnoughArgs.m in Sources */ = {isa = PBXBuildFile; fileRef = 8468B69D1FA48E320060B59D /* SanityUISignupFailedWithNotEnoughArgs.m */; };
+		8468B6A01FA48F550060B59D /* SanityUICreateBudgetsFailedWithNotEnoughArgs.m in Sources */ = {isa = PBXBuildFile; fileRef = 8468B69F1FA48F550060B59D /* SanityUICreateBudgetsFailedWithNotEnoughArgs.m */; };
 		849E42911F9434A200074460 /* PieChartCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 849E42901F9434A200074460 /* PieChartCell.m */; };
 		849E42941F9438EC00074460 /* SingleCategoryTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 849E42931F9438EC00074460 /* SingleCategoryTableViewController.m */; };
 		849E42971F943E8600074460 /* TranscationLabelCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 849E42961F943E8600074460 /* TranscationLabelCell.m */; };
@@ -181,6 +182,7 @@
 		8468B6991FA48D240060B59D /* SanityUILoginFailed.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SanityUILoginFailed.m; sourceTree = "<group>"; };
 		8468B69B1FA48DF00060B59D /* SanityUISignupFailed.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SanityUISignupFailed.m; sourceTree = "<group>"; };
 		8468B69D1FA48E320060B59D /* SanityUISignupFailedWithNotEnoughArgs.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SanityUISignupFailedWithNotEnoughArgs.m; sourceTree = "<group>"; };
+		8468B69F1FA48F550060B59D /* SanityUICreateBudgetsFailedWithNotEnoughArgs.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SanityUICreateBudgetsFailedWithNotEnoughArgs.m; sourceTree = "<group>"; };
 		849E428F1F9434A200074460 /* PieChartCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PieChartCell.h; sourceTree = "<group>"; };
 		849E42901F9434A200074460 /* PieChartCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PieChartCell.m; sourceTree = "<group>"; };
 		849E42921F9438EC00074460 /* SingleCategoryTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SingleCategoryTableViewController.h; sourceTree = "<group>"; };
@@ -380,6 +382,7 @@
 		7C2D9E1C1F875EFD00027681 /* SanityUITests */ = {
 			isa = PBXGroup;
 			children = (
+				8468B69F1FA48F550060B59D /* SanityUICreateBudgetsFailedWithNotEnoughArgs.m */,
 				8468B69D1FA48E320060B59D /* SanityUISignupFailedWithNotEnoughArgs.m */,
 				8468B69B1FA48DF00060B59D /* SanityUISignupFailed.m */,
 				8468B6991FA48D240060B59D /* SanityUILoginFailed.m */,
@@ -734,6 +737,7 @@
 			files = (
 				8468B69E1FA48E320060B59D /* SanityUISignupFailedWithNotEnoughArgs.m in Sources */,
 				84EF3ECA1FA477950064703F /* testPieChartRedirect.m in Sources */,
+				8468B6A01FA48F550060B59D /* SanityUICreateBudgetsFailedWithNotEnoughArgs.m in Sources */,
 				84EF3EC61FA459F60064703F /* SanityUIRefreshHome.m in Sources */,
 				8468B69C1FA48DF00060B59D /* SanityUISignupFailed.m in Sources */,
 				84EF3ECE1FA47D5F0064703F /* SanityUILogin.m in Sources */,
