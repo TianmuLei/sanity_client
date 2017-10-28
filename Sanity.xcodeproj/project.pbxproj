@@ -57,6 +57,7 @@
 		84EF3EC61FA459F60064703F /* SanityUIRefreshHome.m in Sources */ = {isa = PBXBuildFile; fileRef = 84EF3EC51FA459F60064703F /* SanityUIRefreshHome.m */; };
 		84EF3EC81FA4715C0064703F /* SanityUIPieChartShowDetail.m in Sources */ = {isa = PBXBuildFile; fileRef = 84EF3EC71FA4715C0064703F /* SanityUIPieChartShowDetail.m */; };
 		84EF3ECA1FA477950064703F /* testPieChartRedirect.m in Sources */ = {isa = PBXBuildFile; fileRef = 84EF3EC91FA477950064703F /* testPieChartRedirect.m */; };
+		84EF3ECC1FA47B0D0064703F /* SanityUICreateDuplicateBudget.m in Sources */ = {isa = PBXBuildFile; fileRef = 84EF3ECB1FA47B0D0064703F /* SanityUICreateDuplicateBudget.m */; };
 		84F4390C1F957C890040D12B /* SingleBudgetHistoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84F4390B1F957C890040D12B /* SingleBudgetHistoryViewController.m */; };
 		C0ACF45D5FDB633C6D76F84C /* libPods-Sanity.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EB1AA2A5F86FBB7BDA75AF6F /* libPods-Sanity.a */; };
 		CC2D17E11F91AFBE0052613D /* ProfilePage.m in Sources */ = {isa = PBXBuildFile; fileRef = CC2D17E01F91AFBE0052613D /* ProfilePage.m */; };
@@ -186,6 +187,7 @@
 		84EF3EC51FA459F60064703F /* SanityUIRefreshHome.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SanityUIRefreshHome.m; sourceTree = "<group>"; };
 		84EF3EC71FA4715C0064703F /* SanityUIPieChartShowDetail.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SanityUIPieChartShowDetail.m; sourceTree = "<group>"; };
 		84EF3EC91FA477950064703F /* testPieChartRedirect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = testPieChartRedirect.m; sourceTree = "<group>"; };
+		84EF3ECB1FA47B0D0064703F /* SanityUICreateDuplicateBudget.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SanityUICreateDuplicateBudget.m; sourceTree = "<group>"; };
 		84F4390A1F957C890040D12B /* SingleBudgetHistoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SingleBudgetHistoryViewController.h; sourceTree = "<group>"; };
 		84F4390B1F957C890040D12B /* SingleBudgetHistoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SingleBudgetHistoryViewController.m; sourceTree = "<group>"; };
 		CC2D17DF1F91AFBE0052613D /* ProfilePage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfilePage.h; sourceTree = "<group>"; };
@@ -368,6 +370,7 @@
 		7C2D9E1C1F875EFD00027681 /* SanityUITests */ = {
 			isa = PBXGroup;
 			children = (
+				84EF3ECB1FA47B0D0064703F /* SanityUICreateDuplicateBudget.m */,
 				84EF3EC91FA477950064703F /* testPieChartRedirect.m */,
 				84EF3EC71FA4715C0064703F /* SanityUIPieChartShowDetail.m */,
 				84EF3EC51FA459F60064703F /* SanityUIRefreshHome.m */,
@@ -716,6 +719,7 @@
 			files = (
 				84EF3ECA1FA477950064703F /* testPieChartRedirect.m in Sources */,
 				84EF3EC61FA459F60064703F /* SanityUIRefreshHome.m in Sources */,
+				84EF3ECC1FA47B0D0064703F /* SanityUICreateDuplicateBudget.m in Sources */,
 				84EF3EC81FA4715C0064703F /* SanityUIPieChartShowDetail.m in Sources */,
 				84EF3EC41FA458F60064703F /* SanityUICreateBudget.m in Sources */,
 				7C2D9E1E1F875EFD00027681 /* SanityUITests.m in Sources */,
