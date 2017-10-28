@@ -35,6 +35,11 @@
     [self getAlerted:reasonTitle msg:reason];
 }
 
+- (IBAction)resignKeyboard:(id)sender {
+    [sender resignFirstResponder];
+}
+
+
 - (IBAction)submitCategory:(id)sender {
     //error checking
     if (_categoryNameTF.text.length < 1 || _amountTF.text.length < 1)
