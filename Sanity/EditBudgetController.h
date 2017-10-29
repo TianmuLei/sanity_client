@@ -22,4 +22,7 @@
 -(void) success;
 -(void) fail;
 -(Budget*) requestBudget:(NSString*) name;
+-(void) deleteBudget:(NSString*) name;
+-(void) deleteCategory:(NSString*) budgetName :(NSString*)categoryName;
+-(void) editCategory:(NSString*) budgetName :(NSString*)categoryOldName :(NSString*)categoryNewName :(NSNumber*)categoryNewLimit;
 @end

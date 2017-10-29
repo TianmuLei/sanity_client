@@ -35,6 +35,7 @@
 		7C8F834F1F94BEFA0053B40B /* EditBudgetController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C8F834E1F94BEFA0053B40B /* EditBudgetController.m */; };
 		7CA1D1EB1F897A87003631D6 /* MainController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CA1D1E81F897A87003631D6 /* MainController.m */; };
 		7CA1D1EC1F897A87003631D6 /* SignupController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CA1D1EA1F897A87003631D6 /* SignupController.m */; };
+		7CDBD2401FA57A770081C356 /* AddCategoryController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CDBD23F1FA57A770081C356 /* AddCategoryController.m */; };
 		8434BE091F91FF2200A4BDC7 /* LoginPage.m in Sources */ = {isa = PBXBuildFile; fileRef = 8434BE041F91FF2200A4BDC7 /* LoginPage.m */; };
 		8434BE0A1F91FF2200A4BDC7 /* SignupPage.m in Sources */ = {isa = PBXBuildFile; fileRef = 8434BE061F91FF2200A4BDC7 /* SignupPage.m */; };
 		843599C01F91DB39002372E9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 843599B81F91DB38002372E9 /* Assets.xcassets */; };
@@ -48,6 +49,10 @@
 		843599CC1F91DBFD002372E9 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 843599CB1F91DBFD002372E9 /* QuartzCore.framework */; };
 		84416C301F9483E300C711E1 /* PieChartCategoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84416C2F1F9483E300C711E1 /* PieChartCategoryViewController.m */; };
 		8457BF1E1F93363A0028166A /* HomeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8457BF1D1F93363A0028166A /* HomeTableViewCell.m */; };
+		8468B69A1FA48D240060B59D /* SanityUILoginFailed.m in Sources */ = {isa = PBXBuildFile; fileRef = 8468B6991FA48D240060B59D /* SanityUILoginFailed.m */; };
+		8468B69C1FA48DF00060B59D /* SanityUISignupFailed.m in Sources */ = {isa = PBXBuildFile; fileRef = 8468B69B1FA48DF00060B59D /* SanityUISignupFailed.m */; };
+		8468B69E1FA48E320060B59D /* SanityUISignupFailedWithNotEnoughArgs.m in Sources */ = {isa = PBXBuildFile; fileRef = 8468B69D1FA48E320060B59D /* SanityUISignupFailedWithNotEnoughArgs.m */; };
+		8468B6A01FA48F550060B59D /* SanityUICreateBudgetsFailedWithNotEnoughArgs.m in Sources */ = {isa = PBXBuildFile; fileRef = 8468B69F1FA48F550060B59D /* SanityUICreateBudgetsFailedWithNotEnoughArgs.m */; };
 		849E42911F9434A200074460 /* PieChartCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 849E42901F9434A200074460 /* PieChartCell.m */; };
 		849E42941F9438EC00074460 /* SingleCategoryTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 849E42931F9438EC00074460 /* SingleCategoryTableViewController.m */; };
 		849E42971F943E8600074460 /* TranscationLabelCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 849E42961F943E8600074460 /* TranscationLabelCell.m */; };
@@ -55,6 +60,11 @@
 		84C6F8821F954E7400F2F061 /* HistoryHomeTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84C6F8811F954E7400F2F061 /* HistoryHomeTableViewController.m */; };
 		84EF3EC41FA458F60064703F /* SanityUICreateBudget.m in Sources */ = {isa = PBXBuildFile; fileRef = 84EF3EC31FA458F60064703F /* SanityUICreateBudget.m */; };
 		84EF3EC61FA459F60064703F /* SanityUIRefreshHome.m in Sources */ = {isa = PBXBuildFile; fileRef = 84EF3EC51FA459F60064703F /* SanityUIRefreshHome.m */; };
+		84EF3EC81FA4715C0064703F /* SanityUIPieChartShowDetail.m in Sources */ = {isa = PBXBuildFile; fileRef = 84EF3EC71FA4715C0064703F /* SanityUIPieChartShowDetail.m */; };
+		84EF3ECA1FA477950064703F /* testPieChartRedirect.m in Sources */ = {isa = PBXBuildFile; fileRef = 84EF3EC91FA477950064703F /* testPieChartRedirect.m */; };
+		84EF3ECC1FA47B0D0064703F /* SanityUICreateDuplicateBudget.m in Sources */ = {isa = PBXBuildFile; fileRef = 84EF3ECB1FA47B0D0064703F /* SanityUICreateDuplicateBudget.m */; };
+		84EF3ECE1FA47D5F0064703F /* SanityUILogin.m in Sources */ = {isa = PBXBuildFile; fileRef = 84EF3ECD1FA47D5F0064703F /* SanityUILogin.m */; };
+		84EF3ED01FA47E770064703F /* SanityUISignUp.m in Sources */ = {isa = PBXBuildFile; fileRef = 84EF3ECF1FA47E770064703F /* SanityUISignUp.m */; };
 		84F4390C1F957C890040D12B /* SingleBudgetHistoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84F4390B1F957C890040D12B /* SingleBudgetHistoryViewController.m */; };
 		C0ACF45D5FDB633C6D76F84C /* libPods-Sanity.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EB1AA2A5F86FBB7BDA75AF6F /* libPods-Sanity.a */; };
 		CC2D17E11F91AFBE0052613D /* ProfilePage.m in Sources */ = {isa = PBXBuildFile; fileRef = CC2D17E01F91AFBE0052613D /* ProfilePage.m */; };
@@ -150,6 +160,8 @@
 		7CA1D1E81F897A87003631D6 /* MainController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainController.m; sourceTree = "<group>"; };
 		7CA1D1E91F897A87003631D6 /* SignupController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignupController.h; sourceTree = "<group>"; };
 		7CA1D1EA1F897A87003631D6 /* SignupController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignupController.m; sourceTree = "<group>"; };
+		7CDBD23E1FA57A770081C356 /* AddCategoryController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddCategoryController.h; sourceTree = "<group>"; };
+		7CDBD23F1FA57A770081C356 /* AddCategoryController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddCategoryController.m; sourceTree = "<group>"; };
 		8434BE031F91FF2200A4BDC7 /* LoginPage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginPage.h; sourceTree = "<group>"; };
 		8434BE041F91FF2200A4BDC7 /* LoginPage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginPage.m; sourceTree = "<group>"; };
 		8434BE051F91FF2200A4BDC7 /* SignupPage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignupPage.h; sourceTree = "<group>"; };
@@ -170,6 +182,10 @@
 		84416C2F1F9483E300C711E1 /* PieChartCategoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PieChartCategoryViewController.m; sourceTree = "<group>"; };
 		8457BF1C1F93363A0028166A /* HomeTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeTableViewCell.h; sourceTree = "<group>"; };
 		8457BF1D1F93363A0028166A /* HomeTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeTableViewCell.m; sourceTree = "<group>"; };
+		8468B6991FA48D240060B59D /* SanityUILoginFailed.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SanityUILoginFailed.m; sourceTree = "<group>"; };
+		8468B69B1FA48DF00060B59D /* SanityUISignupFailed.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SanityUISignupFailed.m; sourceTree = "<group>"; };
+		8468B69D1FA48E320060B59D /* SanityUISignupFailedWithNotEnoughArgs.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SanityUISignupFailedWithNotEnoughArgs.m; sourceTree = "<group>"; };
+		8468B69F1FA48F550060B59D /* SanityUICreateBudgetsFailedWithNotEnoughArgs.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SanityUICreateBudgetsFailedWithNotEnoughArgs.m; sourceTree = "<group>"; };
 		849E428F1F9434A200074460 /* PieChartCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PieChartCell.h; sourceTree = "<group>"; };
 		849E42901F9434A200074460 /* PieChartCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PieChartCell.m; sourceTree = "<group>"; };
 		849E42921F9438EC00074460 /* SingleCategoryTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SingleCategoryTableViewController.h; sourceTree = "<group>"; };
@@ -182,6 +198,11 @@
 		84C6F8811F954E7400F2F061 /* HistoryHomeTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HistoryHomeTableViewController.m; sourceTree = "<group>"; };
 		84EF3EC31FA458F60064703F /* SanityUICreateBudget.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SanityUICreateBudget.m; sourceTree = "<group>"; };
 		84EF3EC51FA459F60064703F /* SanityUIRefreshHome.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SanityUIRefreshHome.m; sourceTree = "<group>"; };
+		84EF3EC71FA4715C0064703F /* SanityUIPieChartShowDetail.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SanityUIPieChartShowDetail.m; sourceTree = "<group>"; };
+		84EF3EC91FA477950064703F /* testPieChartRedirect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = testPieChartRedirect.m; sourceTree = "<group>"; };
+		84EF3ECB1FA47B0D0064703F /* SanityUICreateDuplicateBudget.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SanityUICreateDuplicateBudget.m; sourceTree = "<group>"; };
+		84EF3ECD1FA47D5F0064703F /* SanityUILogin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SanityUILogin.m; sourceTree = "<group>"; };
+		84EF3ECF1FA47E770064703F /* SanityUISignUp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SanityUISignUp.m; sourceTree = "<group>"; };
 		84F4390A1F957C890040D12B /* SingleBudgetHistoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SingleBudgetHistoryViewController.h; sourceTree = "<group>"; };
 		84F4390B1F957C890040D12B /* SingleBudgetHistoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SingleBudgetHistoryViewController.m; sourceTree = "<group>"; };
 		CC2D17DF1F91AFBE0052613D /* ProfilePage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfilePage.h; sourceTree = "<group>"; };
@@ -289,6 +310,8 @@
 				7C698AA71F983F4800F697F7 /* BudgetListHistoryController.m */,
 				7C698AA91F983F6000F697F7 /* BudgetPageHistoryController.h */,
 				7C698AAA1F983F6000F697F7 /* BudgetPageHistoryController.m */,
+				7CDBD23E1FA57A770081C356 /* AddCategoryController.h */,
+				7CDBD23F1FA57A770081C356 /* AddCategoryController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -364,6 +387,15 @@
 		7C2D9E1C1F875EFD00027681 /* SanityUITests */ = {
 			isa = PBXGroup;
 			children = (
+				8468B69F1FA48F550060B59D /* SanityUICreateBudgetsFailedWithNotEnoughArgs.m */,
+				8468B69D1FA48E320060B59D /* SanityUISignupFailedWithNotEnoughArgs.m */,
+				8468B69B1FA48DF00060B59D /* SanityUISignupFailed.m */,
+				8468B6991FA48D240060B59D /* SanityUILoginFailed.m */,
+				84EF3ECF1FA47E770064703F /* SanityUISignUp.m */,
+				84EF3ECD1FA47D5F0064703F /* SanityUILogin.m */,
+				84EF3ECB1FA47B0D0064703F /* SanityUICreateDuplicateBudget.m */,
+				84EF3EC91FA477950064703F /* testPieChartRedirect.m */,
+				84EF3EC71FA4715C0064703F /* SanityUIPieChartShowDetail.m */,
 				84EF3EC51FA459F60064703F /* SanityUIRefreshHome.m */,
 				84EF3EC31FA458F60064703F /* SanityUICreateBudget.m */,
 				7C2D9E1D1F875EFD00027681 /* SanityUITests.m */,
@@ -675,6 +707,7 @@
 				7C8F833A1F92C72E0053B40B /* AddTransactionController.m in Sources */,
 				7C8F833D1F92DE230053B40B /* AddBudgetController.m in Sources */,
 				CCB2DFB51F9526E600503F0D /* ResetUsernamePage.m in Sources */,
+				7CDBD2401FA57A770081C356 /* AddCategoryController.m in Sources */,
 				CC673EF81F946ACA000CE0B6 /* CategoryDisplay.m in Sources */,
 				7CA1D1EB1F897A87003631D6 /* MainController.m in Sources */,
 				CC673EF11F9357F7000CE0B6 /* HobbyCell.m in Sources */,
@@ -708,9 +741,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8468B69E1FA48E320060B59D /* SanityUISignupFailedWithNotEnoughArgs.m in Sources */,
+				84EF3ECA1FA477950064703F /* testPieChartRedirect.m in Sources */,
+				8468B6A01FA48F550060B59D /* SanityUICreateBudgetsFailedWithNotEnoughArgs.m in Sources */,
 				84EF3EC61FA459F60064703F /* SanityUIRefreshHome.m in Sources */,
+				8468B69C1FA48DF00060B59D /* SanityUISignupFailed.m in Sources */,
+				84EF3ECE1FA47D5F0064703F /* SanityUILogin.m in Sources */,
+				84EF3ECC1FA47B0D0064703F /* SanityUICreateDuplicateBudget.m in Sources */,
+				84EF3EC81FA4715C0064703F /* SanityUIPieChartShowDetail.m in Sources */,
 				84EF3EC41FA458F60064703F /* SanityUICreateBudget.m in Sources */,
+				8468B69A1FA48D240060B59D /* SanityUILoginFailed.m in Sources */,
 				7C2D9E1E1F875EFD00027681 /* SanityUITests.m in Sources */,
+				84EF3ED01FA47E770064703F /* SanityUISignUp.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

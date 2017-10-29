@@ -24,6 +24,24 @@
     
 }
 
+-(void) deleteBudget:(NSString*) name{
+    NSDictionary *info=@{@"email":self.client.myUser.email,@"name":name};
+    NSDictionary* message=@{@"function":@"deleteBudget",@"information":info};
+    [self.client sendMessage:message];
+
+}
+-(void) deleteCategory:(NSString*) budgetName :(NSString*)categoryName{
+    NSDictionary *info=@{@"email":self.client.myUser.email,@"budgetName":budgetName,@"categoryName":categoryName};
+    NSDictionary* message=@{@"function":@"deleteCategory",@"information":info};
+    [self.client sendMessage:message];
+}
+
+-(void) editCategory:(NSString*) budgetName :(NSString*)categoryOldName :(NSString*)categoryNewName :(NSNumber*)categoryNewLimit{
+    NSDictionary *info=@{@"email":self.client.myUser.email,@"budgetName":budgetName,@"categoryOldName":categoryOldName,@"categoryNewName":categoryNewName,@"limit":categoryNewLimit};
+    NSDictionary* message=@{@"function":@"editCategory",@"information":info};
+    [self.client sendMessage:message];
+
+}
 
 -(void) success{
     [self.delegate editEntireBudgetSuccess];

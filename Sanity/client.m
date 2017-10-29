@@ -631,20 +631,12 @@
                 [singleC.transctions addObject:single];
                 
             }
-            
-            
-            
+   
             
             
             [ singleB.categories addObject:singleC];
         }
-        
-        
-        
-        
-        
-        
-        
+
         [historyData addObject:singleB];
         
         
@@ -655,13 +647,6 @@
     
     
 }
-
-
-
-
-
-
-
 
 
 
