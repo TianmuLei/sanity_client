@@ -7,10 +7,14 @@
 //
 
 #import "AddCategoryPage.h"
+#import "UIClientConnector.h"
+#import "AddCategoryController.h"
+#import "AppDelegate.h"
 
 @interface AddCategoryPage ()
 @property (weak, nonatomic) IBOutlet UITextField *categoryNameTF;
 @property (weak, nonatomic) IBOutlet UITextField *amountTF;
+@property (strong, nonatomic) AddCategoryController* controller;
 
 @end
 
@@ -51,7 +55,9 @@
     }
     else {
 #warning call controller
-        [self addSuccessful];
+        NSNumberFormatter *f = [[NSNumberFormatter alloc] init];
+        [_controller addCategory:_budgetName :_categoryNameTF.text :[f numberFromString:_amountTF.text]];
+      //  [self addSuccessful];
     }
     
     

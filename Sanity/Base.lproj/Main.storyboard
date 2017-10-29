@@ -1324,7 +1324,7 @@
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <state key="normal" title="Add Category"/>
                                                     <connections>
-                                                        <segue destination="Nwb-Bh-u5X" kind="show" id="pT4-E0-aAm"/>
+                                                        <segue destination="Nwb-Bh-u5X" kind="show" identifier="EditBudgetToAddCate" id="pT4-E0-aAm"/>
                                                     </connections>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rw2-U6-Lz7">
@@ -2065,6 +2065,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="HLo-Fj-idy"/>
-        <segue reference="JKh-AC-ajD"/>
+        <segue reference="Non-6x-6lM"/>
     </inferredMetricsTieBreakers>
 </document>

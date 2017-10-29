@@ -7,8 +7,12 @@
 //
 
 #import "ViewController.h"
+#import "AddCategoryController.h"
+#import "UIClientConnector.h"
 
-@interface AddCategoryPage : ViewController
+@interface AddCategoryPage : ViewController<AddCategoryControllerDelegate>
+
+@property NSString* budgetName;
 
 - (void) addSuccessful;
 - (void) addFailed: (NSString *)reasonTitle withReason:(NSString *)reason;

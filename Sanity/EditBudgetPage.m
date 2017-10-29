@@ -10,6 +10,7 @@
 #import "CategoryDisplay.h"
 #import "Category.h"
 #import "EditBudgetController.h"
+#import "AddCategoryPage.h"
 
 @interface EditBudgetPage ()
 @property (weak, nonatomic) IBOutlet UITextField *budgetNameTF;
@@ -26,6 +27,7 @@
 
 //data set
 @property (strong, nonatomic) NSMutableArray *categories;
+@property (strong, nonatomic) NSMutableArray *cateCells;
 @end
 
 @implementation EditBudgetPage
@@ -33,6 +35,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.categories = [[NSMutableArray alloc] init];
+    self.cateCells = [[NSMutableArray alloc] init];
     Category *testCate = [[Category alloc]init];
     testCate.name = @"test1";
     testCate.limit = 10.25f;
@@ -44,10 +47,10 @@
     UIClientConnector.myClient.editBudget.delegate = self;
 
     Budget *b = [UIClientConnector.myClient getBudget:_budgetName];
-   // [_controller requestBudget:_budgetName];
- 
+
     [self getBudgetInfo:b];
 }
+
 
 //reload section two
 - (void)viewWillAppear:(BOOL)animated {
@@ -75,6 +78,17 @@
     [sender resignFirstResponder];
 }
 
+
+
+
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    if([segue.identifier isEqualToString:@"EditBudgetToAddCate"]){
+        AddCategoryPage *addCatePage = (AddCategoryPage *)segue.destinationViewController;
+        addCatePage.budgetName = self.budgetName;
+    }
+}
+
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
@@ -99,6 +113,14 @@
     NSString *budgetName = _budgetNameTF.text;
     [_controller editBudget:_budgetName withnewBudget:_budgetNameTF.text withPeriod:_periodTF.text withThreshold:_thresholdTF.text withFrequency:_frequencyTF.text];
     
+    for (int i = 0; i < _categories.count; ++i){
+        //budget name could be changed, so get it from text field
+        Category *cate = [_categories objectAtIndex:i];
+        CategoryDisplay *cateDisplay = [_cateCells objectAtIndex:i+2];
+        NSString *testCell = cateDisplay.categoryNameTF.text;
+        NSNumberFormatter *f = [[NSNumberFormatter alloc] init];
+        [_controller editCategory:_budgetNameTF.text :cate.name :cateDisplay.categoryNameTF.text :[f numberFromString: cateDisplay.categoryAmountTF.text ]];
+    }
 }
 
 
@@ -134,6 +156,21 @@
                                    handler:^(UIAlertAction *action){
 #warning call@jiaxin's function confirm delete
                                        //Delete the object from the friends array and the table.
+                                       [_controller deleteCategory:_budgetName :cell.categoryNameTF.text ];
+                                       
+                                       //delete category from two arraylists
+                                       for (Category *cate in _categories){
+                                           if ([cate.name isEqual:cell.categoryNameTF.text]){
+                                               [_categories removeObject:cate];
+                                           }
+                                       }
+                                       
+                                       for (CategoryDisplay * cellA in _cateCells){
+                                           if ([cellA.categoryNameTF.text isEqual:cell.categoryNameTF.text]){
+                                               [_cateCells removeObject:cellA];
+                                           }
+                                       }
+                                       
                                        _toBeDeleteRow = indexPath;
                                    
                                    }];
@@ -160,8 +197,11 @@
             //set name and amount
             cell.categoryAmountTF.text =[[NSNumber numberWithFloat:tempCate.limit] stringValue];
             cell.categoryNameTF.text = tempCate.name;
+            NSString *todelte = cell.categoryNameTF.text;
+            [_cateCells addObject:cell];
             
         }
+        
         
         return cell;
     }
