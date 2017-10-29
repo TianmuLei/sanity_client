@@ -35,6 +35,7 @@
 		7C8F834F1F94BEFA0053B40B /* EditBudgetController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C8F834E1F94BEFA0053B40B /* EditBudgetController.m */; };
 		7CA1D1EB1F897A87003631D6 /* MainController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CA1D1E81F897A87003631D6 /* MainController.m */; };
 		7CA1D1EC1F897A87003631D6 /* SignupController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CA1D1EA1F897A87003631D6 /* SignupController.m */; };
+		7CDBD2401FA57A770081C356 /* AddCategoryController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CDBD23F1FA57A770081C356 /* AddCategoryController.m */; };
 		8434BE091F91FF2200A4BDC7 /* LoginPage.m in Sources */ = {isa = PBXBuildFile; fileRef = 8434BE041F91FF2200A4BDC7 /* LoginPage.m */; };
 		8434BE0A1F91FF2200A4BDC7 /* SignupPage.m in Sources */ = {isa = PBXBuildFile; fileRef = 8434BE061F91FF2200A4BDC7 /* SignupPage.m */; };
 		843599C01F91DB39002372E9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 843599B81F91DB38002372E9 /* Assets.xcassets */; };
@@ -159,6 +160,8 @@
 		7CA1D1E81F897A87003631D6 /* MainController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainController.m; sourceTree = "<group>"; };
 		7CA1D1E91F897A87003631D6 /* SignupController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignupController.h; sourceTree = "<group>"; };
 		7CA1D1EA1F897A87003631D6 /* SignupController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignupController.m; sourceTree = "<group>"; };
+		7CDBD23E1FA57A770081C356 /* AddCategoryController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddCategoryController.h; sourceTree = "<group>"; };
+		7CDBD23F1FA57A770081C356 /* AddCategoryController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddCategoryController.m; sourceTree = "<group>"; };
 		8434BE031F91FF2200A4BDC7 /* LoginPage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginPage.h; sourceTree = "<group>"; };
 		8434BE041F91FF2200A4BDC7 /* LoginPage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginPage.m; sourceTree = "<group>"; };
 		8434BE051F91FF2200A4BDC7 /* SignupPage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignupPage.h; sourceTree = "<group>"; };
@@ -307,6 +310,8 @@
 				7C698AA71F983F4800F697F7 /* BudgetListHistoryController.m */,
 				7C698AA91F983F6000F697F7 /* BudgetPageHistoryController.h */,
 				7C698AAA1F983F6000F697F7 /* BudgetPageHistoryController.m */,
+				7CDBD23E1FA57A770081C356 /* AddCategoryController.h */,
+				7CDBD23F1FA57A770081C356 /* AddCategoryController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -702,6 +707,7 @@
 				7C8F833A1F92C72E0053B40B /* AddTransactionController.m in Sources */,
 				7C8F833D1F92DE230053B40B /* AddBudgetController.m in Sources */,
 				CCB2DFB51F9526E600503F0D /* ResetUsernamePage.m in Sources */,
+				7CDBD2401FA57A770081C356 /* AddCategoryController.m in Sources */,
 				CC673EF81F946ACA000CE0B6 /* CategoryDisplay.m in Sources */,
 				7CA1D1EB1F897A87003631D6 /* MainController.m in Sources */,
 				CC673EF11F9357F7000CE0B6 /* HobbyCell.m in Sources */,
