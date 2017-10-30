@@ -89,6 +89,11 @@
     }
 }
 
+- (IBAction)deleteBudget:(id)sender {
+    [_controller deleteBudget:_budgetName];
+    
+}
+
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
