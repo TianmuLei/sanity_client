@@ -164,18 +164,18 @@
                                        [_controller deleteCategory:_budgetName :cell.categoryNameTF.text ];
                                        
                                        //delete category from two arraylists
-                                       for (Category *cate in _categories){
-                                           if ([cate.name isEqual:cell.categoryNameTF.text]){
-                                               [_categories removeObject:cate];
-                                           }
-                                       }
-                                       
-                                       for (CategoryDisplay * cellA in _cateCells){
-                                           if ([cellA.categoryNameTF.text isEqual:cell.categoryNameTF.text]){
-                                               [_cateCells removeObject:cellA];
-                                           }
-                                       }
-                                       
+//                                       for (Category *cate in _categories){
+//                                           if ([cate.name isEqual:cell.categoryNameTF.text]){
+//                                               [_categories removeObject:cate];
+//                                           }
+//                                       }
+//                                       
+//                                       for (CategoryDisplay * cellA in _cateCells){
+//                                           if ([cellA.categoryNameTF.text isEqual:cell.categoryNameTF.text]){
+//                                               [_cateCells removeObject:cellA];
+//                                           }
+//                                       }
+//                                       
                                        _toBeDeleteRow = indexPath;
                                    
                                    }];

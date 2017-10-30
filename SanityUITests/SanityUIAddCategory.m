@@ -57,7 +57,8 @@
 
     
     //go to add category page
-   [[[[[[[[[[[app childrenMatchingType:XCUIElementTypeWindow] elementBoundByIndex:0] childrenMatchingType:XCUIElementTypeOther].element childrenMatchingType:XCUIElementTypeOther].element childrenMatchingType:XCUIElementTypeOther].element childrenMatchingType:XCUIElementTypeOther].element childrenMatchingType:XCUIElementTypeOther].element childrenMatchingType:XCUIElementTypeOther].element childrenMatchingType:XCUIElementTypeOther].element childrenMatchingType:XCUIElementTypeOther].element tap];
+
+    [app.buttons[@"Edit"] tap];
     [app.tables.buttons[@"Add Category"] tap];
     
     XCUIElement *categoryNameTextField = app.textFields[@"cate name"];
