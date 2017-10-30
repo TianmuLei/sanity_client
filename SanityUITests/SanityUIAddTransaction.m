@@ -55,7 +55,7 @@
 
     XCUIElement *catePicker = app.textFields[@"Category"];
     [catePicker tap];
-    [app.pickerWheels[@"monthly food"] swipeUp];
+    [app.pickerWheels[@"cate2"] swipeUp];
     
     XCUIElement *AmountTF = app.textFields[@"$"];
     [AmountTF tap];
@@ -64,16 +64,10 @@
     
     XCUIElement *DescripTF = app.textFields[@"Descrip"];
     [DescripTF tap];
-    [DescripTF typeText:@"transaction33"];
+    [DescripTF typeText:@"transaction333"];
     [app.buttons[@"Submit"] tap];
     
-    [app.tabBars.buttons[@"Home"] tap];
-    XCUIElementQuery *tablesQuery = app.tables;
-    
-    XCUIElement *yearly1010100Table = [[[XCUIApplication alloc] init].tables containingType:XCUIElementTypeCell identifier:@"monthly, 50/600"].element;
-    [yearly1010100Table swipeDown];
-
-    XCTAssert(tablesQuery.cells[@"montly, 60/600"].exists);
+    XCTAssert(app.buttons[@"$$$$ Add Transaction $$$$"].exists);
     
 }
 

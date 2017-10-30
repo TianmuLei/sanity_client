@@ -449,19 +449,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L1C-Zr-9RP">
-                                <rect key="frame" x="304" y="623" width="71" height="36"/>
-                                <color key="backgroundColor" red="1" green="0.67791368090000004" blue="0.30888782920000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
-                                <state key="normal" title="Edit">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <connections>
-                                    <segue destination="hyS-CL-Xfk" kind="show" identifier="BudgetToEditBudget" id="RrL-fC-Dr4"/>
-                                </connections>
-                            </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="c7C-NA-g2Q" customClass="XYPieChart">
-                                <rect key="frame" x="0.0" y="30" width="375" height="375"/>
+                                <rect key="frame" x="0.0" y="74" width="375" height="375"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <accessibility key="accessibilityConfiguration">
                                     <bool key="isElement" value="YES"/>
@@ -471,40 +460,51 @@
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap three times to go to category" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5cZ-gw-9Je">
-                                <rect key="frame" x="31" y="584.5" width="314.5" height="22.5"/>
+                                <rect key="frame" x="30" y="532" width="314.5" height="22.5"/>
                                 <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="20"/>
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vAX-k0-H5S" userLabel="Clicked">
-                                <rect key="frame" x="184.5" y="415" width="5" height="24"/>
+                                <rect key="frame" x="184.5" y="459" width="5" height="24"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap once to see detail" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CCt-0J-Zkr">
-                                <rect key="frame" x="84" y="557" width="207.5" height="22.5"/>
+                                <rect key="frame" x="84" y="502" width="207.5" height="22.5"/>
                                 <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="20"/>
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L1C-Zr-9RP">
+                                <rect key="frame" x="304" y="574" width="71" height="36"/>
+                                <color key="backgroundColor" red="1" green="0.67791368090000004" blue="0.30888782920000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <accessibility key="accessibilityConfiguration" identifier="Edit" label="Edit"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <state key="normal" title="Edit">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <segue destination="hyS-CL-Xfk" kind="show" identifier="BudgetToEditBudget" id="RrL-fC-Dr4"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <accessibility key="accessibilityConfiguration">
                             <bool key="isElement" value="YES"/>
                         </accessibility>
                         <constraints>
+                            <constraint firstItem="CCt-0J-Zkr" firstAttribute="centerX" secondItem="1mV-V4-6qc" secondAttribute="centerX" id="0Vo-6I-Ufc"/>
                             <constraint firstAttribute="trailing" secondItem="L1C-Zr-9RP" secondAttribute="trailing" id="0r4-6r-EyB"/>
                             <constraint firstItem="vAX-k0-H5S" firstAttribute="centerX" secondItem="1mV-V4-6qc" secondAttribute="centerX" id="30Z-cb-Hhv"/>
-                            <constraint firstItem="5cZ-gw-9Je" firstAttribute="top" secondItem="CCt-0J-Zkr" secondAttribute="bottom" constant="5" id="BiL-0y-ge6"/>
-                            <constraint firstItem="L1C-Zr-9RP" firstAttribute="top" secondItem="5cZ-gw-9Je" secondAttribute="bottom" constant="16" id="Qp8-ua-m1E"/>
+                            <constraint firstItem="L1C-Zr-9RP" firstAttribute="top" secondItem="5cZ-gw-9Je" secondAttribute="bottom" constant="19.5" id="3aA-br-7B3"/>
+                            <constraint firstItem="5cZ-gw-9Je" firstAttribute="top" secondItem="CCt-0J-Zkr" secondAttribute="bottom" constant="7.5" id="EqF-cM-gIe"/>
                             <constraint firstAttribute="trailing" secondItem="c7C-NA-g2Q" secondAttribute="trailing" id="YdP-6P-XVG"/>
                             <constraint firstItem="c7C-NA-g2Q" firstAttribute="leading" secondItem="1mV-V4-6qc" secondAttribute="leading" id="a8D-J1-nh3"/>
-                            <constraint firstItem="5cZ-gw-9Je" firstAttribute="centerX" secondItem="1mV-V4-6qc" secondAttribute="centerX" id="aLt-gC-716"/>
+                            <constraint firstItem="5cZ-gw-9Je" firstAttribute="centerX" secondItem="1mV-V4-6qc" secondAttribute="centerX" id="eOI-sJ-hx8"/>
                             <constraint firstItem="bhp-UT-KSq" firstAttribute="top" secondItem="L1C-Zr-9RP" secondAttribute="bottom" constant="8" id="nUU-iE-7YN"/>
                             <constraint firstItem="c7C-NA-g2Q" firstAttribute="top" secondItem="Ysn-Af-C1Q" secondAttribute="bottom" constant="10" id="w9e-YY-Vq2"/>
-                            <constraint firstItem="CCt-0J-Zkr" firstAttribute="centerX" secondItem="1mV-V4-6qc" secondAttribute="centerX" id="wcy-YN-TKo"/>
-                            <constraint firstItem="bhp-UT-KSq" firstAttribute="top" secondItem="5cZ-gw-9Je" secondAttribute="bottom" constant="60" id="x4f-zi-TUW"/>
                             <constraint firstItem="vAX-k0-H5S" firstAttribute="top" secondItem="c7C-NA-g2Q" secondAttribute="bottom" constant="10" id="xXl-1b-blQ"/>
                             <constraint firstItem="L1C-Zr-9RP" firstAttribute="leading" secondItem="1mV-V4-6qc" secondAttribute="leading" constant="304" id="ypP-F1-dIv"/>
                         </constraints>
@@ -2080,8 +2080,8 @@
         <image name="profileIcon" width="20" height="20"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="uqa-cg-NDh"/>
-        <segue reference="HLo-Fj-idy"/>
+        <segue reference="vaJ-E9-C5i"/>
         <segue reference="Non-6x-6lM"/>
+        <segue reference="HLo-Fj-idy"/>
     </inferredMetricsTieBreakers>
 </document>
