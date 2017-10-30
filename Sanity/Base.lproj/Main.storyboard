@@ -1370,7 +1370,6 @@
                                                     <state key="normal" title="Delete Budget"/>
                                                     <connections>
                                                         <action selector="deleteBudget:" destination="hyS-CL-Xfk" eventType="touchUpInside" id="QFR-sr-lj2"/>
-                                                        <segue destination="twL-TM-UQa" kind="show" id="vaJ-E9-C5i"/>
                                                     </connections>
                                                 </button>
                                             </subviews>
@@ -2080,8 +2079,7 @@
         <image name="profileIcon" width="20" height="20"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="vaJ-E9-C5i"/>
-        <segue reference="Non-6x-6lM"/>
         <segue reference="HLo-Fj-idy"/>
+        <segue reference="Non-6x-6lM"/>
     </inferredMetricsTieBreakers>
 </document>
