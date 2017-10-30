@@ -1,19 +1,18 @@
 //
-//  SanityTests.m
-//  SanityTests
+//  SanityTestTest.m
+//  Sanity
 //
-//  Created by Tianmu on 10/5/17.
+//  Created by Tianmu on 10/29/17.
 //  Copyright © 2017 Absolute A. All rights reserved.
 //
 
 #import <XCTest/XCTest.h>
-#import "UIClientConnector.h"
 
-@interface SanityTests : XCTestCase
+@interface SanityTestTest : XCTestCase
 
 @end
 
-@implementation SanityTests
+@implementation SanityTestTest
 
 - (void)setUp {
     [super setUp];
@@ -25,12 +24,9 @@
     [super tearDown];
 }
 
-- (void)testSocketConnection {
+- (void)testExample {
     // This is an example of a functional test case.
     // Use XCTAssert and related functions to verify your tests produce the correct results.
-    UIClientConnector *_clientInstant=[[UIClientConnector alloc] init];
-    
-
 }
 
 - (void)testPerformanceExample {

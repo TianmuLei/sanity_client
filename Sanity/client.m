@@ -501,6 +501,7 @@
         singleB.frequency=[[budget objectForKey:@"frequency"] intValue];
         singleB.threshold=[[budget objectForKey:@"threshold"] intValue];
         singleB.remain=[[budget objectForKey:@"remain"] intValue];
+          singleB.period=[[budget objectForKey:@"period"] intValue];
         
         NSMutableArray* cateL=[budget objectForKey:@"categoryList"];
         singleB.categories=[[NSMutableArray alloc]init];
