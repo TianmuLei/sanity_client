@@ -9,6 +9,8 @@
 #import "MainController.h"
 
 @protocol  AddCategoryControllerDelegate<NSObject>
+- (void) addSuccessful;
+- (void) addFailed: (NSString *)reasonTitle withReason:(NSString *)reason;
 @required
 @end
 
@@ -17,6 +19,8 @@
 }
 @property (nonatomic,strong) id delegate;
 -(void) addCategory:(NSString*) budgetName :(NSString*)categoryName :(NSNumber*)limit;
+-(void) success;
+-(void) fail;
 
 
 @end

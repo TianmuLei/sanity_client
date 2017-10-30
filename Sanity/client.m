@@ -238,7 +238,7 @@
                  [_addTransaction success];
             }
         }
-        else if ([function isEqualToString:@"returnBudgetList"]){
+       /* else if ([function isEqualToString:@"returnBudgetList"]){
             if([status isEqualToString:@"fail"]){
                 
             }else{
@@ -263,7 +263,7 @@
                 [self addTansData:info];
                 
             }
-        }
+        }*/
         else if ([function isEqualToString:@"returnEverything"]){
             
                 NSDictionary*info=[messageObject objectForKey:@"information"];
@@ -293,8 +293,42 @@
                 [_editBudget fail];
             }
             else{
+                NSDictionary*info=[messageObject objectForKey:@"information"];
+                _budgetListDataDic=(NSMutableArray*)[info objectForKey:@"budgetLsit"];
+                [self pharseAlldata:_budgetListDataDic];
                 [_editBudget success];
+                
+                
             }
+        }
+        else if([function isEqualToString:@"deleteCategory"]){
+            if([status isEqualToString:@"fail"]){
+                [_editBudget dFail];
+            }
+            else{
+                NSDictionary*info=[messageObject objectForKey:@"information"];
+                _budgetListDataDic=(NSMutableArray*)[info objectForKey:@"budgetLsit"];
+                [self pharseAlldata:_budgetListDataDic];
+                [_editBudget dSuccess];
+            }
+            
+        }
+        else if([function isEqualToString:@"addCategory"]){
+            if([status isEqualToString:@"fail"]){
+                
+            }
+            else{
+                
+            }
+            
+        }
+        else if([function isEqualToString:@"editCategory"]){
+            if([status isEqualToString:@"fail"]){
+            }
+            else{
+                
+            }
+            
         }
         else if ([function isEqualToString:@"requestHistory"]){
             NSDictionary*info1=[messageObject objectForKey:@"information1"];

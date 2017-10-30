@@ -52,6 +52,13 @@
 
 }
 
+-(void) dSuccess{
+     [self.delegate deleteCategorySuccess];
+}
+-(void) dFail{
+    [self.delegate deleteCategoryFail];
+}
+
 -(Budget*) requestBudget:(NSString*) name{
     return [self.client getBudget:name];
     
