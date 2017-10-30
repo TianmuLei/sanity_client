@@ -84,6 +84,7 @@
 		CCB2DFB51F9526E600503F0D /* ResetUsernamePage.m in Sources */ = {isa = PBXBuildFile; fileRef = CCB2DFB41F9526E600503F0D /* ResetUsernamePage.m */; };
 		CCF0CE9E1FA6DD3A00FE4C45 /* SanityUIAddCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = CCF0CE9D1FA6DD3A00FE4C45 /* SanityUIAddCategory.m */; };
 		CCF0CE9F1FA6DF0000FE4C45 /* HomeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8457BF1D1F93363A0028166A /* HomeTableViewCell.m */; };
+		CCF7954F1FA6F6020040BCE1 /* SanityUIAddTransaction.m in Sources */ = {isa = PBXBuildFile; fileRef = CCF7954E1FA6F6020040BCE1 /* SanityUIAddTransaction.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -235,6 +236,7 @@
 		CCB2DFB31F9526E600503F0D /* ResetUsernamePage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResetUsernamePage.h; sourceTree = "<group>"; };
 		CCB2DFB41F9526E600503F0D /* ResetUsernamePage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResetUsernamePage.m; sourceTree = "<group>"; };
 		CCF0CE9D1FA6DD3A00FE4C45 /* SanityUIAddCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SanityUIAddCategory.m; sourceTree = "<group>"; };
+		CCF7954E1FA6F6020040BCE1 /* SanityUIAddTransaction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SanityUIAddTransaction.m; sourceTree = "<group>"; };
 		EB1AA2A5F86FBB7BDA75AF6F /* libPods-Sanity.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Sanity.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -404,6 +406,7 @@
 				7C2D9E1D1F875EFD00027681 /* SanityUITests.m */,
 				7C2D9E1F1F875EFD00027681 /* Info.plist */,
 				CCF0CE9D1FA6DD3A00FE4C45 /* SanityUIAddCategory.m */,
+				CCF7954E1FA6F6020040BCE1 /* SanityUIAddTransaction.m */,
 			);
 			path = SanityUITests;
 			sourceTree = "<group>";
@@ -755,6 +758,7 @@
 				84EF3ECC1FA47B0D0064703F /* SanityUICreateDuplicateBudget.m in Sources */,
 				84EF3EC81FA4715C0064703F /* SanityUIPieChartShowDetail.m in Sources */,
 				CCF0CE9E1FA6DD3A00FE4C45 /* SanityUIAddCategory.m in Sources */,
+				CCF7954F1FA6F6020040BCE1 /* SanityUIAddTransaction.m in Sources */,
 				84EF3EC41FA458F60064703F /* SanityUICreateBudget.m in Sources */,
 				8468B69A1FA48D240060B59D /* SanityUILoginFailed.m in Sources */,
 				7C2D9E1E1F875EFD00027681 /* SanityUITests.m in Sources */,

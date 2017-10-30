@@ -153,9 +153,10 @@
 
 #pragma mark - Table view data source
 - (IBAction)submitTransaction:(id)sender {
-    if (_amountTF.text.length < 1) {
+    if (_amountTF.text.length < 1 || _budgetTF.text.length < 1 || _categoryTF.text.length < 1) {
         [self getAlerted:@"Required Fields" msg:@"Please fill in all required fields"];
     }
+
     else if (![self numberFormatChecker:_amountTF.text]){
          [self getAlerted:@"Number format Error" msg:@"Please enter numbers for budget amount"];
     
