@@ -8,6 +8,8 @@
 
 #import <XCTest/XCTest.h>
 #import "UIClientConnector.h"
+#import <SocketRocket/SRWebSocket.h>
+
 
 @interface SanityTests : XCTestCase
 
@@ -18,6 +20,8 @@
 - (void)setUp {
     [super setUp];
     // Put setup code here. This method is called before the invocation of each test method in the class.
+    
+    
 }
 
 - (void)tearDown {
@@ -25,10 +29,9 @@
     [super tearDown];
 }
 
-- (void)testSocketConnection {
+- (void)testExample{
     // This is an example of a functional test case.
     // Use XCTAssert and related functions to verify your tests produce the correct results.
-    UIClientConnector *_clientInstant=[[UIClientConnector alloc] init];
     
 
 }

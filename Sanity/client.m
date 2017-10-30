@@ -301,6 +301,20 @@
                 
             }
         }
+        
+        else if ([function isEqualToString:@"deleteBudget"]){
+            if([status isEqualToString:@"fail"]){
+                [_editBudget fail];
+            }
+            else{
+                NSDictionary*info=[messageObject objectForKey:@"information"];
+                _budgetListDataDic=(NSMutableArray*)[info objectForKey:@"budgetLsit"];
+                [self pharseAlldata:_budgetListDataDic];
+                [_editBudget success];
+                
+                
+            }
+        }
         else if([function isEqualToString:@"deleteCategory"]){
             if([status isEqualToString:@"fail"]){
                 [_editBudget dFail];

@@ -35,7 +35,6 @@
 		7C8F834F1F94BEFA0053B40B /* EditBudgetController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C8F834E1F94BEFA0053B40B /* EditBudgetController.m */; };
 		7CA1D1EB1F897A87003631D6 /* MainController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CA1D1E81F897A87003631D6 /* MainController.m */; };
 		7CA1D1EC1F897A87003631D6 /* SignupController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CA1D1EA1F897A87003631D6 /* SignupController.m */; };
-		7CC6F07B1FA6F5D600966BCD /* SanityTestTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CC6F07A1FA6F5D600966BCD /* SanityTestTest.m */; };
 		7CDBD2401FA57A770081C356 /* AddCategoryController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CDBD23F1FA57A770081C356 /* AddCategoryController.m */; };
 		8434BE091F91FF2200A4BDC7 /* LoginPage.m in Sources */ = {isa = PBXBuildFile; fileRef = 8434BE041F91FF2200A4BDC7 /* LoginPage.m */; };
 		8434BE0A1F91FF2200A4BDC7 /* SignupPage.m in Sources */ = {isa = PBXBuildFile; fileRef = 8434BE061F91FF2200A4BDC7 /* SignupPage.m */; };
@@ -163,7 +162,6 @@
 		7CA1D1E81F897A87003631D6 /* MainController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainController.m; sourceTree = "<group>"; };
 		7CA1D1E91F897A87003631D6 /* SignupController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignupController.h; sourceTree = "<group>"; };
 		7CA1D1EA1F897A87003631D6 /* SignupController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignupController.m; sourceTree = "<group>"; };
-		7CC6F07A1FA6F5D600966BCD /* SanityTestTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SanityTestTest.m; sourceTree = "<group>"; };
 		7CDBD23E1FA57A770081C356 /* AddCategoryController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddCategoryController.h; sourceTree = "<group>"; };
 		7CDBD23F1FA57A770081C356 /* AddCategoryController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddCategoryController.m; sourceTree = "<group>"; };
 		8434BE031F91FF2200A4BDC7 /* LoginPage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginPage.h; sourceTree = "<group>"; };
@@ -383,7 +381,6 @@
 		7C2D9E111F875EFD00027681 /* SanityTests */ = {
 			isa = PBXGroup;
 			children = (
-				7CC6F07A1FA6F5D600966BCD /* SanityTestTest.m */,
 				7C2D9E121F875EFD00027681 /* SanityTests.m */,
 				7C2D9E141F875EFD00027681 /* Info.plist */,
 			);
@@ -559,7 +556,6 @@
 				TargetAttributes = {
 					7C2D9DF41F875EFD00027681 = {
 						CreatedOnToolsVersion = 8.3.3;
-						DevelopmentTeam = 4C4WA9FBP2;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.Push = {
@@ -741,7 +737,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				7C2D9E131F875EFD00027681 /* SanityTests.m in Sources */,
-				7CC6F07B1FA6F5D600966BCD /* SanityTestTest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -897,7 +892,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Sanity/Sanity.entitlements;
-				DEVELOPMENT_TEAM = 4C4WA9FBP2;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = Sanity/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = edu.usc.Sanity;
@@ -911,7 +906,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Sanity/Sanity.entitlements;
-				DEVELOPMENT_TEAM = 4C4WA9FBP2;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = Sanity/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = edu.usc.Sanity;
