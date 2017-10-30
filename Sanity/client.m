@@ -24,6 +24,7 @@
 #import "Transaction.h"
 #import "BudgetListHistoryController.h"
 #import "BudgetPageHistoryController.h"
+#import "AddCategoryController.h"
 
 @implementation client
 - (instancetype)init
@@ -49,6 +50,7 @@
         _editBudget=[[EditBudgetController alloc] initWithClass:self];
         _budgetListHistory=[[BudgetListHistoryController alloc] initWithClass:self];
         _budgetPageHistory=[[BudgetPageHistoryController alloc] initWithClass:self];
+        _addCategory=[[AddCategoryController alloc] initWithClass:self];
 
         
         
@@ -607,6 +609,7 @@
         singleB.frequency=[[budget objectForKey:@"frequency"] intValue];
         singleB.threshold=[[budget objectForKey:@"threshold"] intValue];
         singleB.remain=[[budget objectForKey:@"remain"] intValue];
+        singleB.period=[[budget objectForKey:@"period"] intValue];
         
         NSMutableArray* cateL=[budget objectForKey:@"categoryList"];
         singleB.categories=[[NSMutableArray alloc]init];
