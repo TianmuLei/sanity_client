@@ -55,22 +55,21 @@
     XCUIElementQuery *tablesQuery = app.tables;
     [tablesQuery.cells[@"yearly, 10/10100"] tap];
 
+    
     //go to add category page
-    XCUIApplication *app1 = [[XCUIApplication alloc] init];
+   [[[[[[[[[[[app childrenMatchingType:XCUIElementTypeWindow] elementBoundByIndex:0] childrenMatchingType:XCUIElementTypeOther].element childrenMatchingType:XCUIElementTypeOther].element childrenMatchingType:XCUIElementTypeOther].element childrenMatchingType:XCUIElementTypeOther].element childrenMatchingType:XCUIElementTypeOther].element childrenMatchingType:XCUIElementTypeOther].element childrenMatchingType:XCUIElementTypeOther].element childrenMatchingType:XCUIElementTypeOther].element tap];
+    [app.tables.buttons[@"Add Category"] tap];
     
-    [[[[[[[[[[[app childrenMatchingType:XCUIElementTypeWindow] elementBoundByIndex:0] childrenMatchingType:XCUIElementTypeOther].element childrenMatchingType:XCUIElementTypeOther].element childrenMatchingType:XCUIElementTypeOther].element childrenMatchingType:XCUIElementTypeOther].element childrenMatchingType:XCUIElementTypeOther].element childrenMatchingType:XCUIElementTypeOther].element childrenMatchingType:XCUIElementTypeOther].element childrenMatchingType:XCUIElementTypeOther].element tap];
-    [app1.tables.buttons[@"Add Category"] tap];
-    
-    XCUIElement *categoryNameTextField = app1.textFields[@"cate name"];
+    XCUIElement *categoryNameTextField = app.textFields[@"cate name"];
     [categoryNameTextField tap];
     [categoryNameTextField typeText:@"addcate1"];
     
-    XCUIElement *amountTF = app1.textFields[@"amount"];
+    XCUIElement *amountTF = app.textFields[@"amount"];
     [amountTF tap];
     [amountTF typeText:@"100"];
     [app.buttons[@"Done"] tap];
     
-    [app1.buttons[@"Submit"] tap];
+    [app.buttons[@"Submit"] tap];
 
     XCTAssert(app.textFields[@"yearly"].exists);
 
