@@ -14,4 +14,13 @@
     NSDictionary* message=@{@"function":@"addCategory",@"information":info};
     [self.client sendMessage:message];
 }
+
+-(void) success{
+    [self.delegate addSuccessful];
+}
+-(void) fail{
+   
+    [self.delegate addFailed:@"duplicate" withReason:@"duplicate"];
+
+}
 @end

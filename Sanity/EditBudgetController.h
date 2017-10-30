@@ -11,6 +11,8 @@
 @protocol  EditBudgetControllerDelegate<NSObject>
 - (void) editEntireBudgetSuccess;
 - (void) editEntireBudgetFail;
+- (void) deleteCategorySuccess;
+- (void) deleteCategoryFail;
 @required
 @end
 
@@ -21,6 +23,8 @@
 - (void) editBudget :(NSString*) oldBudgetName withnewBudget:(NSString *)newBudgetName withPeriod:(NSString*) period withThreshold:(NSString*)threshold withFrequency:(NSString*)frequency;
 -(void) success;
 -(void) fail;
+-(void) dSuccess;
+-(void) dFail;
 -(Budget*) requestBudget:(NSString*) name;
 -(void) deleteBudget:(NSString*) name;
 -(void) deleteCategory:(NSString*) budgetName :(NSString*)categoryName;
