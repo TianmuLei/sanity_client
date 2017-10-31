@@ -45,15 +45,15 @@
     //login
     XCUIElement *emailTextField = app.textFields[@"Email"];
     [emailTextField tap];
-    [emailTextField typeText:@"ruyin@usc.edu"];
+    [emailTextField typeText:@"addCate@usc.edu"];
     XCUIElement *passwordSecureTextField = app.secureTextFields[@"Password"];
     [passwordSecureTextField tap];
-    [passwordSecureTextField typeText:@"ruyin"];
+    [passwordSecureTextField typeText:@"addCate"];
     [app.buttons[@"Done"] tap];
     [app.buttons[@"Login In"] tap];
 
     XCUIElementQuery *tablesQuery = app.tables;
-    [tablesQuery.cells[@"yearly, 10/10100"] tap];
+    [tablesQuery.cells[@"addCate, 0/100"] tap];
 
     
     //go to add category page
@@ -72,7 +72,7 @@
     
     [app.buttons[@"Submit"] tap];
 
-    XCTAssert(app.textFields[@"yearly"].exists);
+    XCTAssert(app.textFields[@"addcate1"].exists);
 
 }
 
