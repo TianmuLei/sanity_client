@@ -329,10 +329,10 @@
         }
         else if([function isEqualToString:@"addCategory"]){
             if([status isEqualToString:@"fail"]){
-                
+                [_addCategory fail];
             }
             else{
-                
+                [_addCategory success];
             }
             
         }
