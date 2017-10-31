@@ -67,9 +67,6 @@
         [app.buttons[@"Submit"] tap];
         
         XCTAssert(app.textFields[@"yearly"].exists);
-        
-    
-
     
     
 }

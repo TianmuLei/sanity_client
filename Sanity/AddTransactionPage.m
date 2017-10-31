@@ -158,7 +158,7 @@
     }
 
     else if (![self numberFormatChecker:_amountTF.text]){
-         [self getAlerted:@"Number format Error" msg:@"Please enter numbers for budget amount"];
+         [self getAlerted:@"Number format Error" msg:@"Please enter numbers for transaction amount"];
     
     }
     else {
