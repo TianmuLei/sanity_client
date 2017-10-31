@@ -340,7 +340,12 @@
             
         }
         else if([function isEqualToString:@"editCategory"]){
+            NSDictionary*info=[messageObject objectForKey:@"information"];
+            _budgetListDataDic=(NSMutableArray*)[info objectForKey:@"budgetLsit"];
+            [self pharseAlldata:_budgetListDataDic];
+
             if([status isEqualToString:@"fail"]){
+                
             }
             else{
                 
