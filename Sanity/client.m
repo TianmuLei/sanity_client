@@ -332,6 +332,9 @@
                 [_addCategory fail];
             }
             else{
+                NSDictionary*info=[messageObject objectForKey:@"information"];
+                _budgetListDataDic=(NSMutableArray*)[info objectForKey:@"budgetLsit"];
+                [self pharseAlldata:_budgetListDataDic];
                 [_addCategory success];
             }
             
