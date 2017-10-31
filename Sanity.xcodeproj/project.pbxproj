@@ -69,6 +69,9 @@
 		C0ACF45D5FDB633C6D76F84C /* libPods-Sanity.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EB1AA2A5F86FBB7BDA75AF6F /* libPods-Sanity.a */; };
 		CC2D17E11F91AFBE0052613D /* ProfilePage.m in Sources */ = {isa = PBXBuildFile; fileRef = CC2D17E01F91AFBE0052613D /* ProfilePage.m */; };
 		CC2D17E41F91C2AF0052613D /* AddBudgetPage.m in Sources */ = {isa = PBXBuildFile; fileRef = CC2D17E31F91C2AF0052613D /* AddBudgetPage.m */; };
+		CC61DB9C1FA7C3BF009621A0 /* ViewTransactions.m in Sources */ = {isa = PBXBuildFile; fileRef = CC61DB9B1FA7C3BF009621A0 /* ViewTransactions.m */; };
+		CC61DB9E1FA805E0009621A0 /* ViewCatesCorrToBudget.m in Sources */ = {isa = PBXBuildFile; fileRef = CC61DB9D1FA805E0009621A0 /* ViewCatesCorrToBudget.m */; };
+		CC61DBA01FA81EE4009621A0 /* ChangePasswordSucc.m in Sources */ = {isa = PBXBuildFile; fileRef = CC61DB9F1FA81EE4009621A0 /* ChangePasswordSucc.m */; };
 		CC673EDC1F934B54000CE0B6 /* CategoryNameCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CC673EDA1F934B54000CE0B6 /* CategoryNameCell.m */; };
 		CC673EDD1F934B54000CE0B6 /* CategoryNameCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CC673EDB1F934B54000CE0B6 /* CategoryNameCell.xib */; };
 		CC673EE11F934C29000CE0B6 /* AmountCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CC673EDF1F934C29000CE0B6 /* AmountCell.xib */; };
@@ -85,6 +88,7 @@
 		CCF0CE9E1FA6DD3A00FE4C45 /* SanityUIAddCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = CCF0CE9D1FA6DD3A00FE4C45 /* SanityUIAddCategory.m */; };
 		CCF0CE9F1FA6DF0000FE4C45 /* HomeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8457BF1D1F93363A0028166A /* HomeTableViewCell.m */; };
 		CCF7954F1FA6F6020040BCE1 /* SanityUIAddTransaction.m in Sources */ = {isa = PBXBuildFile; fileRef = CCF7954E1FA6F6020040BCE1 /* SanityUIAddTransaction.m */; };
+		CCF795511FA79E280040BCE1 /* AddDuplicateTransaction.m in Sources */ = {isa = PBXBuildFile; fileRef = CCF795501FA79E280040BCE1 /* AddDuplicateTransaction.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -212,6 +216,9 @@
 		CC2D17E01F91AFBE0052613D /* ProfilePage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfilePage.m; sourceTree = "<group>"; };
 		CC2D17E21F91C2AF0052613D /* AddBudgetPage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddBudgetPage.h; sourceTree = "<group>"; };
 		CC2D17E31F91C2AF0052613D /* AddBudgetPage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddBudgetPage.m; sourceTree = "<group>"; };
+		CC61DB9B1FA7C3BF009621A0 /* ViewTransactions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewTransactions.m; sourceTree = "<group>"; };
+		CC61DB9D1FA805E0009621A0 /* ViewCatesCorrToBudget.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewCatesCorrToBudget.m; sourceTree = "<group>"; };
+		CC61DB9F1FA81EE4009621A0 /* ChangePasswordSucc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChangePasswordSucc.m; sourceTree = "<group>"; };
 		CC673ED91F934B54000CE0B6 /* CategoryNameCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoryNameCell.h; sourceTree = "<group>"; };
 		CC673EDA1F934B54000CE0B6 /* CategoryNameCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoryNameCell.m; sourceTree = "<group>"; };
 		CC673EDB1F934B54000CE0B6 /* CategoryNameCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CategoryNameCell.xib; sourceTree = "<group>"; };
@@ -237,6 +244,7 @@
 		CCB2DFB41F9526E600503F0D /* ResetUsernamePage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResetUsernamePage.m; sourceTree = "<group>"; };
 		CCF0CE9D1FA6DD3A00FE4C45 /* SanityUIAddCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SanityUIAddCategory.m; sourceTree = "<group>"; };
 		CCF7954E1FA6F6020040BCE1 /* SanityUIAddTransaction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SanityUIAddTransaction.m; sourceTree = "<group>"; };
+		CCF795501FA79E280040BCE1 /* AddDuplicateTransaction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddDuplicateTransaction.m; sourceTree = "<group>"; };
 		EB1AA2A5F86FBB7BDA75AF6F /* libPods-Sanity.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Sanity.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -407,6 +415,10 @@
 				7C2D9E1F1F875EFD00027681 /* Info.plist */,
 				CCF0CE9D1FA6DD3A00FE4C45 /* SanityUIAddCategory.m */,
 				CCF7954E1FA6F6020040BCE1 /* SanityUIAddTransaction.m */,
+				CCF795501FA79E280040BCE1 /* AddDuplicateTransaction.m */,
+				CC61DB9B1FA7C3BF009621A0 /* ViewTransactions.m */,
+				CC61DB9D1FA805E0009621A0 /* ViewCatesCorrToBudget.m */,
+				CC61DB9F1FA81EE4009621A0 /* ChangePasswordSucc.m */,
 			);
 			path = SanityUITests;
 			sourceTree = "<group>";
@@ -748,9 +760,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				8468B69E1FA48E320060B59D /* SanityUISignupFailedWithNotEnoughArgs.m in Sources */,
+				CC61DB9C1FA7C3BF009621A0 /* ViewTransactions.m in Sources */,
 				84EF3ECA1FA477950064703F /* testPieChartRedirect.m in Sources */,
+				CC61DBA01FA81EE4009621A0 /* ChangePasswordSucc.m in Sources */,
 				8468B6A01FA48F550060B59D /* SanityUICreateBudgetsFailedWithNotEnoughArgs.m in Sources */,
 				84EF3EC61FA459F60064703F /* SanityUIRefreshHome.m in Sources */,
+				CC61DB9E1FA805E0009621A0 /* ViewCatesCorrToBudget.m in Sources */,
 				CCF0CE9F1FA6DF0000FE4C45 /* HomeTableViewCell.m in Sources */,
 				8468B69C1FA48DF00060B59D /* SanityUISignupFailed.m in Sources */,
 				84EF3ECE1FA47D5F0064703F /* SanityUILogin.m in Sources */,
@@ -761,6 +776,7 @@
 				84EF3EC41FA458F60064703F /* SanityUICreateBudget.m in Sources */,
 				8468B69A1FA48D240060B59D /* SanityUILoginFailed.m in Sources */,
 				7C2D9E1E1F875EFD00027681 /* SanityUITests.m in Sources */,
+				CCF795511FA79E280040BCE1 /* AddDuplicateTransaction.m in Sources */,
 				84EF3ED01FA47E770064703F /* SanityUISignUp.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -1,18 +1,18 @@
 //
-//  SanityUIPieChartShowDetail.m
+//  ViewCatesCorrToBudget.m
 //  Sanity
 //
-//  Created by Gu on 10/28/17.
+//  Created by Ruyin Shao on 10/30/17.
 //  Copyright © 2017 Absolute A. All rights reserved.
 //
 
 #import <XCTest/XCTest.h>
 
-@interface SanityUIPieChartShowDetail : XCTestCase
+@interface ViewCatesCorrToBudget : XCTestCase
 
 @end
 
-@implementation SanityUIPieChartShowDetail
+@implementation ViewCatesCorrToBudget
 
 - (void)setUp {
     [super setUp];
@@ -32,26 +32,37 @@
     [super tearDown];
 }
 
-- (void)testPieChartShowDetail {
+- (void)testCates {
     XCUIApplication *app = [[XCUIApplication alloc] init];
     [app launch];
     //login
     XCUIElement *emailTextField = app.textFields[@"Email"];
     [emailTextField tap];
-    [emailTextField typeText:@"z@z.com"];
+    [emailTextField typeText:@"tommy@u.edu"];
     XCUIElement *passwordSecureTextField = app.secureTextFields[@"Password"];
     [passwordSecureTextField tap];
-    [passwordSecureTextField typeText:@"zg"];
+    [passwordSecureTextField typeText:@"tommy"];
     [app.buttons[@"Done"] tap];
     [app.buttons[@"Login In"] tap];
     
-    XCUIElementQuery *tablesQuery = app.tables;
-    [tablesQuery.cells[@"budget1, 0/500"] tap];
-    //tap slice0 in pie chart
-    XCUIElement * slice = [[[[[[[[[[app childrenMatchingType:XCUIElementTypeWindow] elementBoundByIndex:0] childrenMatchingType:XCUIElementTypeOther].element childrenMatchingType:XCUIElementTypeOther].element childrenMatchingType:XCUIElementTypeOther].element childrenMatchingType:XCUIElementTypeOther].element childrenMatchingType:XCUIElementTypeOther].element childrenMatchingType:XCUIElementTypeOther].element childrenMatchingType:XCUIElementTypeOther].element childrenMatchingType:XCUIElementTypeOther].element;
-    [slice tap];
-    //check if label exists
-    XCTAssert(app.staticTexts[@"Cat1,   0.00/500.00"].exists);    
+    
+    [app.tabBars.buttons[@"Add"] tap];
+    [app.buttons[@"$$$$ Add Transaction $$$$"] tap];
+    
+    
+    XCUIElement *budgetPicker = app.textFields[@"Budget"];
+    [budgetPicker tap];
+    [app.pickerWheels[@"viewCateTest"] swipeUp];
+    
+    
+    XCUIElement *catePicker = app.textFields[@"Category"];
+    [catePicker tap];
+    XCTAssert(app.pickerWheels[@"viewCate1"].exists);
+    [app.pickers.pickerWheels[@"viewCate1"] adjustToPickerWheelValue:@"viewCate2"];
+    catePicker = app.textFields[@"viewCate2"];
+    [catePicker tap];
+    [app.pickers.pickerWheels[@"viewCate2"] adjustToPickerWheelValue:@"viewCate3"];
+    
 }
 
 @end

@@ -33,8 +33,45 @@
 }
 
 - (void)testExample {
-    // Use recording to get started writing UI tests.
-    // Use XCTAssert and related functions to verify your tests produce the correct results.
+    
+   
+        XCUIApplication *app = [[XCUIApplication alloc] init];
+        [app launch];
+        //login
+        XCUIElement *emailTextField = app.textFields[@"Email"];
+        [emailTextField tap];
+        [emailTextField typeText:@"ruyin@usc.edu"];
+        XCUIElement *passwordSecureTextField = app.secureTextFields[@"Password"];
+        [passwordSecureTextField tap];
+        [passwordSecureTextField typeText:@"ruyin"];
+        [app.buttons[@"Done"] tap];
+        [app.buttons[@"Login In"] tap];
+        
+        XCUIElementQuery *tablesQuery = app.tables;
+        [tablesQuery.cells[@"yearly, 10/10100"] tap];
+        
+        
+        //go to add category page
+        [app.buttons[@"Edit"] tap];
+        [app.tables.buttons[@"Add Category"] tap];
+        
+        XCUIElement *categoryNameTextField = app.textFields[@"cate name"];
+        [categoryNameTextField tap];
+        [categoryNameTextField typeText:@"addcate1"];
+        
+        XCUIElement *amountTF = app.textFields[@"amount"];
+        [amountTF tap];
+        [amountTF typeText:@"100"];
+        [app.buttons[@"Done"] tap];
+        
+        [app.buttons[@"Submit"] tap];
+        
+        XCTAssert(app.textFields[@"yearly"].exists);
+    
+    
 }
+
+
+
 
 @end

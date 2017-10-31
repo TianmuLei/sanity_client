@@ -1,18 +1,18 @@
 //
-//  SanityUIPieChartShowDetail.m
+//  ChangePasswordSucc.m
 //  Sanity
 //
-//  Created by Gu on 10/28/17.
+//  Created by Ruyin Shao on 10/30/17.
 //  Copyright © 2017 Absolute A. All rights reserved.
 //
 
 #import <XCTest/XCTest.h>
 
-@interface SanityUIPieChartShowDetail : XCTestCase
+@interface ChangePasswordSucc : XCTestCase
 
 @end
 
-@implementation SanityUIPieChartShowDetail
+@implementation ChangePasswordSucc
 
 - (void)setUp {
     [super setUp];
@@ -32,26 +32,42 @@
     [super tearDown];
 }
 
-- (void)testPieChartShowDetail {
+- (void)testChangePassword {
     XCUIApplication *app = [[XCUIApplication alloc] init];
     [app launch];
     //login
     XCUIElement *emailTextField = app.textFields[@"Email"];
     [emailTextField tap];
-    [emailTextField typeText:@"z@z.com"];
+    [emailTextField typeText:@"changePass@cc.com"];
     XCUIElement *passwordSecureTextField = app.secureTextFields[@"Password"];
     [passwordSecureTextField tap];
-    [passwordSecureTextField typeText:@"zg"];
+    [passwordSecureTextField typeText:@"change"];
     [app.buttons[@"Done"] tap];
     [app.buttons[@"Login In"] tap];
     
-    XCUIElementQuery *tablesQuery = app.tables;
-    [tablesQuery.cells[@"budget1, 0/500"] tap];
-    //tap slice0 in pie chart
-    XCUIElement * slice = [[[[[[[[[[app childrenMatchingType:XCUIElementTypeWindow] elementBoundByIndex:0] childrenMatchingType:XCUIElementTypeOther].element childrenMatchingType:XCUIElementTypeOther].element childrenMatchingType:XCUIElementTypeOther].element childrenMatchingType:XCUIElementTypeOther].element childrenMatchingType:XCUIElementTypeOther].element childrenMatchingType:XCUIElementTypeOther].element childrenMatchingType:XCUIElementTypeOther].element childrenMatchingType:XCUIElementTypeOther].element;
-    [slice tap];
-    //check if label exists
-    XCTAssert(app.staticTexts[@"Cat1,   0.00/500.00"].exists);    
+    //tap profile
+    
+    [app.tabBars.buttons[@"Profile"] tap];
+    [app.buttons[@"Reset Password"] tap];
+    
+    XCUIElement *oldPass = app.secureTextFields[@"oldPass"];
+    XCUIElement *newPass = app.secureTextFields[@"newPass"];
+    XCUIElement *confirmPass = app.secureTextFields[@"confirmPass"];
+    [oldPass tap];
+    [oldPass typeText:@"change"];
+    [app.buttons[@"Done"] tap];
+    
+    [newPass tap];
+    [newPass typeText:@"changePass"];
+    [confirmPass tap];
+    [confirmPass typeText:@"changePass"];
+    [app.buttons[@"Done"] tap];
+    [app.buttons[@"Submit"] tap];
+    
+    
+
+    
+
 }
 
 @end

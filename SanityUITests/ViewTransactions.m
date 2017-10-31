@@ -1,18 +1,18 @@
 //
-//  SanityUIPieChartShowDetail.m
+//  ViewTransactions.m
 //  Sanity
 //
-//  Created by Gu on 10/28/17.
+//  Created by Ruyin Shao on 10/30/17.
 //  Copyright © 2017 Absolute A. All rights reserved.
 //
 
 #import <XCTest/XCTest.h>
 
-@interface SanityUIPieChartShowDetail : XCTestCase
+@interface ViewTransactions : XCTestCase
 
 @end
 
-@implementation SanityUIPieChartShowDetail
+@implementation ViewTransactions
 
 - (void)setUp {
     [super setUp];
@@ -32,26 +32,35 @@
     [super tearDown];
 }
 
-- (void)testPieChartShowDetail {
+- (void)testViewTransactions {
     XCUIApplication *app = [[XCUIApplication alloc] init];
     [app launch];
     //login
     XCUIElement *emailTextField = app.textFields[@"Email"];
     [emailTextField tap];
-    [emailTextField typeText:@"z@z.com"];
+    [emailTextField typeText:@"ruyin@usc.edu"];
     XCUIElement *passwordSecureTextField = app.secureTextFields[@"Password"];
     [passwordSecureTextField tap];
-    [passwordSecureTextField typeText:@"zg"];
+    [passwordSecureTextField typeText:@"ruyin"];
     [app.buttons[@"Done"] tap];
     [app.buttons[@"Login In"] tap];
     
     XCUIElementQuery *tablesQuery = app.tables;
-    [tablesQuery.cells[@"budget1, 0/500"] tap];
-    //tap slice0 in pie chart
-    XCUIElement * slice = [[[[[[[[[[app childrenMatchingType:XCUIElementTypeWindow] elementBoundByIndex:0] childrenMatchingType:XCUIElementTypeOther].element childrenMatchingType:XCUIElementTypeOther].element childrenMatchingType:XCUIElementTypeOther].element childrenMatchingType:XCUIElementTypeOther].element childrenMatchingType:XCUIElementTypeOther].element childrenMatchingType:XCUIElementTypeOther].element childrenMatchingType:XCUIElementTypeOther].element childrenMatchingType:XCUIElementTypeOther].element;
-    [slice tap];
-    //check if label exists
-    XCTAssert(app.staticTexts[@"Cat1,   0.00/500.00"].exists);    
+    [tablesQuery.cells[@"viewTrans, 131/600"] tap];
+    //tap slice0 in pie chart three times
+    
+    
+    XCUIElement *element = [[[[[[[[[[[[[XCUIApplication alloc] init] childrenMatchingType:XCUIElementTypeWindow] elementBoundByIndex:0] childrenMatchingType:XCUIElementTypeOther].element childrenMatchingType:XCUIElementTypeOther].element childrenMatchingType:XCUIElementTypeOther].element childrenMatchingType:XCUIElementTypeOther].element childrenMatchingType:XCUIElementTypeOther].element childrenMatchingType:XCUIElementTypeOther].element childrenMatchingType:XCUIElementTypeOther].element childrenMatchingType:XCUIElementTypeOther].element childrenMatchingType:XCUIElementTypeOther].element;
+    [element tap];
+    [element tap];
+    [element tap];
+    
+    
+    [app.buttons[@"Show Details"] tap];
+    
+    //check if label exists in new page
+    XCTAssert(app.staticTexts[@"drink"].exists);
+     XCTAssert(app.staticTexts[@"eat"].exists);
 }
 
 @end

@@ -142,17 +142,23 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2DB-Iv-22y">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="newPass" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2DB-Iv-22y">
                                 <rect key="frame" x="193" y="254" width="166" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="done" secureTextEntry="YES"/>
+                                <connections>
+                                    <action selector="dismissKey:" destination="Xpc-nr-sVD" eventType="editingDidEndOnExit" id="f80-vW-Ljs"/>
+                                </connections>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cLG-SW-5wB">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="confirmPass" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cLG-SW-5wB">
                                 <rect key="frame" x="193" y="311" width="166" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="done" secureTextEntry="YES"/>
+                                <connections>
+                                    <action selector="dismissKey:" destination="Xpc-nr-sVD" eventType="editingDidEndOnExit" id="o07-bz-EAp"/>
+                                </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dxg-RH-i6c">
                                 <rect key="frame" x="73" y="405" width="228" height="46"/>
@@ -168,11 +174,14 @@
                                     <action selector="submitPasswordChange:" destination="Xpc-nr-sVD" eventType="touchUpInside" id="gTK-bg-xyd"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="B9B-Sy-BYh">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="oldPass" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="B9B-Sy-BYh">
                                 <rect key="frame" x="165" y="192" width="194" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="done" secureTextEntry="YES"/>
+                                <connections>
+                                    <action selector="dismissKey:" destination="Xpc-nr-sVD" eventType="editingDidEndOnExit" id="AaS-AA-Ijy"/>
+                                </connections>
                             </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -430,95 +439,12 @@
                     <tabBarItem key="tabBarItem" title="Home" id="Tos-4W-wc0"/>
                     <navigationItem key="navigationItem" title="Budget List" id="BbK-Lb-eGs"/>
                     <connections>
-                        <segue destination="PTi-hs-lrl" kind="show" identifier="HomeToBudget" id="Y50-d0-BtZ"/>
+                        <segue destination="g9h-R3-Kpr" kind="show" identifier="HomeToBudget" id="pFd-Cc-tVI"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MBo-Uz-Bpz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1765.5999999999999" y="-452.02398800599701"/>
-        </scene>
-        <!--Single Budget-->
-        <scene sceneID="ZQ9-8M-9g0">
-            <objects>
-                <viewController title="Budget Overview" id="PTi-hs-lrl" userLabel="Single Budget" customClass="SingleBudgetViewController" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="Ysn-Af-C1Q"/>
-                        <viewControllerLayoutGuide type="bottom" id="bhp-UT-KSq"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="1mV-V4-6qc">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="c7C-NA-g2Q" customClass="XYPieChart">
-                                <rect key="frame" x="0.0" y="74" width="375" height="375"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <accessibility key="accessibilityConfiguration">
-                                    <bool key="isElement" value="YES"/>
-                                </accessibility>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="c7C-NA-g2Q" secondAttribute="height" multiplier="1:1" id="OKZ-ek-Lbc"/>
-                                </constraints>
-                            </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap three times to go to category" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5cZ-gw-9Je">
-                                <rect key="frame" x="30" y="532" width="314.5" height="22.5"/>
-                                <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="20"/>
-                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vAX-k0-H5S" userLabel="Clicked">
-                                <rect key="frame" x="184.5" y="459" width="5" height="24"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap once to see detail" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CCt-0J-Zkr">
-                                <rect key="frame" x="84" y="502" width="207.5" height="22.5"/>
-                                <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="20"/>
-                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L1C-Zr-9RP">
-                                <rect key="frame" x="304" y="574" width="71" height="36"/>
-                                <color key="backgroundColor" red="1" green="0.67791368090000004" blue="0.30888782920000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <accessibility key="accessibilityConfiguration" identifier="Edit" label="Edit"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
-                                <state key="normal" title="Edit">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <connections>
-                                    <segue destination="hyS-CL-Xfk" kind="show" identifier="BudgetToEditBudget" id="RrL-fC-Dr4"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <accessibility key="accessibilityConfiguration">
-                            <bool key="isElement" value="YES"/>
-                        </accessibility>
-                        <constraints>
-                            <constraint firstItem="CCt-0J-Zkr" firstAttribute="centerX" secondItem="1mV-V4-6qc" secondAttribute="centerX" id="0Vo-6I-Ufc"/>
-                            <constraint firstAttribute="trailing" secondItem="L1C-Zr-9RP" secondAttribute="trailing" id="0r4-6r-EyB"/>
-                            <constraint firstItem="vAX-k0-H5S" firstAttribute="centerX" secondItem="1mV-V4-6qc" secondAttribute="centerX" id="30Z-cb-Hhv"/>
-                            <constraint firstItem="L1C-Zr-9RP" firstAttribute="top" secondItem="5cZ-gw-9Je" secondAttribute="bottom" constant="19.5" id="3aA-br-7B3"/>
-                            <constraint firstItem="5cZ-gw-9Je" firstAttribute="top" secondItem="CCt-0J-Zkr" secondAttribute="bottom" constant="7.5" id="EqF-cM-gIe"/>
-                            <constraint firstAttribute="trailing" secondItem="c7C-NA-g2Q" secondAttribute="trailing" id="YdP-6P-XVG"/>
-                            <constraint firstItem="c7C-NA-g2Q" firstAttribute="leading" secondItem="1mV-V4-6qc" secondAttribute="leading" id="a8D-J1-nh3"/>
-                            <constraint firstItem="5cZ-gw-9Je" firstAttribute="centerX" secondItem="1mV-V4-6qc" secondAttribute="centerX" id="eOI-sJ-hx8"/>
-                            <constraint firstItem="bhp-UT-KSq" firstAttribute="top" secondItem="L1C-Zr-9RP" secondAttribute="bottom" constant="8" id="nUU-iE-7YN"/>
-                            <constraint firstItem="c7C-NA-g2Q" firstAttribute="top" secondItem="Ysn-Af-C1Q" secondAttribute="bottom" constant="10" id="w9e-YY-Vq2"/>
-                            <constraint firstItem="vAX-k0-H5S" firstAttribute="top" secondItem="c7C-NA-g2Q" secondAttribute="bottom" constant="10" id="xXl-1b-blQ"/>
-                            <constraint firstItem="L1C-Zr-9RP" firstAttribute="leading" secondItem="1mV-V4-6qc" secondAttribute="leading" constant="304" id="ypP-F1-dIv"/>
-                        </constraints>
-                    </view>
-                    <connections>
-                        <outlet property="PieChartDisplay" destination="c7C-NA-g2Q" id="dIq-hV-4Bk"/>
-                        <outlet property="labelForClickedElement" destination="vAX-k0-H5S" id="ZEU-RI-c1b"/>
-                        <outlet property="labelTest" destination="5cZ-gw-9Je" id="9kU-Ad-ybC"/>
-                        <segue destination="KR4-mJ-uTZ" kind="show" identifier="BudgetToCategory" id="Non-6x-6lM"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="cnC-pt-RbS" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2733.5999999999999" y="-452.02398800599701"/>
         </scene>
         <!--Login -->
         <scene sceneID="eL5-e6-hOp">
@@ -1472,7 +1398,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="0.67791368090000004" blue="0.30888782920000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                <state key="normal" title="Add">
+                                <state key="normal" title="Submit">
                                     <color key="titleColor" red="1" green="0.98801764810000003" blue="0.96671994709999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </state>
                                 <connections>
@@ -1620,20 +1546,20 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aFa-Fj-MPE" customClass="XYPieChart">
-                                <rect key="frame" x="0.0" y="55" width="375" height="375"/>
+                                <rect key="frame" x="0.0" y="99" width="375" height="375"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="aFa-Fj-MPE" secondAttribute="height" multiplier="1:1" id="5BY-LS-vIl"/>
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r01-J1-5VV">
-                                <rect key="frame" x="154.5" y="480" width="66" height="30"/>
+                                <rect key="frame" x="154.5" y="524" width="66" height="30"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y3k-Sz-5EZ">
-                                <rect key="frame" x="231" y="629" width="144" height="38"/>
+                                <rect key="frame" x="231" y="580" width="144" height="38"/>
                                 <color key="backgroundColor" red="1" green="0.66676166010000004" blue="0.085009963080000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="23"/>
                                 <state key="normal" title="Show Details">
@@ -2069,6 +1995,83 @@
             </objects>
             <point key="canvasLocation" x="-42.399999999999999" y="1881.4092953523241"/>
         </scene>
+        <!--Single Budget-->
+        <scene sceneID="NLI-gd-gBP">
+            <objects>
+                <viewController title="Budget Overview" id="g9h-R3-Kpr" userLabel="Single Budget" customClass="SingleBudgetViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="hEH-p4-2jX"/>
+                        <viewControllerLayoutGuide type="bottom" id="Var-7n-zrS"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="MtN-jk-7iY">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bxT-Ot-dL1" customClass="XYPieChart">
+                                <rect key="frame" x="0.0" y="74" width="375" height="375"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <bool key="isElement" value="YES"/>
+                                </accessibility>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="bxT-Ot-dL1" secondAttribute="height" multiplier="1:1" id="bPH-Wr-BPX"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap three times to go to category" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zqT-J1-GBd">
+                                <rect key="frame" x="31" y="535.5" width="314.5" height="22.5"/>
+                                <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="20"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l50-UK-7Lv">
+                                <rect key="frame" x="304" y="574" width="71" height="36"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="0.67791368090000004" blue="0.30888782920000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <state key="normal" title="Edit">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <segue destination="hyS-CL-Xfk" kind="show" identifier="BudgetToEditBudget" id="lU2-3L-ODv"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DpX-9U-rVH" userLabel="Clicked">
+                                <rect key="frame" x="184.5" y="459" width="5" height="24"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap once to see detail" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Aux-PO-zsr">
+                                <rect key="frame" x="84" y="508" width="207.5" height="22.5"/>
+                                <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="20"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="DpX-9U-rVH" firstAttribute="centerX" secondItem="MtN-jk-7iY" secondAttribute="centerX" id="2v6-l5-M05"/>
+                            <constraint firstItem="zqT-J1-GBd" firstAttribute="top" secondItem="Aux-PO-zsr" secondAttribute="bottom" constant="5" id="9yV-Qf-TOn"/>
+                            <constraint firstItem="Aux-PO-zsr" firstAttribute="centerX" secondItem="MtN-jk-7iY" secondAttribute="centerX" id="W9d-Wh-Kjy"/>
+                            <constraint firstItem="bxT-Ot-dL1" firstAttribute="leading" secondItem="MtN-jk-7iY" secondAttribute="leading" id="bMf-WD-7K8"/>
+                            <constraint firstItem="bxT-Ot-dL1" firstAttribute="top" secondItem="hEH-p4-2jX" secondAttribute="bottom" constant="10" id="gxC-Ug-jhA"/>
+                            <constraint firstItem="Var-7n-zrS" firstAttribute="top" secondItem="zqT-J1-GBd" secondAttribute="bottom" constant="60" id="qcn-fK-Yke"/>
+                            <constraint firstItem="zqT-J1-GBd" firstAttribute="centerX" secondItem="MtN-jk-7iY" secondAttribute="centerX" id="vD8-88-45E"/>
+                            <constraint firstItem="DpX-9U-rVH" firstAttribute="top" secondItem="bxT-Ot-dL1" secondAttribute="bottom" constant="10" id="z0R-a3-esm"/>
+                            <constraint firstAttribute="trailing" secondItem="bxT-Ot-dL1" secondAttribute="trailing" id="zYf-Jh-W0m"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="PieChartDisplay" destination="bxT-Ot-dL1" id="hYr-p2-Ab4"/>
+                        <outlet property="labelForClickedElement" destination="DpX-9U-rVH" id="btY-6W-hT0"/>
+                        <outlet property="labelTest" destination="zqT-J1-GBd" id="Uce-IV-ITa"/>
+                        <segue destination="KR4-mJ-uTZ" kind="show" identifier="BudgetToCategory" id="wcu-7Q-X3f"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="R3q-gf-U9u" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2733.5999999999999" y="-452.02398800599701"/>
+        </scene>
     </scenes>
     <resources>
         <image name="User" width="64" height="64"/>
@@ -2080,6 +2083,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="HLo-Fj-idy"/>
-        <segue reference="Non-6x-6lM"/>
+        <segue reference="wcu-7Q-X3f"/>
     </inferredMetricsTieBreakers>
 </document>

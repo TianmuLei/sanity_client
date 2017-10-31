@@ -43,7 +43,7 @@
         _confirmPasswordTF.text.length < 1) {
         [self getAlerted:@"Required Fields" msg:@"Should input all text fields to change password"];
     }
-    else if (_resetPasswordTF.text != _confirmPasswordTF.text){
+    else if (![_resetPasswordTF.text isEqualToString:_confirmPasswordTF.text]){
         [self getAlerted:@"New password is inconsistent" msg:@"Make sure that the old password and new password are the same."];
     }
     else {
@@ -54,6 +54,10 @@
 
     }
 
+}
+
+- (IBAction)dismissKey:(id)sender {
+    [sender resignFirstResponder];
 }
 
 /*
