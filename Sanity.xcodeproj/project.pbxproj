@@ -72,6 +72,7 @@
 		CC61DB9C1FA7C3BF009621A0 /* ViewTransactions.m in Sources */ = {isa = PBXBuildFile; fileRef = CC61DB9B1FA7C3BF009621A0 /* ViewTransactions.m */; };
 		CC61DB9E1FA805E0009621A0 /* ViewCatesCorrToBudget.m in Sources */ = {isa = PBXBuildFile; fileRef = CC61DB9D1FA805E0009621A0 /* ViewCatesCorrToBudget.m */; };
 		CC61DBA01FA81EE4009621A0 /* ChangePasswordSucc.m in Sources */ = {isa = PBXBuildFile; fileRef = CC61DB9F1FA81EE4009621A0 /* ChangePasswordSucc.m */; };
+		CC61DBA21FA82C43009621A0 /* changeUsername.m in Sources */ = {isa = PBXBuildFile; fileRef = CC61DBA11FA82C43009621A0 /* changeUsername.m */; };
 		CC673EDC1F934B54000CE0B6 /* CategoryNameCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CC673EDA1F934B54000CE0B6 /* CategoryNameCell.m */; };
 		CC673EDD1F934B54000CE0B6 /* CategoryNameCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CC673EDB1F934B54000CE0B6 /* CategoryNameCell.xib */; };
 		CC673EE11F934C29000CE0B6 /* AmountCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CC673EDF1F934C29000CE0B6 /* AmountCell.xib */; };
@@ -219,6 +220,7 @@
 		CC61DB9B1FA7C3BF009621A0 /* ViewTransactions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewTransactions.m; sourceTree = "<group>"; };
 		CC61DB9D1FA805E0009621A0 /* ViewCatesCorrToBudget.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewCatesCorrToBudget.m; sourceTree = "<group>"; };
 		CC61DB9F1FA81EE4009621A0 /* ChangePasswordSucc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChangePasswordSucc.m; sourceTree = "<group>"; };
+		CC61DBA11FA82C43009621A0 /* changeUsername.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = changeUsername.m; sourceTree = "<group>"; };
 		CC673ED91F934B54000CE0B6 /* CategoryNameCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoryNameCell.h; sourceTree = "<group>"; };
 		CC673EDA1F934B54000CE0B6 /* CategoryNameCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoryNameCell.m; sourceTree = "<group>"; };
 		CC673EDB1F934B54000CE0B6 /* CategoryNameCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CategoryNameCell.xib; sourceTree = "<group>"; };
@@ -419,6 +421,7 @@
 				CC61DB9B1FA7C3BF009621A0 /* ViewTransactions.m */,
 				CC61DB9D1FA805E0009621A0 /* ViewCatesCorrToBudget.m */,
 				CC61DB9F1FA81EE4009621A0 /* ChangePasswordSucc.m */,
+				CC61DBA11FA82C43009621A0 /* changeUsername.m */,
 			);
 			path = SanityUITests;
 			sourceTree = "<group>";
@@ -772,6 +775,7 @@
 				84EF3ECC1FA47B0D0064703F /* SanityUICreateDuplicateBudget.m in Sources */,
 				84EF3EC81FA4715C0064703F /* SanityUIPieChartShowDetail.m in Sources */,
 				CCF0CE9E1FA6DD3A00FE4C45 /* SanityUIAddCategory.m in Sources */,
+				CC61DBA21FA82C43009621A0 /* changeUsername.m in Sources */,
 				CCF7954F1FA6F6020040BCE1 /* SanityUIAddTransaction.m in Sources */,
 				84EF3EC41FA458F60064703F /* SanityUICreateBudget.m in Sources */,
 				8468B69A1FA48D240060B59D /* SanityUILoginFailed.m in Sources */,

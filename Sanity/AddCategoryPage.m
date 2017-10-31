@@ -22,6 +22,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    _controller = UIClientConnector.myClient.addCategory;
+    UIClientConnector.myClient.addCategory.delegate = self;
     // Do any additional setup after loading the view.
 }
 
