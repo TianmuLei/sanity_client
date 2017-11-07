@@ -123,8 +123,9 @@
         Category *cate = [_categories objectAtIndex:i];
         CategoryDisplay *cateDisplay = [_cateCells objectAtIndex:i+1];
         NSString *testCell = cateDisplay.categoryNameTF.text;
+        NSString *testCellAmount = cateDisplay.categoryAmountTF.text;
         NSNumberFormatter *f = [[NSNumberFormatter alloc] init];
-        [_controller editCategory:_budgetNameTF.text :cate.name :cateDisplay.categoryNameTF.text :[f numberFromString: cateDisplay.categoryAmountTF.text ]];
+        [_controller editCategory:_budgetName :cate.name :testCell :[f numberFromString: cateDisplay.categoryAmountTF.text ]];
     }
 }
 
