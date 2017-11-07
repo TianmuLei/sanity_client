@@ -23,6 +23,7 @@
 }
 @property (nonatomic,strong) id delegate;
 -(void) login: (NSString*) email password:(NSString*) password;
+-(void) autoLogin: (NSString*) email;
 -(void) fail;
 -(void) success: (NSArray*) budgetList;
 -(int) hash1:(NSString*) password;

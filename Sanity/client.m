@@ -192,24 +192,26 @@
 
                 
                 
-               // NSLog(@"%@", single.name)
-              /*  for(int i=0;i<_budgetListData.count;i++){
-                    Budget* single=[_budgetListData objectAtIndex:i];
-                    NSLog(@"%@", single.name);
-                    NSMutableArray* categlis=single.categories;
-                    for(int j=0;j<categlis.count;j++){
-                        Category* cat=[categlis objectAtIndex:j];
-                        NSLog(@"%@", cat.name);
-                        NSMutableArray* trasl=cat.transctions;
-                        for(int k=0;k<trasl.count;k++){
-                            Transaction* tras=[trasl objectAtIndex:k];
-                             NSLog(@"%@", tras.describe);
-                        }
-                        
-                    }
-
-                    
-                }*/
+                
+            }
+        }
+        else if ([function isEqualToString:@"autoLogin"]){
+            if([status isEqualToString:@"fail"]){
+                [_login fail];
+                
+            }else{
+                
+                _myUser.username=[messageObject objectForKey:@"username"];
+                NSDictionary*info=[messageObject objectForKey:@"information"];
+                _budgetListDataDic=(NSMutableArray*)[info objectForKey:@"budgetLsit"];
+                [self pharseAlldata:_budgetListDataDic];
+                NSLog(@"loginSuccess111");
+                [_login success:_budgetListDataDic];
+                
+                NSDictionary *infoma=@{@"email":self.myUser.email};
+                NSDictionary *message=@{@"function":@"requestHistory",@"information":infoma};
+                [self sendMessage:message];
+                
                 
                 
                 

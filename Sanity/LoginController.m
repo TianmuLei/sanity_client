@@ -62,12 +62,25 @@
     
 }
 
+-(void) autoLogin: (NSString*) email{
+    
+    self.client.myUser.email=email;
+
+    NSDictionary *info=@{@"email":email,@"username":@""};
+    
+    NSDictionary *message=@{@"function":@"autoLogin",@"information":info};
+    
+    [self.client sendMessage:message];
+
+    
+}
+
 
 -(void) fail{
     [self.delegate loginFailed:@"username and password is incorrect"];
 }
 -(void) success: (NSArray*) budgetList{
-    NSMutableArray *name = [[NSMutableArray alloc]init];
+   /* NSMutableArray *name = [[NSMutableArray alloc]init];
     NSMutableArray *amount = [[NSMutableArray alloc]init];
     NSMutableArray *color = [[NSMutableArray alloc]init];
     for(int i=0;i<budgetList.count;i++){
@@ -86,7 +99,37 @@
         
     }
     [self.delegate loginSucceeded:name withAmount:amount withColor:color];
+*/
+    //NSMutableArray* budgetList=self.client.budgetListDataDic;
+    NSMutableArray *name = [[NSMutableArray alloc]init];
+    NSMutableArray *amount = [[NSMutableArray alloc]init];
+    NSMutableArray *color = [[NSMutableArray alloc]init];
+    for(int i=0;i<budgetList.count;i++){
+        NSDictionary* budget=[budgetList objectAtIndex:i];
+        [name addObject:[budget objectForKey:@"name"]];
+        NSNumber* spent=[budget objectForKey:@"budgetSpent"];
+        NSNumber* total=[budget objectForKey:@"budgetTotal"];
+        NSString* amountString= [NSString stringWithFormat:@"%@/%@",spent,total];
+        [amount addObject:amountString];
+        
+        if(spent>total){
+            [color addObject:@"red"];
+            
+        }
+        else{
+            [color addObject:@"black"];
+            
+        }
+        
+        
+        //NSString *spendT = [NSNumber stringValue];
+        
+    }
+    
+    [self.delegate loginSucceeded:name withAmount:amount withColor:color];
 
+    //[self.delegate setBudget:name amount:amount colors:color];
+    
     
 }
 
