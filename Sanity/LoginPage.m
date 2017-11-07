@@ -9,6 +9,8 @@
 #import "LoginPage.h"
 #import "HomePageTableViewController.h"
 #import "UIClientConnector.h"
+#import <LocalAuthentication/LocalAuthentication.h>
+
 
 @interface LoginPage ()
 @property (weak, nonatomic) IBOutlet UITextField *emailTextField;
@@ -44,6 +46,43 @@
         self.emailTextField.text = self.autofillUsername;
         self.touchIDButton.hidden = false;
         self.touchIDButton.enabled = true;
+        
+        // touch id
+        LAContext *myContext = [[LAContext alloc] init];
+        NSError *authError = nil;
+        NSString *myLocalizedReasonString = @"Please login with your touch id";
+        
+        if ([myContext canEvaluatePolicy:LAPolicyDeviceOwnerAuthenticationWithBiometrics error:&authError]) {
+            [myContext evaluatePolicy:LAPolicyDeviceOwnerAuthenticationWithBiometrics
+                      localizedReason:myLocalizedReasonString
+                                reply:^(BOOL success, NSError *error) {
+                                    if (success) {
+                                        dispatch_async(dispatch_get_main_queue(), ^{
+                                            [self performSegueWithIdentifier:@"Success" sender:nil];
+                                        });
+                                    } else {
+//                                        dispatch_async(dispatch_get_main_queue(), ^{
+//                                            UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@""
+//                                                                                                message:error.description
+//                                                                                               delegate:self
+//                                                                                      cancelButtonTitle:@"OK"
+//                                                                                      otherButtonTitles:nil, nil];
+//                                            [alertView show];
+//                                            // Rather than show a UIAlert here, use the error to determine if you should push to a keypad for PIN entry.
+//                                        });
+                                    }
+                                }];
+        } else {
+            dispatch_async(dispatch_get_main_queue(), ^{
+                UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Error"
+                                                                    message:authError.description
+                                                                   delegate:self
+                                                          cancelButtonTitle:@"OK"
+                                                          otherButtonTitles:nil, nil];
+                [alertView show];
+                // Rather than show a UIAlert here, use the error to determine if you should push to a keypad for PIN entry.
+            });
+        }
     }
 }
 
