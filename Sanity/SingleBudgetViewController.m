@@ -98,6 +98,9 @@
     [super viewDidDisappear:animated];
 }
 
+- (IBAction)sendSummary:(id)sender {
+}
+
 #pragma mark - XYPieChart Data Source
 - (NSUInteger)numberOfSlicesInPieChart:(XYPieChart *)pieChart
 {
