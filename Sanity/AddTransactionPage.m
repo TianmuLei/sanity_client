@@ -186,12 +186,14 @@
     for (Budget* b in _budgets) {
         if ([b.name isEqualToString: budget]) {
             int threshold = b.threshold;
+            
             for (Category *c in b.categories) {
                 if ([c.name isEqualToString:cate]){
                     float n = c.spent + [newAmount floatValue];
+                    float remainingAmount = b.total - b.spent - [newAmount floatValue];
                     if (n > c.limit*threshold/100) {
                         NSString *notiTitle = [[NSString alloc] initWithFormat:@"Spent over budget with threshold %@ %% ", @(b.threshold).stringValue];
-                        NSString *notiContent = [[NSString alloc] initWithFormat:@"You spend over budget %@ in category %@, date remaining %@", b.name, c.name,@(b.remain).stringValue];
+                        NSString *notiContent = [[NSString alloc] initWithFormat:@"You spend over budget %@ in category %@, date remaining %@, amount remainging %@", b.name, c.name,@(b.remain).stringValue,@(remainingAmount).stringValue];
                         [AppDelegate setNotificationTitleAndContent:notiTitle withContent:notiContent];
                         [AppDelegate registerNotification:1];
                         for (int i = 1; i <  b.remain; ++ i) {
@@ -210,6 +212,10 @@
     return false;
 }
 
+- (float) remainingAmountCalc:(Budget*) b newAmount: (float) amount{
+    
+    return 0.0f;
+}
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     return 2;
 }
