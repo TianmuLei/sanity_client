@@ -56,6 +56,16 @@
     
 }
 
+-(void) requestSummary:(NSString*) name{
+    NSDictionary *info=@{@"email":self.client.myUser.email,@"budgetName":name};
+    
+    NSDictionary *message=@{@"function":@"requestSummary",@"information":info};
+    
+    [self.client sendMessage:message];
+    
+
+}
+
 
 -(void) requestCategory:(NSString*) budget category:(NSString*) category{
   Category* actualCat=[self.client getCategory:budget :category];

@@ -24,4 +24,5 @@
 -(void) requestBudgetList;
 -(void) requestBudget:(NSString*) name;
 -(void) requestCategory:(NSString*) budget category:(NSString*) category;
+-(void) requestSummary:(NSString*) name;
 @end
