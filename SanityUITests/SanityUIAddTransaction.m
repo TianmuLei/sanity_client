@@ -64,7 +64,7 @@
     
     XCUIElement *DescripTF = app.textFields[@"Descrip"];
     [DescripTF tap];
-    [DescripTF typeText:@"transaction333"];
+    [DescripTF typeText:@"transaction3333"];
     [app.buttons[@"Submit"] tap];
     
     XCTAssert(app.buttons[@"$$$$ Add Transaction $$$$"].exists);
@@ -92,7 +92,8 @@
     
     XCUIElement *budgetPicker = app.textFields[@"Budget"];
     [budgetPicker tap];
-    [app.pickerWheels[@"yearly"] swipeUp];
+    [app.pickers.pickerWheels[@"yearly"] adjustToPickerWheelValue:@"tryDeleteCate"];
+    
     
     XCUIElement *catePicker = app.textFields[@"Category"];
     [catePicker tap];
@@ -163,7 +164,7 @@
     
     XCUIElement *budgetPicker = app.textFields[@"Budget"];
     [budgetPicker tap];
-    [app.pickerWheels[@"yearly"] swipeUp];
+    [app.pickers.pickerWheels[@"yearly"] adjustToPickerWheelValue:@"tryDeleteCate"];
     
     
     XCUIElement *catePicker = app.textFields[@"Category"];

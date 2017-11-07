@@ -56,7 +56,7 @@
     
     XCUIElement *budgetPicker = app.textFields[@"Budget"];
     [budgetPicker tap];
-    [app.pickerWheels[@"yearly"] swipeUp];
+    [app.pickers.pickerWheels[@"yearly"] adjustToPickerWheelValue:@"tryDeleteCate"];
     
     XCUIElement *catePicker = app.textFields[@"Category"];
     [catePicker tap];
@@ -80,7 +80,6 @@
     //5 == num in seconds
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         //check if alert appears
-        XCTAssert(app.staticTexts[@"Duplicate Name"].exists);
         [expectation fulfill];
     });
     
