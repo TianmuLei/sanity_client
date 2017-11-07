@@ -16,7 +16,9 @@
 @property (weak, nonatomic) IBOutlet UIButton *loginButton;
 @property (weak, nonatomic) IBOutlet UIButton *signupButton;
 @property (weak, nonatomic) IBOutlet UILabel *warningLabel;
-
+@property (strong, nonatomic) NSString* filepath;
+@property (strong, nonatomic) NSString* autofillUsername;
+@property (weak, nonatomic) IBOutlet UIButton *touchIDButton;
 
 @end
 
@@ -26,6 +28,23 @@
     [super viewDidLoad];
     //hide the warning Label
     [self.warningLabel setHidden:YES];
+    
+    //set up property list path
+    // find the Documents directory
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *documentsDirectory = paths[0];
+    //NSLog(@"documentsDirectory = %@", documentsDirectory);
+    self.filepath = [documentsDirectory stringByAppendingPathComponent:@"INFO.plist"];
+    NSLog(@"filepath = %@", self.filepath);
+    NSDictionary *fileContent = [NSDictionary dictionaryWithContentsOfFile:self.filepath];
+    //fill in username(email) automatically
+    if(fileContent)
+    {
+        self.autofillUsername = fileContent[@"Username"];
+        self.emailTextField.text = self.autofillUsername;
+        self.touchIDButton.hidden = false;
+        self.touchIDButton.enabled = true;
+    }
 }
 
 - (void)didReceiveMemoryWarning {
@@ -100,6 +119,7 @@
     self.colors = color;
     self.budgetArray = budget;
     self.amountArray = amount;
+    [self saveUsernameToPList];
     [self performSegueWithIdentifier:@"LoginToHomeSegue" sender:self];
 }
 
@@ -109,14 +129,11 @@
 }
 
 
-/*
- #pragma mark - Navigation
- 
- // In a storyboard-based application, you will often want to do a little preparation before navigation
- - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
- // Get the new view controller using [segue destinationViewController].
- // Pass the selected object to the new view controller.
- }
- */
+- (void) saveUsernameToPList {
+    NSDictionary * fileToStore = [NSDictionary dictionaryWithObjectsAndKeys:
+                                  self.emailTextField.text, @"Username",
+                                  nil];
+    [fileToStore writeToFile: self.filepath atomically:YES];
+}
 
 @end

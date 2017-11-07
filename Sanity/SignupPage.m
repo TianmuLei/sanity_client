@@ -107,6 +107,7 @@
     self.colors = color;
     self.budgetArray = budget;
     self.amountArray = amount;
+    [self saveUsernameToPList];
     [self performSegueWithIdentifier:@"SignupToHomeSegue" sender:self];
 }
 
@@ -115,14 +116,19 @@
     [self.warningLabel setHidden:NO];
 }
 
-/*
-#pragma mark - Navigation
+- (void) saveUsernameToPList {
+    //set up property list path
+    // find the Documents directory
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *documentsDirectory = paths[0];
+    //NSLog(@"documentsDirectory = %@", documentsDirectory);
+    NSString * filepath = [documentsDirectory stringByAppendingPathComponent:@"INFO.plist"];
+    NSLog(@"filepath = %@", filepath);
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    NSDictionary * fileToStore = [NSDictionary dictionaryWithObjectsAndKeys:
+                                  self.emailTextField.text, @"Username",
+                                  nil];
+    [fileToStore writeToFile: filepath atomically:YES];
 }
-*/
 
 @end

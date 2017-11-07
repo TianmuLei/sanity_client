@@ -191,7 +191,7 @@
                     float n = c.spent + [newAmount floatValue];
                     if (n > c.limit*threshold/100) {
                         NSString *notiTitle = [[NSString alloc] initWithFormat:@"Spent over budget with threshold %@ %% ", @(b.threshold).stringValue];
-                        NSString *notiContent = [[NSString alloc] initWithFormat:@"You spend over budget %@ in category %@", b.name, c.name];
+                        NSString *notiContent = [[NSString alloc] initWithFormat:@"You spend over budget %@ in category %@, date remaining %@", b.name, c.name,@(b.remain).stringValue];
                         [AppDelegate setNotificationTitleAndContent:notiTitle withContent:notiContent];
                         [AppDelegate registerNotification:1];
                         for (int i = 1; i <  b.remain; ++ i) {
