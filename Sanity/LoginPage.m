@@ -31,6 +31,8 @@
     //hide the warning Label
     [self.warningLabel setHidden:YES];
     
+    self.loginController = UIClientConnector.myClient.login;
+    UIClientConnector.myClient.login.delegate = self;
     //set up property list path
     // find the Documents directory
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
@@ -58,7 +60,8 @@
                                 reply:^(BOOL success, NSError *error) {
                                     if (success) {
                                         dispatch_async(dispatch_get_main_queue(), ^{
-                                            [self performSegueWithIdentifier:@"Success" sender:nil];
+                                            [_loginController autoLogin:self.autofillUsername];
+                                           
                                         });
                                     } else {
 //                                        dispatch_async(dispatch_get_main_queue(), ^{
@@ -125,8 +128,6 @@
 
 - (void) tryLogin{
     
-    self.loginController = UIClientConnector.myClient.login;
-    UIClientConnector.myClient.login.delegate = self;
     [self.loginController login:self.email password:self.password];
     
     
