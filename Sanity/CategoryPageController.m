@@ -35,7 +35,7 @@
     double limit=actualCat.limit;
     double remain=limit-spent;
     if(remain<0){
-        remain=1;
+        remain=0;
     }
     NSString *spentString=[NSString stringWithFormat:@"%f", spent];
     NSString *remianString=[NSString stringWithFormat:@"%f", remain];

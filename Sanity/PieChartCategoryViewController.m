@@ -142,8 +142,23 @@
     {
         self.detailLabel.textColor = [UIColor blackColor];
     }
+     NSLog(@"%@", self.slices);
+    [self avoidNegativeSlice];
+    NSLog(@"%@", self.slices);
     [self.PieChartDisplay reloadData];
 }
+
+- (void)avoidNegativeSlice
+{
+    for(int i=0; i<self.slices.count; i++)
+    {
+        if(self.slices[i]<0)
+        {
+            self.slices = 0;
+        }
+    }
+}
+
 /*
  #pragma mark - Navigation
  
