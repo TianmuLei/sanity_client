@@ -8,7 +8,11 @@ This is an application used to keep track of user's spending versus their budget
     Jiaxin Cheng jiaxinch@usc.edu
     Ruyin Shao ruyinsha@usc.edu
     Yang Chen chen716@usc.edu
-    
+   
+## Extra step for Sprint 1
+   In Sprint 1, we implemented fingerprint login. In order to test this feature, the user should go to simulator Hardware->TouchID->Toggle Enrolled State to register a fingerprint.
+   If the user want to use fingerprint to login, they should click Hardware -> TouchID -> Matching Touch for successfully login and Hardware -> TouchID -> Non-matching Touch for unsuccessful login. 
+   
 ## 1 - Set up Server
   To run $anity server, one shall use the terminal(macOS) or command line(Linux or Windows) to connect to the digitalocean server first. Use command line: “ssh root@165.227.14.202” to connect to the online server, then the terminal shall ask for the password, type “chenyang” for the password to log into the server. Then one shall then type “java -jar server.jar” to run the server online. 
   ```
