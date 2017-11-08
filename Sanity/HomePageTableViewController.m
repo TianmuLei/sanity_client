@@ -41,6 +41,11 @@
     UIClientConnector.myClient.budgetList.delegate = self;
 }
 
+- (void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:YES];
+    [self getLatest];
+}
+
 - (void)reloadData
 {
     // Reload table data
