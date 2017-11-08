@@ -286,7 +286,14 @@
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Profile" image="profileIcon" selectedImage="profileIcon" id="jg7-oV-pfO"/>
-                    <navigationItem key="navigationItem" title="Profile" id="RuH-Jk-dXc"/>
+                    <navigationItem key="navigationItem" title="Profile" id="RuH-Jk-dXc">
+                        <barButtonItem key="rightBarButtonItem" title="Log Out" id="Ohe-At-Wco">
+                            <color key="tintColor" red="1" green="0.67791368090000004" blue="0.30888782920000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <connections>
+                                <segue destination="V3q-uJ-eOa" kind="presentation" id="lsy-w1-izO"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="emailLabel" destination="Nje-nD-S1f" id="zbd-NS-MCp"/>
                         <outlet property="nameLabel" destination="q0O-rI-3q8" id="aY8-wF-Npt"/>
@@ -549,6 +556,9 @@
                                 <rect key="frame" x="112.5" y="366" width="180" height="34"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                                 <state key="normal" title="Sign in with Touch ID"/>
+                                <connections>
+                                    <action selector="touchIDLogin:" destination="V3q-uJ-eOa" eventType="touchUpInside" id="QnO-TI-F7l"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -2103,6 +2113,7 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="HLo-Fj-idy"/>
+        <segue reference="lsy-w1-izO"/>
         <segue reference="wcu-7Q-X3f"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -48,45 +48,49 @@
         self.emailTextField.text = self.autofillUsername;
         self.touchIDButton.hidden = false;
         self.touchIDButton.enabled = true;
-        
-        // touch id
-        LAContext *myContext = [[LAContext alloc] init];
-        NSError *authError = nil;
-        NSString *myLocalizedReasonString = @"Please login with your touch id";
-        
-        if ([myContext canEvaluatePolicy:LAPolicyDeviceOwnerAuthenticationWithBiometrics error:&authError]) {
-            [myContext evaluatePolicy:LAPolicyDeviceOwnerAuthenticationWithBiometrics
-                      localizedReason:myLocalizedReasonString
-                                reply:^(BOOL success, NSError *error) {
-                                    if (success) {
-                                        dispatch_async(dispatch_get_main_queue(), ^{
-                                            [_loginController autoLogin:self.autofillUsername];
-                                           
-                                        });
-                                    } else {
-//                                        dispatch_async(dispatch_get_main_queue(), ^{
-//                                            UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@""
-//                                                                                                message:error.description
-//                                                                                               delegate:self
-//                                                                                      cancelButtonTitle:@"OK"
-//                                                                                      otherButtonTitles:nil, nil];
-//                                            [alertView show];
-//                                            // Rather than show a UIAlert here, use the error to determine if you should push to a keypad for PIN entry.
-//                                        });
-                                    }
-                                }];
-        } else {
-            dispatch_async(dispatch_get_main_queue(), ^{
-                UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Error"
-                                                                    message:authError.description
-                                                                   delegate:self
-                                                          cancelButtonTitle:@"OK"
-                                                          otherButtonTitles:nil, nil];
-                [alertView show];
-                // Rather than show a UIAlert here, use the error to determine if you should push to a keypad for PIN entry.
-            });
-        }
+        [self touchIDHelper];
     }
+}
+
+- (void) touchIDHelper{
+    // touch id
+    LAContext *myContext = [[LAContext alloc] init];
+    NSError *authError = nil;
+    NSString *myLocalizedReasonString = @"Please login with your touch id";
+    
+    if ([myContext canEvaluatePolicy:LAPolicyDeviceOwnerAuthenticationWithBiometrics error:&authError]) {
+        [myContext evaluatePolicy:LAPolicyDeviceOwnerAuthenticationWithBiometrics
+                  localizedReason:myLocalizedReasonString
+                            reply:^(BOOL success, NSError *error) {
+                                if (success) {
+                                    dispatch_async(dispatch_get_main_queue(), ^{
+                                        [_loginController autoLogin:self.autofillUsername];
+                                        
+                                    });
+                                } else {
+                                    //                                        dispatch_async(dispatch_get_main_queue(), ^{
+                                    //                                            UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@""
+                                    //                                                                                                message:error.description
+                                    //                                                                                               delegate:self
+                                    //                                                                                      cancelButtonTitle:@"OK"
+                                    //                                                                                      otherButtonTitles:nil, nil];
+                                    //                                            [alertView show];
+                                    //                                            // Rather than show a UIAlert here, use the error to determine if you should push to a keypad for PIN entry.
+                                    //                                        });
+                                }
+                            }];
+    } else {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Error"
+                                                                message:authError.description
+                                                               delegate:self
+                                                      cancelButtonTitle:@"OK"
+                                                      otherButtonTitles:nil, nil];
+            [alertView show];
+            // Rather than show a UIAlert here, use the error to determine if you should push to a keypad for PIN entry.
+        });
+    }
+
 }
 
 - (void)didReceiveMemoryWarning {
@@ -126,6 +130,10 @@
     [self.emailTextField resignFirstResponder];
 }
 
+- (IBAction)touchIDLogin:(id)sender {
+    [self touchIDHelper];
+}
+
 - (void) tryLogin{
     
     [self.loginController login:self.email password:self.password];
@@ -153,6 +161,7 @@
         controller.colors = self.colors;
     }
 }
+
 
 - (void) loginSucceeded:(NSArray *) budget withAmount:(NSArray *) amount withColor:(NSArray *) color
 {
