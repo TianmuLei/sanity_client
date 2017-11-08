@@ -11,6 +11,7 @@
 #import "Category.h"
 #import "EditBudgetController.h"
 #import "AddCategoryPage.h"
+#import "SingleBudgetViewController.h"
 
 @interface EditBudgetPage ()
 @property (weak, nonatomic) IBOutlet UITextField *budgetNameTF;
@@ -252,6 +253,7 @@
     [self getAlerted:@"Delete Failed" msg:@"Server receives error message."];
 }
 - (void) editEntireBudgetSuccess {
+    //go back to budget page
     [self.navigationController popViewControllerAnimated:true];
 }
 - (void) editEntireBudgetFail {

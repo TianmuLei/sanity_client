@@ -83,6 +83,11 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
+    //set up delegate
+    self.controller = UIClientConnector.myClient.budgetList;
+    UIClientConnector.myClient.budgetList.delegate = self;
+    //to get data
+    [self.controller requestBudget:self.pageTitle];
 }
 - (void)viewDidAppear:(BOOL)animated
 {
