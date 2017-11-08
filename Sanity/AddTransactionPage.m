@@ -39,10 +39,7 @@
     [super viewDidLoad];
     self.budgetSelected = NO;
     _budgets = [[NSMutableArray alloc]init];
-    _categoriesCurrBudget = [[NSMutableArray alloc]init];
-    
-    
-    
+    _categoriesCurrBudget = [[NSMutableArray alloc]init]; 
     
     Budget * bg = [[Budget alloc] init];
     bg.name = @"mybudget";
@@ -195,7 +192,7 @@
                         NSString *notiTitle = [[NSString alloc] initWithFormat:@"Spent over budget with threshold %@ %% ", @(b.threshold).stringValue];
                         NSString *notiContent = [[NSString alloc] initWithFormat:@"You spend over budget %@ in category %@, date remaining %@, amount remainging %@", b.name, c.name,@(b.remain).stringValue,@(remainingAmount).stringValue];
                         [AppDelegate setNotificationTitleAndContent:notiTitle withContent:notiContent];
-                        [AppDelegate registerNotification:1];
+                        [AppDelegate registerNotification:3];
                         for (int i = 1; i <  b.remain; ++ i) {
                             [AppDelegate setNotificationTitleAndContent:notiTitle withContent:notiContent];
                             [AppDelegate registerNotification:60*60*24*i];
