@@ -252,8 +252,7 @@
     [self getAlerted:@"Delete Failed" msg:@"Server receives error message."];
 }
 - (void) editEntireBudgetSuccess {
-#warning Need to refreshpage
-    [self.navigationController popToRootViewControllerAnimated:YES];
+    [self.navigationController popViewControllerAnimated:true];
 }
 - (void) editEntireBudgetFail {
     [self getAlerted:@"Update failed" msg:@"Update error occured"];
