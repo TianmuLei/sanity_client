@@ -65,6 +65,16 @@
 
 }
 
+-(void) requestSummary:(NSString*) name{
+    NSDictionary *info=@{@"email":self.client.myUser.email,@"budgetName":name};
+    
+    NSDictionary *message=@{@"function":@"requestSummary",@"information":info};
+    
+    [self.client sendMessage:message];
+    
+    
+}
+
 
 
 @end
