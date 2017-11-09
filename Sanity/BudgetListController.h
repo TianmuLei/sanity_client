@@ -21,4 +21,5 @@
 @property (nonatomic,strong) id delegate;
 -(void) requestBudgetList;
 -(void) requestBudget:(NSString*) name;
+-(void) requestSummary:(NSString*) name;
 @end

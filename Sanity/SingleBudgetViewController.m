@@ -104,6 +104,11 @@
 }
 
 - (IBAction)sendSummary:(id)sender {
+    //set delegate
+    UIClientConnector.myClient.budgetList.delegate = self;
+    //to get data
+    [self.controller requestBudget:self.pageTitle];
+    [self.controller requestSummary:self.pageTitle];
 }
 
 #pragma mark - XYPieChart Data Source
