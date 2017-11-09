@@ -275,8 +275,7 @@
                                style:UIAlertActionStyleDefault
                                handler:^(UIAlertAction *action){
                                   //pop back to other page
-                                   [self.navigationController popViewControllerAnimated:true];
-                                   
+                                   [self.navigationController popToRootViewControllerAnimated:true];
                                }];
     [alertController addAction:okAction];
     [self presentViewController:alertController animated:YES completion:nil];
