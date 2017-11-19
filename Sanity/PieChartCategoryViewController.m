@@ -106,6 +106,8 @@
         destViewController.pieChartLabelColor = self.pieChartLabelColor;
         destViewController.pageTitle = self.pageTitle;
         destViewController.period = self.period;
+        destViewController.budgetName = self.budgetName;
+        destViewController.categoryName = self.pageTitle;
     }
 }
 

@@ -126,6 +126,7 @@
         NSString *testCell = cateDisplay.categoryNameTF.text;
         NSString *testCellAmount = cateDisplay.categoryAmountTF.text;
         NSNumberFormatter *f = [[NSNumberFormatter alloc] init];
+        
         [_controller editCategory:_budgetName :cate.name :testCell :[f numberFromString: cateDisplay.categoryAmountTF.text ]];
     }
 }

@@ -9,6 +9,10 @@
 #import <UIKit/UIKit.h>
 
 @interface SingleCategoryTableViewController : UITableViewController
+//for edit transaction
+@property (nonatomic,strong) NSString *budgetName;
+@property (nonatomic,strong) NSString *categoryName;
+//originals
 @property (nonatomic, strong) NSArray *texts;
 @property (nonatomic, strong) NSArray *slices;
 @property (nonatomic, strong) NSArray *transactionNames;

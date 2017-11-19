@@ -11,8 +11,12 @@
 #import "TranscationLabelCell.h"
 #import "TransactionCell.h"
 #import "UIClientConnector.h"
+#import "EditTransaction.h"
 
 @interface SingleCategoryTableViewController ()
+@property NSString* oldAmount;
+@property NSString* oldTransname;
+@property NSString* oldDate;
 @end
 
 @implementation SingleCategoryTableViewController
@@ -136,6 +140,14 @@
     self.pieChartLabelColor = color;
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    self.oldAmount = self.transactionAmounts[indexPath.row - 1];
+    self.oldDate = self.transactionDates[indexPath.row - 1];
+    self.oldTransname = self.transactionNames[indexPath.row - 1] ;
+    
+    [self performSegueWithIdentifier:@"ShowDetail" sender:tableView];
+}
 
 /*
  // Override to support conditional editing of the table view.
@@ -171,14 +183,24 @@
  }
  */
 
-/*
+
  #pragma mark - Navigation
  
  // In a storyboard-based application, you will often want to do a little preparation before navigation
  - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
  // Get the new view controller using [segue destinationViewController].
  // Pass the selected object to the new view controller.
+     
+     if ([segue.identifier isEqualToString:@"ShowDetail"]) {
+         //Do something
+        EditTransaction *editTrans = segue.destinationViewController;
+         editTrans.oldbudget = self.budgetName;
+         editTrans.oldcategory = self.categoryName;
+         editTrans.oldAmount = self.oldAmount;
+         editTrans.olddescrip = self.oldTransname;
+         editTrans.dateText = self.oldDate;
+         
+     }
  }
- */
 
 @end
