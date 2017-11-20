@@ -26,7 +26,7 @@
 //Arrays
 @property (strong, nonatomic) NSMutableArray *budgets;
 @property (strong, nonatomic) NSMutableArray *categoriesCurrBudget;
-@property (strong, nonatomic) EditTransController *controller;
+//@property (strong, nonatomic) EditTransController *controller;
 @property BOOL budgetSelected;
 
 
@@ -49,12 +49,12 @@
     _categoriesCurrBudget = [[NSMutableArray alloc]init];
     
 #warning need new controller
-    
-    _controller = UIClientConnector.myClient.editTrans;
-    UIClientConnector.myClient.editTrans.delegate = self;
-    
-    //call function
-    [_controller requestBudgetAndCate];
+//    
+//    _controller = UIClientConnector.myClient.editTrans;
+//    UIClientConnector.myClient.editTrans.delegate = self;
+//    
+//    //call function
+//    [_controller requestBudgetAndCate];
     
     self.budgetPicker = [[UIPickerView alloc] initWithFrame:CGRectMake(0, 50, 100, 150)];
     self.budgetPicker.delegate = self;
@@ -164,8 +164,14 @@
         NSNumber *newAmount = [NSNumber numberWithFloat:_amountTF.text.floatValue];
         [self exceedsBudget:newAmount withBudget:_budgetTF.text withCategory:_categoryTF.text];
 #warning call controller edit
-
-       
+        NSNumberFormatter *f = [[NSNumberFormatter alloc] init];
+        f.numberStyle = NSNumberFormatterDecimalStyle;
+        NSNumber *amountNum = [f numberFromString:_amountTF.text];
+        
+        NSNumber *oldAmountNum = [f numberFromString:_oldAmount];
+//        
+//        [_controller editTransaction:oldAmountNum olddescribe:_olddescrip oldcategory:_oldcategory oldbudget:_oldbudget newcategory:_categoryTF.text newbudget:_budgetTF.text olddate:_dateText newamount:amountNum newdescribe:_descripTF.text newdate:_dateText];
+        [self.navigationController popToRootViewControllerAnimated:YES];
         
     }
     
@@ -173,11 +179,14 @@
     
 }
 - (IBAction)deleteTrans:(id)sender {
-    NSNumberFormatter *f = [[NSNumberFormatter alloc] init];
-    f.numberStyle = NSNumberFormatterDecimalStyle;
-    NSNumber *amountNum = [f numberFromString:_amountTF.text];
-   
-    [_controller deleteTransaction:amountNum describe:_olddescrip category:_oldcategory budget:_oldbudget :_dateText];
+    
+//    NSNumberFormatter *f = [[NSNumberFormatter alloc] init];
+//    f.numberStyle = NSNumberFormatterDecimalStyle;
+//    NSNumber *oldAmountNum = [f numberFromString:_oldAmount];
+//    [_controller deleteTransaction:oldAmountNum describe:_olddescrip category:_oldcategory budget:_oldbudget date:_dateText];
+    
+    [[self navigationController] popToRootViewControllerAnimated:YES];
+  //  [self performSegueWithIdentifier:@"transReload" sender:sender];
 }
 
 - (BOOL) exceedsBudget:(NSNumber *) newAmount withBudget:(NSString*) budget withCategory:(NSString*) cate{
@@ -318,7 +327,6 @@
 }
 */
 
-/*
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
@@ -326,6 +334,6 @@
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
 }
-*/
+
 
 @end

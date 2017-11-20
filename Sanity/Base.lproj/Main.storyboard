@@ -2401,6 +2401,7 @@
                         <outlet property="categoryTF" destination="EUB-Qx-vEv" id="AAc-zq-TE2"/>
                         <outlet property="date" destination="Bxq-mf-Ar4" id="FID-De-cQf"/>
                         <outlet property="descripTF" destination="0d5-0j-HlI" id="IfS-u6-GD5"/>
+                        <segue destination="y3W-rg-Le6" kind="showDetail" identifier="transReload" id="HBW-QX-a7f"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9VV-bD-iyy" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -2417,8 +2418,9 @@
         <image name="profileIcon" width="20" height="20"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="HLo-Fj-idy"/>
         <segue reference="lsy-w1-izO"/>
+        <segue reference="HLo-Fj-idy"/>
         <segue reference="wcu-7Q-X3f"/>
+        <segue reference="HBW-QX-a7f"/>
     </inferredMetricsTieBreakers>
 </document>
