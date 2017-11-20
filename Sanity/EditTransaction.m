@@ -253,13 +253,6 @@
     
 }
 
-- (void) addSuccessful{
-    [self.navigationController popToRootViewControllerAnimated:YES];
-}
-
-- (void) addFailed{
-    [self getAlerted:@"Duplicate transactions" msg:@"You have entered a transaction that's duplicate"];
-}
 
 
 //dismiss keyboards
