@@ -21,7 +21,7 @@
     
 }
 
--(void)  editTransaction: (NSNumber*) oldamount olddescribe:(NSString*) olddescribe oldcategory:(NSString*) oldcategory oldbudget:(NSString*)oldbudget newcategory:(NSString*) newcategory newbudget:(NSString*)newbudget olddate:(NSDateComponents*) olddate newamount:(NSNumber*) newamount newdescribe:(NSString*) newdescribe newdate:(NSString*) newdate:(NSString*) newdate {
+-(void)  editTransaction: (NSNumber*) oldamount olddescribe:(NSString*) olddescribe oldcategory:(NSString*) oldcategory oldbudget:(NSString*)oldbudget newcategory:(NSString*) newcategory newbudget:(NSString*)newbudget olddate:(NSString*) olddate newamount:(NSNumber*) newamount newdescribe:(NSString*) newdescribe newdate:(NSString*) newdate {
     
 
     

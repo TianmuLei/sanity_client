@@ -9,8 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "EditTransController.h"
 
-@interface EditTransaction : UITableViewController
-//EditTransControllerDelegate
+@interface EditTransaction : UITableViewController<EditTransControllerDelegate>
 
 @property NSString *oldbudget;
 @property NSString *oldcategory;
