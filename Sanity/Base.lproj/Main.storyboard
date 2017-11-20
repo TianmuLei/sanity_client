@@ -590,7 +590,7 @@
         <scene sceneID="45S-wh-Lb5">
             <objects>
                 <navigationController hidesBarsOnSwipe="YES" id="Pys-cj-9KR" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="tqo-08-ClJ">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="tqo-08-ClJ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -2376,6 +2376,7 @@
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <state key="normal" title="Delete"/>
                                                     <connections>
+                                                        <action selector="deleteTrans:" destination="k3y-NC-7ET" eventType="touchUpInside" id="d4l-0A-0DC"/>
                                                         <action selector="deleteTransaction:" destination="k3y-NC-7ET" eventType="touchUpInside" id="lzE-kR-F5c"/>
                                                         <action selector="submitTransaction:" destination="k3y-NC-7ET" eventType="touchUpInside" id="8FG-52-AcF"/>
                                                     </connections>
