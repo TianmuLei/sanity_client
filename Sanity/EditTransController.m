@@ -28,7 +28,7 @@
     
 }
 
--(void) editTransaction: (NSNumber*) oldamount olddescribe:(NSString*) olddescribe category:(NSString*) category budget:(NSString*)budget olddate:(NSDateComponents*) olddate newamount:(NSNumber*) newamount newdescribe:(NSString*) newdescribe newdate:(NSDateComponents*) newdate {
+-(void)  editTransaction: (NSNumber*) oldamount olddescribe:(NSString*) olddescribe oldcategory:(NSString*) oldcategory oldbudget:(NSString*)oldbudget newcategory:(NSString*) newcategory newbudget:(NSString*)newbudget olddate:(NSDateComponents*) olddate newamount:(NSNumber*) newamount newdescribe:(NSString*) newdescribe newdate:(NSDateComponents*) newdate:(NSDateComponents*) newdate {
     
     NSInteger year=olddate.year;
     NSInteger month=olddate.month;
@@ -44,7 +44,7 @@
                            (long)newyear,(long)newmonth,(long)newday];
    
     //TO-Do date
-    NSDictionary *info=@{@"email":self.client.myUser.email,@"oldAmount":oldamount,@"oldDescription":olddescribe,@"budget":budget,@"category":category,@"oldDate":dateString,@"newAmount":newamount,@"newDescription":newdescribe,@"newDate":newdateString};
+    NSDictionary *info=@{@"email":self.client.myUser.email,@"oldAmount":oldamount,@"oldDescription":olddescribe,@"oldBudget":oldbudget,@"oldCategory":oldcategory,@"newBudget":newbudget,@"newCategory":newcategory,@"oldDate":dateString,@"newAmount":newamount,@"newDescription":newdescribe,@"newDate":newdateString};
     NSDictionary *message=@{@"function":@"editTransaction",@"information":info};
     
     [self.client sendMessage:message];
