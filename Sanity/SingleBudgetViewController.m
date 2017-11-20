@@ -17,6 +17,7 @@
 @property int indexClicked;
 @property int numOfClicks;
 @property int previousIndexClicked;
+@property (weak, nonatomic) IBOutlet UILabel *detailLabel;
 
 @end
 
@@ -28,6 +29,7 @@
     self.navigationItem.title = self.pageTitle;
     self.slices = [[NSMutableArray alloc] init];
     self.texts = [[NSMutableArray alloc] init];
+    self.detailLabel.text = @"";
     
     //set up delegate
     self.controller = UIClientConnector.myClient.budgetList;
@@ -189,6 +191,11 @@
     [self.PieChartDisplay reloadData];
 }
 
+- (void) setAdditionalText: (NSString*) text
+{
+    self.additionalInfo = text;
+    self.detailLabel.text = text;
+}
 
 /*
  #pragma mark - Navigation

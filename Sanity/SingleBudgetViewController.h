@@ -17,6 +17,10 @@
 @property (nonatomic, strong) NSMutableArray *texts;
 @property (nonatomic, strong) NSMutableArray *slices;
 @property (nonatomic, strong) NSString * pageTitle;
+@property (nonatomic, strong) NSString * additionalInfo;
+
 - (void) setTexts:(NSMutableArray*) textsArray slices:(NSMutableArray*)slicesArray;
+- (void) setAdditionalText: (NSString*) text;
+
 
 @end
