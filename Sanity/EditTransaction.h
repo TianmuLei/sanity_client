@@ -16,4 +16,6 @@
 @property NSString *oldAmount;
 @property NSString *dateText;
 @property NSString *olddescrip;
+
+- (void) receiveBudgetInfo:(NSMutableArray *)budgetsFromServer;
 @end
