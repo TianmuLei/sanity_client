@@ -61,11 +61,11 @@
     }
     
     float remainMoney=single.total-single.spent;
-    int ramainDay=single.remain;
+    int ramainDay=single.remainNew;
     int period=single.period;
-    NSString* info = [NSString stringWithFormat:@"Remaining: $%0.02f, Days Left: %.i, Period: %i",remainMoney,ramainDay,period];
+    NSString* info = [NSString stringWithFormat:@"Remaining: $%0.02f, Days Left: %i, Period: %i",remainMoney,ramainDay,period];
     
-    
+    NSLog(@"%i", ramainDay);
     NSLog(@"%@", name1);
      NSLog(@"%@", amount);
     [self.delegate setTexts:name1 slices:amount];
