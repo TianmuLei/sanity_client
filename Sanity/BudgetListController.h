@@ -12,6 +12,7 @@
 //add call back function here
 - (void) setBudget:(NSArray*) budget amount:(NSArray*) amount colors:(NSArray*)color;
 - (void) setTexts:(NSArray*) textsArray slices:(NSArray*) slicesArray;
+- (void) setAdditionalText: (NSString*) text;
 @required
 @end
 

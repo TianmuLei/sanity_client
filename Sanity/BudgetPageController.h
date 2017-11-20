@@ -13,6 +13,7 @@
 - (void) setBudget:(NSArray*) budget amount:(NSArray*) amount colors:(NSArray*)color;
 - (void) setTexts:(NSArray*) textsArray slices:(NSArray*) slicesArray;
 - (void) setTexts:(NSArray*) textsArray slices:(NSArray*)slicesArray transactionNames:(NSArray*) names transactionAmounts:(NSArray*) amounts transactionDates:(NSArray*)dates numOfTransactions:(int) number labelColor:(NSString*) color;
+- (void) setAdditionalText: (NSString*) text;
 
 @required
 @end
@@ -25,4 +26,5 @@
 -(void) requestBudget:(NSString*) name;
 -(void) requestCategory:(NSString*) budget category:(NSString*) category;
 -(void) requestSummary:(NSString*) name;
+-(void) shareBudget:(NSString*) budgetName budget:(NSString*)emailShare;
 @end

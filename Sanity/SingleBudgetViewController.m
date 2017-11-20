@@ -193,6 +193,7 @@
 
 - (void) setAdditionalText: (NSString*) text
 {
+    NSLog(@"text received: %@",text);
     self.additionalInfo = text;
     self.detailLabel.text = text;
 }
