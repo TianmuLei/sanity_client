@@ -330,7 +330,7 @@
                 
             }
         }
-        else if ([function isEqualToString:@"editTransactionn"]){
+        else if ([function isEqualToString:@"editTransaction"]){
             if([status isEqualToString:@"fail"]){
                 
             }
