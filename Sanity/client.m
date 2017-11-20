@@ -321,7 +321,7 @@
         }
         else if ([function isEqualToString:@"deleteTransaction"]){
             if([status isEqualToString:@"fail"]){
-               ;
+           
             }
             else{
                 NSDictionary*info=[messageObject objectForKey:@"information"];
@@ -332,7 +332,7 @@
         }
         else if ([function isEqualToString:@"editTransactionn"]){
             if([status isEqualToString:@"fail"]){
-                ;
+                
             }
             else{
                 NSDictionary*info=[messageObject objectForKey:@"information"];
