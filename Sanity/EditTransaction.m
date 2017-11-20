@@ -164,6 +164,7 @@
         NSNumber *newAmount = [NSNumber numberWithFloat:_amountTF.text.floatValue];
         [self exceedsBudget:newAmount withBudget:_budgetTF.text withCategory:_categoryTF.text];
 #warning call controller edit
+
        
         
     }
@@ -175,6 +176,7 @@
     NSNumberFormatter *f = [[NSNumberFormatter alloc] init];
     f.numberStyle = NSNumberFormatterDecimalStyle;
     NSNumber *amountNum = [f numberFromString:_amountTF.text];
+    
     [_controller deleteTransaction:amountNum describe:_olddescrip category:_oldcategory budget:_oldbudget date:_dateText];
 }
 
