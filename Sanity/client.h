@@ -26,6 +26,7 @@
 @class BudgetListHistoryController;
 @class BudgetPageHistoryController;
 @class AddCategoryController;
+@class EditTransController;
 
 @interface client : NSObject <SRWebSocketDelegate>
 @property (strong, atomic)  SRWebSocket *webSocket;
@@ -44,6 +45,7 @@
 @property (strong,atomic) BudgetListHistoryController* budgetListHistory;
 @property (strong,atomic) BudgetPageHistoryController* budgetPageHistory;
 @property (strong,atomic) AddCategoryController* addCategory;
+@property (strong,atomic) EditTransController* editTrans;
 @property (strong,atomic) NSMutableArray* budgetListData;
 @property (strong,atomic) NSMutableArray* budgetHistoryData;
 @property (strong,atomic) NSMutableArray* budgetHistoryDataDic;
