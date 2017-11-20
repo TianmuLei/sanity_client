@@ -1788,8 +1788,35 @@
                             </tableViewSection>
                             <tableViewSection headerTitle="" id="5TG-3N-Wdj">
                                 <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="HRx-4V-449">
+                                        <rect key="frame" x="0.0" y="220" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="HRx-4V-449" id="S9G-06-UEb">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="WX9-to-BUh">
+                                                    <rect key="frame" x="8" y="12" width="20" height="20"/>
+                                                </activityIndicatorView>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MZP-a0-qJT">
+                                                    <rect key="frame" x="38" y="8" width="117" height="30"/>
+                                                    <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="16"/>
+                                                    <state key="normal" title="Upload Receipt"/>
+                                                    <connections>
+                                                        <action selector="uploadPressed:" destination="ciV-Dr-eMI" eventType="touchUpInside" id="SIQ-yO-DNe"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="MZP-a0-qJT" firstAttribute="leading" secondItem="WX9-to-BUh" secondAttribute="trailing" constant="10" id="d3q-Me-lC5"/>
+                                                <constraint firstItem="MZP-a0-qJT" firstAttribute="top" secondItem="S9G-06-UEb" secondAttribute="top" constant="8" id="hAg-6V-7ok"/>
+                                                <constraint firstItem="WX9-to-BUh" firstAttribute="top" secondItem="S9G-06-UEb" secondAttribute="topMargin" constant="4" id="syd-2F-n3f"/>
+                                                <constraint firstItem="WX9-to-BUh" firstAttribute="leading" secondItem="S9G-06-UEb" secondAttribute="leadingMargin" id="ykL-2I-STK"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
                                     <tableViewCell autoresizesSubviews="NO" clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="65" id="218-Df-d5c">
-                                        <rect key="frame" x="0.0" y="220" width="375" height="65"/>
+                                        <rect key="frame" x="0.0" y="264" width="375" height="65"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="218-Df-d5c" id="9Gx-gN-2kV">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="65"/>
@@ -1807,26 +1834,11 @@
                                                         <action selector="submitTransaction:" destination="ciV-Dr-eMI" eventType="touchUpInside" id="TDR-fT-hOy"/>
                                                     </connections>
                                                 </button>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MZP-a0-qJT">
-                                                    <rect key="frame" x="253" y="6" width="117" height="30"/>
-                                                    <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="16"/>
-                                                    <state key="normal" title="Upload Receipt"/>
-                                                    <connections>
-                                                        <action selector="uploadPressed:" destination="ciV-Dr-eMI" eventType="touchUpInside" id="SIQ-yO-DNe"/>
-                                                    </connections>
-                                                </button>
-                                                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="WX9-to-BUh">
-                                                    <rect key="frame" x="228" y="11" width="20" height="20"/>
-                                                </activityIndicatorView>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="ziS-T6-uvE" firstAttribute="leading" secondItem="9Gx-gN-2kV" secondAttribute="leading" constant="5" id="1SY-Um-CPw"/>
                                                 <constraint firstAttribute="trailing" secondItem="ziS-T6-uvE" secondAttribute="trailing" constant="15" id="6Ga-Gu-c8i"/>
-                                                <constraint firstItem="WX9-to-BUh" firstAttribute="top" secondItem="9Gx-gN-2kV" secondAttribute="topMargin" constant="3" id="NkD-Na-lVR"/>
                                                 <constraint firstAttribute="bottom" secondItem="ziS-T6-uvE" secondAttribute="bottom" constant="7.5" id="b17-3W-s4M"/>
-                                                <constraint firstItem="MZP-a0-qJT" firstAttribute="leading" secondItem="WX9-to-BUh" secondAttribute="trailing" constant="5" id="e3v-ep-jjf"/>
-                                                <constraint firstAttribute="trailing" secondItem="MZP-a0-qJT" secondAttribute="trailing" constant="5" id="hUX-pj-qSe"/>
-                                                <constraint firstItem="MZP-a0-qJT" firstAttribute="top" secondItem="ziS-T6-uvE" secondAttribute="top" id="mRW-cC-2jV"/>
                                                 <constraint firstItem="ziS-T6-uvE" firstAttribute="top" secondItem="9Gx-gN-2kV" secondAttribute="top" constant="6" id="ocH-zG-Rdl"/>
                                             </constraints>
                                         </tableViewCellContentView>
@@ -2385,7 +2397,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4KZ-hK-jry" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2516" y="1331.784107946027"/>
+            <point key="canvasLocation" x="1820" y="1332"/>
         </scene>
         <!--EditTransaction-->
         <scene sceneID="RQS-9A-aW6">

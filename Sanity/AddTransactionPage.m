@@ -45,6 +45,7 @@
     [super viewDidLoad];
     // Create a queue to perform recognition operations
     self.operationQueue = [[NSOperationQueue alloc] init];
+    self.activityIndicator.hidden = YES;
     
     self.budgetSelected = NO;
     _budgets = [[NSMutableArray alloc]init];
@@ -93,15 +94,20 @@
 }
 
 - (IBAction)uploadPressed:(id)sender {
+    NSLog(@"button pressed");
+    [self recognizeImageWithTesseract:[UIImage imageNamed:@"image_sample4.jpg"]];
+    
+    /*
     //pick an image
     UIImagePickerController *imgPicker = [UIImagePickerController new];
-    imgPicker.delegate = self;
-    
+     imgPicker.delegate = self;
+
     if([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera])
     {
         imgPicker.sourceType = UIImagePickerControllerSourceTypeCamera;
         [self presentViewController:imgPicker animated:YES completion:nil];
     }
+     */
 }
 
 #pragma OCR Helper Method
