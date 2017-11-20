@@ -89,7 +89,6 @@
 		84F4390C1F957C890040D12B /* SingleBudgetHistoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84F4390B1F957C890040D12B /* SingleBudgetHistoryViewController.m */; };
 		C0ACF45D5FDB633C6D76F84C /* libPods-Sanity.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EB1AA2A5F86FBB7BDA75AF6F /* libPods-Sanity.a */; };
 		CC12775C1FC0F9DB004C6567 /* EditTransaction.m in Sources */ = {isa = PBXBuildFile; fileRef = CC12775B1FC0F9DB004C6567 /* EditTransaction.m */; };
-		CC1277BD1FC2BD0D004C6567 /* tessdata in Resources */ = {isa = PBXBuildFile; fileRef = CC1277BC1FC2BD0D004C6567 /* tessdata */; };
 		CC2D17E11F91AFBE0052613D /* ProfilePage.m in Sources */ = {isa = PBXBuildFile; fileRef = CC2D17E01F91AFBE0052613D /* ProfilePage.m */; };
 		CC2D17E41F91C2AF0052613D /* AddBudgetPage.m in Sources */ = {isa = PBXBuildFile; fileRef = CC2D17E31F91C2AF0052613D /* AddBudgetPage.m */; };
 		CC61DB9C1FA7C3BF009621A0 /* ViewTransactions.m in Sources */ = {isa = PBXBuildFile; fileRef = CC61DB9B1FA7C3BF009621A0 /* ViewTransactions.m */; };
@@ -337,7 +336,6 @@
 		84F4390B1F957C890040D12B /* SingleBudgetHistoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SingleBudgetHistoryViewController.m; sourceTree = "<group>"; };
 		CC12775A1FC0F9DB004C6567 /* EditTransaction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditTransaction.h; sourceTree = "<group>"; };
 		CC12775B1FC0F9DB004C6567 /* EditTransaction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditTransaction.m; sourceTree = "<group>"; };
-		CC1277BC1FC2BD0D004C6567 /* tessdata */ = {isa = PBXFileReference; lastKnownFileType = folder; path = tessdata; sourceTree = "<group>"; };
 		CC2D17DF1F91AFBE0052613D /* ProfilePage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfilePage.h; sourceTree = "<group>"; };
 		CC2D17E01F91AFBE0052613D /* ProfilePage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfilePage.m; sourceTree = "<group>"; };
 		CC2D17E21F91C2AF0052613D /* AddBudgetPage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddBudgetPage.h; sourceTree = "<group>"; };
@@ -691,7 +689,6 @@
 		8446FEA41FC297CE001ED3E4 /* OCR */ = {
 			isa = PBXGroup;
 			children = (
-				CC1277BC1FC2BD0D004C6567 /* tessdata */,
 				8446FE311FC29750001ED3E4 /* en.lproj */,
 				8446FE341FC29750001ED3E4 /* G8Constants.h */,
 				8446FE351FC29750001ED3E4 /* G8RecognitionOperation.h */,
@@ -917,7 +914,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				8446FEA21FC29750001ED3E4 /* TesseractOCR-Info.plist in Resources */,
-				CC1277BD1FC2BD0D004C6567 /* tessdata in Resources */,
 				8446FEA01FC29750001ED3E4 /* parametersConstantsGenerator.py in Resources */,
 				8446FED21FC2A77F001ED3E4 /* image_sample.jpg in Resources */,
 				CC673EF91F946ACA000CE0B6 /* CategoryDisplay.xib in Resources */,
