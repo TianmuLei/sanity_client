@@ -23,4 +23,5 @@
 -(void) requestBudgetList;
 -(void) requestBudget:(NSString*) name;
 -(void) requestSummary:(NSString*) name;
+-(void) shareBudget:(NSString*) budgetName budget:(NSString*)emailShare;
 @end

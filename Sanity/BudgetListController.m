@@ -84,6 +84,14 @@
     
 }
 
+-(void) shareBudget:(NSString*) budgetName budget:(NSString*)emailShare{
+    NSDictionary *info=@{@"email":self.client.myUser.email,@"budgetName":budgetName,@"emailShare":emailShare};
+    
+    NSDictionary *message=@{@"function":@"shareBudget",@"information":info};
+    
+    [self.client sendMessage:message];
+}
+
 
 
 @end
