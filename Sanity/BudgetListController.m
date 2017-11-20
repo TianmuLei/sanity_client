@@ -59,9 +59,18 @@
         [name1 addObject:Catname];
         
     }
+    
+    float remainMoney=single.total-single.spent;
+    int ramainDay=single.remainNew;
+    int period=single.period;
+    NSString* info = [NSString stringWithFormat:@"Remaining: $%0.02f, Days Left: %i, Period: %i",remainMoney,ramainDay,period];
+    
+    NSLog(@"%i", ramainDay);
     NSLog(@"%@", name1);
      NSLog(@"%@", amount);
     [self.delegate setTexts:name1 slices:amount];
+    [self.delegate setAdditionalText:info];
+
 
 }
 
@@ -73,6 +82,14 @@
     [self.client sendMessage:message];
     
     
+}
+
+-(void) shareBudget:(NSString*) budgetName budget:(NSString*)emailShare{
+    NSDictionary *info=@{@"email":self.client.myUser.email,@"budgetName":budgetName,@"emailShare":emailShare};
+    
+    NSDictionary *message=@{@"function":@"shareBudget",@"information":info};
+    
+    [self.client sendMessage:message];
 }
 
 

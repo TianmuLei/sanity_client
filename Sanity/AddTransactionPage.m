@@ -12,9 +12,12 @@
 #import "UIClientConnector.h"
 #import "AddTransactionController.h"
 #import "AppDelegate.h"
+#import "TesseractOCR.h"
 
 
-@interface AddTransactionPage () <UIPickerViewDelegate, UIPickerViewDataSource>
+@interface AddTransactionPage () <UIPickerViewDelegate, UIPickerViewDataSource, UIImagePickerControllerDelegate>
+
+@property (nonatomic, strong) NSOperationQueue *operationQueue;
 
 //UI Elements
 @property (weak, nonatomic) IBOutlet UITextField *budgetTF;
@@ -24,6 +27,9 @@
 @property (weak, nonatomic) IBOutlet UITextField *descripTF;
 @property UIPickerView *budgetPicker;
 @property UIPickerView *categoryPicker;
+@property (weak, nonatomic) IBOutlet UIButton *uploadButton;
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
+
 
 //Arrays
 @property (strong, nonatomic) NSMutableArray *budgets;
@@ -37,6 +43,10 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    // Create a queue to perform recognition operations
+    self.operationQueue = [[NSOperationQueue alloc] init];
+    self.activityIndicator.hidden = YES;
+    
     self.budgetSelected = NO;
     _budgets = [[NSMutableArray alloc]init];
     _categoriesCurrBudget = [[NSMutableArray alloc]init]; 
@@ -82,6 +92,205 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+- (IBAction)uploadPressed:(id)sender {
+    NSLog(@"button pressed");
+    self.activityIndicator.hidden = FALSE;
+    [self recognizeImageWithTesseract:[UIImage imageNamed:@"image_sample5.jpg"]];
+    
+    /*
+    //pick an image
+    UIImagePickerController *imgPicker = [UIImagePickerController new];
+     imgPicker.delegate = self;
+
+    if([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera])
+    {
+        imgPicker.sourceType = UIImagePickerControllerSourceTypeCamera;
+        [self presentViewController:imgPicker animated:YES completion:nil];
+    }
+     */
+}
+
+#pragma OCR Helper Method
+-(void)recognizeImageWithTesseract:(UIImage *)image
+{
+#warning to be modified
+    // Animate a progress activity indicator
+    [self.activityIndicator startAnimating];
+    
+    // Create a new `G8RecognitionOperation` to perform the OCR asynchronously
+    // It is assumed that there is a .traineddata file for the language pack
+    // you want Tesseract to use in the "tessdata" folder in the root of the
+    // project AND that the "tessdata" folder is a referenced folder and NOT
+    // a symbolic group in your project
+    G8RecognitionOperation *operation = [[G8RecognitionOperation alloc] initWithLanguage:@"eng"];
+    
+    // Use the original Tesseract engine mode in performing the recognition
+    // (see G8Constants.h) for other engine mode options
+    operation.tesseract.engineMode = G8OCREngineModeTesseractOnly;
+    
+    // Let Tesseract automatically segment the page into blocks of text
+    // based on its analysis (see G8Constants.h) for other page segmentation
+    // mode options
+    operation.tesseract.pageSegmentationMode = G8PageSegmentationModeAutoOnly;
+    
+    // Optionally limit the time Tesseract should spend performing the
+    // recognition
+    //operation.tesseract.maximumRecognitionTime = 1.0;
+    
+    // Set the delegate for the recognition to be this class
+    // (see `progressImageRecognitionForTesseract` and
+    // `shouldCancelImageRecognitionForTesseract` methods below)
+    operation.delegate = self;
+    
+    // Optionally limit Tesseract's recognition to the following whitelist
+    // and blacklist of characters
+    //operation.tesseract.charWhitelist = @"01234";
+    //operation.tesseract.charBlacklist = @"56789";
+    
+    // Set the image on which Tesseract should perform recognition
+    operation.tesseract.image = image;
+    
+    // Optionally limit the region in the image on which Tesseract should
+    // perform recognition to a rectangle
+    //operation.tesseract.rect = CGRectMake(20, 20, 100, 100);
+    
+    // Specify the function block that should be executed when Tesseract
+    // finishes performing recognition on the image
+    operation.recognitionCompleteBlock = ^(G8Tesseract *tesseract) {
+        // Fetch the recognized text
+        NSString *recognizedText = tesseract.recognizedText;
+        
+        //remove weird characters
+        NSString *textCopy = [[NSString alloc]initWithString:tesseract.recognizedText];
+        NSCharacterSet *charactersToRemove  = [[NSCharacterSet characterSetWithCharactersInString:@"abcdefghijklmnopqrstuvwxyz .ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890"] invertedSet];
+        NSString *strippedString = [[textCopy componentsSeparatedByCharactersInSet:charactersToRemove] componentsJoinedByString:@""];
+        strippedString =  [strippedString lowercaseString];
+        
+        NSArray *array = [strippedString componentsSeparatedByCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
+        array = [array filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"SELF != ''"]];
+        
+        //look for subtotal, tax and total
+        bool subtotalFound = FALSE;
+        bool totalFound = FALSE;
+        bool taxFound = FALSE;
+        float subtotal = -1;
+        float total = -1;
+        float tax = -1;
+        
+        for(int i=0; i<(array.count-1); i++)
+        {
+            if((!subtotalFound) && [array[i] rangeOfString:@"subtotal"].location != NSNotFound)
+            {
+                NSLog(@"subtotalFound: %@", array[i+1]);
+                subtotalFound = TRUE;
+                NSString* floatString = [NSString stringWithString:(NSString*)array[i+1]];
+                subtotal = [floatString floatValue];
+                //check if is valid
+                if(subtotal == 0)
+                {
+                    subtotal = -1;
+                    subtotalFound = NO;
+                }
+            }else if((!totalFound) && [array[i] rangeOfString:@"total"].location != NSNotFound){
+                NSLog(@"totalFound: %@", array[i+1]);
+                totalFound = TRUE;
+                NSString* floatString = [NSString stringWithString:(NSString*)array[i+1]];
+                total = [floatString floatValue];
+                //check if is valid
+                if(total ==0)
+                {
+                    total = -1;
+                    totalFound = NO;
+                }
+            }else if(subtotalFound && (!taxFound) && [array[i] rangeOfString:@"tax"].location != NSNotFound){
+                NSLog(@"taxFound: %@", array[i+1]);
+                taxFound = TRUE;
+                NSString* floatString = [NSString stringWithString:(NSString*)array[i+1]];
+                tax = [floatString floatValue];
+            }
+            
+            //break if all found
+            if(taxFound && totalFound && subtotalFound)
+            {
+                break;
+            }
+        }
+        
+        
+        NSString * stored = nil;
+        NSString * amountString = nil;
+        if(subtotal==-1 && tax==-1 && total==-1)
+        {
+            NSLog(@"NOT FOUND!!!");
+            stored = @"NOT FOUND!!!";
+        }else if(subtotal==-1 || tax==-1){
+            NSLog(@"total is: %.02f", total);
+            stored = [[NSString alloc] initWithFormat:@"total is: %.02f", total];
+            amountString = [[NSString alloc] initWithFormat:@"%.02f", total];
+        }else if(total==-1){
+            NSLog(@"total calculuated is: %.02f", (subtotal+tax));
+            stored = [[NSString alloc] initWithFormat:@"total calculuated is: %.02f", (subtotal+tax)];
+            amountString = [[NSString alloc] initWithFormat:@"%.02f", (subtotal+tax)];
+        }else if((subtotal+tax)==total){
+            NSLog(@"matched total is: %.02f", total);
+            stored = [[NSString alloc] initWithFormat:@"matched total is: %.02f", total];
+            amountString =  [[NSString alloc] initWithFormat:@"%.02f", total];
+        }else if((subtotal+tax)<total){
+            NSLog(@"smaller total is: %.02f", subtotal+tax);
+            stored = [[NSString alloc] initWithFormat:@"smaller total is: %.02f", subtotal+tax];
+            amountString =  [[NSString alloc] initWithFormat:@"%.02f", subtotal+tax];
+        }else{
+            NSLog(@"total smaller is: %.02f", total);
+            stored = [[NSString alloc] initWithFormat:@"total smaller is: %.02f", total];
+            amountString = [[NSString alloc] initWithFormat:@"%.02f", total];
+        }
+        
+        // Remove the animated progress activity indicator
+        [self.activityIndicator stopAnimating];
+        self.activityIndicator.hidden = TRUE;
+        //self.uploadButton.hidden = TRUE;
+        
+        if([stored isEqualToString:@"NOT FOUND!!!"])
+        {
+            // Spawn an alert with the recognized text
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"OCR Failed"
+                                                        message:@"Please try again!"
+                                                       delegate:nil
+                                              cancelButtonTitle:@"OK"
+                                              otherButtonTitles:nil];
+             [alert show];
+        }else{
+            self.amountTF.text = [[NSString alloc] initWithFormat:@"%@",amountString];
+        }
+        [G8Tesseract clearCache];
+    };
+    
+    // Display the image to be recognized in the view
+    //self.imageToRecognize.image = operation.tesseract.thresholdedImage;
+    
+    // Finally, add the recognition operation to the queue
+    [self.operationQueue addOperation:operation];
+}
+
+#pragma mark - UIImagePickerController Delegate
+- (void)imagePickerController:(UIImagePickerController *)picker
+didFinishPickingMediaWithInfo:(NSDictionary *)info
+{
+    UIImage *image = info[UIImagePickerControllerOriginalImage];
+    [picker dismissViewControllerAnimated:YES completion:nil];
+    [self recognizeImageWithTesseract:image];
+}
+
+#pragma OCR Delegate
+- (void)progressImageRecognitionForTesseract:(G8Tesseract *)tesseract {
+    //  NSLog(@"progress: %lu", (unsigned long)tesseract.progress);
+}
+
+- (BOOL)shouldCancelImageRecognitionForTesseract:(G8Tesseract *)tesseract {
+    return NO;
+}
+
 
 #pragma mark - UIPickerViewDataSource
 // #3

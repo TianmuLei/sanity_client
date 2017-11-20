@@ -15,6 +15,7 @@
 @property double total;
 @property double spent;
 @property int period;
+@property int remainNew;
 @property int frequency;
 @property int remain;
 @property (strong, atomic) NSString* name;
