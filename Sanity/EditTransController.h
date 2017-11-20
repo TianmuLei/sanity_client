@@ -16,7 +16,7 @@
 }
 @property (nonatomic,strong) id delegate;
 -(void) deleteTransaction: (NSNumber*) amount describe:(NSString*) describe category:(NSString*) category budget:(NSString*)budget date:(NSDateComponents*) date;
--(void) editTransaction: (NSNumber*) oldamount olddescribe:(NSString*) olddescribe category:(NSString*) category budget:(NSString*)budget olddate:(NSDateComponents*) olddate newamount:(NSNumber*) newamount newdescribe:(NSString*) newdescribe newdate:(NSDateComponents*) newdate ;
+-(void) editTransaction: (NSNumber*) oldamount olddescribe:(NSString*) olddescribe oldcategory:(NSString*) oldcategory oldbudget:(NSString*)oldbudget newcategory:(NSString*) newcategory newbudget:(NSString*)newbudget olddate:(NSString*) olddate newamount:(NSNumber*) newamount newdescribe:(NSString*) newdescribe newdate:(NSString*) newdate ;
 -(Budget*) requestBudget:(NSString*) name;
 -(void) requestBudgetAndCate;
 
