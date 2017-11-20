@@ -2378,7 +2378,6 @@
                                                     <connections>
                                                         <action selector="deleteTrans:" destination="k3y-NC-7ET" eventType="touchUpInside" id="d4l-0A-0DC"/>
                                                         <action selector="deleteTransaction:" destination="k3y-NC-7ET" eventType="touchUpInside" id="lzE-kR-F5c"/>
-                                                        <action selector="submitTransaction:" destination="k3y-NC-7ET" eventType="touchUpInside" id="8FG-52-AcF"/>
                                                     </connections>
                                                 </button>
                                             </subviews>
