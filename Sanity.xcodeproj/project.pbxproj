@@ -48,6 +48,7 @@
 		843599CA1F91DBF6002372E9 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 843599C91F91DBF6002372E9 /* UIKit.framework */; };
 		843599CC1F91DBFD002372E9 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 843599CB1F91DBFD002372E9 /* QuartzCore.framework */; };
 		84416C301F9483E300C711E1 /* PieChartCategoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84416C2F1F9483E300C711E1 /* PieChartCategoryViewController.m */; };
+		8446FDE21FC28379001ED3E4 /* CoreImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8446FDE11FC28379001ED3E4 /* CoreImage.framework */; };
 		8457BF1E1F93363A0028166A /* HomeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8457BF1D1F93363A0028166A /* HomeTableViewCell.m */; };
 		8468B69A1FA48D240060B59D /* SanityUILoginFailed.m in Sources */ = {isa = PBXBuildFile; fileRef = 8468B6991FA48D240060B59D /* SanityUILoginFailed.m */; };
 		8468B69C1FA48DF00060B59D /* SanityUISignupFailed.m in Sources */ = {isa = PBXBuildFile; fileRef = 8468B69B1FA48DF00060B59D /* SanityUISignupFailed.m */; };
@@ -188,6 +189,7 @@
 		843599CB1F91DBFD002372E9 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		84416C2E1F9483E300C711E1 /* PieChartCategoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PieChartCategoryViewController.h; sourceTree = "<group>"; };
 		84416C2F1F9483E300C711E1 /* PieChartCategoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PieChartCategoryViewController.m; sourceTree = "<group>"; };
+		8446FDE11FC28379001ED3E4 /* CoreImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreImage.framework; path = System/Library/Frameworks/CoreImage.framework; sourceTree = SDKROOT; };
 		8457BF1C1F93363A0028166A /* HomeTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeTableViewCell.h; sourceTree = "<group>"; };
 		8457BF1D1F93363A0028166A /* HomeTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeTableViewCell.m; sourceTree = "<group>"; };
 		8468B6991FA48D240060B59D /* SanityUILoginFailed.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SanityUILoginFailed.m; sourceTree = "<group>"; };
@@ -255,10 +257,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				843599C61F91DBEA002372E9 /* CoreGraphics.framework in Frameworks */,
+				8446FDE21FC28379001ED3E4 /* CoreImage.framework in Frameworks */,
 				843599CC1F91DBFD002372E9 /* QuartzCore.framework in Frameworks */,
 				843599CA1F91DBF6002372E9 /* UIKit.framework in Frameworks */,
 				843599C81F91DBF1002372E9 /* Foundation.framework in Frameworks */,
-				843599C61F91DBEA002372E9 /* CoreGraphics.framework in Frameworks */,
 				C0ACF45D5FDB633C6D76F84C /* libPods-Sanity.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -283,6 +286,7 @@
 		4A6FEE003D3905322FAA0D4B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				8446FDE11FC28379001ED3E4 /* CoreImage.framework */,
 				843599CB1F91DBFD002372E9 /* QuartzCore.framework */,
 				843599C91F91DBF6002372E9 /* UIKit.framework */,
 				843599C71F91DBF1002372E9 /* Foundation.framework */,

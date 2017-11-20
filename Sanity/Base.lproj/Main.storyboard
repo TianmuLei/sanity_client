@@ -1796,7 +1796,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ziS-T6-uvE">
-                                                    <rect key="frame" x="15" y="6" width="216.5" height="32"/>
+                                                    <rect key="frame" x="5" y="6" width="216.5" height="32"/>
                                                     <color key="backgroundColor" red="1" green="0.74446411130000001" blue="0.78041947970000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="ziS-T6-uvE" secondAttribute="height" multiplier="115:17" id="QjX-LE-vib"/>
@@ -1807,11 +1807,26 @@
                                                         <action selector="submitTransaction:" destination="ciV-Dr-eMI" eventType="touchUpInside" id="TDR-fT-hOy"/>
                                                     </connections>
                                                 </button>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MZP-a0-qJT">
+                                                    <rect key="frame" x="253" y="6" width="117" height="30"/>
+                                                    <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="16"/>
+                                                    <state key="normal" title="Upload Receipt"/>
+                                                    <connections>
+                                                        <action selector="uploadPressed:" destination="ciV-Dr-eMI" eventType="touchUpInside" id="SIQ-yO-DNe"/>
+                                                    </connections>
+                                                </button>
+                                                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="WX9-to-BUh">
+                                                    <rect key="frame" x="228" y="11" width="20" height="20"/>
+                                                </activityIndicatorView>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="ziS-T6-uvE" firstAttribute="leading" secondItem="9Gx-gN-2kV" secondAttribute="leading" constant="15" id="1SY-Um-CPw"/>
+                                                <constraint firstItem="ziS-T6-uvE" firstAttribute="leading" secondItem="9Gx-gN-2kV" secondAttribute="leading" constant="5" id="1SY-Um-CPw"/>
                                                 <constraint firstAttribute="trailing" secondItem="ziS-T6-uvE" secondAttribute="trailing" constant="15" id="6Ga-Gu-c8i"/>
+                                                <constraint firstItem="WX9-to-BUh" firstAttribute="top" secondItem="9Gx-gN-2kV" secondAttribute="topMargin" constant="3" id="NkD-Na-lVR"/>
                                                 <constraint firstAttribute="bottom" secondItem="ziS-T6-uvE" secondAttribute="bottom" constant="7.5" id="b17-3W-s4M"/>
+                                                <constraint firstItem="MZP-a0-qJT" firstAttribute="leading" secondItem="WX9-to-BUh" secondAttribute="trailing" constant="5" id="e3v-ep-jjf"/>
+                                                <constraint firstAttribute="trailing" secondItem="MZP-a0-qJT" secondAttribute="trailing" constant="5" id="hUX-pj-qSe"/>
+                                                <constraint firstItem="MZP-a0-qJT" firstAttribute="top" secondItem="ziS-T6-uvE" secondAttribute="top" id="mRW-cC-2jV"/>
                                                 <constraint firstItem="ziS-T6-uvE" firstAttribute="top" secondItem="9Gx-gN-2kV" secondAttribute="top" constant="6" id="ocH-zG-Rdl"/>
                                             </constraints>
                                         </tableViewCellContentView>
@@ -1828,11 +1843,13 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="Add Transaction" id="eJp-wD-wVg"/>
                     <connections>
+                        <outlet property="activityIndicator" destination="WX9-to-BUh" id="sfd-5G-wOy"/>
                         <outlet property="amountTF" destination="jBG-5b-SD5" id="uRo-J7-wAq"/>
                         <outlet property="budgetTF" destination="L5w-5b-hiq" id="ile-wv-gBP"/>
                         <outlet property="categoryTF" destination="412-xg-mAF" id="MSB-jq-7xK"/>
                         <outlet property="date" destination="ihK-7K-lm3" id="Qmq-Ja-0pB"/>
                         <outlet property="descripTF" destination="7fV-ca-BfA" id="qLq-9u-xYU"/>
+                        <outlet property="uploadButton" destination="MZP-a0-qJT" id="b2P-T9-LyI"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VlG-BL-Egn" userLabel="First Responder" sceneMemberID="firstResponder"/>
