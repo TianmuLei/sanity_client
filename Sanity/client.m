@@ -25,6 +25,7 @@
 #import "BudgetListHistoryController.h"
 #import "BudgetPageHistoryController.h"
 #import "AddCategoryController.h"
+#import "EditTransController.h"
 
 @implementation client
 - (instancetype)init
@@ -51,6 +52,7 @@
         _budgetListHistory=[[BudgetListHistoryController alloc] initWithClass:self];
         _budgetPageHistory=[[BudgetPageHistoryController alloc] initWithClass:self];
         _addCategory=[[AddCategoryController alloc] initWithClass:self];
+        _editTrans=[[EditTransController alloc] initWithClass:self];
 
         
         

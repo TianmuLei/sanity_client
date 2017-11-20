@@ -36,6 +36,9 @@
 		7CA1D1EB1F897A87003631D6 /* MainController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CA1D1E81F897A87003631D6 /* MainController.m */; };
 		7CA1D1EC1F897A87003631D6 /* SignupController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CA1D1EA1F897A87003631D6 /* SignupController.m */; };
 		7CDBD2401FA57A770081C356 /* AddCategoryController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CDBD23F1FA57A770081C356 /* AddCategoryController.m */; };
+		7CE9CAF81FC2AA140019B23D /* tessdata in Resources */ = {isa = PBXBuildFile; fileRef = 7CE9CAF71FC2AA140019B23D /* tessdata */; };
+		7CE9CAFB1FC2AAF40019B23D /* EditTransaction.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CE9CAFA1FC2AAF40019B23D /* EditTransaction.m */; };
+		7CE9CAFE1FC2ABA20019B23D /* EditTransController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CE9CAFD1FC2ABA20019B23D /* EditTransController.m */; };
 		8434BE091F91FF2200A4BDC7 /* LoginPage.m in Sources */ = {isa = PBXBuildFile; fileRef = 8434BE041F91FF2200A4BDC7 /* LoginPage.m */; };
 		8434BE0A1F91FF2200A4BDC7 /* SignupPage.m in Sources */ = {isa = PBXBuildFile; fileRef = 8434BE061F91FF2200A4BDC7 /* SignupPage.m */; };
 		843599C01F91DB39002372E9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 843599B81F91DB38002372E9 /* Assets.xcassets */; };
@@ -67,7 +70,6 @@
 		8446FEA31FC29750001ED3E4 /* UIImage+G8Filters.m in Sources */ = {isa = PBXBuildFile; fileRef = 8446FE941FC29750001ED3E4 /* UIImage+G8Filters.m */; };
 		8446FEA71FC29E10001ED3E4 /* image_sample4.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8446FEA51FC29E10001ED3E4 /* image_sample4.jpg */; };
 		8446FEA81FC29E10001ED3E4 /* image_sample5.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8446FEA61FC29E10001ED3E4 /* image_sample5.jpg */; };
-		8446FED01FC2A2B0001ED3E4 /* tessdata in Resources */ = {isa = PBXBuildFile; fileRef = 8446FECF1FC2A2B0001ED3E4 /* tessdata */; };
 		8446FED21FC2A77F001ED3E4 /* image_sample.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8446FED11FC2A77F001ED3E4 /* image_sample.jpg */; };
 		8457BF1E1F93363A0028166A /* HomeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8457BF1D1F93363A0028166A /* HomeTableViewCell.m */; };
 		8468B69A1FA48D240060B59D /* SanityUILoginFailed.m in Sources */ = {isa = PBXBuildFile; fileRef = 8468B6991FA48D240060B59D /* SanityUILoginFailed.m */; };
@@ -192,6 +194,11 @@
 		7CA1D1EA1F897A87003631D6 /* SignupController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignupController.m; sourceTree = "<group>"; };
 		7CDBD23E1FA57A770081C356 /* AddCategoryController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddCategoryController.h; sourceTree = "<group>"; };
 		7CDBD23F1FA57A770081C356 /* AddCategoryController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddCategoryController.m; sourceTree = "<group>"; };
+		7CE9CAF71FC2AA140019B23D /* tessdata */ = {isa = PBXFileReference; lastKnownFileType = folder; name = tessdata; path = ../../../Downloads/tessdata; sourceTree = "<group>"; };
+		7CE9CAF91FC2AAF40019B23D /* EditTransaction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditTransaction.h; sourceTree = "<group>"; };
+		7CE9CAFA1FC2AAF40019B23D /* EditTransaction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditTransaction.m; sourceTree = "<group>"; };
+		7CE9CAFC1FC2ABA20019B23D /* EditTransController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditTransController.h; sourceTree = "<group>"; };
+		7CE9CAFD1FC2ABA20019B23D /* EditTransController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditTransController.m; sourceTree = "<group>"; };
 		8434BE031F91FF2200A4BDC7 /* LoginPage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginPage.h; sourceTree = "<group>"; };
 		8434BE041F91FF2200A4BDC7 /* LoginPage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginPage.m; sourceTree = "<group>"; };
 		8434BE051F91FF2200A4BDC7 /* SignupPage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignupPage.h; sourceTree = "<group>"; };
@@ -306,7 +313,6 @@
 		8446FE941FC29750001ED3E4 /* UIImage+G8Filters.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+G8Filters.m"; sourceTree = "<group>"; };
 		8446FEA51FC29E10001ED3E4 /* image_sample4.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = image_sample4.jpg; sourceTree = "<group>"; };
 		8446FEA61FC29E10001ED3E4 /* image_sample5.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = image_sample5.jpg; sourceTree = "<group>"; };
-		8446FECF1FC2A2B0001ED3E4 /* tessdata */ = {isa = PBXFileReference; lastKnownFileType = folder; name = tessdata; path = ../../tessdata; sourceTree = "<group>"; };
 		8446FED11FC2A77F001ED3E4 /* image_sample.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = image_sample.jpg; sourceTree = "<group>"; };
 		8457BF1C1F93363A0028166A /* HomeTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeTableViewCell.h; sourceTree = "<group>"; };
 		8457BF1D1F93363A0028166A /* HomeTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeTableViewCell.m; sourceTree = "<group>"; };
@@ -458,6 +464,8 @@
 				7C698AAA1F983F6000F697F7 /* BudgetPageHistoryController.m */,
 				7CDBD23E1FA57A770081C356 /* AddCategoryController.h */,
 				7CDBD23F1FA57A770081C356 /* AddCategoryController.m */,
+				7CE9CAFC1FC2ABA20019B23D /* EditTransController.h */,
+				7CE9CAFD1FC2ABA20019B23D /* EditTransController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -487,7 +495,6 @@
 		7C2D9DF71F875EFD00027681 /* Sanity */ = {
 			isa = PBXGroup;
 			children = (
-				8446FECF1FC2A2B0001ED3E4 /* tessdata */,
 				8446FEA41FC297CE001ED3E4 /* OCR */,
 				7C19917A1F91C6000039701C /* Controller */,
 				CC15B38E1F87675800764940 /* View */,
@@ -687,6 +694,7 @@
 		8446FEA41FC297CE001ED3E4 /* OCR */ = {
 			isa = PBXGroup;
 			children = (
+				7CE9CAF71FC2AA140019B23D /* tessdata */,
 				8446FE311FC29750001ED3E4 /* en.lproj */,
 				8446FE341FC29750001ED3E4 /* G8Constants.h */,
 				8446FE351FC29750001ED3E4 /* G8RecognitionOperation.h */,
@@ -754,6 +762,8 @@
 				CC2D17E31F91C2AF0052613D /* AddBudgetPage.m */,
 				7C2D9DFE1F875EFD00027681 /* ViewController.h */,
 				7C2D9DFF1F875EFD00027681 /* ViewController.m */,
+				7CE9CAF91FC2AAF40019B23D /* EditTransaction.h */,
+				7CE9CAFA1FC2AAF40019B23D /* EditTransaction.m */,
 				CC673EF21F94655F000CE0B6 /* EditBudgetPage.h */,
 				CC673EF31F94655F000CE0B6 /* EditBudgetPage.m */,
 				CC673EFD1F94C372000CE0B6 /* AddTransactionPage.h */,
@@ -912,8 +922,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				8446FEA21FC29750001ED3E4 /* TesseractOCR-Info.plist in Resources */,
+				7CE9CAF81FC2AA140019B23D /* tessdata in Resources */,
 				8446FEA01FC29750001ED3E4 /* parametersConstantsGenerator.py in Resources */,
-				8446FED01FC2A2B0001ED3E4 /* tessdata in Resources */,
 				8446FED21FC2A77F001ED3E4 /* image_sample.jpg in Resources */,
 				CC673EF91F946ACA000CE0B6 /* CategoryDisplay.xib in Resources */,
 				CC673EE11F934C29000CE0B6 /* AmountCell.xib in Resources */,
@@ -999,6 +1009,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7CE9CAFB1FC2AAF40019B23D /* EditTransaction.m in Sources */,
 				7C703F321F8AC41700B5D982 /* User.m in Sources */,
 				8446FEA31FC29750001ED3E4 /* UIImage+G8Filters.m in Sources */,
 				CC2D17E11F91AFBE0052613D /* ProfilePage.m in Sources */,
@@ -1011,6 +1022,7 @@
 				84F4390C1F957C890040D12B /* SingleBudgetHistoryViewController.m in Sources */,
 				7C2D9E001F875EFD00027681 /* ViewController.m in Sources */,
 				CC8D32151F952BF700FE0704 /* ResetPasswordPage.m in Sources */,
+				7CE9CAFE1FC2ABA20019B23D /* EditTransController.m in Sources */,
 				7C8F834F1F94BEFA0053B40B /* EditBudgetController.m in Sources */,
 				849E42941F9438EC00074460 /* SingleCategoryTableViewController.m in Sources */,
 				849E42971F943E8600074460 /* TranscationLabelCell.m in Sources */,
