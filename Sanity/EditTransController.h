@@ -8,7 +8,7 @@
 
 #import "MainController.h"
 @protocol  EditTransControllerDelegate<NSObject>
-
+- (void) receiveBudgetInfo: (NSMutableArray *) budgetsFromServer;
 @required
 @end
 @interface EditTransController : MainController{
@@ -18,6 +18,7 @@
 -(void) deleteTransaction: (NSNumber*) amount describe:(NSString*) describe category:(NSString*) category budget:(NSString*)budget date:(NSDateComponents*) date;
 -(void) editTransaction: (NSNumber*) oldamount olddescribe:(NSString*) olddescribe category:(NSString*) category budget:(NSString*)budget olddate:(NSDateComponents*) olddate newamount:(NSNumber*) newamount newdescribe:(NSString*) newdescribe newdate:(NSDateComponents*) newdate ;
 -(Budget*) requestBudget:(NSString*) name;
+-(void) requestBudgetAndCate;
 
 
 @end
