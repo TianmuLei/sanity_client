@@ -37,7 +37,6 @@
 		7CA1D1EC1F897A87003631D6 /* SignupController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CA1D1EA1F897A87003631D6 /* SignupController.m */; };
 		7CDBD2401FA57A770081C356 /* AddCategoryController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CDBD23F1FA57A770081C356 /* AddCategoryController.m */; };
 		7CE9CAF81FC2AA140019B23D /* tessdata in Resources */ = {isa = PBXBuildFile; fileRef = 7CE9CAF71FC2AA140019B23D /* tessdata */; };
-		7CE9CAFB1FC2AAF40019B23D /* EditTransaction.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CE9CAFA1FC2AAF40019B23D /* EditTransaction.m */; };
 		7CE9CAFE1FC2ABA20019B23D /* EditTransController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CE9CAFD1FC2ABA20019B23D /* EditTransController.m */; };
 		8434BE091F91FF2200A4BDC7 /* LoginPage.m in Sources */ = {isa = PBXBuildFile; fileRef = 8434BE041F91FF2200A4BDC7 /* LoginPage.m */; };
 		8434BE0A1F91FF2200A4BDC7 /* SignupPage.m in Sources */ = {isa = PBXBuildFile; fileRef = 8434BE061F91FF2200A4BDC7 /* SignupPage.m */; };
@@ -195,8 +194,6 @@
 		7CDBD23E1FA57A770081C356 /* AddCategoryController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddCategoryController.h; sourceTree = "<group>"; };
 		7CDBD23F1FA57A770081C356 /* AddCategoryController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddCategoryController.m; sourceTree = "<group>"; };
 		7CE9CAF71FC2AA140019B23D /* tessdata */ = {isa = PBXFileReference; lastKnownFileType = folder; name = tessdata; path = ../../../Downloads/tessdata; sourceTree = "<group>"; };
-		7CE9CAF91FC2AAF40019B23D /* EditTransaction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditTransaction.h; sourceTree = "<group>"; };
-		7CE9CAFA1FC2AAF40019B23D /* EditTransaction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditTransaction.m; sourceTree = "<group>"; };
 		7CE9CAFC1FC2ABA20019B23D /* EditTransController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditTransController.h; sourceTree = "<group>"; };
 		7CE9CAFD1FC2ABA20019B23D /* EditTransController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditTransController.m; sourceTree = "<group>"; };
 		8434BE031F91FF2200A4BDC7 /* LoginPage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginPage.h; sourceTree = "<group>"; };
@@ -762,8 +759,6 @@
 				CC2D17E31F91C2AF0052613D /* AddBudgetPage.m */,
 				7C2D9DFE1F875EFD00027681 /* ViewController.h */,
 				7C2D9DFF1F875EFD00027681 /* ViewController.m */,
-				7CE9CAF91FC2AAF40019B23D /* EditTransaction.h */,
-				7CE9CAFA1FC2AAF40019B23D /* EditTransaction.m */,
 				CC673EF21F94655F000CE0B6 /* EditBudgetPage.h */,
 				CC673EF31F94655F000CE0B6 /* EditBudgetPage.m */,
 				CC673EFD1F94C372000CE0B6 /* AddTransactionPage.h */,
@@ -1009,7 +1004,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7CE9CAFB1FC2AAF40019B23D /* EditTransaction.m in Sources */,
 				7C703F321F8AC41700B5D982 /* User.m in Sources */,
 				8446FEA31FC29750001ED3E4 /* UIImage+G8Filters.m in Sources */,
 				CC2D17E11F91AFBE0052613D /* ProfilePage.m in Sources */,

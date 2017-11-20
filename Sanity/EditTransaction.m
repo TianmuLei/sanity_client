@@ -10,7 +10,7 @@
 #import "Budget.h"
 #import "Category.h"
 #import "UIClientConnector.h"
-#import "AddTransactionController.h"
+#import "EditTransController.h"
 #import "AppDelegate.h"
 
 @interface EditTransaction ()<UIPickerViewDelegate, UIPickerViewDataSource>
@@ -26,7 +26,7 @@
 //Arrays
 @property (strong, nonatomic) NSMutableArray *budgets;
 @property (strong, nonatomic) NSMutableArray *categoriesCurrBudget;
-@property (strong, nonatomic) AddTransactionController *controller;
+@property (strong, nonatomic) EditTransController *controller;
 @property BOOL budgetSelected;
 
 
@@ -50,8 +50,8 @@
     
 #warning need new controller
     
-    _controller = UIClientConnector.myClient.addTransaction;
-    UIClientConnector.myClient.addTransaction.delegate = self;
+    _controller = UIClientConnector.myClient.editTrans;
+    UIClientConnector.myClient.editTrans.delegate = self;
     
     //call function
     [_controller requestBudgetAndCate];
