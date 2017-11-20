@@ -95,7 +95,8 @@
 
 - (IBAction)uploadPressed:(id)sender {
     NSLog(@"button pressed");
-    [self recognizeImageWithTesseract:[UIImage imageNamed:@"image_sample4.jpg"]];
+    self.activityIndicator.hidden = FALSE;
+    [self recognizeImageWithTesseract:[UIImage imageNamed:@"image_sample5.jpg"]];
     
     /*
     //pick an image
@@ -168,7 +169,6 @@
         
         NSArray *array = [strippedString componentsSeparatedByCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
         array = [array filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"SELF != ''"]];
-        //  NSLog(@"%@",array);
         
         //look for subtotal, tax and total
         bool subtotalFound = FALSE;
@@ -219,6 +219,7 @@
         
         
         NSString * stored = nil;
+        NSString * amountString = nil;
         if(subtotal==-1 && tax==-1 && total==-1)
         {
             NSLog(@"NOT FOUND!!!");
@@ -226,31 +227,43 @@
         }else if(subtotal==-1 || tax==-1){
             NSLog(@"total is: %.02f", total);
             stored = [[NSString alloc] initWithFormat:@"total is: %.02f", total];
+            amountString = [[NSString alloc] initWithFormat:@"%.02f", total];
         }else if(total==-1){
             NSLog(@"total calculuated is: %.02f", (subtotal+tax));
             stored = [[NSString alloc] initWithFormat:@"total calculuated is: %.02f", (subtotal+tax)];
+            amountString = [[NSString alloc] initWithFormat:@"%.02f", (subtotal+tax)];
         }else if((subtotal+tax)==total){
             NSLog(@"matched total is: %.02f", total);
             stored = [[NSString alloc] initWithFormat:@"matched total is: %.02f", total];
+            amountString =  [[NSString alloc] initWithFormat:@"%.02f", total];
         }else if((subtotal+tax)<total){
             NSLog(@"smaller total is: %.02f", subtotal+tax);
             stored = [[NSString alloc] initWithFormat:@"smaller total is: %.02f", subtotal+tax];
+            amountString =  [[NSString alloc] initWithFormat:@"%.02f", subtotal+tax];
         }else{
             NSLog(@"total smaller is: %.02f", total);
             stored = [[NSString alloc] initWithFormat:@"total smaller is: %.02f", total];
+            amountString = [[NSString alloc] initWithFormat:@"%.02f", total];
         }
-        //      NSString* display = [[NSString alloc] initWithFormat:@"%@,   %@", recognizedText,stored];
         
         // Remove the animated progress activity indicator
         [self.activityIndicator stopAnimating];
+        self.activityIndicator.hidden = TRUE;
+        //self.uploadButton.hidden = TRUE;
         
-        // Spawn an alert with the recognized text
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"OCR Result"
-                                                        message:stored
+        if([stored isEqualToString:@"NOT FOUND!!!"])
+        {
+            // Spawn an alert with the recognized text
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"OCR Failed"
+                                                        message:@"Please try again!"
                                                        delegate:nil
                                               cancelButtonTitle:@"OK"
                                               otherButtonTitles:nil];
-        [alert show];
+             [alert show];
+        }else{
+            self.amountTF.text = [[NSString alloc] initWithFormat:@"%@",amountString];
+        }
+        [G8Tesseract clearCache];
     };
     
     // Display the image to be recognized in the view
