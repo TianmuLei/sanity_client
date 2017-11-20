@@ -319,6 +319,28 @@
                 
             }
         }
+        else if ([function isEqualToString:@"deleteTransaction"]){
+            if([status isEqualToString:@"fail"]){
+               ;
+            }
+            else{
+                NSDictionary*info=[messageObject objectForKey:@"information"];
+                _budgetListDataDic=(NSMutableArray*)[info objectForKey:@"budgetLsit"];
+                [self pharseAlldata:_budgetListDataDic];
+                
+            }
+        }
+        else if ([function isEqualToString:@"editTransactionn"]){
+            if([status isEqualToString:@"fail"]){
+                ;
+            }
+            else{
+                NSDictionary*info=[messageObject objectForKey:@"information"];
+                _budgetListDataDic=(NSMutableArray*)[info objectForKey:@"budgetLsit"];
+                [self pharseAlldata:_budgetListDataDic];
+                
+            }
+        }
         else if([function isEqualToString:@"deleteCategory"]){
             if([status isEqualToString:@"fail"]){
                 [_editBudget dFail];
