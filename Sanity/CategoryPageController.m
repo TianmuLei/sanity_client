@@ -9,6 +9,7 @@
 #import "CategoryPageController.h"
 #import "Transaction.h"
 #import "Category.h"
+#import "Currency.h"
 
 @implementation CategoryPageController
 
@@ -22,37 +23,34 @@
 
 -(void) requestCategory:(NSString*) budget category:(NSString*) category{
     Category* actualCat=[self.client getCategory:budget :category];
-    if(actualCat==nil){
-        NSLog(@"THIS IS NULL");
-    }
     NSMutableArray *textArray = [[NSMutableArray alloc]init];
     NSMutableArray *slices = [[NSMutableArray alloc]init];
-   NSMutableArray *transName = [[NSMutableArray alloc]init];
+    NSMutableArray *transName = [[NSMutableArray alloc]init];
     NSMutableArray *transDate = [[NSMutableArray alloc]init];
     NSMutableArray *transAmount = [[NSMutableArray alloc]init];
     
-    double spent=actualCat.spent;
-    double limit=actualCat.limit;
+    //set currency
+    Currency* dataModel;
+    dataModel = [Currency sharedModel];
+    float rate = [dataModel convertFrom:@"USD" To:dataModel.currCurrency];
+    
+    double spent=actualCat.spent * rate;
+    double limit=actualCat.limit * rate;
     double remain=limit-spent;
-    if(remain<0){
-        remain=0;
-    }
     NSString *spentString=[NSString stringWithFormat:@"%f", spent];
     NSString *remianString=[NSString stringWithFormat:@"%f", remain];
     
-    [textArray addObject:@"Spent"];
-    [textArray addObject:@"Left"];
+    [textArray addObject:@"spent"];
+    [textArray addObject:@"left"];
     [slices addObject:spentString];
     [slices addObject:remianString];
-    NSLog(@"%@", spentString);
-    NSLog(@"%@", remianString);
     NSMutableArray *trans=actualCat.transctions;
-    
-    
     for(int j=0;j<trans.count;j++){
         Transaction* t=[trans objectAtIndex:j];
         [transName addObject:t.describe];
-        NSNumber *a=t.amount;
+        //set currency
+        float amtF = [t.amount floatValue] * rate;
+        NSNumber *a= [NSNumber numberWithFloat:amtF];
         NSString *aS=[a stringValue];
         [transAmount addObject:aS];
         [transDate addObject:t.dateString];
@@ -63,10 +61,6 @@
     }else{
         color=@"black";
     }
-    
-    NSLog(@"%@", transName );
-    
-    NSLog(@"%@", transAmount);
     [self.delegate setTexts:textArray slices:slices transactionNames:transName transactionAmounts:transAmount transactionDates:transDate numOfTransactions:trans.count labelColor:color];
     
     
@@ -78,7 +72,6 @@
     
     
 }
-
 
 
 -(void) deleteTransaction: (NSNumber*) amount describe:(NSString*) describe category:(NSString*) category budget:(NSString*)budget date:(NSDateComponents*) date{
@@ -117,31 +110,31 @@
     NSMutableArray *transDate = [[NSMutableArray alloc]init];
     NSMutableArray *transAmount = [[NSMutableArray alloc]init];
     
-    double spent=actualCat.spent;
-    double limit=actualCat.limit;
+    //set currency
+    Currency* dataModel;
+    dataModel = [Currency sharedModel];
+    float rate = [dataModel convertFrom:@"USD" To:dataModel.currCurrency];
+    
+    double spent=actualCat.spent * rate;
+    double limit=actualCat.limit * rate;
     double remain=limit-spent;
-    if(remain<0){
-        remain=0;
-    }
     NSString *spentString=[NSString stringWithFormat:@"%f", spent];
     NSString *remianString=[NSString stringWithFormat:@"%f", remain];
     
-    [textArray addObject:@"Spent"];
-    [textArray addObject:@"Left"];
+    [textArray addObject:@"spent"];
+    [textArray addObject:@"left"];
     [slices addObject:spentString];
     [slices addObject:remianString];
-    NSLog(@"%@", spentString);
-    NSLog(@"%@", remianString);
     NSMutableArray *trans=actualCat.transctions;
-    
-    
     for(int j=0;j<trans.count;j++){
         Transaction* t=[trans objectAtIndex:j];
         [transName addObject:t.describe];
-        NSNumber *a=t.amount;
+        //set currency
+        float amtF = [t.amount floatValue] * rate;
+        NSNumber *a= [NSNumber numberWithFloat:amtF];
         NSString *aS=[a stringValue];
         [transAmount addObject:aS];
-        [transDate addObject:t.dateString];
+        [transDate addObject:t.date];
     }
     NSString* color;
     if(spent>limit){

@@ -10,6 +10,8 @@
 #import "HomePageTableViewController.h"
 #import "UIClientConnector.h"
 #import <LocalAuthentication/LocalAuthentication.h>
+#import <FBSDKCoreKit/FBSDKCoreKit.h>
+#import <FBSDKLoginKit/FBSDKLoginKit.h>
 
 
 @interface LoginPage ()
@@ -21,6 +23,7 @@
 @property (strong, nonatomic) NSString* filepath;
 @property (strong, nonatomic) NSString* autofillUsername;
 @property (weak, nonatomic) IBOutlet UIButton *touchIDButton;
+@property (weak, nonatomic) IBOutlet UIView *FacebookButtonView;
 
 @end
 
@@ -30,9 +33,10 @@
     [super viewDidLoad];
     //hide the warning Label
     [self.warningLabel setHidden:YES];
-    
     self.loginController = UIClientConnector.myClient.login;
     UIClientConnector.myClient.login.delegate = self;
+    
+    
     //set up property list path
     // find the Documents directory
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
@@ -50,6 +54,23 @@
         self.touchIDButton.enabled = true;
         [self touchIDHelper];
     }
+    
+    // facebook login button
+    FBSDKLoginButton *FBloginButton = [[FBSDKLoginButton alloc] init];
+    // location of the login button
+    FBloginButton.center = self.FacebookButtonView.center;
+    [self.view addSubview:FBloginButton];
+    
+   
+}
+
+- (void) viewDidAppear:(BOOL)animated{
+    if ([FBSDKAccessToken currentAccessToken]) {
+        // User is logged in, do work such as go to next view controller.
+        [_loginController autoLogin:self.autofillUsername];
+
+    }
+    
 }
 
 - (void) touchIDHelper{
@@ -111,6 +132,7 @@
     [self tryLogin];
     
 }
+
 - (IBAction)exitKeyboardForEmail:(id)sender {
     //get rid of white space
     self.emailTextField.text = [self.emailTextField.text stringByTrimmingCharactersInSet:

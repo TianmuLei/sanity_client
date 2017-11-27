@@ -14,6 +14,8 @@
 @property (weak, nonatomic) IBOutlet UITextField *oldPasswordTF;
 @property (weak, nonatomic) IBOutlet UITextField *resetPasswordTF;
 @property (weak, nonatomic) IBOutlet UITextField *confirmPasswordTF;
+@property (weak, nonatomic) IBOutlet UITextField *emailTF;
+@property (weak, nonatomic) IBOutlet UITextField *verificationCodeTF;
 
 @property ChangePasswordController* controller;
 @end
@@ -56,19 +58,26 @@
 
 }
 
+#pragma mark callbacks
+- (void) ForgetPasswordSuccess{
+    [self.navigationController popToRootViewControllerAnimated:YES];
+}
+
+- (void) ForgetPasswordFailed:(NSString *)reason{
+      [self getAlerted:@"Forget Password Failed." msg:reason];
+}
+
 - (IBAction)dismissKey:(id)sender {
     [sender resignFirstResponder];
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (IBAction)submitEmail:(id)sender {
+    //call verification function
 }
-*/
+- (IBAction)submitForgetPass:(id)sender {
+#warning call controler
+    [self ForgetPasswordSuccess];
+}
+
 
 - (void) getAlerted: (NSString*) errorTitle msg:(NSString*) errorMessage {
     UIAlertController *alertController = [UIAlertController
@@ -79,11 +88,23 @@
                                actionWithTitle:@"OK"
                                style:UIAlertActionStyleDefault
                                handler:^(UIAlertAction *action){
-                                   //set all label to red
+                                   if ([errorTitle isEqualToString: @"Forget Password Failed."]){
+                                       [self.navigationController popToRootViewControllerAnimated:YES];
+                                   }
+                                   
                                }];
     [alertController addAction:okAction];
     [self presentViewController:alertController animated:YES completion:nil];
     
 }
+/*
+#pragma mark - Navigation
+
+// In a storyboard-based application, you will often want to do a little preparation before navigation
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    // Get the new view controller using [segue destinationViewController].
+    // Pass the selected object to the new view controller.
+}
+ */
 
 @end
