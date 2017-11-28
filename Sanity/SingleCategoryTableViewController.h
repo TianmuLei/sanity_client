@@ -25,6 +25,6 @@
 @property int period;
 
 - (void) setTexts:(NSArray*) textsArray slices:(NSArray*)slicesArray transactionNames:(NSArray*) names transactionAmounts:(NSArray*) amounts transactionDates:(NSArray*)dates numOfTransactions:(int) number labelColor:(NSString*) color;
-
+- (void)redirectToMaps;
 
 @end

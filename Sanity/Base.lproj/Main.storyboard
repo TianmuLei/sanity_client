@@ -1449,6 +1449,24 @@
             </objects>
             <point key="canvasLocation" x="4676" y="-452.02398800599701"/>
         </scene>
+        <!--Map View Controller-->
+        <scene sceneID="dTB-CD-AX4">
+            <objects>
+                <viewController id="Eww-bb-hRn" customClass="MapViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="gu9-DX-oE9"/>
+                        <viewControllerLayoutGuide type="bottom" id="NRZ-8L-GSp"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="oZZ-ty-28u">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Fhc-kT-wtI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4353" y="-1979"/>
+        </scene>
         <!--Single Category-->
         <scene sceneID="PiI-xL-hh3">
             <objects>
@@ -1577,6 +1595,31 @@
                                     <outlet property="nameLabel" destination="Lte-gW-QqB" id="uAh-0b-4SB"/>
                                 </connections>
                             </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ShowMapsCell" rowHeight="32" id="u8T-Nj-eca" customClass="ShowMapsCell">
+                                <rect key="frame" x="0.0" y="396" width="375" height="32"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="u8T-Nj-eca" id="ssm-Sr-bd6">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="31.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fSf-zW-K6I">
+                                            <rect key="frame" x="16" y="0.0" width="119" height="31"/>
+                                            <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="17"/>
+                                            <state key="normal" title="Show on Maps"/>
+                                            <connections>
+                                                <action selector="showMapPressed:" destination="u8T-Nj-eca" eventType="touchUpInside" id="pvh-QA-T7q"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="fSf-zW-K6I" firstAttribute="leading" secondItem="ssm-Sr-bd6" secondAttribute="leading" constant="16" id="ClS-ge-8U3"/>
+                                        <constraint firstItem="fSf-zW-K6I" firstAttribute="top" secondItem="ssm-Sr-bd6" secondAttribute="top" id="J7r-UH-H1c"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="showMapButton" destination="fSf-zW-K6I" id="Idb-YS-rWL"/>
+                                </connections>
+                            </tableViewCell>
                         </prototypes>
                         <connections>
                             <outlet property="dataSource" destination="y3W-rg-Le6" id="Bih-5h-O8c"/>
@@ -1585,6 +1628,7 @@
                     </tableView>
                     <connections>
                         <segue destination="k3y-NC-7ET" kind="show" identifier="ShowDetail" id="2bg-w6-He3"/>
+                        <segue destination="Eww-bb-hRn" kind="presentation" identifier="TransactionToMap" id="VBr-w0-a5P"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Sc5-cN-c22" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1869,8 +1913,38 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="lFc-Mm-2hI">
+                                        <rect key="frame" x="0.0" y="264" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="lFc-Mm-2hI" id="WZs-cS-ekh">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add Current Location" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NUE-GU-yGi">
+                                                    <rect key="frame" x="16" y="11" width="163" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sJi-Pn-rOH">
+                                                    <rect key="frame" x="308" y="6" width="51" height="31"/>
+                                                    <connections>
+                                                        <action selector="addLocationPressed:" destination="ciV-Dr-eMI" eventType="valueChanged" id="FkI-2U-i5m"/>
+                                                    </connections>
+                                                </switch>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="sJi-Pn-rOH" firstAttribute="top" secondItem="WZs-cS-ekh" secondAttribute="top" constant="6" id="JGc-5g-Jr4"/>
+                                                <constraint firstItem="NUE-GU-yGi" firstAttribute="leading" secondItem="WZs-cS-ekh" secondAttribute="leadingMargin" id="djk-89-aCr"/>
+                                                <constraint firstAttribute="trailing" secondItem="sJi-Pn-rOH" secondAttribute="trailing" constant="18" id="hss-zA-WoA"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="NUE-GU-yGi" secondAttribute="bottom" constant="1" id="ktz-bL-OoT"/>
+                                                <constraint firstItem="NUE-GU-yGi" firstAttribute="top" secondItem="WZs-cS-ekh" secondAttribute="topMargin" id="l0X-ti-jyK"/>
+                                                <constraint firstAttribute="bottom" secondItem="sJi-Pn-rOH" secondAttribute="bottom" constant="6.5" id="qP1-fO-JZE"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
                                     <tableViewCell autoresizesSubviews="NO" clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="65" id="218-Df-d5c">
-                                        <rect key="frame" x="0.0" y="264" width="375" height="65"/>
+                                        <rect key="frame" x="0.0" y="308" width="375" height="65"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="218-Df-d5c" id="9Gx-gN-2kV">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="64.5"/>
@@ -1912,6 +1986,7 @@
                         <outlet property="categoryTF" destination="412-xg-mAF" id="MSB-jq-7xK"/>
                         <outlet property="date" destination="ihK-7K-lm3" id="Qmq-Ja-0pB"/>
                         <outlet property="descripTF" destination="7fV-ca-BfA" id="qLq-9u-xYU"/>
+                        <outlet property="locationSwitch" destination="sJi-Pn-rOH" id="lEd-Vo-66I"/>
                         <outlet property="uploadButton" destination="MZP-a0-qJT" id="b2P-T9-LyI"/>
                     </connections>
                 </tableViewController>
@@ -2596,6 +2671,7 @@
         <image name="profileIcon" width="20" height="20"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="2bg-w6-He3"/>
         <segue reference="wcu-7Q-X3f"/>
         <segue reference="HBW-QX-a7f"/>
         <segue reference="zIu-Wk-KKc"/>
