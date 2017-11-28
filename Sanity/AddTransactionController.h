@@ -21,7 +21,7 @@
       id <AddTransactionControllerDelegate> _delegate;
 }
 @property (nonatomic,strong) id delegate;
--(void) addTransaction: (NSNumber*) amount describe:(NSString*) describe category:(NSString*) category budget:(NSString*)budget date:(NSDateComponents*) date;
+-(void) addTransaction: (NSNumber*) amount describe:(NSString*) describe category:(NSString*) category budget:(NSString*)budget date:(NSDateComponents*) date longi:(NSNumber*) longi lat:(NSNumber*)lat;
 -(void) requestBudgetAndCate;
 -(void) fail;
 -(void) success;

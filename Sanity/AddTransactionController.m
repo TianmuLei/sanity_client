@@ -11,7 +11,7 @@
 @implementation AddTransactionController
 
 
--(void) addTransaction: (NSNumber*) amount describe:(NSString*) describe category:(NSString*) category budget:(NSString*)budget date:(NSDateComponents*) date{
+-(void) addTransaction: (NSNumber*) amount describe:(NSString*) describe category:(NSString*) category budget:(NSString*)budget date:(NSDateComponents*) date longi:(NSNumber*) longi lat:(NSNumber*)lat{
     NSInteger year=date.year;
     NSInteger month=date.month;
     NSInteger day=date.day;
