@@ -413,6 +413,10 @@
             NSMutableArray* info66=(NSMutableArray*)[info6 objectForKey:@"budgetLsit"];
             NSMutableArray* info666=[self pharseHistorydata:info66];
             
+            NSDictionary*info7=[messageObject objectForKey:@"information7"];
+            NSMutableArray* info77=(NSMutableArray*)[info7 objectForKey:@"budgetLsit"];
+            NSMutableArray* info777=[self pharseHistorydata:info77];
+            
             _budgetHistoryData=[[NSMutableArray alloc]init];
             [_budgetHistoryData addObject:info111];
             [_budgetHistoryData addObject:info222];
@@ -420,6 +424,7 @@
             [_budgetHistoryData addObject:info444];
             [_budgetHistoryData addObject:info555];
             [_budgetHistoryData addObject:info666];
+             [_budgetHistoryData addObject:info777];
             
             _budgetHistoryDataDic=[[NSMutableArray alloc]init];
             [_budgetHistoryDataDic addObject:info11];
@@ -428,6 +433,7 @@
               [_budgetHistoryDataDic addObject:info44];
               [_budgetHistoryDataDic addObject:info55];
               [_budgetHistoryDataDic addObject:info66];
+             [_budgetHistoryDataDic addObject:info77];
 
 
 
@@ -584,6 +590,8 @@
                 single.dateString=[transaction objectForKey:@"date"];
                 single.budget=[transaction objectForKey:@"budgetName"];
                 single.category=[transaction objectForKey:@"categoryName"];
+                single.longi=[transaction objectForKey:@"longi"];
+                single.lat=[transaction objectForKey:@"lat"];
                 [singleC.transctions addObject:single];
                 
         }

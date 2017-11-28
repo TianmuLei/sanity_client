@@ -20,7 +20,7 @@
                          (long)year,(long)month,(long)day];
     
     //TO-Do date
-    NSDictionary *info=@{@"email":self.client.myUser.email,@"amount":amount,@"description":describe,@"budget":budget,@"category":category,@"date":dateString};
+    NSDictionary *info=@{@"email":self.client.myUser.email,@"amount":amount,@"description":describe,@"budget":budget,@"category":category,@"date":dateString,@"longi":longi,@"lat":lat};
     NSDictionary *message=@{@"function":@"addTransaction",@"information":info};
     
     [self.client sendMessage:message];

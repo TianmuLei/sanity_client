@@ -17,4 +17,6 @@
 @property (strong, atomic) NSString* budget;
 @property (strong, atomic) NSString* category;
 @property (strong, atomic) NSString* describe;
+@property (strong, atomic) NSNumber* longi;
+@property (strong, atomic) NSNumber* lat;
 @end
