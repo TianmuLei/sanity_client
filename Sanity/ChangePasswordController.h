@@ -33,6 +33,8 @@
 -(void) fail;
 -(void) forgetPassword:(NSString*)email;
 -(void) forgetChangePassword:(NSString*)email password:(NSString*)password code:(NSString*)code;
+-(void) successForget;
+-(void) failForget;
 //@property (strong, atomic)  client *client;
 
 @end

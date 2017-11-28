@@ -283,6 +283,15 @@
                [ _changePassword success];
             }
         }
+        else if ([function isEqualToString:@"forgetChangePassword"]){
+            if([status isEqualToString:@"fail"]){
+                [_changePassword failForget];
+            }
+            else{
+                [ _changePassword successForget];
+            }
+            
+        }
         else if ([function isEqualToString:@"changeUsername"]){
             if([status isEqualToString:@"fail"]){
                 

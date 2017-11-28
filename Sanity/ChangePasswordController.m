@@ -52,6 +52,32 @@
     
     
 }
+-(void) forgetPassword:(NSString*)email{
+    NSDictionary* info=@{@"email":email};
+    NSDictionary *message=@{@"function":@"forgetPassword",@"information":info};
+    [self.client sendMessage:message];
+    
+}
+
+-(void) forgetChangePassword:(NSString*)email password:(NSString*)password code:(NSString*)code{
+    
+    
+    NSString* pass1=[NSString stringWithFormat:@"%d", [self hash1:password]];
+    NSString* pass2=[NSString stringWithFormat:@"%d", [self hash2:password]];
+    NSDictionary* info=@{@"email":email,@"password1":pass1,@"password2":pass2,@"code":code};
+    NSDictionary *message=@{@"function":@"forgetChangePassword",@"information":info};
+    [self.client sendMessage:message];
+
+    
+
+}
+
+-(void) successForget{
+    [self.delegate ForgetPasswordSuccess];
+}
+-(void) failForget{
+      [self.delegate ForgetPasswordFailed:@"The verification code is not correct"];
+}
 
 -(void) success{
     
