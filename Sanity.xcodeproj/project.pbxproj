@@ -33,6 +33,7 @@
 		7C8F83491F93FB3A0053B40B /* ProfilePageController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C8F83481F93FB3A0053B40B /* ProfilePageController.m */; };
 		7C8F834C1F93FED10053B40B /* UIClientConnector.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C8F834B1F93FED10053B40B /* UIClientConnector.m */; };
 		7C8F834F1F94BEFA0053B40B /* EditBudgetController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C8F834E1F94BEFA0053B40B /* EditBudgetController.m */; };
+		7C976C4B1FC2CCA500C09E25 /* tessdata in Resources */ = {isa = PBXBuildFile; fileRef = 7C976C4A1FC2CCA500C09E25 /* tessdata */; };
 		7CA1D1EB1F897A87003631D6 /* MainController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CA1D1E81F897A87003631D6 /* MainController.m */; };
 		7CA1D1EC1F897A87003631D6 /* SignupController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CA1D1EA1F897A87003631D6 /* SignupController.m */; };
 		7CDBD2401FA57A770081C356 /* AddCategoryController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CDBD23F1FA57A770081C356 /* AddCategoryController.m */; };
@@ -89,7 +90,6 @@
 		84F4390C1F957C890040D12B /* SingleBudgetHistoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84F4390B1F957C890040D12B /* SingleBudgetHistoryViewController.m */; };
 		C0ACF45D5FDB633C6D76F84C /* libPods-Sanity.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EB1AA2A5F86FBB7BDA75AF6F /* libPods-Sanity.a */; };
 		CC12775C1FC0F9DB004C6567 /* EditTransaction.m in Sources */ = {isa = PBXBuildFile; fileRef = CC12775B1FC0F9DB004C6567 /* EditTransaction.m */; };
-		CC1277BF1FC2C05A004C6567 /* tessdata in Resources */ = {isa = PBXBuildFile; fileRef = CC1277BE1FC2C05A004C6567 /* tessdata */; };
 		CC2D17E11F91AFBE0052613D /* ProfilePage.m in Sources */ = {isa = PBXBuildFile; fileRef = CC2D17E01F91AFBE0052613D /* ProfilePage.m */; };
 		CC2D17E41F91C2AF0052613D /* AddBudgetPage.m in Sources */ = {isa = PBXBuildFile; fileRef = CC2D17E31F91C2AF0052613D /* AddBudgetPage.m */; };
 		CC61DB9C1FA7C3BF009621A0 /* ViewTransactions.m in Sources */ = {isa = PBXBuildFile; fileRef = CC61DB9B1FA7C3BF009621A0 /* ViewTransactions.m */; };
@@ -187,6 +187,7 @@
 		7C8F834B1F93FED10053B40B /* UIClientConnector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIClientConnector.m; sourceTree = "<group>"; };
 		7C8F834D1F94BEFA0053B40B /* EditBudgetController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditBudgetController.h; sourceTree = "<group>"; };
 		7C8F834E1F94BEFA0053B40B /* EditBudgetController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditBudgetController.m; sourceTree = "<group>"; };
+		7C976C4A1FC2CCA500C09E25 /* tessdata */ = {isa = PBXFileReference; lastKnownFileType = folder; name = tessdata; path = ../../../../Downloads/tessdata; sourceTree = "<group>"; };
 		7CA1D1E71F897A87003631D6 /* MainController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainController.h; sourceTree = "<group>"; };
 		7CA1D1E81F897A87003631D6 /* MainController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainController.m; sourceTree = "<group>"; };
 		7CA1D1E91F897A87003631D6 /* SignupController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignupController.h; sourceTree = "<group>"; };
@@ -337,7 +338,6 @@
 		84F4390B1F957C890040D12B /* SingleBudgetHistoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SingleBudgetHistoryViewController.m; sourceTree = "<group>"; };
 		CC12775A1FC0F9DB004C6567 /* EditTransaction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditTransaction.h; sourceTree = "<group>"; };
 		CC12775B1FC0F9DB004C6567 /* EditTransaction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditTransaction.m; sourceTree = "<group>"; };
-		CC1277BE1FC2C05A004C6567 /* tessdata */ = {isa = PBXFileReference; lastKnownFileType = folder; name = tessdata; path = ../../../../../../Downloads/tessdata; sourceTree = "<group>"; };
 		CC2D17DF1F91AFBE0052613D /* ProfilePage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfilePage.h; sourceTree = "<group>"; };
 		CC2D17E01F91AFBE0052613D /* ProfilePage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfilePage.m; sourceTree = "<group>"; };
 		CC2D17E21F91C2AF0052613D /* AddBudgetPage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddBudgetPage.h; sourceTree = "<group>"; };
@@ -492,6 +492,7 @@
 		7C2D9DF71F875EFD00027681 /* Sanity */ = {
 			isa = PBXGroup;
 			children = (
+				7C976C4A1FC2CCA500C09E25 /* tessdata */,
 				8446FEA41FC297CE001ED3E4 /* OCR */,
 				7C19917A1F91C6000039701C /* Controller */,
 				CC15B38E1F87675800764940 /* View */,
@@ -691,7 +692,6 @@
 		8446FEA41FC297CE001ED3E4 /* OCR */ = {
 			isa = PBXGroup;
 			children = (
-				CC1277BE1FC2C05A004C6567 /* tessdata */,
 				8446FE311FC29750001ED3E4 /* en.lproj */,
 				8446FE341FC29750001ED3E4 /* G8Constants.h */,
 				8446FE351FC29750001ED3E4 /* G8RecognitionOperation.h */,
@@ -917,7 +917,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				8446FEA21FC29750001ED3E4 /* TesseractOCR-Info.plist in Resources */,
-				CC1277BF1FC2C05A004C6567 /* tessdata in Resources */,
 				8446FEA01FC29750001ED3E4 /* parametersConstantsGenerator.py in Resources */,
 				8446FED21FC2A77F001ED3E4 /* image_sample.jpg in Resources */,
 				CC673EF91F946ACA000CE0B6 /* CategoryDisplay.xib in Resources */,
@@ -925,6 +924,7 @@
 				7C2D9E081F875EFD00027681 /* LaunchScreen.storyboard in Resources */,
 				8446FEA71FC29E10001ED3E4 /* image_sample4.jpg in Resources */,
 				CC673EF01F9357F7000CE0B6 /* HobbyCell.xib in Resources */,
+				7C976C4B1FC2CCA500C09E25 /* tessdata in Resources */,
 				8446FEA81FC29E10001ED3E4 /* image_sample5.jpg in Resources */,
 				7C2D9E051F875EFD00027681 /* Assets.xcassets in Resources */,
 				843599C11F91DB39002372E9 /* Base.lproj in Resources */,
