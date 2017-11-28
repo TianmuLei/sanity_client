@@ -108,7 +108,6 @@
 		CC8D32151F952BF700FE0704 /* ResetPasswordPage.m in Sources */ = {isa = PBXBuildFile; fileRef = CC8D32141F952BF700FE0704 /* ResetPasswordPage.m */; };
 		CC8D32181F9558CC00FE0704 /* AddCategoryPage.m in Sources */ = {isa = PBXBuildFile; fileRef = CC8D32171F9558CC00FE0704 /* AddCategoryPage.m */; };
 		CCB2DFB51F9526E600503F0D /* ResetUsernamePage.m in Sources */ = {isa = PBXBuildFile; fileRef = CCB2DFB41F9526E600503F0D /* ResetUsernamePage.m */; };
-		CCCE0E8E1FCD1B050091E8B8 /* tessdata in Resources */ = {isa = PBXBuildFile; fileRef = CCCE0E8D1FCD1B050091E8B8 /* tessdata */; };
 		CCD859A41FCA311200A121B2 /* Currency.m in Sources */ = {isa = PBXBuildFile; fileRef = CCD859A31FCA311200A121B2 /* Currency.m */; };
 		CCF0CE9E1FA6DD3A00FE4C45 /* SanityUIAddCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = CCF0CE9D1FA6DD3A00FE4C45 /* SanityUIAddCategory.m */; };
 		CCF0CE9F1FA6DF0000FE4C45 /* HomeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8457BF1D1F93363A0028166A /* HomeTableViewCell.m */; };
@@ -374,7 +373,6 @@
 		CC8D321A1F95813200FE0704 /* Sanity.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Sanity.entitlements; sourceTree = "<group>"; };
 		CCB2DFB31F9526E600503F0D /* ResetUsernamePage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResetUsernamePage.h; sourceTree = "<group>"; };
 		CCB2DFB41F9526E600503F0D /* ResetUsernamePage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResetUsernamePage.m; sourceTree = "<group>"; };
-		CCCE0E8D1FCD1B050091E8B8 /* tessdata */ = {isa = PBXFileReference; lastKnownFileType = folder; name = tessdata; path = ../../../../../../Downloads/tessdata; sourceTree = "<group>"; };
 		CCD859A21FCA311200A121B2 /* Currency.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Currency.h; sourceTree = "<group>"; };
 		CCD859A31FCA311200A121B2 /* Currency.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Currency.m; sourceTree = "<group>"; };
 		CCF0CE9D1FA6DD3A00FE4C45 /* SanityUIAddCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SanityUIAddCategory.m; sourceTree = "<group>"; };
@@ -515,7 +513,6 @@
 		7C2D9DF71F875EFD00027681 /* Sanity */ = {
 			isa = PBXGroup;
 			children = (
-				CCCE0E8D1FCD1B050091E8B8 /* tessdata */,
 				CCD859A11FCA306A00A121B2 /* Model */,
 				8446FEA41FC297CE001ED3E4 /* OCR */,
 				7C19917A1F91C6000039701C /* Controller */,
@@ -950,7 +947,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				8446FEA21FC29750001ED3E4 /* TesseractOCR-Info.plist in Resources */,
-				CCCE0E8E1FCD1B050091E8B8 /* tessdata in Resources */,
 				8446FEA01FC29750001ED3E4 /* parametersConstantsGenerator.py in Resources */,
 				8446FED21FC2A77F001ED3E4 /* image_sample.jpg in Resources */,
 				CC673EF91F946ACA000CE0B6 /* CategoryDisplay.xib in Resources */,
