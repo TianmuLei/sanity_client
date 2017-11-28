@@ -10,10 +10,11 @@
 #import "XYPieChart.h"
 #import "SingleCategoryTableViewController.h"
 #import "UIClientConnector.h"
-
+#import "Currency.h"
 @interface PieChartCategoryViewController ()
 @property (weak, nonatomic) IBOutlet XYPieChart *PieChartDisplay;
 @property (weak, nonatomic) IBOutlet UILabel *detailLabel;
+@property (strong, nonatomic) Currency* sharedModel;
 
 @end
 
@@ -51,7 +52,8 @@
     #warning to be uncommented
         [self.controller requestCategory:self.budgetName category:self.pageTitle period:self.period];
     }
-    
+    //set up shared model
+    _sharedModel = [Currency sharedModel];
     /*
     //for testing purposers
     self.texts =  @[@"used",@"unused"];

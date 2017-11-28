@@ -109,10 +109,16 @@
 		CC8D32151F952BF700FE0704 /* ResetPasswordPage.m in Sources */ = {isa = PBXBuildFile; fileRef = CC8D32141F952BF700FE0704 /* ResetPasswordPage.m */; };
 		CC8D32181F9558CC00FE0704 /* AddCategoryPage.m in Sources */ = {isa = PBXBuildFile; fileRef = CC8D32171F9558CC00FE0704 /* AddCategoryPage.m */; };
 		CCB2DFB51F9526E600503F0D /* ResetUsernamePage.m in Sources */ = {isa = PBXBuildFile; fileRef = CCB2DFB41F9526E600503F0D /* ResetUsernamePage.m */; };
+		CCD859A41FCA311200A121B2 /* Currency.m in Sources */ = {isa = PBXBuildFile; fileRef = CCD859A31FCA311200A121B2 /* Currency.m */; };
 		CCF0CE9E1FA6DD3A00FE4C45 /* SanityUIAddCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = CCF0CE9D1FA6DD3A00FE4C45 /* SanityUIAddCategory.m */; };
 		CCF0CE9F1FA6DF0000FE4C45 /* HomeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8457BF1D1F93363A0028166A /* HomeTableViewCell.m */; };
 		CCF7954F1FA6F6020040BCE1 /* SanityUIAddTransaction.m in Sources */ = {isa = PBXBuildFile; fileRef = CCF7954E1FA6F6020040BCE1 /* SanityUIAddTransaction.m */; };
 		CCF795511FA79E280040BCE1 /* AddDuplicateTransaction.m in Sources */ = {isa = PBXBuildFile; fileRef = CCF795501FA79E280040BCE1 /* AddDuplicateTransaction.m */; };
+		CCF959191FCBDC6E0039D112 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CCF959141FCBDC6C0039D112 /* Bolts.framework */; };
+		CCF9591A1FCBDC6F0039D112 /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CCF959151FCBDC6C0039D112 /* FBSDKShareKit.framework */; };
+		CCF9591B1FCBDC6F0039D112 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CCF959161FCBDC6C0039D112 /* FBSDKLoginKit.framework */; };
+		CCF9591C1FCBDC6F0039D112 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CCF959171FCBDC6D0039D112 /* FBSDKCoreKit.framework */; };
+		CCF9591D1FCBDC6F0039D112 /* AccountKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CCF959181FCBDC6E0039D112 /* AccountKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -369,9 +375,16 @@
 		CC8D321A1F95813200FE0704 /* Sanity.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Sanity.entitlements; sourceTree = "<group>"; };
 		CCB2DFB31F9526E600503F0D /* ResetUsernamePage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResetUsernamePage.h; sourceTree = "<group>"; };
 		CCB2DFB41F9526E600503F0D /* ResetUsernamePage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResetUsernamePage.m; sourceTree = "<group>"; };
+		CCD859A21FCA311200A121B2 /* Currency.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Currency.h; sourceTree = "<group>"; };
+		CCD859A31FCA311200A121B2 /* Currency.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Currency.m; sourceTree = "<group>"; };
 		CCF0CE9D1FA6DD3A00FE4C45 /* SanityUIAddCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SanityUIAddCategory.m; sourceTree = "<group>"; };
 		CCF7954E1FA6F6020040BCE1 /* SanityUIAddTransaction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SanityUIAddTransaction.m; sourceTree = "<group>"; };
 		CCF795501FA79E280040BCE1 /* AddDuplicateTransaction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddDuplicateTransaction.m; sourceTree = "<group>"; };
+		CCF959141FCBDC6C0039D112 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
+		CCF959151FCBDC6C0039D112 /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKShareKit.framework; sourceTree = "<group>"; };
+		CCF959161FCBDC6C0039D112 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
+		CCF959171FCBDC6D0039D112 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
+		CCF959181FCBDC6E0039D112 /* AccountKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AccountKit.framework; sourceTree = "<group>"; };
 		EB1AA2A5F86FBB7BDA75AF6F /* libPods-Sanity.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Sanity.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -382,15 +395,20 @@
 			files = (
 				8446FE0A1FC2938F001ED3E4 /* libz.tbd in Frameworks */,
 				843599C61F91DBEA002372E9 /* CoreGraphics.framework in Frameworks */,
+				CCF9591B1FCBDC6F0039D112 /* FBSDKLoginKit.framework in Frameworks */,
 				8446FE9B1FC29750001ED3E4 /* liblept.a in Frameworks */,
 				8446FDE21FC28379001ED3E4 /* CoreImage.framework in Frameworks */,
 				843599CC1F91DBFD002372E9 /* QuartzCore.framework in Frameworks */,
 				8446FE9C1FC29750001ED3E4 /* libpng.a in Frameworks */,
 				843599CA1F91DBF6002372E9 /* UIKit.framework in Frameworks */,
+				CCF959191FCBDC6E0039D112 /* Bolts.framework in Frameworks */,
 				8446FE9A1FC29750001ED3E4 /* libjpeg.a in Frameworks */,
 				8446FE9E1FC29750001ED3E4 /* libtiff.a in Frameworks */,
+				CCF9591A1FCBDC6F0039D112 /* FBSDKShareKit.framework in Frameworks */,
 				843599C81F91DBF1002372E9 /* Foundation.framework in Frameworks */,
+				CCF9591C1FCBDC6F0039D112 /* FBSDKCoreKit.framework in Frameworks */,
 				8446FE9D1FC29750001ED3E4 /* libtesseract.a in Frameworks */,
+				CCF9591D1FCBDC6F0039D112 /* AccountKit.framework in Frameworks */,
 				C0ACF45D5FDB633C6D76F84C /* libPods-Sanity.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -415,6 +433,11 @@
 		4A6FEE003D3905322FAA0D4B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				CCF959181FCBDC6E0039D112 /* AccountKit.framework */,
+				CCF959141FCBDC6C0039D112 /* Bolts.framework */,
+				CCF959171FCBDC6D0039D112 /* FBSDKCoreKit.framework */,
+				CCF959161FCBDC6C0039D112 /* FBSDKLoginKit.framework */,
+				CCF959151FCBDC6C0039D112 /* FBSDKShareKit.framework */,
 				8446FE091FC2938F001ED3E4 /* libz.tbd */,
 				8446FDE11FC28379001ED3E4 /* CoreImage.framework */,
 				843599CB1F91DBFD002372E9 /* QuartzCore.framework */,
@@ -493,6 +516,7 @@
 			isa = PBXGroup;
 			children = (
 				7C976C4A1FC2CCA500C09E25 /* tessdata */,
+				CCD859A11FCA306A00A121B2 /* Model */,
 				8446FEA41FC297CE001ED3E4 /* OCR */,
 				7C19917A1F91C6000039701C /* Controller */,
 				CC15B38E1F87675800764940 /* View */,
@@ -802,6 +826,15 @@
 			name = Cells;
 			sourceTree = "<group>";
 		};
+		CCD859A11FCA306A00A121B2 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				CCD859A21FCA311200A121B2 /* Currency.h */,
+				CCD859A31FCA311200A121B2 /* Currency.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1028,6 +1061,7 @@
 				7C703F2C1F8AC1EB00B5D982 /* Category.m in Sources */,
 				8434BE0A1F91FF2200A4BDC7 /* SignupPage.m in Sources */,
 				7C252C661F97275000DCD981 /* ChangeUsernameController.m in Sources */,
+				CCD859A41FCA311200A121B2 /* Currency.m in Sources */,
 				CC673EFF1F94C372000CE0B6 /* AddTransactionPage.m in Sources */,
 				CC12775C1FC0F9DB004C6567 /* EditTransaction.m in Sources */,
 				7C2D9E2D1F875FA200027681 /* client.m in Sources */,
@@ -1239,6 +1273,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Sanity/Sanity.entitlements;
 				DEVELOPMENT_TEAM = "";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = Sanity/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
@@ -1257,6 +1295,11 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Sanity/Sanity.entitlements;
 				DEVELOPMENT_TEAM = "";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				"FRAMEWORK_SEARCH_PATHS[arch=*]" = " ~/Documents/FacebookSDK ";
 				INFOPLIST_FILE = Sanity/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (

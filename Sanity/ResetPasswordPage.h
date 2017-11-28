@@ -16,5 +16,9 @@
 
 - (void)resetPasswordFailed;
 
+- (void)ForgetPasswordSuccess;
+//give me a reason for success or not
+- (void)ForgetPasswordFailed:(NSString*) reason;
+
 
 @end

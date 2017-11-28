@@ -9,10 +9,14 @@
 #import "BudgetListController.h"
 #include "Category.h"
 #include "Budget.h"
+#include "Currency.h"
+
 
 @implementation BudgetListController
 
+
 -(void) requestBudgetList{
+   
     NSMutableArray* budgetList=self.client.budgetListDataDic;
     NSMutableArray *name = [[NSMutableArray alloc]init];
     NSMutableArray *amount = [[NSMutableArray alloc]init];
@@ -22,7 +26,16 @@
         [name addObject:[budget objectForKey:@"name"]];
         NSNumber* spent=[budget objectForKey:@"budgetSpent"];
         NSNumber* total=[budget objectForKey:@"budgetTotal"];
-        NSString* amountString= [NSString stringWithFormat:@"%@/%@",spent,total];
+        
+        //set currency
+        Currency* dataModel;
+        dataModel = [Currency sharedModel];
+        float rate = [dataModel convertFrom:@"USD" To:dataModel.currCurrency];
+        float spentf = [spent floatValue] * rate;
+        float totalf = [total floatValue] * rate;
+        
+        
+        NSString* amountString= [NSString stringWithFormat:@"%.02f/%.02f",spentf,totalf];
         [amount addObject:amountString];
         
         if(spent>total){
@@ -49,23 +62,29 @@
     Budget* single=[self.client getBudget:name];
     NSMutableArray *name1 = [[NSMutableArray alloc]init];
     NSMutableArray *amount = [[NSMutableArray alloc]init];
+    
+    //set currency
+    Currency* dataModel;
+    dataModel = [Currency sharedModel];
+    float rate = [dataModel convertFrom:@"USD" To:dataModel.currCurrency];
+   
     for(int j=0;j<single.categories.count;j++){
         Category* cat=  [single.categories objectAtIndex:j];
         NSString* Catname=cat.name;
-        double Catspent=cat.spent;
-        double Cattotal=cat.limit;
-        NSString* amountString= [NSString stringWithFormat:@"%f/%f",Catspent,Cattotal];
+        double Catspent=cat.spent * rate;
+        double Cattotal=cat.limit * rate;
+        NSString* amountString= [NSString stringWithFormat:@"%.02f/%.02f",Catspent,Cattotal];
         [amount addObject:amountString];
         [name1 addObject:Catname];
         
     }
     
-    float remainMoney=single.total-single.spent;
+    float remainMoney= (single.total-single.spent) * rate;
     int ramainDay=single.remainNew;
     int period=single.period;
     NSString* info = [NSString stringWithFormat:@"Remaining: $%0.02f, Days Left: %i, Period: %i",remainMoney,ramainDay,period];
     
-    NSLog(@"%i", ramainDay);
+    NSLog(@"remainDays %i", ramainDay);
     NSLog(@"%@", name1);
      NSLog(@"%@", amount);
     [self.delegate setTexts:name1 slices:amount];
