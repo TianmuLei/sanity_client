@@ -71,10 +71,11 @@
     [sender resignFirstResponder];
 }
 - (IBAction)submitEmail:(id)sender {
-    //call verification function
+    [self.controller forgetPassword:self.emailTF.text];
 }
 - (IBAction)submitForgetPass:(id)sender {
 #warning call controler
+    [self.controller forgetChangePassword:self.verificationCodeTF.text password:self.resetPasswordTF.text];
     [self ForgetPasswordSuccess];
 }
 
