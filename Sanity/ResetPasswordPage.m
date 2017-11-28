@@ -25,6 +25,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    _controller = UIClientConnector.myClient.changePassword;
+    UIClientConnector.myClient.changePassword.delegate = self;
     // Do any additional setup after loading the view.
 }
 
@@ -51,8 +53,7 @@
     }
     else {
     //call controller and update information
-        _controller = UIClientConnector.myClient.changePassword;
-        UIClientConnector.myClient.changePassword.delegate = self;
+  
         [_controller changePassword:_oldPasswordTF.text newPassword:_resetPasswordTF.text];
 
     }
