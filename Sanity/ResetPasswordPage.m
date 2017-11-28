@@ -16,6 +16,7 @@
 @property (weak, nonatomic) IBOutlet UITextField *confirmPasswordTF;
 @property (weak, nonatomic) IBOutlet UITextField *emailTF;
 @property (weak, nonatomic) IBOutlet UITextField *verificationCodeTF;
+@property NSString* email;
 
 @property ChangePasswordController* controller;
 @end
@@ -71,11 +72,19 @@
     [sender resignFirstResponder];
 }
 - (IBAction)submitEmail:(id)sender {
-    //call verification function
+    self.email = self.emailTF.text;
+    [self.controller forgetPassword:self.emailTF.text];
+    [self performSegueWithIdentifier:@"forgetToVerify" sender:sender];
+   // forgetToVerify
 }
 - (IBAction)submitForgetPass:(id)sender {
 #warning call controler
-    [self ForgetPasswordSuccess];
+    if (![self.resetPasswordTF.text isEqualToString:self.confirmPasswordTF.text]){
+        [self getAlerted:@"Passwords don't match!" msg:@":("];
+    }
+    else {
+        [self.controller forgetChangePassword:self.email password:self.resetPasswordTF.text code:self.verificationCodeTF.text];
+    }
 }
 
 
@@ -97,14 +106,18 @@
     [self presentViewController:alertController animated:YES completion:nil];
     
 }
-/*
+
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
+      if ([segue.identifier isEqualToString:@"forgetToVerify"]) {
+          ResetPasswordPage *forgetPass = segue.destinationViewController;
+          forgetPass.email = self.emailTF.text;
+      }
 }
- */
+ 
 
 @end

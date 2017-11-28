@@ -2468,7 +2468,6 @@
                                 </state>
                                 <connections>
                                     <action selector="submitEmail:" destination="hVw-OH-Pzp" eventType="touchUpInside" id="9xf-YW-Cld"/>
-                                    <segue destination="G2Q-t8-Zxo" kind="show" id="vak-oI-hmU"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="We will send you a code for verification :D" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dmV-bq-tEz">
@@ -2493,6 +2492,7 @@
                     </view>
                     <connections>
                         <outlet property="emailTF" destination="1hq-an-aBB" id="Rwq-xk-vwB"/>
+                        <segue destination="G2Q-t8-Zxo" kind="show" identifier="forgetToVerify" id="LTh-rW-SFS"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YLc-zw-YRJ" userLabel="First Responder" sceneMemberID="firstResponder"/>

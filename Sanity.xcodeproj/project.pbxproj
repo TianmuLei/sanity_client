@@ -33,7 +33,6 @@
 		7C8F83491F93FB3A0053B40B /* ProfilePageController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C8F83481F93FB3A0053B40B /* ProfilePageController.m */; };
 		7C8F834C1F93FED10053B40B /* UIClientConnector.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C8F834B1F93FED10053B40B /* UIClientConnector.m */; };
 		7C8F834F1F94BEFA0053B40B /* EditBudgetController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C8F834E1F94BEFA0053B40B /* EditBudgetController.m */; };
-		7C976C4B1FC2CCA500C09E25 /* tessdata in Resources */ = {isa = PBXBuildFile; fileRef = 7C976C4A1FC2CCA500C09E25 /* tessdata */; };
 		7CA1D1EB1F897A87003631D6 /* MainController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CA1D1E81F897A87003631D6 /* MainController.m */; };
 		7CA1D1EC1F897A87003631D6 /* SignupController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CA1D1EA1F897A87003631D6 /* SignupController.m */; };
 		7CDBD2401FA57A770081C356 /* AddCategoryController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CDBD23F1FA57A770081C356 /* AddCategoryController.m */; };
@@ -109,6 +108,7 @@
 		CC8D32151F952BF700FE0704 /* ResetPasswordPage.m in Sources */ = {isa = PBXBuildFile; fileRef = CC8D32141F952BF700FE0704 /* ResetPasswordPage.m */; };
 		CC8D32181F9558CC00FE0704 /* AddCategoryPage.m in Sources */ = {isa = PBXBuildFile; fileRef = CC8D32171F9558CC00FE0704 /* AddCategoryPage.m */; };
 		CCB2DFB51F9526E600503F0D /* ResetUsernamePage.m in Sources */ = {isa = PBXBuildFile; fileRef = CCB2DFB41F9526E600503F0D /* ResetUsernamePage.m */; };
+		CCCE0E8E1FCD1B050091E8B8 /* tessdata in Resources */ = {isa = PBXBuildFile; fileRef = CCCE0E8D1FCD1B050091E8B8 /* tessdata */; };
 		CCD859A41FCA311200A121B2 /* Currency.m in Sources */ = {isa = PBXBuildFile; fileRef = CCD859A31FCA311200A121B2 /* Currency.m */; };
 		CCF0CE9E1FA6DD3A00FE4C45 /* SanityUIAddCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = CCF0CE9D1FA6DD3A00FE4C45 /* SanityUIAddCategory.m */; };
 		CCF0CE9F1FA6DF0000FE4C45 /* HomeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8457BF1D1F93363A0028166A /* HomeTableViewCell.m */; };
@@ -193,7 +193,6 @@
 		7C8F834B1F93FED10053B40B /* UIClientConnector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIClientConnector.m; sourceTree = "<group>"; };
 		7C8F834D1F94BEFA0053B40B /* EditBudgetController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditBudgetController.h; sourceTree = "<group>"; };
 		7C8F834E1F94BEFA0053B40B /* EditBudgetController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditBudgetController.m; sourceTree = "<group>"; };
-		7C976C4A1FC2CCA500C09E25 /* tessdata */ = {isa = PBXFileReference; lastKnownFileType = folder; name = tessdata; path = ../../../../Downloads/tessdata; sourceTree = "<group>"; };
 		7CA1D1E71F897A87003631D6 /* MainController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainController.h; sourceTree = "<group>"; };
 		7CA1D1E81F897A87003631D6 /* MainController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainController.m; sourceTree = "<group>"; };
 		7CA1D1E91F897A87003631D6 /* SignupController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignupController.h; sourceTree = "<group>"; };
@@ -375,6 +374,7 @@
 		CC8D321A1F95813200FE0704 /* Sanity.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Sanity.entitlements; sourceTree = "<group>"; };
 		CCB2DFB31F9526E600503F0D /* ResetUsernamePage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResetUsernamePage.h; sourceTree = "<group>"; };
 		CCB2DFB41F9526E600503F0D /* ResetUsernamePage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResetUsernamePage.m; sourceTree = "<group>"; };
+		CCCE0E8D1FCD1B050091E8B8 /* tessdata */ = {isa = PBXFileReference; lastKnownFileType = folder; name = tessdata; path = ../../../../../../Downloads/tessdata; sourceTree = "<group>"; };
 		CCD859A21FCA311200A121B2 /* Currency.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Currency.h; sourceTree = "<group>"; };
 		CCD859A31FCA311200A121B2 /* Currency.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Currency.m; sourceTree = "<group>"; };
 		CCF0CE9D1FA6DD3A00FE4C45 /* SanityUIAddCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SanityUIAddCategory.m; sourceTree = "<group>"; };
@@ -515,7 +515,7 @@
 		7C2D9DF71F875EFD00027681 /* Sanity */ = {
 			isa = PBXGroup;
 			children = (
-				7C976C4A1FC2CCA500C09E25 /* tessdata */,
+				CCCE0E8D1FCD1B050091E8B8 /* tessdata */,
 				CCD859A11FCA306A00A121B2 /* Model */,
 				8446FEA41FC297CE001ED3E4 /* OCR */,
 				7C19917A1F91C6000039701C /* Controller */,
@@ -950,6 +950,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8446FEA21FC29750001ED3E4 /* TesseractOCR-Info.plist in Resources */,
+				CCCE0E8E1FCD1B050091E8B8 /* tessdata in Resources */,
 				8446FEA01FC29750001ED3E4 /* parametersConstantsGenerator.py in Resources */,
 				8446FED21FC2A77F001ED3E4 /* image_sample.jpg in Resources */,
 				CC673EF91F946ACA000CE0B6 /* CategoryDisplay.xib in Resources */,
@@ -957,7 +958,6 @@
 				7C2D9E081F875EFD00027681 /* LaunchScreen.storyboard in Resources */,
 				8446FEA71FC29E10001ED3E4 /* image_sample4.jpg in Resources */,
 				CC673EF01F9357F7000CE0B6 /* HobbyCell.xib in Resources */,
-				7C976C4B1FC2CCA500C09E25 /* tessdata in Resources */,
 				8446FEA81FC29E10001ED3E4 /* image_sample5.jpg in Resources */,
 				7C2D9E051F875EFD00027681 /* Assets.xcassets in Resources */,
 				843599C11F91DB39002372E9 /* Base.lproj in Resources */,
