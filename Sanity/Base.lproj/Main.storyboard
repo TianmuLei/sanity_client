@@ -1595,11 +1595,11 @@
                                     <outlet property="nameLabel" destination="Lte-gW-QqB" id="uAh-0b-4SB"/>
                                 </connections>
                             </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ShowMapsCell" rowHeight="31" id="u8T-Nj-eca" customClass="ShowMapsCell">
-                                <rect key="frame" x="0.0" y="396" width="375" height="31"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ShowMapsCell" rowHeight="32" id="u8T-Nj-eca" customClass="ShowMapsCell">
+                                <rect key="frame" x="0.0" y="396" width="375" height="32"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="u8T-Nj-eca" id="ssm-Sr-bd6">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="30.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="31.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fSf-zW-K6I">

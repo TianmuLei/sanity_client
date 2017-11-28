@@ -179,12 +179,12 @@
         return cell;
     }else{//set up transactions
         TransactionCell *cell = [tableView dequeueReusableCellWithIdentifier:@"SingleCategoryTransactionCell" forIndexPath:indexPath];
-        cell.nameLabel.text = [self.transactions[indexPath.row-1] describe];
-        NSNumber * amtStr = [self.transactions[indexPath.row-1] amount];
+        cell.nameLabel.text = [self.transactions[indexPath.row-2] describe];
+        NSNumber * amtStr = [self.transactions[indexPath.row-2] amount];
         float amt = [amtStr floatValue];
         NSString * amt2Decimal = [[NSString alloc] initWithFormat:@"%0.02f",amt];
         cell.amountLabel.text = amt2Decimal;
-        cell.dateLabel.text = [self.transactions[indexPath.row-1] dateString];
+        cell.dateLabel.text = [self.transactions[indexPath.row-2] dateString];
         return cell;
     }
     
@@ -204,13 +204,13 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSNumber * amtStr = [self.transactions[indexPath.row-1] amount];
+    NSNumber * amtStr = [self.transactions[indexPath.row-2] amount];
     float amt = [amtStr floatValue];
     NSString * amt2Decimal = [[NSString alloc] initWithFormat:@"%0.02f",amt];
     
     self.oldAmount = amt2Decimal;
-    self.oldDate = [self.transactions[indexPath.row-1] dateString];
-    self.oldTransname =  [self.transactions[indexPath.row-1] describe];
+    self.oldDate = [self.transactions[indexPath.row-2] dateString];
+    self.oldTransname =  [self.transactions[indexPath.row-2] describe];
     
     [self performSegueWithIdentifier:@"ShowDetail" sender:tableView];
 }
