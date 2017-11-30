@@ -11,6 +11,8 @@
 #import "SingleCategoryTableViewController.h"
 #import "UIClientConnector.h"
 #import "Currency.h"
+#import "MapViewController.h"
+
 @interface PieChartCategoryViewController ()
 @property (weak, nonatomic) IBOutlet XYPieChart *PieChartDisplay;
 @property (weak, nonatomic) IBOutlet UILabel *detailLabel;
@@ -114,6 +116,14 @@
         destViewController.categoryName = self.pageTitle;
         destViewController.longtitude = self.longtitude;
         destViewController.latitude = self.latitude;
+    }else if ([segue.identifier isEqualToString:@"TransactionToMap"]){
+        UINavigationController *navController = [segue destinationViewController];
+        MapViewController * view = (MapViewController *)([navController viewControllers][0]);
+        view.longtitude = self.longtitude;
+        view.latitude = self.latitude;
+        view.transactionDates = self.transactionDates;
+        view.transactionAmounts = self.transactionAmounts;
+        view.transactionNames = self.transactionNames;
     }
 }
 
