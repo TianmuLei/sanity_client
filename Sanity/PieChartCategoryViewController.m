@@ -28,6 +28,8 @@
     self.transactionNames = [[NSMutableArray alloc] init];
     self.transactionAmounts = [[NSMutableArray alloc] init];
     self.transactionDates = [[NSMutableArray alloc] init];
+    self.longtitude =  [[NSMutableArray alloc] init];
+    self.latitude =  [[NSMutableArray alloc] init];
     
     //set up page title
     self.navigationItem.title = self.pageTitle;
@@ -110,6 +112,8 @@
         destViewController.period = self.period;
         destViewController.budgetName = self.budgetName;
         destViewController.categoryName = self.pageTitle;
+        destViewController.longtitude = self.longtitude;
+        destViewController.latitude = self.latitude;
     }
 }
 
@@ -130,7 +134,7 @@
 }
 
 //call back function for delegate
-- (void) setTexts:(NSMutableArray *) textsArray slices:(NSMutableArray *)slicesArray transactionNames:(NSMutableArray *) names transactionAmounts:(NSMutableArray *) amounts transactionDates:(NSMutableArray *)dates numOfTransactions:(int) number labelColor:(NSString*) color
+- (void) setTexts:(NSMutableArray *) textsArray slices:(NSMutableArray *)slicesArray transactionNames:(NSMutableArray *) names transactionAmounts:(NSMutableArray *) amounts transactionDates:(NSMutableArray *)dates numOfTransactions:(int) number labelColor:(NSString*)color longtitude:(NSMutableArray *)longtitudeArray latitude:(NSMutableArray *)latitudeArray
 {
     self.texts = textsArray;
     self.slices = slicesArray;
@@ -139,6 +143,9 @@
     self.transactionDates = dates;
     self.numOfTransactions = number;
     self.pieChartLabelColor = color;
+    self.longtitude = longtitudeArray;
+    self.latitude = latitudeArray;
+    
     if([color isEqualToString:@"red"])
     {
         self.detailLabel.textColor = [UIColor redColor];

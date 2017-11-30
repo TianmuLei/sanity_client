@@ -23,6 +23,8 @@
 @property (nonatomic, strong) NSString * pieChartLabelColor;
 @property (nonatomic, strong) NSString * pageTitle;
 @property int period;
+@property (nonatomic, strong) NSMutableArray *longtitude;
+@property (nonatomic, strong) NSMutableArray *latitude;
 
 - (void) setTexts:(NSArray*) textsArray slices:(NSArray*)slicesArray transactionNames:(NSArray*) names transactionAmounts:(NSArray*) amounts transactionDates:(NSArray*)dates numOfTransactions:(int) number labelColor:(NSString*) color;
 - (void)redirectToMaps;

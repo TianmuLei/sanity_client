@@ -11,13 +11,11 @@
 
 @interface MapViewController ()<GMSMapViewDelegate>
 
-@property (strong, nonatomic) CLLocationManager *locationManager;
 @property (strong, nonatomic) NSMutableArray * markerArray;
 @property (strong, nonatomic) NSMutableArray * dataArray;
 @property int markerCount;
 @property int markerIndexSelected;
-@property float latitude;
-@property float longitude;
+
 
 @end
 
@@ -31,85 +29,56 @@
     self.dataArray = [[NSMutableArray alloc] init];
     self.markerCount = 0;
     
-    //set up locationManager and get current location
-    self.locationManager = [[CLLocationManager alloc] init];
-    self.locationManager.delegate = self;
-    self.locationManager.desiredAccuracy = kCLLocationAccuracyBest;
-    self.locationManager.distanceFilter = 100.0f;
-    [self.locationManager requestWhenInUseAuthorization];
-    [self updateLocation];
-    
     //update current location on map
     [self loadView];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 #pragma Google Maps Delegate Methods
 - (void)loadView
 {
-    GMSCameraPosition *camera = [GMSCameraPosition cameraWithLatitude:self.latitude
-                                                            longitude:self.longitude
-                                                                 zoom:14];
+    GMSCameraPosition *camera = [GMSCameraPosition cameraWithLatitude: -100.529555
+                                                            longitude: 38.623369
+                                                                 zoom:1];
     GMSMapView *mapView = [GMSMapView mapWithFrame:CGRectZero camera:camera];
-    mapView.settings.myLocationButton = YES;
-    mapView.myLocationEnabled = YES;
+    //mapView.settings.myLocationButton = YES;
+    //mapView.myLocationEnabled = YES;
     mapView.delegate = self;
     self.view = mapView;
+    
+    for(int i=0; self.transactionAmounts.count; i++)
+    {
+        NSString *titleTemp = [[NSString alloc] initWithFormat:@"%@  %@",self.transactionAmounts[i],self.transactionDates[i]];
+        float longTemp = [self.longtitude[i] floatValue];
+        float latTemp = [self.latitude[i] floatValue];
+        [self createMarkerWithLongitude:longTemp Latitude:latTemp Title:titleTemp Snippet:self.transactionNames[i]];
+    }
 }
 
-- (void)mapView:(GMSMapView *)mapView didLongPressAtCoordinate:(CLLocationCoordinate2D)
-    coordinate
-{
-    [mapView setCamera:[GMSCameraPosition cameraWithLatitude:coordinate.latitude
-                                                   longitude:coordinate.longitude
-                                                        zoom:14]];
-    //[self.model getDataWithLongitude:coordinate.longitude Latitude:coordinate.latitude];
-}
-
+/*
 - (nullable UIView *) mapView:(GMSMapView *)mapView markerInfoContents:(GMSMarker *)marker
 {
     int index = [self findMark:marker InArray:self.markerArray];
     if(index >= 0)
     {
-
+        
     }
     return nil;
 }
+*/
 
-#pragma Model Delegate Methods
--(void) setData:(NSMutableArray*)data
-{
-    self.dataArray = data;
-    //clear previous markers
-    self.markerArray = [[NSMutableArray alloc] init];
-    for(int i=0; i<self.dataArray.count; i++)
-    {
-        NSDictionary * currDict = self.dataArray[i];
-      //  float longitude = [[currDict objectForKey:self.model.kLongitude] floatValue];
-      //  float latitude = [[currDict objectForKey:self.model.kLatitude] floatValue];
-      //  [self createMarkerWithLongitude:longitude Latitude:latitude];
-    }
-}
-
-#pragma Helper Methods
-- (void) updateLocation
-{
-    [self.locationManager startUpdatingLocation];
-    self.latitude = self.locationManager.location.coordinate.latitude;
-    self.longitude = self.locationManager.location.coordinate.longitude;
-    [self.locationManager stopUpdatingLocation];
-}
-
-- (void)createMarkerWithLongitude:(float) longitude Latitude:(float)latitude
+- (void)createMarkerWithLongitude:(float) longitude Latitude:(float)latitude Title:(NSString*)title
+                          Snippet:(NSString*)snippet
 {
     //google maps API requires drawing to be done in main thread
     dispatch_async(dispatch_get_main_queue(), ^{
         GMSMarker *marker = [[GMSMarker alloc] init];
         marker.position = CLLocationCoordinate2DMake(latitude,longitude);
+        marker.title = title;
+        marker.snippet = snippet;
         marker.map = (GMSMapView*)self.view;
         [self.markerArray addObject:marker];
     });

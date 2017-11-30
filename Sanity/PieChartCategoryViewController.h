@@ -23,7 +23,9 @@
 @property (strong,nonatomic) CategoryPageController * controller;
 @property int period;
 @property (nonatomic, strong) NSString * budgetName;
+@property (nonatomic, strong) NSMutableArray *longtitude;
+@property (nonatomic, strong) NSMutableArray *latitude;
 
-- (void) setTexts:(NSMutableArray *) textsArray slices:(NSMutableArray *)slicesArray transactionNames:(NSMutableArray *) names transactionAmounts:(NSMutableArray *) amounts transactionDates:(NSMutableArray *)dates numOfTransactions:(int) number labelColor:(NSString*) color;
+- (void) setTexts:(NSMutableArray *) textsArray slices:(NSMutableArray *)slicesArray transactionNames:(NSMutableArray *) names transactionAmounts:(NSMutableArray *) amounts transactionDates:(NSMutableArray *)dates numOfTransactions:(int) number labelColor:(NSString*)color longtitude:(NSMutableArray *)longtitudeArray latitude:(NSMutableArray *)latitudeArray;
 
 @end

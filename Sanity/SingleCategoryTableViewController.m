@@ -171,10 +171,10 @@
      return cell;
      }else*/
     
-    if(indexPath.row == 0){ //set up "Transaction" labell
+    if(indexPath.row == 1){ //set up "Transaction" labell
         TranscationLabelCell *cell = [tableView dequeueReusableCellWithIdentifier:@"SingleCategoryTransactionLabelCell" forIndexPath:indexPath];
         return cell;
-    }else if(indexPath.row == 1){
+    }else if(indexPath.row == 0){
         ShowMapsCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ShowMapsCell" forIndexPath:indexPath];
         return cell;
     }else{//set up transactions
@@ -272,7 +272,11 @@
          editTrans.dateText = self.oldDate;
      }else if ([segue.identifier isEqualToString:@"TransactionToMap"]){
          MapViewController * view = segue.destinationViewController;
-         
+         view.longtitude = self.longtitude;
+         view.latitude = self.latitude;
+         view.transactionDates = self.transactionDates;
+         view.transactionAmounts = self.transactionAmounts;
+         view.transactionNames = self.transactionNames;
      }
  }
 
