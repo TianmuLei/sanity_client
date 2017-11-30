@@ -45,7 +45,7 @@
     
     //request info of picker
     //call function
-    self.periods = [[NSMutableArray alloc] initWithObjects:@"1",@"2",@"3",@"4",@"5",@"6", nil];
+    self.periods = [[NSMutableArray alloc] initWithObjects:@"1",@"2",@"3",@"4",@"5",@"6", @"All", nil];
     self.periodPicker = [[UIPickerView alloc] initWithFrame:CGRectMake(0, 50, 100, 150)];
     self.periodPicker.delegate = self;
     self.periodPicker.dataSource = self;
