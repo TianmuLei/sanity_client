@@ -45,7 +45,7 @@
     
     //request info of picker
     //call function
-    self.periods = [[NSMutableArray alloc] initWithObjects:@"1",@"2",@"3",@"4",@"5",@"6", @"All", nil];
+    self.periods = [[NSMutableArray alloc] initWithObjects:@"1",@"2",@"3",@"4",@"5",@"6", @"7", nil];
     self.periodPicker = [[UIPickerView alloc] initWithFrame:CGRectMake(0, 50, 100, 150)];
     self.periodPicker.delegate = self;
     self.periodPicker.dataSource = self;
@@ -217,6 +217,9 @@
     if (pickerView == self.periodPicker) {
         _periodSelected = YES;
 #warning cast to period var? whats the format?
+        if ([self.periods[row] isEqualToString:@"7"]){
+            return @"All";
+        }
         return _periods[row];
     }
     return nil;
@@ -227,7 +230,13 @@
     if (pickerView == self.periodPicker) {
         self.currentPeriod = [_periods[row] intValue];
         //need controller
-        self.periodTF.text = _periods[row];
+        if (row == 6){
+            self.periodTF.text = @"All";
+        }
+        else {
+            self.periodTF.text = _periods[row];
+        }
+        
         
         [self.periodTF endEditing:YES];
         
