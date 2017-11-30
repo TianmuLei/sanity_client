@@ -603,11 +603,7 @@
             [ singleB.categories addObject:singleC];
         }
         
-        
-        
-        
-        
-        
+
         
         [_budgetListData addObject:singleB];
         
