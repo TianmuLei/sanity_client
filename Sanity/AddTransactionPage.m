@@ -13,7 +13,7 @@
 #import "AddTransactionController.h"
 #import "AppDelegate.h"
 #import "TesseractOCR.h"
-
+#import <CoreLocation/CoreLocation.h>
 
 @interface AddTransactionPage () <UIPickerViewDelegate, UIPickerViewDataSource, UIImagePickerControllerDelegate>
 
@@ -29,6 +29,7 @@
 @property UIPickerView *categoryPicker;
 @property (weak, nonatomic) IBOutlet UIButton *uploadButton;
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
+@property (weak, nonatomic) IBOutlet UISwitch *locationSwitch;
 
 
 //Arrays
@@ -36,6 +37,11 @@
 @property (strong, nonatomic) NSMutableArray *categoriesCurrBudget;
 @property (strong, nonatomic) AddTransactionController *controller;
 @property BOOL budgetSelected;
+
+//private data
+@property float longitude;
+@property float latitude;
+@property (strong, nonatomic) CLLocationManager *locationManager;
 
 @end
 
@@ -77,6 +83,15 @@
     self.categoryPicker.showsSelectionIndicator = YES;
     _categoryTF.inputView = self.categoryPicker;
     
+    
+    //set up locationManager and get current location
+    self.locationManager = [[CLLocationManager alloc] init];
+    self.locationManager.delegate = self;
+    self.locationManager.desiredAccuracy = kCLLocationAccuracyBest;
+    self.locationManager.distanceFilter = 100.0f;
+    [self.locationManager requestWhenInUseAuthorization];
+    self.longitude = 0;
+    self.latitude = 0;
  
 //    [yourpicker setDelegate: self];
 //    yourpicker.showsSelectionIndicator = YES;
@@ -91,6 +106,17 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+- (IBAction)addLocationPressed:(id)sender {
+    if([self.locationSwitch isOn])
+    {
+        [self.locationManager startUpdatingLocation];
+        self.latitude = self.locationManager.location.coordinate.latitude;
+        self.longitude = self.locationManager.location.coordinate.longitude;
+    }else{
+        self.latitude = 0;
+        self.longitude = 0;
+    }
 }
 
 - (IBAction)uploadPressed:(id)sender {
@@ -379,9 +405,11 @@ didFinishPickingMediaWithInfo:(NSDictionary *)info
                                                              NSCalendarUnitSecond) fromDate:[_date date]];
         
         //check whether exceeds amount
+        NSNumber* longi = [[NSNumber alloc] initWithFloat:self.longitude];
+        NSNumber* lat = [[NSNumber alloc] initWithFloat:self.latitude];
         NSNumber *newAmount = [NSNumber numberWithFloat:_amountTF.text.floatValue];
         [self exceedsBudget:newAmount withBudget:_budgetTF.text withCategory:_categoryTF.text];
-        [_controller addTransaction:newAmount describe:_descripTF.text category:_categoryTF.text budget:_budgetTF.text date:components];
+        [_controller addTransaction:newAmount describe:_descripTF.text category:_categoryTF.text budget:_budgetTF.text date:components longi:longi lat:lat];
         
     }
 

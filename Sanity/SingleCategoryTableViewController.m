@@ -13,6 +13,8 @@
 #import "UIClientConnector.h"
 #import "EditTransaction.h"
 #import "Transaction.h"
+#import "MapViewController.h"
+#import "ShowMapsCell.h"
 
 @interface SingleCategoryTableViewController ()
 @property NSString* oldAmount;
@@ -142,7 +144,7 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return self.numOfTransactions+1;
+    return self.numOfTransactions+2;
 }
 
 //Configure the cells in table
@@ -172,14 +174,17 @@
     if(indexPath.row == 0){ //set up "Transaction" labell
         TranscationLabelCell *cell = [tableView dequeueReusableCellWithIdentifier:@"SingleCategoryTransactionLabelCell" forIndexPath:indexPath];
         return cell;
-    }else {//set up transactions
+    }else if(indexPath.row == 1){
+        ShowMapsCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ShowMapsCell" forIndexPath:indexPath];
+        return cell;
+    }else{//set up transactions
         TransactionCell *cell = [tableView dequeueReusableCellWithIdentifier:@"SingleCategoryTransactionCell" forIndexPath:indexPath];
-        cell.nameLabel.text = [self.transactions[indexPath.row-1] describe];
-        NSNumber * amtStr = [self.transactions[indexPath.row-1] amount];
+        cell.nameLabel.text = [self.transactions[indexPath.row-2] describe];
+        NSNumber * amtStr = [self.transactions[indexPath.row-2] amount];
         float amt = [amtStr floatValue];
         NSString * amt2Decimal = [[NSString alloc] initWithFormat:@"%0.02f",amt];
         cell.amountLabel.text = amt2Decimal;
-        cell.dateLabel.text = [self.transactions[indexPath.row-1] dateString];
+        cell.dateLabel.text = [self.transactions[indexPath.row-2] dateString];
         return cell;
     }
     
@@ -199,15 +204,20 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSNumber * amtStr = [self.transactions[indexPath.row-1] amount];
+    NSNumber * amtStr = [self.transactions[indexPath.row-2] amount];
     float amt = [amtStr floatValue];
     NSString * amt2Decimal = [[NSString alloc] initWithFormat:@"%0.02f",amt];
     
     self.oldAmount = amt2Decimal;
-    self.oldDate = [self.transactions[indexPath.row-1] dateString];
-    self.oldTransname =  [self.transactions[indexPath.row-1] describe];
+    self.oldDate = [self.transactions[indexPath.row-2] dateString];
+    self.oldTransname =  [self.transactions[indexPath.row-2] describe];
     
     [self performSegueWithIdentifier:@"ShowDetail" sender:tableView];
+}
+
+- (void)redirectToMaps
+{
+    [self performSegueWithIdentifier: @"TransactionToMap" sender:self.tableView];
 }
 
 /*
@@ -260,6 +270,8 @@
          editTrans.oldAmount = self.oldAmount;
          editTrans.olddescrip = self.oldTransname;
          editTrans.dateText = self.oldDate;
+     }else if ([segue.identifier isEqualToString:@"TransactionToMap"]){
+         MapViewController * view = segue.destinationViewController;
          
      }
  }

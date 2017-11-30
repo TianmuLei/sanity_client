@@ -74,6 +74,24 @@
 		8468B69C1FA48DF00060B59D /* SanityUISignupFailed.m in Sources */ = {isa = PBXBuildFile; fileRef = 8468B69B1FA48DF00060B59D /* SanityUISignupFailed.m */; };
 		8468B69E1FA48E320060B59D /* SanityUISignupFailedWithNotEnoughArgs.m in Sources */ = {isa = PBXBuildFile; fileRef = 8468B69D1FA48E320060B59D /* SanityUISignupFailedWithNotEnoughArgs.m */; };
 		8468B6A01FA48F550060B59D /* SanityUICreateBudgetsFailedWithNotEnoughArgs.m in Sources */ = {isa = PBXBuildFile; fileRef = 8468B69F1FA48F550060B59D /* SanityUICreateBudgetsFailedWithNotEnoughArgs.m */; };
+		84968F7F1FCD3E0A00A171C7 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84968F7E1FCD3DFA00A171C7 /* CoreLocation.framework */; };
+		84968F821FCD442600A171C7 /* ShowMapsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 84968F811FCD442600A171C7 /* ShowMapsCell.m */; };
+		84968F851FCD46FE00A171C7 /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84968F831FCD46FD00A171C7 /* MapViewController.m */; };
+		84968F871FCD4AD300A171C7 /* GoogleMapsBase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84968F861FCD4AD200A171C7 /* GoogleMapsBase.framework */; };
+		84968F8A1FCD4B0F00A171C7 /* GoogleMapsCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84968F881FCD4B0C00A171C7 /* GoogleMapsCore.framework */; };
+		84968F8B1FCD4B0F00A171C7 /* GoogleMaps.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84968F891FCD4B0E00A171C7 /* GoogleMaps.framework */; };
+		84968F8D1FCD4B6400A171C7 /* GoogleMaps.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 84968F8C1FCD4B6300A171C7 /* GoogleMaps.bundle */; };
+		84968F8F1FCD4BAB00A171C7 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84968F8E1FCD4BA200A171C7 /* MapKit.framework */; };
+		84968F911FCD4BB800A171C7 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 84968F901FCD4BB800A171C7 /* libc++.tbd */; };
+		84968F931FCD4C0100A171C7 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84968F921FCD4BF100A171C7 /* SystemConfiguration.framework */; };
+		84968F951FCD4C3C00A171C7 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84968F941FCD4C3100A171C7 /* OpenGLES.framework */; };
+		84968F971FCD4C5C00A171C7 /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84968F961FCD4C4F00A171C7 /* ImageIO.framework */; };
+		84968F991FCD4C7100A171C7 /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84968F981FCD4C6600A171C7 /* GLKit.framework */; };
+		84968F9C1FCD4C8E00A171C7 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84968F9B1FCD4C8700A171C7 /* CoreTelephony.framework */; };
+		84968F9D1FCD4C9900A171C7 /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84968F9A1FCD4C7F00A171C7 /* CoreText.framework */; };
+		84968F9F1FCD4CC100A171C7 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84968F9E1FCD4CBC00A171C7 /* Accelerate.framework */; };
+		84968FA11FCD4CD200A171C7 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84968FA01FCD4CCA00A171C7 /* CoreData.framework */; };
+		84968FA31FCD4EE400A171C7 /* tessdata in Resources */ = {isa = PBXBuildFile; fileRef = 84968FA21FCD4EE400A171C7 /* tessdata */; };
 		849E42911F9434A200074460 /* PieChartCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 849E42901F9434A200074460 /* PieChartCell.m */; };
 		849E42941F9438EC00074460 /* SingleCategoryTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 849E42931F9438EC00074460 /* SingleCategoryTableViewController.m */; };
 		849E42971F943E8600074460 /* TranscationLabelCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 849E42961F943E8600074460 /* TranscationLabelCell.m */; };
@@ -321,6 +339,26 @@
 		8468B69B1FA48DF00060B59D /* SanityUISignupFailed.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SanityUISignupFailed.m; sourceTree = "<group>"; };
 		8468B69D1FA48E320060B59D /* SanityUISignupFailedWithNotEnoughArgs.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SanityUISignupFailedWithNotEnoughArgs.m; sourceTree = "<group>"; };
 		8468B69F1FA48F550060B59D /* SanityUICreateBudgetsFailedWithNotEnoughArgs.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SanityUICreateBudgetsFailedWithNotEnoughArgs.m; sourceTree = "<group>"; };
+		84968F7E1FCD3DFA00A171C7 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		84968F801FCD442600A171C7 /* ShowMapsCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ShowMapsCell.h; sourceTree = "<group>"; };
+		84968F811FCD442600A171C7 /* ShowMapsCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ShowMapsCell.m; sourceTree = "<group>"; };
+		84968F831FCD46FD00A171C7 /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
+		84968F841FCD46FD00A171C7 /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
+		84968F861FCD4AD200A171C7 /* GoogleMapsBase.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleMapsBase.framework; sourceTree = "<group>"; };
+		84968F881FCD4B0C00A171C7 /* GoogleMapsCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleMapsCore.framework; sourceTree = "<group>"; };
+		84968F891FCD4B0E00A171C7 /* GoogleMaps.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleMaps.framework; sourceTree = "<group>"; };
+		84968F8C1FCD4B6300A171C7 /* GoogleMaps.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = GoogleMaps.bundle; path = GoogleMaps.framework/Resources/GoogleMaps.bundle; sourceTree = "<group>"; };
+		84968F8E1FCD4BA200A171C7 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		84968F901FCD4BB800A171C7 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
+		84968F921FCD4BF100A171C7 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		84968F941FCD4C3100A171C7 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
+		84968F961FCD4C4F00A171C7 /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
+		84968F981FCD4C6600A171C7 /* GLKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLKit.framework; path = System/Library/Frameworks/GLKit.framework; sourceTree = SDKROOT; };
+		84968F9A1FCD4C7F00A171C7 /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
+		84968F9B1FCD4C8700A171C7 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
+		84968F9E1FCD4CBC00A171C7 /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
+		84968FA01FCD4CCA00A171C7 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		84968FA21FCD4EE400A171C7 /* tessdata */ = {isa = PBXFileReference; lastKnownFileType = folder; name = tessdata; path = ../../tessdata; sourceTree = "<group>"; };
 		849E428F1F9434A200074460 /* PieChartCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PieChartCell.h; sourceTree = "<group>"; };
 		849E42901F9434A200074460 /* PieChartCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PieChartCell.m; sourceTree = "<group>"; };
 		849E42921F9438EC00074460 /* SingleCategoryTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SingleCategoryTableViewController.h; sourceTree = "<group>"; };
@@ -391,20 +429,34 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8446FE0A1FC2938F001ED3E4 /* libz.tbd in Frameworks */,
+				84968FA11FCD4CD200A171C7 /* CoreData.framework in Frameworks */,
+				84968F9F1FCD4CC100A171C7 /* Accelerate.framework in Frameworks */,
 				843599C61F91DBEA002372E9 /* CoreGraphics.framework in Frameworks */,
+				84968F9D1FCD4C9900A171C7 /* CoreText.framework in Frameworks */,
+				84968F9C1FCD4C8E00A171C7 /* CoreTelephony.framework in Frameworks */,
+				84968F991FCD4C7100A171C7 /* GLKit.framework in Frameworks */,
+				84968F971FCD4C5C00A171C7 /* ImageIO.framework in Frameworks */,
+				84968F951FCD4C3C00A171C7 /* OpenGLES.framework in Frameworks */,
+				843599CC1F91DBFD002372E9 /* QuartzCore.framework in Frameworks */,
+				84968F931FCD4C0100A171C7 /* SystemConfiguration.framework in Frameworks */,
+				843599CA1F91DBF6002372E9 /* UIKit.framework in Frameworks */,
+				84968F911FCD4BB800A171C7 /* libc++.tbd in Frameworks */,
+				84968F8F1FCD4BAB00A171C7 /* MapKit.framework in Frameworks */,
+				84968F7F1FCD3E0A00A171C7 /* CoreLocation.framework in Frameworks */,
+				8446FE0A1FC2938F001ED3E4 /* libz.tbd in Frameworks */,
 				CCF9591B1FCBDC6F0039D112 /* FBSDKLoginKit.framework in Frameworks */,
 				8446FE9B1FC29750001ED3E4 /* liblept.a in Frameworks */,
 				8446FDE21FC28379001ED3E4 /* CoreImage.framework in Frameworks */,
-				843599CC1F91DBFD002372E9 /* QuartzCore.framework in Frameworks */,
+				84968F8A1FCD4B0F00A171C7 /* GoogleMapsCore.framework in Frameworks */,
 				8446FE9C1FC29750001ED3E4 /* libpng.a in Frameworks */,
-				843599CA1F91DBF6002372E9 /* UIKit.framework in Frameworks */,
 				CCF959191FCBDC6E0039D112 /* Bolts.framework in Frameworks */,
 				8446FE9A1FC29750001ED3E4 /* libjpeg.a in Frameworks */,
 				8446FE9E1FC29750001ED3E4 /* libtiff.a in Frameworks */,
 				CCF9591A1FCBDC6F0039D112 /* FBSDKShareKit.framework in Frameworks */,
 				843599C81F91DBF1002372E9 /* Foundation.framework in Frameworks */,
+				84968F8B1FCD4B0F00A171C7 /* GoogleMaps.framework in Frameworks */,
 				CCF9591C1FCBDC6F0039D112 /* FBSDKCoreKit.framework in Frameworks */,
+				84968F871FCD4AD300A171C7 /* GoogleMapsBase.framework in Frameworks */,
 				8446FE9D1FC29750001ED3E4 /* libtesseract.a in Frameworks */,
 				CCF9591D1FCBDC6F0039D112 /* AccountKit.framework in Frameworks */,
 				C0ACF45D5FDB633C6D76F84C /* libPods-Sanity.a in Frameworks */,
@@ -431,6 +483,21 @@
 		4A6FEE003D3905322FAA0D4B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				84968FA01FCD4CCA00A171C7 /* CoreData.framework */,
+				84968F9E1FCD4CBC00A171C7 /* Accelerate.framework */,
+				84968F9B1FCD4C8700A171C7 /* CoreTelephony.framework */,
+				84968F9A1FCD4C7F00A171C7 /* CoreText.framework */,
+				84968F981FCD4C6600A171C7 /* GLKit.framework */,
+				84968F961FCD4C4F00A171C7 /* ImageIO.framework */,
+				84968F941FCD4C3100A171C7 /* OpenGLES.framework */,
+				84968F921FCD4BF100A171C7 /* SystemConfiguration.framework */,
+				84968F901FCD4BB800A171C7 /* libc++.tbd */,
+				84968F8E1FCD4BA200A171C7 /* MapKit.framework */,
+				84968F8C1FCD4B6300A171C7 /* GoogleMaps.bundle */,
+				84968F891FCD4B0E00A171C7 /* GoogleMaps.framework */,
+				84968F881FCD4B0C00A171C7 /* GoogleMapsCore.framework */,
+				84968F861FCD4AD200A171C7 /* GoogleMapsBase.framework */,
+				84968F7E1FCD3DFA00A171C7 /* CoreLocation.framework */,
 				CCF959181FCBDC6E0039D112 /* AccountKit.framework */,
 				CCF959141FCBDC6C0039D112 /* Bolts.framework */,
 				CCF959171FCBDC6D0039D112 /* FBSDKCoreKit.framework */,
@@ -513,6 +580,7 @@
 		7C2D9DF71F875EFD00027681 /* Sanity */ = {
 			isa = PBXGroup;
 			children = (
+				84968FA21FCD4EE400A171C7 /* tessdata */,
 				CCD859A11FCA306A00A121B2 /* Model */,
 				8446FEA41FC297CE001ED3E4 /* OCR */,
 				7C19917A1F91C6000039701C /* Controller */,
@@ -756,6 +824,8 @@
 			isa = PBXGroup;
 			children = (
 				CC673ED81F934B31000CE0B6 /* Cells */,
+				84968F841FCD46FD00A171C7 /* MapViewController.h */,
+				84968F831FCD46FD00A171C7 /* MapViewController.m */,
 				843599BA1F91DB38002372E9 /* HomePageTableViewController.m */,
 				843599BB1F91DB38002372E9 /* HomePageTableViewController.h */,
 				84C6F8801F954E7400F2F061 /* HistoryHomeTableViewController.h */,
@@ -799,6 +869,8 @@
 		CC673ED81F934B31000CE0B6 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				84968F801FCD442600A171C7 /* ShowMapsCell.h */,
+				84968F811FCD442600A171C7 /* ShowMapsCell.m */,
 				8457BF1C1F93363A0028166A /* HomeTableViewCell.h */,
 				8457BF1D1F93363A0028166A /* HomeTableViewCell.m */,
 				849E42951F943E8600074460 /* TranscationLabelCell.h */,
@@ -953,7 +1025,9 @@
 				CC673EE11F934C29000CE0B6 /* AmountCell.xib in Resources */,
 				7C2D9E081F875EFD00027681 /* LaunchScreen.storyboard in Resources */,
 				8446FEA71FC29E10001ED3E4 /* image_sample4.jpg in Resources */,
+				84968F8D1FCD4B6400A171C7 /* GoogleMaps.bundle in Resources */,
 				CC673EF01F9357F7000CE0B6 /* HobbyCell.xib in Resources */,
+				84968FA31FCD4EE400A171C7 /* tessdata in Resources */,
 				8446FEA81FC29E10001ED3E4 /* image_sample5.jpg in Resources */,
 				7C2D9E051F875EFD00027681 /* Assets.xcassets in Resources */,
 				843599C11F91DB39002372E9 /* Base.lproj in Resources */,
@@ -1052,6 +1126,7 @@
 				8446FE9F1FC29750001ED3E4 /* Makefile in Sources */,
 				7C252C631F97272F00DCD981 /* ChangePasswordController.m in Sources */,
 				7C2D9DFD1F875EFD00027681 /* AppDelegate.m in Sources */,
+				84968F821FCD442600A171C7 /* ShowMapsCell.m in Sources */,
 				8446FE961FC29750001ED3E4 /* G8RecognitionOperation.m in Sources */,
 				CC8D32181F9558CC00FE0704 /* AddCategoryPage.m in Sources */,
 				7C703F2C1F8AC1EB00B5D982 /* Category.m in Sources */,
@@ -1059,6 +1134,7 @@
 				7C252C661F97275000DCD981 /* ChangeUsernameController.m in Sources */,
 				CCD859A41FCA311200A121B2 /* Currency.m in Sources */,
 				CC673EFF1F94C372000CE0B6 /* AddTransactionPage.m in Sources */,
+				84968F851FCD46FE00A171C7 /* MapViewController.m in Sources */,
 				CC12775C1FC0F9DB004C6567 /* EditTransaction.m in Sources */,
 				7C2D9E2D1F875FA200027681 /* client.m in Sources */,
 				7C8F83491F93FB3A0053B40B /* ProfilePageController.m in Sources */,
