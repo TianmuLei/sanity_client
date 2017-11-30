@@ -134,7 +134,7 @@
         NSNumber *a= [NSNumber numberWithFloat:amtF];
         NSString *aS=[a stringValue];
         [transAmount addObject:aS];
-        [transDate addObject:t.date];
+        [transDate addObject:t.dateString];
     }
     NSString* color;
     if(spent>limit){
