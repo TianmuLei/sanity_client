@@ -91,7 +91,6 @@
 		84968F9D1FCD4C9900A171C7 /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84968F9A1FCD4C7F00A171C7 /* CoreText.framework */; };
 		84968F9F1FCD4CC100A171C7 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84968F9E1FCD4CBC00A171C7 /* Accelerate.framework */; };
 		84968FA11FCD4CD200A171C7 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84968FA01FCD4CCA00A171C7 /* CoreData.framework */; };
-		84968FA31FCD4EE400A171C7 /* tessdata in Resources */ = {isa = PBXBuildFile; fileRef = 84968FA21FCD4EE400A171C7 /* tessdata */; };
 		849E42911F9434A200074460 /* PieChartCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 849E42901F9434A200074460 /* PieChartCell.m */; };
 		849E42941F9438EC00074460 /* SingleCategoryTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 849E42931F9438EC00074460 /* SingleCategoryTableViewController.m */; };
 		849E42971F943E8600074460 /* TranscationLabelCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 849E42961F943E8600074460 /* TranscationLabelCell.m */; };
@@ -125,6 +124,7 @@
 		CC673EFF1F94C372000CE0B6 /* AddTransactionPage.m in Sources */ = {isa = PBXBuildFile; fileRef = CC673EFE1F94C372000CE0B6 /* AddTransactionPage.m */; };
 		CC8D32151F952BF700FE0704 /* ResetPasswordPage.m in Sources */ = {isa = PBXBuildFile; fileRef = CC8D32141F952BF700FE0704 /* ResetPasswordPage.m */; };
 		CC8D32181F9558CC00FE0704 /* AddCategoryPage.m in Sources */ = {isa = PBXBuildFile; fileRef = CC8D32171F9558CC00FE0704 /* AddCategoryPage.m */; };
+		CC936A261FCFD03E0010055B /* tessdata in Resources */ = {isa = PBXBuildFile; fileRef = CC936A251FCFD03E0010055B /* tessdata */; };
 		CCB2DFB51F9526E600503F0D /* ResetUsernamePage.m in Sources */ = {isa = PBXBuildFile; fileRef = CCB2DFB41F9526E600503F0D /* ResetUsernamePage.m */; };
 		CCD859A41FCA311200A121B2 /* Currency.m in Sources */ = {isa = PBXBuildFile; fileRef = CCD859A31FCA311200A121B2 /* Currency.m */; };
 		CCF0CE9E1FA6DD3A00FE4C45 /* SanityUIAddCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = CCF0CE9D1FA6DD3A00FE4C45 /* SanityUIAddCategory.m */; };
@@ -358,7 +358,6 @@
 		84968F9B1FCD4C8700A171C7 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
 		84968F9E1FCD4CBC00A171C7 /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
 		84968FA01FCD4CCA00A171C7 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
-		84968FA21FCD4EE400A171C7 /* tessdata */ = {isa = PBXFileReference; lastKnownFileType = folder; name = tessdata; path = ../../tessdata; sourceTree = "<group>"; };
 		849E428F1F9434A200074460 /* PieChartCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PieChartCell.h; sourceTree = "<group>"; };
 		849E42901F9434A200074460 /* PieChartCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PieChartCell.m; sourceTree = "<group>"; };
 		849E42921F9438EC00074460 /* SingleCategoryTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SingleCategoryTableViewController.h; sourceTree = "<group>"; };
@@ -409,6 +408,7 @@
 		CC8D32161F9558CC00FE0704 /* AddCategoryPage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddCategoryPage.h; sourceTree = "<group>"; };
 		CC8D32171F9558CC00FE0704 /* AddCategoryPage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddCategoryPage.m; sourceTree = "<group>"; };
 		CC8D321A1F95813200FE0704 /* Sanity.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Sanity.entitlements; sourceTree = "<group>"; };
+		CC936A251FCFD03E0010055B /* tessdata */ = {isa = PBXFileReference; lastKnownFileType = folder; name = tessdata; path = ../../../../../../Downloads/tessdata; sourceTree = "<group>"; };
 		CCB2DFB31F9526E600503F0D /* ResetUsernamePage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResetUsernamePage.h; sourceTree = "<group>"; };
 		CCB2DFB41F9526E600503F0D /* ResetUsernamePage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResetUsernamePage.m; sourceTree = "<group>"; };
 		CCD859A21FCA311200A121B2 /* Currency.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Currency.h; sourceTree = "<group>"; };
@@ -580,7 +580,7 @@
 		7C2D9DF71F875EFD00027681 /* Sanity */ = {
 			isa = PBXGroup;
 			children = (
-				84968FA21FCD4EE400A171C7 /* tessdata */,
+				CC936A251FCFD03E0010055B /* tessdata */,
 				CCD859A11FCA306A00A121B2 /* Model */,
 				8446FEA41FC297CE001ED3E4 /* OCR */,
 				7C19917A1F91C6000039701C /* Controller */,
@@ -1027,7 +1027,7 @@
 				8446FEA71FC29E10001ED3E4 /* image_sample4.jpg in Resources */,
 				84968F8D1FCD4B6400A171C7 /* GoogleMaps.bundle in Resources */,
 				CC673EF01F9357F7000CE0B6 /* HobbyCell.xib in Resources */,
-				84968FA31FCD4EE400A171C7 /* tessdata in Resources */,
+				CC936A261FCFD03E0010055B /* tessdata in Resources */,
 				8446FEA81FC29E10001ED3E4 /* image_sample5.jpg in Resources */,
 				7C2D9E051F875EFD00027681 /* Assets.xcassets in Resources */,
 				843599C11F91DB39002372E9 /* Base.lproj in Resources */,
