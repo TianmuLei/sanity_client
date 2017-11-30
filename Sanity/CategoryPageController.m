@@ -28,6 +28,8 @@
     NSMutableArray *transName = [[NSMutableArray alloc]init];
     NSMutableArray *transDate = [[NSMutableArray alloc]init];
     NSMutableArray *transAmount = [[NSMutableArray alloc]init];
+    NSMutableArray *longi = [[NSMutableArray alloc]init];
+    NSMutableArray *lat = [[NSMutableArray alloc]init];
     
     //set currency
     Currency* dataModel;
@@ -52,8 +54,13 @@
         float amtF = [t.amount floatValue] * rate;
         NSNumber *a= [NSNumber numberWithFloat:amtF];
         NSString *aS=[a stringValue];
+        
+        NSString *lats = [[NSString alloc] initWithFormat:@"%@",t.lat];
+        NSString *longis = [[NSString alloc] initWithFormat:@"%@",t.longi];
         [transAmount addObject:aS];
         [transDate addObject:t.dateString];
+        [lat addObject:lats];
+        [longi addObject:longis];
     }
     NSString* color;
     if(spent>limit){
@@ -61,7 +68,7 @@
     }else{
         color=@"black";
     }
-    [self.delegate setTexts:textArray slices:slices transactionNames:transName transactionAmounts:transAmount transactionDates:transDate numOfTransactions:trans.count labelColor:color];
+    [self.delegate setTexts:textArray slices:slices transactionNames:transName transactionAmounts:transAmount transactionDates:transDate numOfTransactions:trans.count labelColor:color longtitude:longi latitude:lat];
     
     
     
@@ -109,6 +116,8 @@
     NSMutableArray *transName = [[NSMutableArray alloc]init];
     NSMutableArray *transDate = [[NSMutableArray alloc]init];
     NSMutableArray *transAmount = [[NSMutableArray alloc]init];
+     NSMutableArray *longi = [[NSMutableArray alloc]init];
+     NSMutableArray *lat = [[NSMutableArray alloc]init];
     
     //set currency
     Currency* dataModel;
@@ -133,8 +142,15 @@
         float amtF = [t.amount floatValue] * rate;
         NSNumber *a= [NSNumber numberWithFloat:amtF];
         NSString *aS=[a stringValue];
+        
+        NSString *lats = [[NSString alloc] initWithFormat:@"%@",t.lat];
+        NSString *longis = [[NSString alloc] initWithFormat:@"%@",t.longi];
+       
+        
         [transAmount addObject:aS];
         [transDate addObject:t.dateString];
+        [lat addObject:lats];
+        [longi addObject:longis];
     }
     NSString* color;
     if(spent>limit){
@@ -146,7 +162,7 @@
     NSLog(@"%@", transName );
     
     NSLog(@"%@", transAmount);
-    [self.delegate setTexts:textArray slices:slices transactionNames:transName transactionAmounts:transAmount transactionDates:transDate numOfTransactions:trans.count labelColor:color];
+    [self.delegate setTexts:textArray slices:slices transactionNames:transName transactionAmounts:transAmount transactionDates:transDate numOfTransactions:trans.count labelColor:color longtitude:longi latitude:lat];
     
     
 }
