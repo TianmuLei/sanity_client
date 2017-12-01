@@ -48,6 +48,7 @@
 		843599C81F91DBF1002372E9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 843599C71F91DBF1002372E9 /* Foundation.framework */; };
 		843599CA1F91DBF6002372E9 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 843599C91F91DBF6002372E9 /* UIKit.framework */; };
 		843599CC1F91DBFD002372E9 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 843599CB1F91DBFD002372E9 /* QuartzCore.framework */; };
+		8438C3A21FCFEC8C0038E85C /* tessdata in Resources */ = {isa = PBXBuildFile; fileRef = 8438C3A11FCFEC8C0038E85C /* tessdata */; };
 		84416C301F9483E300C711E1 /* PieChartCategoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84416C2F1F9483E300C711E1 /* PieChartCategoryViewController.m */; };
 		8446FDE21FC28379001ED3E4 /* CoreImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8446FDE11FC28379001ED3E4 /* CoreImage.framework */; };
 		8446FE0A1FC2938F001ED3E4 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 8446FE091FC2938F001ED3E4 /* libz.tbd */; };
@@ -75,7 +76,6 @@
 		8468B69E1FA48E320060B59D /* SanityUISignupFailedWithNotEnoughArgs.m in Sources */ = {isa = PBXBuildFile; fileRef = 8468B69D1FA48E320060B59D /* SanityUISignupFailedWithNotEnoughArgs.m */; };
 		8468B6A01FA48F550060B59D /* SanityUICreateBudgetsFailedWithNotEnoughArgs.m in Sources */ = {isa = PBXBuildFile; fileRef = 8468B69F1FA48F550060B59D /* SanityUICreateBudgetsFailedWithNotEnoughArgs.m */; };
 		84968F7F1FCD3E0A00A171C7 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84968F7E1FCD3DFA00A171C7 /* CoreLocation.framework */; };
-		84968F821FCD442600A171C7 /* ShowMapsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 84968F811FCD442600A171C7 /* ShowMapsCell.m */; };
 		84968F851FCD46FE00A171C7 /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84968F831FCD46FD00A171C7 /* MapViewController.m */; };
 		84968F871FCD4AD300A171C7 /* GoogleMapsBase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84968F861FCD4AD200A171C7 /* GoogleMapsBase.framework */; };
 		84968F8A1FCD4B0F00A171C7 /* GoogleMapsCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84968F881FCD4B0C00A171C7 /* GoogleMapsCore.framework */; };
@@ -233,6 +233,7 @@
 		843599C71F91DBF1002372E9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		843599C91F91DBF6002372E9 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		843599CB1F91DBFD002372E9 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		8438C3A11FCFEC8C0038E85C /* tessdata */ = {isa = PBXFileReference; lastKnownFileType = folder; name = tessdata; path = ../../tessdata; sourceTree = "<group>"; };
 		84416C2E1F9483E300C711E1 /* PieChartCategoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PieChartCategoryViewController.h; sourceTree = "<group>"; };
 		84416C2F1F9483E300C711E1 /* PieChartCategoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PieChartCategoryViewController.m; sourceTree = "<group>"; };
 		8446FDE11FC28379001ED3E4 /* CoreImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreImage.framework; path = System/Library/Frameworks/CoreImage.framework; sourceTree = SDKROOT; };
@@ -339,8 +340,6 @@
 		8468B69D1FA48E320060B59D /* SanityUISignupFailedWithNotEnoughArgs.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SanityUISignupFailedWithNotEnoughArgs.m; sourceTree = "<group>"; };
 		8468B69F1FA48F550060B59D /* SanityUICreateBudgetsFailedWithNotEnoughArgs.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SanityUICreateBudgetsFailedWithNotEnoughArgs.m; sourceTree = "<group>"; };
 		84968F7E1FCD3DFA00A171C7 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
-		84968F801FCD442600A171C7 /* ShowMapsCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ShowMapsCell.h; sourceTree = "<group>"; };
-		84968F811FCD442600A171C7 /* ShowMapsCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ShowMapsCell.m; sourceTree = "<group>"; };
 		84968F831FCD46FD00A171C7 /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
 		84968F841FCD46FD00A171C7 /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
 		84968F861FCD4AD200A171C7 /* GoogleMapsBase.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleMapsBase.framework; sourceTree = "<group>"; };
@@ -578,6 +577,7 @@
 		7C2D9DF71F875EFD00027681 /* Sanity */ = {
 			isa = PBXGroup;
 			children = (
+				8438C3A11FCFEC8C0038E85C /* tessdata */,
 				CCD859A11FCA306A00A121B2 /* Model */,
 				8446FEA41FC297CE001ED3E4 /* OCR */,
 				7C19917A1F91C6000039701C /* Controller */,
@@ -866,8 +866,6 @@
 		CC673ED81F934B31000CE0B6 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
-				84968F801FCD442600A171C7 /* ShowMapsCell.h */,
-				84968F811FCD442600A171C7 /* ShowMapsCell.m */,
 				8457BF1C1F93363A0028166A /* HomeTableViewCell.h */,
 				8457BF1D1F93363A0028166A /* HomeTableViewCell.m */,
 				849E42951F943E8600074460 /* TranscationLabelCell.h */,
@@ -1024,6 +1022,7 @@
 				8446FEA71FC29E10001ED3E4 /* image_sample4.jpg in Resources */,
 				84968F8D1FCD4B6400A171C7 /* GoogleMaps.bundle in Resources */,
 				CC673EF01F9357F7000CE0B6 /* HobbyCell.xib in Resources */,
+				8438C3A21FCFEC8C0038E85C /* tessdata in Resources */,
 				8446FEA81FC29E10001ED3E4 /* image_sample5.jpg in Resources */,
 				7C2D9E051F875EFD00027681 /* Assets.xcassets in Resources */,
 				843599C11F91DB39002372E9 /* Base.lproj in Resources */,
@@ -1122,7 +1121,6 @@
 				8446FE9F1FC29750001ED3E4 /* Makefile in Sources */,
 				7C252C631F97272F00DCD981 /* ChangePasswordController.m in Sources */,
 				7C2D9DFD1F875EFD00027681 /* AppDelegate.m in Sources */,
-				84968F821FCD442600A171C7 /* ShowMapsCell.m in Sources */,
 				8446FE961FC29750001ED3E4 /* G8RecognitionOperation.m in Sources */,
 				CC8D32181F9558CC00FE0704 /* AddCategoryPage.m in Sources */,
 				7C703F2C1F8AC1EB00B5D982 /* Category.m in Sources */,

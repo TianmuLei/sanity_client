@@ -10,12 +10,7 @@
 #import <GoogleMaps/GoogleMaps.h>
 
 @interface MapViewController ()<GMSMapViewDelegate>
-
-@property (strong, nonatomic) NSMutableArray * markerArray;
-@property (strong, nonatomic) NSMutableArray * dataArray;
-@property int markerCount;
-@property int markerIndexSelected;
-
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *backButton;
 
 @end
 
@@ -23,11 +18,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    //alloc and init variables
-    self.markerArray = [[NSMutableArray alloc] init];
-    self.dataArray = [[NSMutableArray alloc] init];
-    self.markerCount = 0;
     
     //update current location on map
     [self loadView];
@@ -40,8 +30,8 @@
 #pragma Google Maps Delegate Methods
 - (void)loadView
 {
-    GMSCameraPosition *camera = [GMSCameraPosition cameraWithLatitude: -100.529555
-                                                            longitude: 38.623369
+    GMSCameraPosition *camera = [GMSCameraPosition cameraWithLatitude: 38.623369
+                                                            longitude: -100.529555
                                                                  zoom:1];
     GMSMapView *mapView = [GMSMapView mapWithFrame:CGRectZero camera:camera];
     //mapView.settings.myLocationButton = YES;
@@ -49,26 +39,17 @@
     mapView.delegate = self;
     self.view = mapView;
     
-    for(int i=0; self.transactionAmounts.count; i++)
+    for(int i=0; i<self.transactionAmounts.count; i++)
     {
-        NSString *titleTemp = [[NSString alloc] initWithFormat:@"%@  %@",self.transactionAmounts[i],self.transactionDates[i]];
-        float longTemp = [self.longtitude[i] floatValue];
-        float latTemp = [self.latitude[i] floatValue];
-        [self createMarkerWithLongitude:longTemp Latitude:latTemp Title:titleTemp Snippet:self.transactionNames[i]];
+        if([self.longtitude[i] floatValue]!=0 && [self.latitude[i] floatValue]!=0)
+        {
+            NSString *titleTemp = [[NSString alloc] initWithFormat:@"$%@  %@",self.transactionAmounts[i],self.transactionDates[i]];
+            float longTemp = [self.longtitude[i] floatValue];
+            float latTemp = [self.latitude[i] floatValue];
+            [self createMarkerWithLongitude:longTemp Latitude:latTemp Title:titleTemp Snippet:self.transactionNames[i]];
+        }
     }
 }
-
-/*
-- (nullable UIView *) mapView:(GMSMapView *)mapView markerInfoContents:(GMSMarker *)marker
-{
-    int index = [self findMark:marker InArray:self.markerArray];
-    if(index >= 0)
-    {
-        
-    }
-    return nil;
-}
-*/
 
 - (void)createMarkerWithLongitude:(float) longitude Latitude:(float)latitude Title:(NSString*)title
                           Snippet:(NSString*)snippet
@@ -80,20 +61,11 @@
         marker.title = title;
         marker.snippet = snippet;
         marker.map = (GMSMapView*)self.view;
-        [self.markerArray addObject:marker];
     });
 }
 
-- (int)findMark:(GMSMarker*)marker InArray:(NSMutableArray*)array
-{
-    for(int i=0; i<array.count; i++)
-    {
-        if(array[i]==marker)
-            return i;
-    }
-    return -1;
+- (IBAction)backButtonTapped:(id)sender {
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
-
-
 
 @end

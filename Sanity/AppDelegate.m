@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 #import <UserNotifications/UserNotifications.h>
 #import <FBSDKCoreKit/FBSDKCoreKit.h>
+@import GoogleMaps;
 
 @interface AppDelegate ()<UNUserNotificationCenterDelegate>
 @end
@@ -19,6 +20,8 @@
  NSString *notificationContent;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+     [GMSServices provideAPIKey:@"AIzaSyCJ2WoiBwKcpTNAI5hzpH89rZpcCSbAWjM"];
+    
     // use UNUserNotificationCenter to manage all notifications
     UNUserNotificationCenter *center = [UNUserNotificationCenter currentNotificationCenter];
     // set up listener
